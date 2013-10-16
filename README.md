@@ -1,7 +1,7 @@
-Project: Holo Acceent
-Developer: Borja Lopez Urkidi
-Organization: NEGU Soft
-Web: http://www.negusoft.com
+ - Project: Holo Accent
+ - Developer: Borja Lopez Urkidi
+ - Organization: NEGU Soft
+ - Web: http://www.negusoft.com
 
 
 Description
