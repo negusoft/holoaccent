@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- Transparent rectanche to set the size of the drawable -->
+    <item>
+        <shape android:shape="rectangle" >
+            <solid
+        		android:color="@android:color/transparent" />
+            <size
+        		android:width="@dimen/radio_size"
+        		android:height="@dimen/radio_size" />
+        </shape>
+    </item>
+    
+    <!-- Background colored fill -->
+    <item>
+        <shape android:shape="oval" >
+            <solid android:color="@color/key_pressed_dimmed" />
+        </shape>
+    </item>
+    
+    <!-- glow around -->
+<!--     <item> -->
+<!--         <shape android:shape="ring" -->
+<!--             android:innerRadius="@dimen/radio_glow_inner_radius" -->
+<!--             android:thickness="@dimen/radio_glow_thickness" -->
+<!--             android:useLevel="false" > -->
+<!--         <gradient -->
+<!--             android:type="radial" -->
+<!--             android:gradientRadius="@dimen/radio_glow_gradient_radius" -->
+<!--             android:startColor="#afff" -->
+<!--             android:endColor="#0000" /> -->
+<!--         </shape> -->
+<!--     </item> -->
+    
+    <!-- inner background -->
+    <item
+        android:top="@dimen/radio_center_margin"
+        android:right="@dimen/radio_center_margin"
+        android:bottom="@dimen/radio_center_margin"
+        android:left="@dimen/radio_center_margin">
+        <shape android:shape="oval" >
+            <solid android:color="#3d3d3d" />
+        </shape>
+    </item>
+    
+    <!-- reuse the off drawable -->
+	<item android:drawable="@drawable/btn_radio_off_light" />
+    
+</layer-list>

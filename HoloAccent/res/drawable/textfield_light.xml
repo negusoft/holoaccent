@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_multiline="true" android:state_window_focused="false" android:state_enabled="true"  android:drawable="@drawable/textfield_default_light" />
+    <item android:state_multiline="true" android:state_window_focused="false" android:state_enabled="false" android:drawable="@drawable/textfield_disabled_light" />
+    <item android:state_multiline="true" android:state_enabled="true" android:state_focused="true" android:drawable="@drawable/textfield_activated" />
+    <item android:state_multiline="true" android:state_enabled="true" android:state_activated="true" android:drawable="@drawable/textfield_focused_multiline" />
+    <item android:state_multiline="true" android:state_enabled="true" android:drawable="@drawable/textfield_default_light" />
+    <item android:state_multiline="true" android:state_focused="true" android:drawable="@drawable/textfield_disabled_focused_light" />
+    <item android:state_multiline="true" android:drawable="@drawable/textfield_disabled_light" />
+
+    <item android:state_window_focused="false" android:state_enabled="true" android:drawable="@drawable/textfield_default_light" />
+    <item android:state_window_focused="false" android:state_enabled="false" android:drawable="@drawable/textfield_disabled_light" />
+    <item android:state_enabled="true" android:state_focused="true" android:drawable="@drawable/textfield_activated" />
+    <item android:state_enabled="true" android:state_activated="true" android:drawable="@drawable/textfield_focused" />
+    <item android:state_enabled="true" android:drawable="@drawable/textfield_default_light" />
+    <item android:state_focused="true" android:drawable="@drawable/textfield_disabled_focused_light" />
+    <item android:drawable="@drawable/textfield_disabled_light" />
+</selector>

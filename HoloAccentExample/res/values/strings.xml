@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HoloAccent</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_alert_dialog">Alert Dialog</string>
+    <string name="action_spinner_activity">Spinner Activity</string>
+<!--     <string name="title_section1">Section 1</string> -->
+<!--     <string name="title_section2">Section 2</string> -->
+<!--     <string name="title_section3">Section 3</string> -->
+
+    <string-array name="list_items">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+        <item>four</item>
+        <item>five</item>
+        <item>six</item>
+        <item>seven</item>
+        <item>eight</item>
+        <item>nine</item>
+        <item>ten</item>
+        <item>eleven</item>
+        <item>twelve</item>
+        <item>thirteen</item>
+    </string-array>
+
+    <string name="title_activity_tabbed">TabbedActivity</string>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="key">#33b5e5</color>
+    <color name="key_pressed">#aa33b5e5</color>
+    <color name="key_pressed_dimmed">#8833b5e5</color>
+    <color name="key_focused">#5533b5e5</color>
+    <color name="key_focused_dimmed">#2233b5e5</color>
+    
+    <color name="selector_disabled">#8000</color>
+    <color name="selector_disabled_light">#2000</color>
+    
+    <color name="radio_outer_ring">#44cccccc</color>
+    <color name="radio_outer_ring_disabled">#22cccccc</color>
+    <color name="radio_outer_ring_light">#883d3d3d</color>
+    <color name="radio_outer_ring_disabled_light">#443d3d3d</color>
+
+</resources>

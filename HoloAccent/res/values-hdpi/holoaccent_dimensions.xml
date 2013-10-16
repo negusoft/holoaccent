@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="radio_glow_gradient_radius" format="float" type="dimen">22.0</item>
+    <item name="radio_pressed_gradient_radius" format="float" type="dimen">28.0</item>
+</resources>

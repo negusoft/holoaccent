@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- background glow -->
+    <item>
+        <shape android:shape="rectangle" >
+            <corners android:radius="5dp"/>
+            <solid android:color="@color/key_focused" />
+        </shape>
+    </item>
+    
+    <!-- button backgournd -->
+    <item
+        android:top="@dimen/btn_default_margin"
+        android:right="@dimen/btn_default_margin"
+        android:bottom="@dimen/btn_default_margin"
+        android:left="@dimen/btn_default_margin">
+        <shape android:shape="rectangle" >
+            <corners android:radius="@dimen/btn_fill_corner_radius"/>
+            <solid android:color="@color/key_pressed" />
+        </shape>
+    </item>
+    
+    <item>
+        <nine-patch android:src="@drawable/btn_default_frame"/>
+    </item>
+    
+</layer-list>

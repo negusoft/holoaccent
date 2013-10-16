@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<RadioGroup
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+	        <Button
+	            android:layout_width="32dp"
+	            android:layout_height="32dp"
+	            android:background="@drawable/btn_radio_off_focused_light" />
+
+	        <RadioButton
+	            android:id="@+id/radioButton1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:checked="true"
+	            android:text="RadioButton" />
+
+	    </LinearLayout>
+	
+	    <RadioButton
+	        android:id="@+id/radioButton2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:enabled="true"
+	        android:text="RadioButton" />
+	</RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/btn_radio_off_disabled_focused_light" />
+
+        <RadioButton
+            android:id="@+id/RadioButton01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:enabled="false"
+            android:text="RadioButton" />
+        
+    </LinearLayout>
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="RadioButton" />
+
+</LinearLayout>

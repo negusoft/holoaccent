@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item>
+        <bitmap 
+            android:src="@drawable/textfield_comp_activated_left" 
+            android:gravity="bottom|left" />
+    </item>
+    
+    <item>
+        <bitmap 
+            android:src="@drawable/textfield_comp_activated_right" 
+            android:gravity="bottom|right" />
+    </item>
+    
+    <item
+        android:left="12dp"
+        android:right="12dp">
+        <bitmap 
+            android:src="@drawable/textfield_comp_activated_main" 
+            android:gravity="bottom|fill_horizontal" />
+    </item>
+    
+    <item>
+        <nine-patch android:src="@drawable/textfield_comp_background" />
+    </item>
+    
+</layer-list>

@@ -1,0 +1,9 @@
+<resources>
+    
+    <attr name="coloredButtonBackground" format="reference" />
+
+    <declare-styleable name="HoloAccent">
+        <attr name="accentColor" format="color|reference" />
+    </declare-styleable>
+
+</resources>
