@@ -22,6 +22,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.negusoft.holoaccent.ResourceHelper;
+import com.negusoft.holoaccent.dialog.AccentAlertDialog;
+import com.negusoft.holoaccent.dialog.DividerPainter;
 
 public class TabbedActivity extends FragmentActivity implements ActionBar.TabListener {
 
@@ -44,46 +46,43 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tabbed);
-		
 
-		
-//		ProgressBar bar = new ProgressBar(this);
-
-		getActionBar().setHomeButtonEnabled(true);
-
-		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		if (actionBar != null) {
+			actionBar.setHomeButtonEnabled(true);
+			
+			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		// Create the adapter that will return a fragment for each of the three
-		// primary sections of the app.
-		mSectionsPagerAdapter = new SectionsPagerAdapter(
-				getSupportFragmentManager());
+			// Create the adapter that will return a fragment for each of the three
+			// primary sections of the app.
+			mSectionsPagerAdapter = new SectionsPagerAdapter(
+					getSupportFragmentManager());
 
-		// Set up the ViewPager with the sections adapter.
-		mViewPager = (ViewPager) findViewById(R.id.pager);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
+			// Set up the ViewPager with the sections adapter.
+			mViewPager = (ViewPager) findViewById(R.id.pager);
+			mViewPager.setAdapter(mSectionsPagerAdapter);
 
-		// When swiping between different sections, select the corresponding
-		// tab. We can also use ActionBar.Tab#select() to do this if we have
-		// a reference to the Tab.
-		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-					@Override
-					public void onPageSelected(int position) {
-						actionBar.setSelectedNavigationItem(position);
-					}
-				});
+			// When swiping between different sections, select the corresponding
+			// tab. We can also use ActionBar.Tab#select() to do this if we have
+			// a reference to the Tab.
+			mViewPager
+					.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+						@Override
+						public void onPageSelected(int position) {
+							actionBar.setSelectedNavigationItem(position);
+						}
+					});
 
-		// For each of the sections in the app, add a tab to the action bar.
-		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-			// Create a tab with text corresponding to the page title defined by
-			// the adapter. Also specify this Activity object, which implements
-			// the TabListener interface, as the callback (listener) for when
-			// this tab is selected.
-			actionBar.addTab(actionBar.newTab()
-					.setText(mSectionsPagerAdapter.getPageTitle(i))
-					.setTabListener(this));
+			// For each of the sections in the app, add a tab to the action bar.
+			for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
+				// Create a tab with text corresponding to the page title defined by
+				// the adapter. Also specify this Activity object, which implements
+				// the TabListener interface, as the callback (listener) for when
+				// this tab is selected.
+				actionBar.addTab(actionBar.newTab()
+						.setText(mSectionsPagerAdapter.getPageTitle(i))
+						.setTabListener(this));
+			}
 		}
 	}
 	
@@ -136,7 +135,7 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 	}
 	
 	private void showAlertDialog() {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
 		builder.setTitle("Alert Dialog")
 				.setMessage("Dummie dialog")
 				.setPositiveButton("Positive",
@@ -151,9 +150,10 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 								// negative action
 							}
 						});
-        // Create the AlertDialog object and return it
-		
-        builder.create().show();
+
+//        AlertDialog d = builder.create();
+//        d.show();
+		builder.show();
 	}
 
 	/**

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="key">#33b5e5</color>
-    <color name="key_pressed">#aa33b5e5</color>
-    <color name="key_pressed_dimmed">#8833b5e5</color>
-    <color name="key_focused">#5533b5e5</color>
-    <color name="key_focused_dimmed">#2233b5e5</color>
+    <color name="key">#A4C739</color>
+    <color name="key_pressed">#aaA4C739</color>
+    <color name="key_pressed_dimmed">#88A4C739</color>
+    <color name="key_focused">#55A4C739</color>
+    <color name="key_focused_dimmed">#22A4C739</color>
     
     <color name="selector_disabled">#8000</color>
     <color name="selector_disabled_light">#2000</color>

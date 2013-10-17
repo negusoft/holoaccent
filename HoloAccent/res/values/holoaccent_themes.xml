@@ -32,6 +32,7 @@
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         <item name="accentColor">@color/key</item>
+        
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
@@ -53,10 +54,13 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
     </style>
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="accentColor">@color/key</item>
+        
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
@@ -78,9 +82,15 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
     </style>
     
-    <!-- Dialog themes (attributes copied from Theme.HoloAccent) -->
+    <!--
+        Dialog themes (attributes copied from Theme.HoloAccent)
+    	If you apply the themes to an Activity, you will need to programatically modify 
+    	the title divider color. See DividerPainter for more information.
+    -->
     <style name="Theme.HoloAccent.Dialog" parent="android:Theme.Holo.Dialog">
         <item name="accentColor">@color/key</item>
         
@@ -106,20 +116,50 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-    	
-<!--         <item name="android:textColorHighlight">@color/key_focused</item> -->
-        <item name="android:textColorHighlightInverse">@color/key_focused</item>
-        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.Holo.Light.Widget.PopupMenu.Large</item>
-        <item name="android:textAppearanceSmallPopupMenu">@style/TextAppearance.Holo.Light.Widget.PopupMenu.Small</item>
-        <item name="android:textColorHint">@color/key_focused</item>
-        <item name="android:textColorHighlight">@color/key_focused</item>
-        <item name="android:textColorLink">@color/key_focused</item>
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
+        
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
+    </style>
+    <style name="Theme.HoloAccent.Light.Dialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="accentColor">@color/key</item>
+        
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
+        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
+        
+        <item name="android:editTextBackground">@drawable/textfield_light</item>
+        
+        <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
+        <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
+        <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
+        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        
+    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+        
+        <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
+        
+    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+        
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
     
-    
+    <!-- Extension themes (the parents are HoloAccent themes) -->
     <style name="Theme.HoloAccent.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+    <style name="Theme.HoloAccent.Light.Dialog.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         <item name="android:windowContentOverlay">@null</item>

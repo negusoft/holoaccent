@@ -70,7 +70,6 @@
     
     <!-- Text appearance -->
     <style name="TextAppearance.HoloAccent.DialogWindowTitle" parent="android:TextAppearance.Holo.DialogWindowTitle">
-        <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/key</item>
     </style>
     
