@@ -17,6 +17,8 @@
         <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
         
+        <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
+        
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
         
@@ -45,6 +47,8 @@
         <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
         
+        <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
+        
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
         
@@ -72,6 +76,8 @@
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
         <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        
+        <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
         
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>

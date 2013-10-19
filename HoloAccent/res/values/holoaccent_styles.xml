@@ -39,6 +39,14 @@
         <item name="android:background">@drawable/btn_default</item>
     </style>
     
+    <!-- Toogle button -->
+    <style name="Widget.HoloAccent.Button.Toggle" parent="android:Widget.Holo.Button.Toggle">
+        <item name="android:background">@drawable/btn_toggle</item>
+    </style>
+    <style name="Widget.HoloAccent.Light.Button.Toggle" parent="android:Widget.Holo.Light.Button.Toggle">
+        <item name="android:background">@drawable/btn_toggle</item>
+    </style>
+    
     <!-- Colored button styles -->
     <style name="HoloAccent.Button.Colored" parent="android:Widget.Holo.Button">
         <item name="android:background">@drawable/btn_default</item>

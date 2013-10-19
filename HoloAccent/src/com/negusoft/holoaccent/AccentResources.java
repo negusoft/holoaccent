@@ -29,6 +29,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -36,6 +37,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
+import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
 import com.negusoft.holoaccent.util.BitmapUtils;
 
 /**
@@ -68,12 +70,14 @@ public class AccentResources extends Resources {
 	
 	private final int mAccentColor;
 
+	private final ToggleInterceptor mToggleInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
 	public AccentResources(int accentColor, AssetManager assets, DisplayMetrics metrics, Configuration config) {
 		super(assets, metrics, config);
 		mAccentColor = accentColor;
+		mToggleInterceptor = new ToggleInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -85,6 +89,7 @@ public class AccentResources extends Resources {
 		mAccentColor = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
 		attrs.recycle();
 
+		mToggleInterceptor = new ToggleInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -94,6 +99,11 @@ public class AccentResources extends Resources {
 		if (resId == R.drawable.progress_comp_primary) {
 			return super.getDrawable(resId);
 		}
+		
+		// Replace the toggle button foreground drawables if required
+		Drawable toggleDrawable = mToggleInterceptor.getDrawable(resId);
+		if (toggleDrawable != null)
+			return toggleDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -117,23 +127,6 @@ public class AccentResources extends Resources {
 		}
 		return super.openRawResource(resId, value);
 	}
-	
-//	private Drawable getFilteredDrawable(int id) {
-//		Drawable result = super.getDrawable(id);
-//		result.setColorFilter(mAccentColor, PorterDuff.Mode.MULTIPLY);
-//		return result;
-//	}
-	
-//	private Drawable getFilteredDrawable(int id) {
-//		Bitmap bitmap = BitmapFactory.decodeResource(this, id);
-//		bitmap = BitmapUtils.applyColor(bitmap, mAccentColor);
-////		try {
-////			BitmapUtils.writeToFile(bitmap, "holoaccent", id + ".png");
-////		} catch (IOException e) {
-////			e.printStackTrace();
-////		}
-//		return new BitmapDrawable(this, bitmap);
-//	}
 	
 	/**
 	 * Get a reference to a resource that is equivalent to the one requested, 
@@ -163,6 +156,36 @@ public class AccentResources extends Resources {
 		} catch (IOException e) { /* ignore */}
 		
 		return new ByteArrayInputStream(bitmapData);
+	}
+	
+	/**
+	 * Inner class holding the logic for replacing the toogle button's foreground 
+	 * light that represents the state of the button
+	 */
+	private class ToggleInterceptor {
+
+		private final int COLOR_ON_PRESSED = Color.rgb(255, 255, 255);
+		private final int COLOR_OFF = Color.argb(128, 0, 0, 0);
+		private final int COLOR_OFF_DISABLED = Color.argb(64, 0, 0, 0);
+
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.btn_toggle_comp_on_foreground)
+				return new ToggleForegroundDrawable(AccentResources.this, mAccentColor);
+			if (resId == R.drawable.btn_toggle_comp_on_foreground_pressed)
+				return new ToggleForegroundDrawable(AccentResources.this, COLOR_ON_PRESSED);
+			if (resId == R.drawable.btn_toggle_comp_on_foreground_disabled)
+				return new ToggleForegroundDrawable(AccentResources.this, getDisabledOnColor());
+			if (resId == R.drawable.btn_toggle_comp_off_foreground)
+				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF);
+			if (resId == R.drawable.btn_toggle_comp_off_foreground_disabled)
+				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF_DISABLED);
+			return null;
+		}
+		
+		private int getDisabledOnColor() {
+			return Color.argb(128, Color.red(mAccentColor), 
+					Color.green(mAccentColor), Color.blue(mAccentColor));
+		}
 	}
 	
 	/**
