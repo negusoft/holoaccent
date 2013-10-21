@@ -38,6 +38,7 @@ import android.util.TypedValue;
 
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
 import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
+import com.negusoft.holoaccent.drawable.UnderlineDrawable;
 import com.negusoft.holoaccent.util.BitmapUtils;
 
 /**
@@ -71,6 +72,7 @@ public class AccentResources extends Resources {
 	private final int mAccentColor;
 
 	private final ToggleInterceptor mToggleInterceptor;
+	private final UnderlineInterceptor mUnderlineInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
@@ -78,6 +80,7 @@ public class AccentResources extends Resources {
 		super(assets, metrics, config);
 		mAccentColor = accentColor;
 		mToggleInterceptor = new ToggleInterceptor();
+		mUnderlineInterceptor = new UnderlineInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -90,6 +93,7 @@ public class AccentResources extends Resources {
 		attrs.recycle();
 
 		mToggleInterceptor = new ToggleInterceptor();
+		mUnderlineInterceptor = new UnderlineInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -104,6 +108,11 @@ public class AccentResources extends Resources {
 		Drawable toggleDrawable = mToggleInterceptor.getDrawable(resId);
 		if (toggleDrawable != null)
 			return toggleDrawable;
+		
+		// Replace the underline drawables
+		Drawable underlineDrawable = mUnderlineInterceptor.getDrawable(resId);
+		if (underlineDrawable != null)
+			return underlineDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -185,6 +194,18 @@ public class AccentResources extends Resources {
 		private int getDisabledOnColor() {
 			return Color.argb(128, Color.red(mAccentColor), 
 					Color.green(mAccentColor), Color.blue(mAccentColor));
+		}
+	}
+	
+	/**
+	 * Inner class holding the logic for replacing underline drawables
+	 */
+	private class UnderlineInterceptor {
+
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.underline_1_5)
+				return new UnderlineDrawable(AccentResources.this, mAccentColor, 1.5f);
+			return null;
 		}
 	}
 	
