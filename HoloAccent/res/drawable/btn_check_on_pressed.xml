@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <!-- background -->
-    <item>
-        <shape android:shape="rectangle">
-			<corners android:radius="@dimen/check_pressed_corner_radius"/>
-			<solid android:color="@color/key_pressed_dimmed"/>
-	    </shape>
-    </item>
-    
-    <!-- background glow -->
-    <item>
-        <shape android:shape="rectangle">
-			<corners android:radius="@dimen/check_pressed_corner_radius"/>
-			<gradient 
-			    android:type="radial"
-			    android:startColor="@color/key_pressed_dimmed"
-			    android:endColor="#0fff"
-			    android:gradientRadius="@dimen/check_pressed_gradient_radius"/>
-	    </shape>
-    </item>
-
-	<item>
-	    <bitmap android:src="@drawable/btn_check_comp_on_pressed"/>
-	</item>
+    <item android:drawable="@drawable/roundrect_check_pressed"/>
+    <item android:drawable="@drawable/btn_check_comp_on_pressed"/>
 
 </layer-list>

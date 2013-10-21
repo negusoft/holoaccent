@@ -12,7 +12,7 @@
         <Button
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:background="@drawable/btn_check_on" />
+            android:background="@drawable/btn_check_on_pressed" />
 
         <CheckBox
             android:id="@+id/radioButton1"

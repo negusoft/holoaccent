@@ -39,6 +39,7 @@ import android.util.TypedValue;
 
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
 import com.negusoft.holoaccent.drawable.RectDrawable;
+import com.negusoft.holoaccent.drawable.RoundRectDrawable;
 import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
 import com.negusoft.holoaccent.drawable.UnderlineDrawable;
 import com.negusoft.holoaccent.util.BitmapUtils;
@@ -78,6 +79,7 @@ public class AccentResources extends Resources {
 	private final UnderlineInterceptor mUnderlineInterceptor;
 	private final SolidColorInterceptor mSolidColorInterceptor;
 	private final RectInterceptor mRectInterceptor;
+	private final RoundRectInterceptor mRoundRectInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
@@ -88,6 +90,7 @@ public class AccentResources extends Resources {
 		mUnderlineInterceptor = new UnderlineInterceptor();
 		mSolidColorInterceptor = new SolidColorInterceptor();
 		mRectInterceptor = new RectInterceptor();
+		mRoundRectInterceptor = new RoundRectInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -104,16 +107,13 @@ public class AccentResources extends Resources {
 		mUnderlineInterceptor = new UnderlineInterceptor();
 		mSolidColorInterceptor = new SolidColorInterceptor();
 		mRectInterceptor = new RectInterceptor();
+		mRoundRectInterceptor = new RoundRectInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
 
 	@Override
 	public Drawable getDrawable(int resId) throws Resources.NotFoundException {
-		if (resId == R.drawable.progress_comp_primary) {
-			return super.getDrawable(resId);
-		}
-		
 		// Replace the toggle button foreground drawables if required
 		Drawable toggleDrawable = mToggleInterceptor.getDrawable(resId);
 		if (toggleDrawable != null)
@@ -133,6 +133,11 @@ public class AccentResources extends Resources {
 		Drawable rectColorDrawable = mRectInterceptor.getDrawable(resId);
 		if (rectColorDrawable != null)
 			return rectColorDrawable;
+		
+		// Replace the underline drawables
+		Drawable roundRectDrawable = mRoundRectInterceptor.getDrawable(resId);
+		if (roundRectDrawable != null)
+			return roundRectDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -245,6 +250,16 @@ public class AccentResources extends Resources {
 				int backColor = mAccentColor.getTranslucent(0x55);
 				int borderColor = mAccentColor.getTranslucent(0xAA);
 				return new RectDrawable(AccentResources.this, backColor, 2f, borderColor);
+			}
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing rounded rectangle drawables */
+	private class RoundRectInterceptor {
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.roundrect_check_pressed) {
+				return new RoundRectDrawable(mAccentColor.getTranslucent(0x88), 3f);
 			}
 			return null;
 		}
