@@ -38,6 +38,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
+import com.negusoft.holoaccent.drawable.RectDrawable;
 import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
 import com.negusoft.holoaccent.drawable.UnderlineDrawable;
 import com.negusoft.holoaccent.util.BitmapUtils;
@@ -76,6 +77,7 @@ public class AccentResources extends Resources {
 	private final ToggleInterceptor mToggleInterceptor;
 	private final UnderlineInterceptor mUnderlineInterceptor;
 	private final SolidColorInterceptor mSolidColorInterceptor;
+	private final RectInterceptor mRectInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
@@ -85,6 +87,7 @@ public class AccentResources extends Resources {
 		mToggleInterceptor = new ToggleInterceptor();
 		mUnderlineInterceptor = new UnderlineInterceptor();
 		mSolidColorInterceptor = new SolidColorInterceptor();
+		mRectInterceptor = new RectInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -100,6 +103,7 @@ public class AccentResources extends Resources {
 		mToggleInterceptor = new ToggleInterceptor();
 		mUnderlineInterceptor = new UnderlineInterceptor();
 		mSolidColorInterceptor = new SolidColorInterceptor();
+		mRectInterceptor = new RectInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -124,6 +128,11 @@ public class AccentResources extends Resources {
 		Drawable solidColorDrawable = mSolidColorInterceptor.getDrawable(resId);
 		if (solidColorDrawable != null)
 			return solidColorDrawable;
+		
+		// Replace the underline drawables
+		Drawable rectColorDrawable = mRectInterceptor.getDrawable(resId);
+		if (rectColorDrawable != null)
+			return rectColorDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -225,6 +234,18 @@ public class AccentResources extends Resources {
 				return new ColorDrawable(mAccentColor.getTranslucent(PRESSED_ALPHA));
 			if (resId == R.drawable.solid_focused)
 				return new ColorDrawable(mAccentColor.getTranslucent(FOCUSED_ALPHA));
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing rectangle drawables */
+	private class RectInterceptor {
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.rect_focused_background) {
+				int backColor = mAccentColor.getTranslucent(0x55);
+				int borderColor = mAccentColor.getTranslucent(0xAA);
+				return new RectDrawable(AccentResources.this, backColor, 2f, borderColor);
+			}
 			return null;
 		}
 	}
