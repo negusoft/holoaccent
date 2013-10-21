@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <!-- background -->
-    <item>
-        <shape android:shape="rectangle" >
-            <corners android:radius="@dimen/spinner_corner_radius"/>
-            <solid android:color="@color/key_pressed" />
-        </shape>
-    </item>
-    
+    <item android:drawable="@drawable/roundrect_spinner_pressed" />
     <item>
         <nine-patch android:src="@drawable/spinner_default_holo_light"/>
     </item>

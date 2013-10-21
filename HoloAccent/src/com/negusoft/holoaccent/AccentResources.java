@@ -258,9 +258,12 @@ public class AccentResources extends Resources {
 	/** Inner class holding the logic for replacing rounded rectangle drawables */
 	private class RoundRectInterceptor {
 		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.roundrect_check_pressed) {
-				return new RoundRectDrawable(mAccentColor.getTranslucent(0x88), 3f);
-			}
+			if (resId == R.drawable.roundrect_check_pressed)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x88), 1.5f);
+			if (resId == R.drawable.roundrect_spinner_pressed)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), 1.5f);
+			if (resId == R.drawable.roundrect_spinner_focussed)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), 1.5f, 2f);
 			return null;
 		}
 	}

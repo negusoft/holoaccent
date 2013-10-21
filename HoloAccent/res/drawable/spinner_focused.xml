@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@drawable/solid_focused"
+        android:left="2dp"
+        android:top="2dp"
+        android:right="2dp"
+        android:bottom="2dp" />
     
-    <!-- background -->
-    <item>
-        <shape android:shape="rectangle" >
-            <corners android:radius="@dimen/btn_fill_corner_radius"/>
-            <solid android:color="@color/key_focused" />
-        </shape>
-    </item>
-    
-    <!-- border -->
-    <item>
-        <shape android:shape="rectangle" >
-			<solid android:color="#0000"/>
-            <corners android:radius="@dimen/btn_border_corner_radius"/>
-            <stroke
-                android:width="@dimen/btn_border_width"
-                android:color="@color/key_focused" />
-        </shape>
-    </item>
+    <item android:drawable="@drawable/roundrect_spinner_focussed" />
     
     <item>
         <nine-patch android:src="@drawable/spinner_default_holo_dark"/>

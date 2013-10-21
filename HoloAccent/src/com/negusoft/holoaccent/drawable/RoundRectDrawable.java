@@ -4,35 +4,35 @@ import android.graphics.RectF;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.graphics.drawable.shapes.Shape;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 public class RoundRectDrawable extends ShapeDrawable {
 	
-	private static Shape initShape(float cornerRadius, float borderWidth) {
-		float[] coreners = new float[] { cornerRadius, cornerRadius, cornerRadius, 
-				cornerRadius, cornerRadius, cornerRadius, cornerRadius, cornerRadius };
-		RectF inset = new RectF(borderWidth, borderWidth, borderWidth, borderWidth);
+	private static Shape initShape(DisplayMetrics metrics, float cornerRadiusDp, float borderWidthDp) {
+		float cornerRadiusPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, cornerRadiusDp, metrics);
+		float[] coreners = new float[] { cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, 
+				cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, cornerRadiusPx };
+		float borderWidthPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, borderWidthDp, metrics);
+		RectF inset = new RectF(borderWidthPx, borderWidthPx, borderWidthPx, borderWidthPx);
 		return new RoundRectShape(coreners, inset, null);
 	}
 	
-	private static Shape initShape(float cornerRadius) {
-		float[] coreners = new float[] { cornerRadius, cornerRadius, cornerRadius, 
-				cornerRadius, cornerRadius, cornerRadius, cornerRadius, cornerRadius };
+	private static Shape initShape(DisplayMetrics metrics, float cornerRadiusDp) {
+		float cornerRadiusPx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, cornerRadiusDp, metrics);
+		float[] coreners = new float[] { cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, 
+				cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, cornerRadiusPx };
 		return new RoundRectShape(coreners, null, null);
 	}
 	
-	public RoundRectDrawable(int fillColor, float cornerRadius) {
-		super(initShape(cornerRadius));
+	public RoundRectDrawable(DisplayMetrics metrics, int fillColor, float cornerRadiusDp) {
+		super(initShape(metrics, cornerRadiusDp));
 		getPaint().setColor(fillColor);
 	}
 	
-	public RoundRectDrawable(int fillColor, float cornerRadius, float borderWidth) {
-		super(initShape(cornerRadius, borderWidth));
+	public RoundRectDrawable(DisplayMetrics metrics, int fillColor, float cornerRadiusDp, float borderWidthDp) {
+		super(initShape(metrics, cornerRadiusDp, borderWidthDp));
 		getPaint().setColor(fillColor);
-	}
-	
-	public RoundRectDrawable(int fillColor, float cornerRadius, int padding) {
-		this(fillColor, cornerRadius);
-		setPadding(padding, padding, padding, padding);
 	}
 
 }
