@@ -32,6 +32,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -68,19 +69,22 @@ public class AccentResources extends Resources {
 		R.drawable.progress_comp_primary,
 		R.drawable.progress_comp_primary
 	};
-	
-	private final int mAccentColor;
+
+//	private final int mAccentColor;
+	private final AccentPalette mAccentColor;
 
 	private final ToggleInterceptor mToggleInterceptor;
 	private final UnderlineInterceptor mUnderlineInterceptor;
+	private final SolidColorInterceptor mSolidColorInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
 	public AccentResources(int accentColor, AssetManager assets, DisplayMetrics metrics, Configuration config) {
 		super(assets, metrics, config);
-		mAccentColor = accentColor;
+		mAccentColor = new AccentPalette(accentColor);
 		mToggleInterceptor = new ToggleInterceptor();
 		mUnderlineInterceptor = new UnderlineInterceptor();
+		mSolidColorInterceptor = new SolidColorInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -89,11 +93,13 @@ public class AccentResources extends Resources {
 		super(assets, metrics, config);
 		
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
-		mAccentColor = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
+		int accentColor = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
+		mAccentColor = new AccentPalette(accentColor);
 		attrs.recycle();
 
 		mToggleInterceptor = new ToggleInterceptor();
 		mUnderlineInterceptor = new UnderlineInterceptor();
+		mSolidColorInterceptor = new SolidColorInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -113,6 +119,11 @@ public class AccentResources extends Resources {
 		Drawable underlineDrawable = mUnderlineInterceptor.getDrawable(resId);
 		if (underlineDrawable != null)
 			return underlineDrawable;
+		
+		// Replace the underline drawables
+		Drawable solidColorDrawable = mSolidColorInterceptor.getDrawable(resId);
+		if (solidColorDrawable != null)
+			return solidColorDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -154,7 +165,7 @@ public class AccentResources extends Resources {
 				new Rect(), options);
 		
 		// Apply the tint color
-		bitmap = BitmapUtils.applyColor(bitmap, mAccentColor);
+		bitmap = BitmapUtils.applyColor(bitmap, mAccentColor.accentColor);
 
 		// Get the InputStream for the bitmap
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -179,32 +190,41 @@ public class AccentResources extends Resources {
 
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.btn_toggle_comp_on_foreground)
-				return new ToggleForegroundDrawable(AccentResources.this, mAccentColor);
+				return new ToggleForegroundDrawable(AccentResources.this, mAccentColor.accentColor);
 			if (resId == R.drawable.btn_toggle_comp_on_foreground_pressed)
 				return new ToggleForegroundDrawable(AccentResources.this, COLOR_ON_PRESSED);
 			if (resId == R.drawable.btn_toggle_comp_on_foreground_disabled)
-				return new ToggleForegroundDrawable(AccentResources.this, getDisabledOnColor());
+				return new ToggleForegroundDrawable(AccentResources.this, mAccentColor.getTranslucent(128));
 			if (resId == R.drawable.btn_toggle_comp_off_foreground)
 				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF);
 			if (resId == R.drawable.btn_toggle_comp_off_foreground_disabled)
 				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF_DISABLED);
 			return null;
 		}
-		
-		private int getDisabledOnColor() {
-			return Color.argb(128, Color.red(mAccentColor), 
-					Color.green(mAccentColor), Color.blue(mAccentColor));
-		}
 	}
 	
-	/**
-	 * Inner class holding the logic for replacing underline drawables
-	 */
+	/** Inner class holding the logic for replacing underline drawables */
 	private class UnderlineInterceptor {
 
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.underline_1_5)
-				return new UnderlineDrawable(AccentResources.this, mAccentColor, 1.5f);
+				return new UnderlineDrawable(AccentResources.this, mAccentColor.accentColor, 1.5f);
+			if (resId == R.drawable.underline_6)
+				return new UnderlineDrawable(AccentResources.this, mAccentColor.accentColor, 6f);
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing solid color drawables */
+	private class SolidColorInterceptor {
+		private static final int PRESSED_ALPHA = 0xAA;
+		private static final int FOCUSED_ALPHA = 0x55;
+
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.solid_pressed)
+				return new ColorDrawable(mAccentColor.getTranslucent(PRESSED_ALPHA));
+			if (resId == R.drawable.solid_focused)
+				return new ColorDrawable(mAccentColor.getTranslucent(FOCUSED_ALPHA));
 			return null;
 		}
 	}
@@ -229,7 +249,7 @@ public class AccentResources extends Resources {
 		public Drawable getDrawable(int resId) {
 			for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
 				if (resId == INDETERMINED_DRAWABLE_IDS[i])
-					return new IndeterminedProgressDrawable(AccentResources.this, mAccentColor, i);
+					return new IndeterminedProgressDrawable(AccentResources.this, mAccentColor.accentColor, i);
 			}
 			return null;
 		}
@@ -264,13 +284,13 @@ public class AccentResources extends Resources {
 		
 		private Drawable getEdgeDrawable() {
 			Drawable result = AccentResources.super.getDrawable(R.drawable.overscroll_edge);
-			result.setColorFilter(mAccentColor, PorterDuff.Mode.MULTIPLY);
+			result.setColorFilter(mAccentColor.accentColor, PorterDuff.Mode.MULTIPLY);
 			return result;
 		}
 		
 		private Drawable getGlowDrawable() {
 			Drawable result = AccentResources.super.getDrawable(R.drawable.overscroll_glow);
-			result.setColorFilter(mAccentColor, PorterDuff.Mode.MULTIPLY);
+			result.setColorFilter(mAccentColor.accentColor, PorterDuff.Mode.MULTIPLY);
 			return result;
 		}
 	}

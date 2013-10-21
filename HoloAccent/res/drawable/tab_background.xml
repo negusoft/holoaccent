@@ -25,10 +25,10 @@
 
     <!-- Pressed -->
     <!--    Non focused states -->
-    <item android:state_focused="false" android:state_selected="false" android:state_pressed="true" android:drawable="@color/key_pressed" />
+    <item android:state_focused="false" android:state_selected="false" android:state_pressed="true" android:drawable="@drawable/solid_pressed" />
     <item android:state_focused="false" android:state_selected="true"  android:state_pressed="true" android:drawable="@drawable/tab_selected_pressed" />
 
     <!--    Focused states -->
-    <item android:state_focused="true" android:state_selected="false" android:state_pressed="true" android:drawable="@color/key_pressed" />
+    <item android:state_focused="true" android:state_selected="false" android:state_pressed="true" android:drawable="@drawable/solid_focused" />
     <item android:state_focused="true" android:state_selected="true"  android:state_pressed="true" android:drawable="@drawable/tab_selected_pressed" />
 </selector>
