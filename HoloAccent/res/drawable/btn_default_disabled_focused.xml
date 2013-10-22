@@ -2,31 +2,16 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <!-- background -->
-    <item
+    <item android:drawable="@drawable/roundrect_button_disabled_focused"
         android:top="@dimen/btn_default_margin"
         android:right="@dimen/btn_default_margin"
         android:bottom="@dimen/btn_default_margin"
-        android:left="@dimen/btn_default_margin">
-        <shape android:shape="rectangle" >
-            <corners android:radius="@dimen/btn_fill_corner_radius"/>
-            <solid android:color="@color/key_focused_dimmed" />
-        </shape>
-    </item>
+        android:left="@dimen/btn_default_margin"/>
     
-    <!-- border -->
-    <item
-        android:bottom="@dimen/btn_default_margin"
-        android:left="@dimen/btn_default_margin"
-        android:right="@dimen/btn_default_margin"
-        android:top="@dimen/btn_default_margin">
-        <shape android:shape="rectangle" >
-			<solid android:color="#0000"/>
-            <corners android:radius="@dimen/btn_border_corner_radius"/>
-            <stroke
-                android:width="@dimen/btn_border_width"
-                android:color="@color/key_focused_dimmed" />
-        </shape>
-    </item>
+    <item android:drawable="@drawable/solid_focused_dimmed"
+        android:top="@dimen/btn_default_fill_margin"
+        android:right="@dimen/btn_default_fill_margin"
+        android:bottom="@dimen/btn_default_fill_margin"
+        android:left="@dimen/btn_default_fill_margin"/>
     
 </layer-list>

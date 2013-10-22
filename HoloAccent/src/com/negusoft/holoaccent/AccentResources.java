@@ -233,12 +233,15 @@ public class AccentResources extends Resources {
 	private class SolidColorInterceptor {
 		private static final int PRESSED_ALPHA = 0xAA;
 		private static final int FOCUSED_ALPHA = 0x55;
+		private static final int FOCUSED_DIMMED_ALPHA = 0x22;
 
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.solid_pressed)
 				return new ColorDrawable(mAccentColor.getTranslucent(PRESSED_ALPHA));
 			if (resId == R.drawable.solid_focused)
 				return new ColorDrawable(mAccentColor.getTranslucent(FOCUSED_ALPHA));
+			if (resId == R.drawable.solid_focused_dimmed)
+				return new ColorDrawable(mAccentColor.getTranslucent(FOCUSED_DIMMED_ALPHA));
 			return null;
 		}
 	}
@@ -257,13 +260,30 @@ public class AccentResources extends Resources {
 	
 	/** Inner class holding the logic for replacing rounded rectangle drawables */
 	private class RoundRectInterceptor {
+
+		private static final float BORDER_WIDTH_DP = 2f;
+		private static final float CORNER_RADIUS_DP = 1.5f;
+		private static final float BUTTION_GLOW_CORNER_RADIUS_DP = 5f;
+		
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.roundrect_check_pressed)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x88), 1.5f);
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x88), CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_spinner_pressed)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), 1.5f);
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_spinner_focussed)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), 1.5f, 2f);
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
+			if (resId == R.drawable.roundrect_button_pressed_glow)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
+			if (resId == R.drawable.roundrect_button_pressed_fill)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.accentColor, CORNER_RADIUS_DP);
+			if (resId == R.drawable.roundrect_button_pressed_fill_colored)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), CORNER_RADIUS_DP);
+			if (resId == R.drawable.roundrect_button_focused)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
+			if (resId == R.drawable.roundrect_button_disabled_focused)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
+			if (resId == R.drawable.roundrect_button_normal_colored)
+				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.accentColor, CORNER_RADIUS_DP);
 			return null;
 		}
 	}

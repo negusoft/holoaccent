@@ -2,16 +2,11 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <item
+    <item android:drawable="@drawable/roundrect_button_normal_colored"
         android:top="@dimen/btn_default_margin"
         android:right="@dimen/btn_default_margin"
         android:bottom="@dimen/btn_default_margin"
-        android:left="@dimen/btn_default_margin">
-        <shape android:shape="rectangle" >
-            <corners android:radius="@dimen/btn_fill_corner_radius"/>
-            <solid android:color="@color/key" />
-        </shape>
-    </item>
+        android:left="@dimen/btn_default_margin"/>
     
     <item>
         <nine-patch android:src="@drawable/btn_default_frame"/>
