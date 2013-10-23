@@ -5,14 +5,6 @@
 	<item android:drawable="@drawable/btn_radio_off_light" />
     
     <!-- Focus ring -->
-    <item>
-        <shape
-	        android:shape="ring"
-	        android:innerRadius="@dimen/radio_focus_ring_inner_radius"
-	        android:thickness="@dimen/radio_focus_ring_thickness"
-	        android:useLevel="false">
-            <solid android:color="@color/key_pressed" />
-	    </shape>
-    </item>
+    <item android:drawable="@drawable/circle_focused"/>
     
 </layer-list>

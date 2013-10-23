@@ -7,26 +7,25 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
-public class RectDrawable extends Drawable {
+public class CircleDrawable extends Drawable {
 
-	private final RectConstantState mState;
+	private final CircleConstantState mState;
 	private final Paint mFillPaint;
 	private final Paint mBorderPaint;
 	
-	public RectDrawable(Resources res, int fillColor, float borderWidthDp, int borderColor) {
+	public CircleDrawable(Resources res, float radiusDp, int fillColor, float borderWidthDp, int borderColor) {
 		DisplayMetrics metrics = res.getDisplayMetrics();
-		mState = new RectConstantState(metrics, fillColor, borderWidthDp, borderColor);
+		mState = new CircleConstantState(metrics, radiusDp, fillColor, borderWidthDp, borderColor);
 		mBorderPaint = initBorderPaint(metrics, borderWidthDp, borderColor);
 		mFillPaint = initFillPaint(fillColor);
 	}
 	
-	RectDrawable(DisplayMetrics metrics, int fillColor, float borderWidthDp, int borderColor) {
-		mState = new RectConstantState(metrics, fillColor, borderWidthDp, borderColor);
+	CircleDrawable(DisplayMetrics metrics, float radiusDp, int fillColor, float borderWidthDp, int borderColor) {
+		mState = new CircleConstantState(metrics, radiusDp, fillColor, borderWidthDp, borderColor);
 		mBorderPaint = initBorderPaint(metrics, borderWidthDp, borderColor);
 		mFillPaint = initFillPaint(fillColor);
 	}
@@ -60,23 +59,16 @@ public class RectDrawable extends Drawable {
 	@Override
 	public void draw(Canvas canvas) {
 		Rect r = getBounds();
-		if (mFillPaint != null) {
-			float fillMargin = mBorderPaint == null ? 0f : mState.mBorderWidth;
-			float left = r.left + fillMargin;
-			float top = r.top + fillMargin;
-			float right = r.right - fillMargin;
-			float bottom = r.bottom - fillMargin;
-			RectF fillRect = new RectF(left, top, right, bottom);
-			canvas.drawRect(fillRect, mFillPaint);
-		}
+		float centerX = (r.left + r.right) / 2f;
+		float centerY = (r.top + r.bottom) / 2f;
+		float radius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mState.mRadiusDp, mState.mDisplayMetrics);
 		if (mBorderPaint != null) {
-			float borderMargin = mState.mBorderWidth / 2f;
-			float left = r.left + borderMargin;
-			float top = r.top + borderMargin;
-			float right = r.right - borderMargin;
-			float bottom = r.bottom - borderMargin;
-			RectF borderRect = new RectF(left, top, right, bottom);
-			canvas.drawRect(borderRect, mBorderPaint);
+			canvas.drawCircle(centerX, centerY, radius, mBorderPaint);
+		}
+		if (mFillPaint != null) {
+			if (mBorderPaint != null)
+				radius -= (mBorderPaint.getStrokeWidth() / 2);
+			canvas.drawCircle(centerX, centerY, radius, mFillPaint);
 		}
 	}
 
@@ -101,19 +93,21 @@ public class RectDrawable extends Drawable {
 		return mState;
 	}
 	
-	public static class RectConstantState extends ConstantState {
+	public static class CircleConstantState extends ConstantState {
 
 		public final DisplayMetrics mDisplayMetrics;
+		public final float mRadiusDp;
 		public final int mColor;
-		public final float mBorderWidth;
+		public final float mBorderWidthDp;
 		public final int mBorderColor;
 		
 		int changingConfigurationValue;
 		
-		public RectConstantState(DisplayMetrics metrics, int color, float borderWidth, int borderColor) {
+		public CircleConstantState(DisplayMetrics metrics, float radius, int color, float borderWidthDp, int borderColor) {
 			mDisplayMetrics = metrics;
+			mRadiusDp = radius;
 			mColor = color;
-			mBorderWidth = borderWidth;
+			mBorderWidthDp = borderWidthDp;
 			mBorderColor = borderColor;
 		}
 
@@ -124,7 +118,7 @@ public class RectDrawable extends Drawable {
 
 		@Override
 		public Drawable newDrawable() {
-			return new RectDrawable(mDisplayMetrics, mColor, mBorderWidth, mBorderColor);
+			return new CircleDrawable(mDisplayMetrics, mRadiusDp, mColor, mBorderWidthDp, mBorderColor);
 		}
 		
 	}

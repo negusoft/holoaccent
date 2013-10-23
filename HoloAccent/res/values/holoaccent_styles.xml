@@ -78,7 +78,7 @@
     
     <!-- Text appearance -->
     <style name="TextAppearance.HoloAccent.DialogWindowTitle" parent="android:TextAppearance.Holo.DialogWindowTitle">
-        <item name="android:textColor">@color/key</item>
+        <item name="android:textColor">?attr/accentColor</item>
     </style>
     
     <!-- Dialog styles -->

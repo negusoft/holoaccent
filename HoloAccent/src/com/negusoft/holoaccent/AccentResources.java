@@ -37,7 +37,9 @@ import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
+import com.negusoft.holoaccent.drawable.CircleDrawable;
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
+import com.negusoft.holoaccent.drawable.RadioOnDrawable;
 import com.negusoft.holoaccent.drawable.RectDrawable;
 import com.negusoft.holoaccent.drawable.RoundRectDrawable;
 import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
@@ -80,6 +82,7 @@ public class AccentResources extends Resources {
 	private final SolidColorInterceptor mSolidColorInterceptor;
 	private final RectInterceptor mRectInterceptor;
 	private final RoundRectInterceptor mRoundRectInterceptor;
+	private final CircleInterceptor mCircleInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
@@ -91,6 +94,7 @@ public class AccentResources extends Resources {
 		mSolidColorInterceptor = new SolidColorInterceptor();
 		mRectInterceptor = new RectInterceptor();
 		mRoundRectInterceptor = new RoundRectInterceptor();
+		mCircleInterceptor = new CircleInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -108,6 +112,7 @@ public class AccentResources extends Resources {
 		mSolidColorInterceptor = new SolidColorInterceptor();
 		mRectInterceptor = new RectInterceptor();
 		mRoundRectInterceptor = new RoundRectInterceptor();
+		mCircleInterceptor = new CircleInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -124,20 +129,25 @@ public class AccentResources extends Resources {
 		if (underlineDrawable != null)
 			return underlineDrawable;
 		
-		// Replace the underline drawables
+		// Replace the solid color drawables
 		Drawable solidColorDrawable = mSolidColorInterceptor.getDrawable(resId);
 		if (solidColorDrawable != null)
 			return solidColorDrawable;
 		
-		// Replace the underline drawables
+		// Replace the rect drawables
 		Drawable rectColorDrawable = mRectInterceptor.getDrawable(resId);
 		if (rectColorDrawable != null)
 			return rectColorDrawable;
 		
-		// Replace the underline drawables
+		// Replace the round rect drawables
 		Drawable roundRectDrawable = mRoundRectInterceptor.getDrawable(resId);
 		if (roundRectDrawable != null)
 			return roundRectDrawable;
+		
+		// Replace the circle drawables
+		Drawable circleDrawable = mCircleInterceptor.getDrawable(resId);
+		if (circleDrawable != null)
+			return circleDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -148,6 +158,10 @@ public class AccentResources extends Resources {
 		Drawable overScrollDrawable = mOverScrollInterceptor.getDrawable(resId);
 		if (overScrollDrawable != null)
 			return overScrollDrawable;
+		
+		// Check whether it is the radio on dot
+		if (resId == R.drawable.radio_on_dot)
+			return new RadioOnDrawable(getDisplayMetrics(), mAccentColor);
 		
 		return super.getDrawable(resId);
 	}
@@ -284,6 +298,25 @@ public class AccentResources extends Resources {
 				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
 			if (resId == R.drawable.roundrect_button_normal_colored)
 				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.accentColor, CORNER_RADIUS_DP);
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing rectangle drawables */
+	private class CircleInterceptor {
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.circle_pressed) {
+				int backColor = mAccentColor.getTranslucent(0x88);
+				return new CircleDrawable(AccentResources.this, 16f, backColor, 0f, Color.TRANSPARENT);
+			}
+			if (resId == R.drawable.circle_focused) {
+				int borderColor = mAccentColor.getTranslucent(0xAA);
+				return new CircleDrawable(AccentResources.this, 11f, Color.TRANSPARENT, 1.5f, borderColor);
+			}
+			if (resId == R.drawable.circle_disabled_focused) {
+				int borderColor = mAccentColor.getTranslucent(0x55);
+				return new CircleDrawable(AccentResources.this, 11f, Color.TRANSPARENT, 1.5f, borderColor);
+			}
 			return null;
 		}
 	}

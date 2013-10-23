@@ -17,7 +17,7 @@
 	        <Button
 	            android:layout_width="32dp"
 	            android:layout_height="32dp"
-	            android:background="@drawable/btn_radio_off_focused_light" />
+	            android:background="@drawable/btn_radio_on_light" />
 
 	        <RadioButton
 	            android:id="@+id/radioButton1"

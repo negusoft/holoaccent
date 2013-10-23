@@ -13,26 +13,7 @@
     </item>
     
     <!-- Background colored fill -->
-    <item>
-        <shape android:shape="oval" >
-            <solid android:color="@color/key_pressed_dimmed" />
-        </shape>
-    </item>
-    
-    <!-- glow around -->
-<!--     <item> -->
-<!--         <shape android:shape="ring" -->
-<!--             android:innerRadius="0dp" -->
-<!--             android:thickness="@dimen/radio_glow_thickness" -->
-<!--             android:useLevel="false" > -->
-<!--         <gradient -->
-<!--             android:type="radial" -->
-<!--             android:gradientRadius="@dimen/radio_pressed_gradient_radius" -->
-<!--             android:startColor="#28ffffff" -->
-<!--             android:centerColor="#18ffffff" -->
-<!--             android:endColor="#0000" /> -->
-<!--         </shape> -->
-<!--     </item> -->
+    <item android:drawable="@drawable/circle_pressed"/>
     
     <!-- reuse the off drawable -->
 	<item android:drawable="@drawable/btn_radio_off_light" />
