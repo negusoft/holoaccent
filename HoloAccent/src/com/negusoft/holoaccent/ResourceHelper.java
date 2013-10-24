@@ -41,16 +41,39 @@ public class ResourceHelper {
 	private AccentResources mInstance;
 	private boolean initializingFlag = false;
 	
+	private final boolean mOverrideThemeColor;
+	private final int mOverrideColor;
+	
+	public ResourceHelper() {
+		mOverrideThemeColor = false;
+		mOverrideColor = 0;
+	}
+	
+	public ResourceHelper(int color) {
+		mOverrideThemeColor = true;
+		mOverrideColor = color;
+	}
+	
 	public Resources getResources(Context c, Resources resources) {
 		if (mInstance == null) {
 			if (initializingFlag)
 				return resources;
 			
 			initializingFlag = true;
-			mInstance = new AccentResources(c, resources.getAssets(), 
-					resources.getDisplayMetrics(), resources.getConfiguration());
+			mInstance = createInstance(c, resources);
 		}
 		return mInstance;
+	}
+	
+	private AccentResources createInstance(Context c, Resources resources) {
+		if (mOverrideThemeColor) {
+			return new AccentResources(mOverrideColor, resources.getAssets(), 
+					resources.getDisplayMetrics(), resources.getConfiguration());
+		}
+		else {
+			return new AccentResources(c, resources.getAssets(), 
+					resources.getDisplayMetrics(), resources.getConfiguration());
+		}
 	}
 
 }

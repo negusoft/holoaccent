@@ -6,18 +6,25 @@
         android:showAsAction="never"
         android:title="@string/action_alert_dialog"/>
     <item
+        android:id="@+id/dialog_activity"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_dialog_activity"/>
+    <item
         android:id="@+id/spinner_activity"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_spinner_activity"/>
     <item
+        android:id="@+id/code_override_activity"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_code_override_activity"/>
     <item
+        android:id="@+id/theme_override_activity"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_theme_override_activity"/>
     <item
         android:orderInCategory="100"
         android:showAsAction="never"

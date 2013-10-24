@@ -28,8 +28,8 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
+        <item name="android:dialogTheme">@style/BaseDialogTheme</item>
+        <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
     </style>
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
@@ -58,8 +58,8 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
-        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
+        <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
+        <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
     </style>
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
@@ -88,18 +88,16 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
+        <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
+        <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
     </style>
     
-    <!--
-        Dialog themes (attributes copied from Theme.HoloAccent)
-    	If you apply the themes to an Activity, you will need to programatically modify 
-    	the title divider color. See DividerPainter for more information.
-    -->
-    <style name="Theme.HoloAccent.Dialog" parent="android:Theme.Holo.Dialog">
-        <item name="accentColor">@color/key</item>
-        
+    <!-- 
+    	Base dialog themes, they are referenced from attributes in other thems. 
+    	DON'T use them as themes for your activityes. Use 'Theme.HoloAccent.Dialog' 
+    	and 'Theme.HoloAccent.Light.Dialog' instead
+     -->
+    <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
@@ -122,14 +120,12 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
+        <item name="android:dialogTheme">@style/BaseDialogTheme</item>
+        <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
-    <style name="Theme.HoloAccent.Light.Dialog" parent="android:Theme.Holo.Light.Dialog">
-        <item name="accentColor">@color/key</item>
-        
+    <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
@@ -151,21 +147,33 @@
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
-        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
-        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
+        <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
+        <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
     
+    <!--
+        Dialog themes (attributes copied from Theme.HoloAccent)
+    	If you apply the themes to an Activity, you will need to programatically modify 
+    	the title divider color. See DividerPainter for more information.
+    -->
+    <style name="Theme.HoloAccent.Dialog" parent="BaseDialogTheme">
+        <item name="accentColor">@color/key</item>
+    </style>
+    <style name="Theme.HoloAccent.Light.Dialog" parent="BaseDialogTheme.Light">
+        <item name="accentColor">@color/key</item>
+    </style>
+    
     <!-- Extension themes (the parents are HoloAccent themes) -->
-    <style name="Theme.HoloAccent.Dialog.Alert">
+    <style name="BaseDialogTheme.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
         <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.HoloAccent.Light.Dialog.Alert">
+    <style name="BaseDialogTheme.Light.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         <item name="android:windowContentOverlay">@null</item>

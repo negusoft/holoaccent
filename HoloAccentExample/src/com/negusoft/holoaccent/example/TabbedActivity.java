@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ActionBar;
-import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,7 +22,12 @@ import android.widget.TextView;
 
 import com.negusoft.holoaccent.ResourceHelper;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
-import com.negusoft.holoaccent.dialog.DividerPainter;
+import com.negusoft.holoaccent.example.fragment.BarFragment;
+import com.negusoft.holoaccent.example.fragment.ButtonFragment;
+import com.negusoft.holoaccent.example.fragment.CheckFragment;
+import com.negusoft.holoaccent.example.fragment.ListFragment;
+import com.negusoft.holoaccent.example.fragment.RadioFragment;
+import com.negusoft.holoaccent.example.fragment.TextviewFragment;
 
 public class TabbedActivity extends FragmentActivity implements ActionBar.TabListener {
 
@@ -101,8 +105,17 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 		case R.id.alert_dialog:
 			showAlertDialog();
             return true;
+		case R.id.dialog_activity:
+            startActivity(new Intent(this, DialogActivity.class));
+            return true;
 		case R.id.spinner_activity:
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, SpinnerActivity.class));
+            return true;
+		case R.id.code_override_activity:
+            startActivity(new Intent(this, CodeOverrideActivity.class));
+            return true;
+		case R.id.theme_override_activity:
+            startActivity(new Intent(this, ThemeOverrideActivity.class));
             return true;
 		default:
 			return super.onOptionsItemSelected(item);

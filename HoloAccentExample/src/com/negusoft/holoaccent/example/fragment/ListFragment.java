@@ -1,4 +1,9 @@
-package com.negusoft.holoaccent.example;
+package com.negusoft.holoaccent.example.fragment;
+
+import com.negusoft.holoaccent.example.R;
+import com.negusoft.holoaccent.example.R.array;
+import com.negusoft.holoaccent.example.R.id;
+import com.negusoft.holoaccent.example.R.layout;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
