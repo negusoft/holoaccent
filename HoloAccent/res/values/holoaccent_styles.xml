@@ -66,6 +66,18 @@
         <item name="android:background">@drawable/spinner_background_light</item>
     </style>
     
+    <!-- SeekBar styles -->
+    <style name="HoloAccent.SeekBar" parent="android:Widget.Holo.SeekBar">
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal</item>
+        <item name="android:thumb">@drawable/scrubber_control_selector</item>
+    </style>
+    <style name="HoloAccent.SeekBar.Light" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_light</item>
+        <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal_light</item>
+        <item name="android:thumb">@drawable/scrubber_control_selector</item>
+    </style>
+    
     <!-- Horizontal progress bar (must be set on the layout XML directly) -->
     <style name="HoloAccent.ProgressBar.Horizontal" parent="android:Widget.Holo.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal</item>

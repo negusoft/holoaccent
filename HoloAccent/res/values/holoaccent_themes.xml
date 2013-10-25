@@ -26,6 +26,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
@@ -56,6 +57,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
@@ -86,6 +88,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
@@ -118,6 +121,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
@@ -145,6 +149,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
         
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>

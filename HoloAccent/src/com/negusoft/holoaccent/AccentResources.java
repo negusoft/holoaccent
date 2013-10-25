@@ -42,6 +42,9 @@ import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
 import com.negusoft.holoaccent.drawable.RadioOnDrawable;
 import com.negusoft.holoaccent.drawable.RectDrawable;
 import com.negusoft.holoaccent.drawable.RoundRectDrawable;
+import com.negusoft.holoaccent.drawable.ScrubberControlSelectorDrawable;
+import com.negusoft.holoaccent.drawable.ScrubberControlSelectorDrawable.SelectorType;
+import com.negusoft.holoaccent.drawable.ScrubberProgressDrawable;
 import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
 import com.negusoft.holoaccent.drawable.UnderlineDrawable;
 import com.negusoft.holoaccent.util.BitmapUtils;
@@ -71,11 +74,11 @@ public class AccentResources extends Resources {
 		R.drawable.btn_check_comp_off_focus,
 		R.drawable.btn_check_comp_on_focus,
 		R.drawable.progress_comp_primary,
-		R.drawable.progress_comp_primary
+		R.drawable.scrubber_comp_primary,
+		R.drawable.scrubber_comp_secondary
 	};
 
-//	private final int mAccentColor;
-	private final AccentPalette mAccentColor;
+	private final AccentPalette mPalette;
 
 	private final ToggleInterceptor mToggleInterceptor;
 	private final UnderlineInterceptor mUnderlineInterceptor;
@@ -83,18 +86,20 @@ public class AccentResources extends Resources {
 	private final RectInterceptor mRectInterceptor;
 	private final RoundRectInterceptor mRoundRectInterceptor;
 	private final CircleInterceptor mCircleInterceptor;
+	private final ScrubberInterceptor mScrubberInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
 	public AccentResources(int accentColor, AssetManager assets, DisplayMetrics metrics, Configuration config) {
 		super(assets, metrics, config);
-		mAccentColor = new AccentPalette(accentColor);
+		mPalette = new AccentPalette(accentColor);
 		mToggleInterceptor = new ToggleInterceptor();
 		mUnderlineInterceptor = new UnderlineInterceptor();
 		mSolidColorInterceptor = new SolidColorInterceptor();
 		mRectInterceptor = new RectInterceptor();
 		mRoundRectInterceptor = new RoundRectInterceptor();
 		mCircleInterceptor = new CircleInterceptor();
+		mScrubberInterceptor = new ScrubberInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -104,7 +109,7 @@ public class AccentResources extends Resources {
 		
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
 		int accentColor = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
-		mAccentColor = new AccentPalette(accentColor);
+		mPalette = new AccentPalette(accentColor);
 		attrs.recycle();
 
 		mToggleInterceptor = new ToggleInterceptor();
@@ -113,6 +118,7 @@ public class AccentResources extends Resources {
 		mRectInterceptor = new RectInterceptor();
 		mRoundRectInterceptor = new RoundRectInterceptor();
 		mCircleInterceptor = new CircleInterceptor();
+		mScrubberInterceptor = new ScrubberInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -149,6 +155,11 @@ public class AccentResources extends Resources {
 		if (circleDrawable != null)
 			return circleDrawable;
 		
+		// Replace the seekbar selector drawables
+		Drawable scrubberDrawable = mScrubberInterceptor.getDrawable(resId);
+		if (scrubberDrawable != null)
+			return scrubberDrawable;
+		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
 		if (indeterminedDrawable != null)
@@ -161,7 +172,7 @@ public class AccentResources extends Resources {
 		
 		// Check whether it is the radio on dot
 		if (resId == R.drawable.radio_on_dot)
-			return new RadioOnDrawable(getDisplayMetrics(), mAccentColor);
+			return new RadioOnDrawable(getDisplayMetrics(), mPalette);
 		
 		return super.getDrawable(resId);
 	}
@@ -193,7 +204,7 @@ public class AccentResources extends Resources {
 				new Rect(), options);
 		
 		// Apply the tint color
-		bitmap = BitmapUtils.applyColor(bitmap, mAccentColor.accentColor);
+		bitmap = BitmapUtils.applyColor(bitmap, mPalette.accentColor);
 
 		// Get the InputStream for the bitmap
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -218,11 +229,11 @@ public class AccentResources extends Resources {
 
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.btn_toggle_comp_on_foreground)
-				return new ToggleForegroundDrawable(AccentResources.this, mAccentColor.accentColor);
+				return new ToggleForegroundDrawable(AccentResources.this, mPalette.accentColor);
 			if (resId == R.drawable.btn_toggle_comp_on_foreground_pressed)
 				return new ToggleForegroundDrawable(AccentResources.this, COLOR_ON_PRESSED);
 			if (resId == R.drawable.btn_toggle_comp_on_foreground_disabled)
-				return new ToggleForegroundDrawable(AccentResources.this, mAccentColor.getTranslucent(128));
+				return new ToggleForegroundDrawable(AccentResources.this, mPalette.getTranslucent(128));
 			if (resId == R.drawable.btn_toggle_comp_off_foreground)
 				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF);
 			if (resId == R.drawable.btn_toggle_comp_off_foreground_disabled)
@@ -236,9 +247,9 @@ public class AccentResources extends Resources {
 
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.underline_1_5)
-				return new UnderlineDrawable(AccentResources.this, mAccentColor.accentColor, 1.5f);
+				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 1.5f);
 			if (resId == R.drawable.underline_6)
-				return new UnderlineDrawable(AccentResources.this, mAccentColor.accentColor, 6f);
+				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 6f);
 			return null;
 		}
 	}
@@ -251,11 +262,11 @@ public class AccentResources extends Resources {
 
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.solid_pressed)
-				return new ColorDrawable(mAccentColor.getTranslucent(PRESSED_ALPHA));
+				return new ColorDrawable(mPalette.getTranslucent(PRESSED_ALPHA));
 			if (resId == R.drawable.solid_focused)
-				return new ColorDrawable(mAccentColor.getTranslucent(FOCUSED_ALPHA));
+				return new ColorDrawable(mPalette.getTranslucent(FOCUSED_ALPHA));
 			if (resId == R.drawable.solid_focused_dimmed)
-				return new ColorDrawable(mAccentColor.getTranslucent(FOCUSED_DIMMED_ALPHA));
+				return new ColorDrawable(mPalette.getTranslucent(FOCUSED_DIMMED_ALPHA));
 			return null;
 		}
 	}
@@ -264,8 +275,8 @@ public class AccentResources extends Resources {
 	private class RectInterceptor {
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.rect_focused_background) {
-				int backColor = mAccentColor.getTranslucent(0x55);
-				int borderColor = mAccentColor.getTranslucent(0xAA);
+				int backColor = mPalette.getTranslucent(0x55);
+				int borderColor = mPalette.getTranslucent(0xAA);
 				return new RectDrawable(AccentResources.this, backColor, 2f, borderColor);
 			}
 			return null;
@@ -281,23 +292,23 @@ public class AccentResources extends Resources {
 		
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.roundrect_check_pressed)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x88), CORNER_RADIUS_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x88), CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_spinner_pressed)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), CORNER_RADIUS_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0xAA), CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_spinner_focussed)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
 			if (resId == R.drawable.roundrect_button_pressed_glow)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_button_pressed_fill)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.accentColor, CORNER_RADIUS_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.accentColor, CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_button_pressed_fill_colored)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), CORNER_RADIUS_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x55), CORNER_RADIUS_DP);
 			if (resId == R.drawable.roundrect_button_focused)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
 			if (resId == R.drawable.roundrect_button_disabled_focused)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.getTranslucent(0x55), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x55), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
 			if (resId == R.drawable.roundrect_button_normal_colored)
-				return new RoundRectDrawable(getDisplayMetrics(), mAccentColor.accentColor, CORNER_RADIUS_DP);
+				return new RoundRectDrawable(getDisplayMetrics(), mPalette.accentColor, CORNER_RADIUS_DP);
 			return null;
 		}
 	}
@@ -306,17 +317,39 @@ public class AccentResources extends Resources {
 	private class CircleInterceptor {
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.circle_pressed) {
-				int backColor = mAccentColor.getTranslucent(0x88);
+				int backColor = mPalette.getTranslucent(0x88);
 				return new CircleDrawable(AccentResources.this, 16f, backColor, 0f, Color.TRANSPARENT);
 			}
 			if (resId == R.drawable.circle_focused) {
-				int borderColor = mAccentColor.getTranslucent(0xAA);
+				int borderColor = mPalette.getTranslucent(0xAA);
 				return new CircleDrawable(AccentResources.this, 11f, Color.TRANSPARENT, 1.5f, borderColor);
 			}
 			if (resId == R.drawable.circle_disabled_focused) {
-				int borderColor = mAccentColor.getTranslucent(0x55);
+				int borderColor = mPalette.getTranslucent(0x55);
 				return new CircleDrawable(AccentResources.this, 11f, Color.TRANSPARENT, 1.5f, borderColor);
 			}
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing SeekBar selector drawables */
+	private class ScrubberInterceptor {
+		public Drawable getDrawable(int resId) {
+			// control selector
+			if (resId == R.drawable.scrubber_control_disabled)
+				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.DISABLED);
+			if (resId == R.drawable.scrubber_control_focused)
+				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.FOCUSED);
+			if (resId == R.drawable.scrubber_control_normal)
+				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.NORMAL);
+			if (resId == R.drawable.scrubber_control_pressed)
+				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.PRESSED);
+			
+			// progress indicators
+			if (resId == R.drawable.scrubber_comp_primary)
+				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette);
+			if (resId == R.drawable.scrubber_comp_secondary)
+				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette, 77);
 			return null;
 		}
 	}
@@ -341,7 +374,7 @@ public class AccentResources extends Resources {
 		public Drawable getDrawable(int resId) {
 			for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
 				if (resId == INDETERMINED_DRAWABLE_IDS[i])
-					return new IndeterminedProgressDrawable(AccentResources.this, mAccentColor.accentColor, i);
+					return new IndeterminedProgressDrawable(AccentResources.this, mPalette.accentColor, i);
 			}
 			return null;
 		}
@@ -376,13 +409,13 @@ public class AccentResources extends Resources {
 		
 		private Drawable getEdgeDrawable() {
 			Drawable result = AccentResources.super.getDrawable(R.drawable.overscroll_edge);
-			result.setColorFilter(mAccentColor.accentColor, PorterDuff.Mode.MULTIPLY);
+			result.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
 			return result;
 		}
 		
 		private Drawable getGlowDrawable() {
 			Drawable result = AccentResources.super.getDrawable(R.drawable.overscroll_glow);
-			result.setColorFilter(mAccentColor.accentColor, PorterDuff.Mode.MULTIPLY);
+			result.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
 			return result;
 		}
 	}
