@@ -100,7 +100,7 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 	public boolean onOptionsItemSelected(android.view.MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-            startActivity(new Intent(this, TabbetHoloActivity.class));
+            startActivity(new Intent(this, TabbedActivity.class));
             return true;
 		case R.id.alert_dialog:
 			showAlertDialog();
@@ -116,6 +116,9 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
             return true;
 		case R.id.theme_override_activity:
             startActivity(new Intent(this, ThemeOverrideActivity.class));
+            return true;
+		case R.id.holo_theme_activity:
+            startActivity(new Intent(this, TabbetHoloActivity.class));
             return true;
 		default:
 			return super.onOptionsItemSelected(item);

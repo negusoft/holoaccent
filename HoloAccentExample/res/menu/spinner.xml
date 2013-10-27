@@ -5,12 +5,12 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:enabled="false"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_dummie"/>
     <item
         android:id="@+id/action_if_room"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_dummie"/>
     <item
         android:id="@+id/action_if_room"
         android:orderInCategory="100"
@@ -21,6 +21,6 @@
         android:id="@+id/action_with_text"
         android:orderInCategory="100"
         android:showAsAction="withText"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_dummie"/>
 
 </menu>
