@@ -9,28 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SpinnerActivity" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <Spinner
+        android:id="@+id/spinner1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" >
+        android:layout_height="wrap_content" />
 
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText2"
+    <Spinner
+        android:id="@+id/spinner2"
+        android:spinnerMode="dialog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollHeader="@drawable/ic_launcher" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

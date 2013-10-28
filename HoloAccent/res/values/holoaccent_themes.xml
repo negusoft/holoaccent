@@ -1,11 +1,11 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 	
     <!-- Default themes -->
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
         <item name="accentColor">@color/key</item>
         
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
@@ -93,6 +93,8 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
+        
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
     
     <!-- 
@@ -100,9 +102,10 @@
     	DON'T use them as themes for your activityes. Use 'Theme.HoloAccent.Dialog' 
     	and 'Theme.HoloAccent.Light.Dialog' instead
      -->
+    <!-- @hide -->
     <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
@@ -129,6 +132,7 @@
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
+    <!-- @hide -->
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
@@ -171,6 +175,7 @@
     </style>
     
     <!-- Extension themes (the parents are HoloAccent themes) -->
+    <!-- @hide -->
     <style name="BaseDialogTheme.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
@@ -178,6 +183,7 @@
         <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
         <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
     </style>
+    <!-- @hide -->
     <style name="BaseDialogTheme.Light.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
