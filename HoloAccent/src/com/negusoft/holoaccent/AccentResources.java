@@ -38,6 +38,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
 import com.negusoft.holoaccent.drawable.CircleDrawable;
+import com.negusoft.holoaccent.drawable.FastScrollDrawable;
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
 import com.negusoft.holoaccent.drawable.RadioOnDrawable;
 import com.negusoft.holoaccent.drawable.RectDrawable;
@@ -87,6 +88,7 @@ public class AccentResources extends Resources {
 	private final RoundRectInterceptor mRoundRectInterceptor;
 	private final CircleInterceptor mCircleInterceptor;
 	private final ScrubberInterceptor mScrubberInterceptor;
+	private final FastScrollInterceptor mFastScrollInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
 
@@ -100,6 +102,7 @@ public class AccentResources extends Resources {
 		mRoundRectInterceptor = new RoundRectInterceptor();
 		mCircleInterceptor = new CircleInterceptor();
 		mScrubberInterceptor = new ScrubberInterceptor();
+		mFastScrollInterceptor = new FastScrollInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -119,6 +122,7 @@ public class AccentResources extends Resources {
 		mRoundRectInterceptor = new RoundRectInterceptor();
 		mCircleInterceptor = new CircleInterceptor();
 		mScrubberInterceptor = new ScrubberInterceptor();
+		mFastScrollInterceptor = new FastScrollInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
 	}
@@ -159,6 +163,11 @@ public class AccentResources extends Resources {
 		Drawable scrubberDrawable = mScrubberInterceptor.getDrawable(resId);
 		if (scrubberDrawable != null)
 			return scrubberDrawable;
+		
+		// Replace the fastscroll drawables if required
+		Drawable fastscrollDrawable = mFastScrollInterceptor.getDrawable(resId);
+		if (fastscrollDrawable != null)
+			return fastscrollDrawable;
 		
 		// Replace the indetermined horizontal drawables if required
 		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
@@ -350,6 +359,17 @@ public class AccentResources extends Resources {
 				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette);
 			if (resId == R.drawable.scrubber_comp_secondary)
 				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette, 77);
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing SeekBar selector drawables */
+	private class FastScrollInterceptor {
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.fastscroll_thumb_default)
+				return new FastScrollDrawable(getDisplayMetrics(), mPalette, false);
+			if (resId == R.drawable.fastscroll_thumb_pressed)
+				return new FastScrollDrawable(getDisplayMetrics(), mPalette, true);
 			return null;
 		}
 	}

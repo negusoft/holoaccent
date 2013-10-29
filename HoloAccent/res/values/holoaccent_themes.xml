@@ -24,6 +24,7 @@
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
@@ -55,6 +56,7 @@
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
@@ -86,6 +88,7 @@
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
@@ -122,6 +125,7 @@
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
@@ -151,6 +155,7 @@
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>

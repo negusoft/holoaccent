@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Simply by overriding the key color, we can change the accent color -->
-<!--     <color name="key">#33b5e5</color> -->
+    <color name="key">#33b5e5</color>
 <!--     <color name="key">#00ff00</color> -->
 </resources>

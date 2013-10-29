@@ -1,10 +1,5 @@
 package com.negusoft.holoaccent.example.fragment;
 
-import com.negusoft.holoaccent.example.R;
-import com.negusoft.holoaccent.example.R.array;
-import com.negusoft.holoaccent.example.R.id;
-import com.negusoft.holoaccent.example.R.layout;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.negusoft.holoaccent.example.R;
 
 public class ListFragment extends Fragment {
 	
@@ -24,6 +21,8 @@ public class ListFragment extends Fragment {
 				android.R.layout.simple_list_item_1, 
 				getResources().getStringArray(R.array.list_items));
 		listView.setAdapter(adapter);
+		listView.setFastScrollEnabled(true);
+		listView.setFastScrollAlwaysVisible(true);
 		
 		return result;
 	}
