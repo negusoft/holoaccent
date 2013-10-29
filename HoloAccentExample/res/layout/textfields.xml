@@ -26,4 +26,16 @@
         android:enabled="false"
         android:ems="10" />
 
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="AutoCompleteTextView" />
+
+    <MultiAutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="MultiAutoCompleteTextView" />
+
 </LinearLayout>

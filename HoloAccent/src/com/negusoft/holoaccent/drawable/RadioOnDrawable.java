@@ -32,7 +32,7 @@ public class RadioOnDrawable extends Drawable {
 	}
 	
 	private Paint getCenterGlowPaint(AccentPalette palette, float centerY, float radius) {
-		LinearGradient gradient = new LinearGradient(0f, centerY - radius, 0f, centerY, 0xaaffffff, palette.accentColor, TileMode.CLAMP);
+		LinearGradient gradient = new LinearGradient(0f, centerY - radius, 0f, centerY, 0x88ffffff, palette.getDarkAccentColor(), TileMode.CLAMP);
 		Paint result = new Paint();
 		result.setShader(gradient);
 		result.setStyle(Paint.Style.STROKE);
@@ -55,7 +55,7 @@ public class RadioOnDrawable extends Drawable {
 	
 	private Paint getCenterPaint(AccentPalette palette) {
 		Paint result = new Paint();
-		result.setColor(palette.accentColor);
+		result.setColor(palette.getDarkAccentColor());
 		result.setStyle(Paint.Style.FILL);
 		result.setAntiAlias(true);
 		return result;

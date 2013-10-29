@@ -71,12 +71,15 @@ public class AccentResources extends Resources {
 		R.drawable.textfield_comp_focused_left,
 		R.drawable.textfield_comp_focused_main,
 		R.drawable.textfield_comp_focused_right,
-		R.drawable.btn_check_comp_on_accent,
 		R.drawable.btn_check_comp_off_focus,
 		R.drawable.btn_check_comp_on_focus,
 		R.drawable.progress_comp_primary,
 		R.drawable.scrubber_comp_primary,
 		R.drawable.scrubber_comp_secondary
+	};
+	
+	private static final int[] DARK_TINT_DRAWABLE_IDS = new int[] {
+		R.drawable.btn_check_comp_on_accent
 	};
 
 	private final AccentPalette mPalette;
@@ -191,7 +194,11 @@ public class AccentResources extends Resources {
 			throws NotFoundException {
 		for (int id : TINT_DRAWABLE_IDS) {
 			if (resId == id)
-				return getTintendResourceStream(resId, value);
+				return getTintendResourceStream(resId, value, mPalette.accentColor);
+		}
+		for (int id : DARK_TINT_DRAWABLE_IDS) {
+			if (resId == id)
+				return getTintendResourceStream(resId, value, mPalette.getDarkAccentColor());
 		}
 		return super.openRawResource(resId, value);
 	}
@@ -200,7 +207,7 @@ public class AccentResources extends Resources {
 	 * Get a reference to a resource that is equivalent to the one requested, 
 	 * but with the accent color applied to it.
 	 */
-	private InputStream getTintendResourceStream(int id, TypedValue value) {
+	private InputStream getTintendResourceStream(int id, TypedValue value, int color) {
 		// Get the bitmap form the resources
 		InputStream original = super.openRawResource(id, value);
 		value.density = getDisplayMetrics().densityDpi;
@@ -213,7 +220,7 @@ public class AccentResources extends Resources {
 				new Rect(), options);
 		
 		// Apply the tint color
-		bitmap = BitmapUtils.applyColor(bitmap, mPalette.accentColor);
+		bitmap = BitmapUtils.applyColor(bitmap, color);
 
 		// Get the InputStream for the bitmap
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
