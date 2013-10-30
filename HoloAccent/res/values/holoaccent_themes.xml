@@ -11,6 +11,7 @@
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:editTextBackground">@drawable/textfield</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
@@ -43,6 +44,7 @@
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
@@ -75,6 +77,7 @@
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
@@ -114,6 +117,7 @@
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:editTextBackground">@drawable/textfield</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
@@ -144,6 +148,7 @@
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
