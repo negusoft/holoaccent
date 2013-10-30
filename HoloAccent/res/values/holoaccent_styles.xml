@@ -5,6 +5,14 @@
         <item name="android:background">@drawable/actionbar_background</item>
     </style>
     
+    <!-- Action Mode customization -->
+    <style name="HoloAccent.ActionButton.CloseMode" parent="android:Widget.Holo.ActionButton.CloseMode">
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+    </style>
+    <style name="HoloAccent.ActionButton.CloseMode.Light" parent="android:Widget.Holo.Light.ActionButton.CloseMode">
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+    </style>
+    
     <!-- Style for the tabs -->
     <style name="MyActionBarTabStyle" parent="android:Widget.Holo.ActionBar.TabView">
         <item name="android:background">@drawable/tab_background</item>

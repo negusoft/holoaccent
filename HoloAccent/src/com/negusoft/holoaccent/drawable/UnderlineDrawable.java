@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -15,13 +16,17 @@ public class UnderlineDrawable extends Drawable {
 	private final Paint mPaint;
 	
 	public UnderlineDrawable(Resources res, int color, float lineWidthDp) {
+		this(res, color, lineWidthDp, false);
+	}
+	
+	public UnderlineDrawable(Resources res, int color, float lineWidthDp, boolean overline) {
 		DisplayMetrics metrics = res.getDisplayMetrics();
-		mState = new UnderlineConstantState(metrics, color, lineWidthDp);
+		mState = new UnderlineConstantState(metrics, color, lineWidthDp, overline);
 		mPaint = initPaint(metrics, color, lineWidthDp);
 	}
 	
-	UnderlineDrawable(DisplayMetrics metrics, int color, float lineWidthDp) {
-		mState = new UnderlineConstantState(metrics, color, lineWidthDp);
+	UnderlineDrawable(DisplayMetrics metrics, int color, float lineWidthDp, boolean overline) {
+		mState = new UnderlineConstantState(metrics, color, lineWidthDp, overline);
 		mPaint = initPaint(metrics, color, lineWidthDp);
 	}
 	
@@ -36,8 +41,11 @@ public class UnderlineDrawable extends Drawable {
 	
 	@Override
 	public void draw(Canvas canvas) {
-		float posY = canvas.getHeight() - (mPaint.getStrokeWidth() / 2f);
-		canvas.drawLine(0f, posY, canvas.getWidth(), posY, mPaint);
+		Rect r = getBounds();
+		float posY = mPaint.getStrokeWidth() / 2f;
+		if (!mState.mOverline)
+			posY = r.bottom - posY;
+		canvas.drawLine(r.left, posY, r.right, posY, mPaint);
 	}
 
 	@Override
@@ -66,13 +74,15 @@ public class UnderlineDrawable extends Drawable {
 		public final DisplayMetrics mDisplayMetrics;
 		public final int mColor;
 		public final float mLineWidth;
+		public final boolean mOverline;
 		
 		int changingConfigurationValue;
 		
-		public UnderlineConstantState(DisplayMetrics metrics, int color, float lineWidth) {
+		public UnderlineConstantState(DisplayMetrics metrics, int color, float lineWidth, boolean overline) {
 			mDisplayMetrics = metrics;
 			mColor = color;
 			mLineWidth = lineWidth;
+			mOverline = overline;
 		}
 
 		@Override
@@ -82,7 +92,7 @@ public class UnderlineDrawable extends Drawable {
 
 		@Override
 		public Drawable newDrawable() {
-			return new UnderlineDrawable(mDisplayMetrics, mColor, mLineWidth);
+			return new UnderlineDrawable(mDisplayMetrics, mColor, mLineWidth, mOverline);
 		}
 		
 	}

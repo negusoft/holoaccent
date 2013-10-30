@@ -26,8 +26,11 @@
         <activity
             android:name="com.negusoft.holoaccent.example.TabbetHoloActivity"
             android:theme="@android:style/Theme.Holo.Light" />
-        
-        <activity android:name="com.negusoft.holoaccent.example.SpinnerActivity" />
+        <activity
+            android:name="com.negusoft.holoaccent.example.SpinnerActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
+        </activity>
+
         <activity android:name="com.negusoft.holoaccent.example.CodeOverrideActivity" />
         <activity 
             android:name="com.negusoft.holoaccent.example.ThemeOverrideActivity"

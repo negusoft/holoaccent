@@ -264,8 +264,13 @@ public class AccentResources extends Resources {
 		public Drawable getDrawable(int resId) {
 			if (resId == R.drawable.underline_1_5)
 				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 1.5f);
+			if (resId == R.drawable.underline_3)
+				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 3f);
 			if (resId == R.drawable.underline_6)
 				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 6f);
+			// overline
+			if (resId == R.drawable.overline_3)
+				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 3f, true);
 			return null;
 		}
 	}

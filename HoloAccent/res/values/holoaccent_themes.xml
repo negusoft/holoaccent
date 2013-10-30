@@ -10,6 +10,10 @@
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        
         <item name="android:editTextBackground">@drawable/textfield</item>
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         
@@ -33,6 +37,14 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
+        
+        <!-- Text selection handle attributes -->
+<!--         <item name="android:textSelectHandleLeft">@android:drawable/text_select_handle_left</item> -->
+<!--         <item name="android:textSelectHandleRight">@android:drawable/text_select_handle_right</item> -->
+<!--         <item name="android:textSelectHandle">@android:drawable/text_select_handle_middle</item> -->
+<!--         <item name="android:textSelectHandleWindowStyle">@android:style/Widget.Holo.TextSelectHandle</item> -->
+<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
+<!--         <item name="android:textCursorDrawable">@android:drawable/text_cursor_holo_dark</item> -->
     </style>
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
@@ -42,6 +54,10 @@
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
+        
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
@@ -75,6 +91,10 @@
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
+        
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
@@ -116,6 +136,10 @@
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        
         <item name="android:editTextBackground">@drawable/textfield</item>
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         
@@ -146,6 +170,10 @@
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
+        
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
