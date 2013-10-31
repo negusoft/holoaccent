@@ -45,7 +45,9 @@ import com.negusoft.holoaccent.drawable.RectDrawable;
 import com.negusoft.holoaccent.drawable.RoundRectDrawable;
 import com.negusoft.holoaccent.drawable.ScrubberControlSelectorDrawable;
 import com.negusoft.holoaccent.drawable.ScrubberControlSelectorDrawable.SelectorType;
+import com.negusoft.holoaccent.drawable.TextSelectHandleDrawable.HandleType;
 import com.negusoft.holoaccent.drawable.ScrubberProgressDrawable;
+import com.negusoft.holoaccent.drawable.TextSelectHandleDrawable;
 import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
 import com.negusoft.holoaccent.drawable.UnderlineDrawable;
 import com.negusoft.holoaccent.util.BitmapUtils;
@@ -91,6 +93,7 @@ public class AccentResources extends Resources {
 	private final RoundRectInterceptor mRoundRectInterceptor;
 	private final CircleInterceptor mCircleInterceptor;
 	private final ScrubberInterceptor mScrubberInterceptor;
+	private final TextSelectHandleInterceptor mTextSelectHandleInterceptor;
 	private final FastScrollInterceptor mFastScrollInterceptor;
 	private final IndeterminateInterceptor mIndeterminateInterceptor;
 	private final OverScrollIntercepter mOverScrollInterceptor;
@@ -105,6 +108,7 @@ public class AccentResources extends Resources {
 		mRoundRectInterceptor = new RoundRectInterceptor();
 		mCircleInterceptor = new CircleInterceptor();
 		mScrubberInterceptor = new ScrubberInterceptor();
+		mTextSelectHandleInterceptor = new TextSelectHandleInterceptor();
 		mFastScrollInterceptor = new FastScrollInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
@@ -125,6 +129,7 @@ public class AccentResources extends Resources {
 		mRoundRectInterceptor = new RoundRectInterceptor();
 		mCircleInterceptor = new CircleInterceptor();
 		mScrubberInterceptor = new ScrubberInterceptor();
+		mTextSelectHandleInterceptor = new TextSelectHandleInterceptor();
 		mFastScrollInterceptor = new FastScrollInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
@@ -166,6 +171,11 @@ public class AccentResources extends Resources {
 		Drawable scrubberDrawable = mScrubberInterceptor.getDrawable(resId);
 		if (scrubberDrawable != null)
 			return scrubberDrawable;
+		
+		// Replace the text select handle drawables if required
+		Drawable textSelectHandleDrawable = mTextSelectHandleInterceptor.getDrawable(resId);
+		if (textSelectHandleDrawable != null)
+			return textSelectHandleDrawable;
 		
 		// Replace the fastscroll drawables if required
 		Drawable fastscrollDrawable = mFastScrollInterceptor.getDrawable(resId);
@@ -371,6 +381,19 @@ public class AccentResources extends Resources {
 				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette);
 			if (resId == R.drawable.scrubber_comp_secondary)
 				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette, 77);
+			return null;
+		}
+	}
+	
+	/** Inner class holding the logic for replacing text select handlel drawables */
+	private class TextSelectHandleInterceptor {
+		public Drawable getDrawable(int resId) {
+			if (resId == R.drawable.text_select_handle_left_accent)
+				return new TextSelectHandleDrawable(getDisplayMetrics(), mPalette, HandleType.LEFT);
+			if (resId == R.drawable.text_select_handle_right_accent)
+				return new TextSelectHandleDrawable(getDisplayMetrics(), mPalette, HandleType.RIGHT);
+			if (resId == R.drawable.text_select_handle_middle_accent)
+				return new TextSelectHandleDrawable(getDisplayMetrics(), mPalette, HandleType.MIDDLE);
 			return null;
 		}
 	}

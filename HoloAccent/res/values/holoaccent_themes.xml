@@ -38,13 +38,9 @@
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
         
-        <!-- Text selection handle attributes -->
-<!--         <item name="android:textSelectHandleLeft">@android:drawable/text_select_handle_left</item> -->
-<!--         <item name="android:textSelectHandleRight">@android:drawable/text_select_handle_right</item> -->
-<!--         <item name="android:textSelectHandle">@android:drawable/text_select_handle_middle</item> -->
-<!--         <item name="android:textSelectHandleWindowStyle">@android:style/Widget.Holo.TextSelectHandle</item> -->
-<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
-<!--         <item name="android:textCursorDrawable">@android:drawable/text_cursor_holo_dark</item> -->
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
     </style>
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
@@ -82,6 +78,10 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
+        
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
     </style>
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
@@ -120,7 +120,9 @@
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
         
-        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
     </style>
     
     <!-- 
@@ -162,6 +164,10 @@
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
         
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
+        
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
     <!-- @hide -->
@@ -196,6 +202,10 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
+        
+        <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
     </style>
