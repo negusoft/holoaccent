@@ -3,6 +3,10 @@
     <!-- Default themes -->
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
         <item name="accentColor">@color/key</item>
+        <item name="accentColorTranslucent">@color/key_translucent</item>
+        
+        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
         
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
@@ -45,6 +49,10 @@
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         <item name="accentColor">@color/key</item>
+        <item name="accentColorTranslucent">@color/key_translucent</item>
+        
+        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
         
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
@@ -86,6 +94,10 @@
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="accentColor">@color/key</item>
+        <item name="accentColorTranslucent">@color/key_translucent</item>
+        
+        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
         
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
@@ -132,6 +144,9 @@
      -->
     <!-- @hide -->
     <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
+        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
@@ -172,6 +187,9 @@
     </style>
     <!-- @hide -->
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
@@ -217,9 +235,11 @@
     -->
     <style name="Theme.HoloAccent.Dialog" parent="BaseDialogTheme">
         <item name="accentColor">@color/key</item>
+        <item name="accentColorTranslucent">@color/key_translucent</item>
     </style>
     <style name="Theme.HoloAccent.Light.Dialog" parent="BaseDialogTheme.Light">
         <item name="accentColor">@color/key</item>
+        <item name="accentColorTranslucent">@color/key_translucent</item>
     </style>
     
     <!-- Extension themes (the parents are HoloAccent themes) -->

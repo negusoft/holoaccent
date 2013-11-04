@@ -25,6 +25,8 @@ public class SpinnerActivity extends Activity {
 	
 	private void initActionBar() {
 		ActionBar actionBar = getActionBar();
+		if (actionBar == null)
+			return;
 		
 		actionBar.setHomeButtonEnabled(true);
 		

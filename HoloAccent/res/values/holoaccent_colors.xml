@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="key">#A4C739</color>
+    <color name="key_translucent">#66A4C739</color>
     
     <color name="selector_disabled">#8000</color>
     <color name="selector_disabled_light">#2000</color>

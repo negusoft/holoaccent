@@ -4,6 +4,7 @@
 
     <declare-styleable name="HoloAccent">
         <attr name="accentColor" format="color|reference" />
+        <attr name="accentColorTranslucent" format="color|reference" />
     </declare-styleable>
 
 </resources>

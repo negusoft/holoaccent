@@ -1,18 +1,16 @@
 package com.negusoft.holoaccent.example;
 
-import com.negusoft.holoaccent.ResourceHelper;
-import com.negusoft.holoaccent.dialog.DividerPainter;
-
-import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 
-public class DialogActivity extends Activity {
+import com.negusoft.holoaccent.ResourceHelper;
+import com.negusoft.holoaccent.dialog.DividerPainter;
+
+public class DialogActivity extends SpinnerActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
 		new DividerPainter(this).paint(getWindow());
 	}
 	

@@ -23,6 +23,7 @@ import java.io.InputStream;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -34,6 +35,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
@@ -133,6 +135,25 @@ public class AccentResources extends Resources {
 		mFastScrollInterceptor = new FastScrollInterceptor();
 		mIndeterminateInterceptor = new IndeterminateInterceptor();
 		mOverScrollInterceptor = new OverScrollIntercepter();
+	}
+	
+	@Override
+	public TypedArray obtainAttributes(AttributeSet set, int[] attrs) {
+		// TODO Auto-generated method stub
+		TypedArray result = super.obtainAttributes(set, attrs);
+		return result;
+	}
+	
+	@Override
+	public int getColor(int id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return super.getColor(id);
+	}
+	
+	@Override
+	public ColorStateList getColorStateList(int id) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return super.getColorStateList(id);
 	}
 
 	@Override
