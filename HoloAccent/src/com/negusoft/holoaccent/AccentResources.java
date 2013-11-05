@@ -20,53 +20,57 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
-import com.negusoft.holoaccent.drawable.CircleDrawable;
-import com.negusoft.holoaccent.drawable.FastScrollDrawable;
-import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
-import com.negusoft.holoaccent.drawable.RadioOnDrawable;
-import com.negusoft.holoaccent.drawable.RectDrawable;
-import com.negusoft.holoaccent.drawable.RoundRectDrawable;
-import com.negusoft.holoaccent.drawable.ScrubberControlSelectorDrawable;
-import com.negusoft.holoaccent.drawable.ScrubberControlSelectorDrawable.SelectorType;
-import com.negusoft.holoaccent.drawable.TextSelectHandleDrawable.HandleType;
-import com.negusoft.holoaccent.drawable.ScrubberProgressDrawable;
-import com.negusoft.holoaccent.drawable.TextSelectHandleDrawable;
-import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
-import com.negusoft.holoaccent.drawable.UnderlineDrawable;
+import com.negusoft.holoaccent.intercepter.CircleInterceptor;
+import com.negusoft.holoaccent.intercepter.FastScrollInterceptor;
+import com.negusoft.holoaccent.intercepter.IndeterminateInterceptor;
+import com.negusoft.holoaccent.intercepter.RadioOnInterceptor;
+import com.negusoft.holoaccent.intercepter.RectInterceptor;
+import com.negusoft.holoaccent.intercepter.RoundRectInterceptor;
+import com.negusoft.holoaccent.intercepter.ScrubberInterceptor;
+import com.negusoft.holoaccent.intercepter.SolidColorInterceptor;
+import com.negusoft.holoaccent.intercepter.TextSelectHandleInterceptor;
+import com.negusoft.holoaccent.intercepter.ToggleInterceptor;
+import com.negusoft.holoaccent.intercepter.UnderlineInterceptor;
 import com.negusoft.holoaccent.util.BitmapUtils;
 
 /**
  * Extends the default android Resources to replace and modify 
  * drawables on runtime and apply the accent color.
  * <br/><br/>
- * "openRawResource()" is called when inflating XML drawable 
- * resources. By overriding it, we can replace the components 
- * that form the drawable.
+ * "openRawResource()" and "getDrawable()" are called when inflating 
+ * XML drawable resources. By overriding them, we can replace the 
+ * components that form the drawables at runtime.
  * <br/><br/>
  * For the OverScroll, the native android drawables are modified 
  * directly. We look up their id by name, and the we replace the 
  * drawable with a tinted version by applying a ColorFilter.
  */
 public class AccentResources extends Resources {
+	
+	public interface Interceptor {
+		/**
+		 * @return The drawable to be replaced or null 
+		 * to continue the normal flow.
+		 */
+		public Drawable getDrawable(Resources res, AccentPalette palette, int resId);
+	}
 	
 	private static final int[] TINT_DRAWABLE_IDS = new int[] {
 		R.drawable.textfield_comp_activated_left,
@@ -87,33 +91,13 @@ public class AccentResources extends Resources {
 	};
 
 	private final AccentPalette mPalette;
-
-	private final ToggleInterceptor mToggleInterceptor;
-	private final UnderlineInterceptor mUnderlineInterceptor;
-	private final SolidColorInterceptor mSolidColorInterceptor;
-	private final RectInterceptor mRectInterceptor;
-	private final RoundRectInterceptor mRoundRectInterceptor;
-	private final CircleInterceptor mCircleInterceptor;
-	private final ScrubberInterceptor mScrubberInterceptor;
-	private final TextSelectHandleInterceptor mTextSelectHandleInterceptor;
-	private final FastScrollInterceptor mFastScrollInterceptor;
-	private final IndeterminateInterceptor mIndeterminateInterceptor;
-	private final OverScrollIntercepter mOverScrollInterceptor;
+	private final List<Interceptor> mIterceptors;
 
 	public AccentResources(int accentColor, AssetManager assets, DisplayMetrics metrics, Configuration config) {
 		super(assets, metrics, config);
 		mPalette = new AccentPalette(accentColor);
-		mToggleInterceptor = new ToggleInterceptor();
-		mUnderlineInterceptor = new UnderlineInterceptor();
-		mSolidColorInterceptor = new SolidColorInterceptor();
-		mRectInterceptor = new RectInterceptor();
-		mRoundRectInterceptor = new RoundRectInterceptor();
-		mCircleInterceptor = new CircleInterceptor();
-		mScrubberInterceptor = new ScrubberInterceptor();
-		mTextSelectHandleInterceptor = new TextSelectHandleInterceptor();
-		mFastScrollInterceptor = new FastScrollInterceptor();
-		mIndeterminateInterceptor = new IndeterminateInterceptor();
-		mOverScrollInterceptor = new OverScrollIntercepter();
+		mIterceptors = new ArrayList<Interceptor>();
+		addInterceptors();
 	}
 
 	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config) {
@@ -124,98 +108,34 @@ public class AccentResources extends Resources {
 		mPalette = new AccentPalette(accentColor);
 		attrs.recycle();
 
-		mToggleInterceptor = new ToggleInterceptor();
-		mUnderlineInterceptor = new UnderlineInterceptor();
-		mSolidColorInterceptor = new SolidColorInterceptor();
-		mRectInterceptor = new RectInterceptor();
-		mRoundRectInterceptor = new RoundRectInterceptor();
-		mCircleInterceptor = new CircleInterceptor();
-		mScrubberInterceptor = new ScrubberInterceptor();
-		mTextSelectHandleInterceptor = new TextSelectHandleInterceptor();
-		mFastScrollInterceptor = new FastScrollInterceptor();
-		mIndeterminateInterceptor = new IndeterminateInterceptor();
-		mOverScrollInterceptor = new OverScrollIntercepter();
+		mIterceptors = new ArrayList<Interceptor>();
+		addInterceptors();
 	}
 	
-	@Override
-	public TypedArray obtainAttributes(AttributeSet set, int[] attrs) {
-		// TODO Auto-generated method stub
-		TypedArray result = super.obtainAttributes(set, attrs);
-		return result;
-	}
-	
-	@Override
-	public int getColor(int id) throws NotFoundException {
-		// TODO Auto-generated method stub
-		return super.getColor(id);
-	}
-	
-	@Override
-	public ColorStateList getColorStateList(int id) throws NotFoundException {
-		// TODO Auto-generated method stub
-		return super.getColorStateList(id);
+	private void addInterceptors() {
+		mIterceptors.add(new ToggleInterceptor());
+		mIterceptors.add(new UnderlineInterceptor());
+		mIterceptors.add(new SolidColorInterceptor());
+		mIterceptors.add(new RectInterceptor());
+		mIterceptors.add(new RoundRectInterceptor());
+		mIterceptors.add(new CircleInterceptor());
+		mIterceptors.add(new ScrubberInterceptor());
+		mIterceptors.add(new TextSelectHandleInterceptor());
+		mIterceptors.add(new FastScrollInterceptor());
+		mIterceptors.add(new IndeterminateInterceptor());
+		mIterceptors.add(new RadioOnInterceptor());
+		mIterceptors.add(new OverScrollInterceptor());
 	}
 
 	@Override
 	public Drawable getDrawable(int resId) throws Resources.NotFoundException {
-		// Replace the toggle button foreground drawables if required
-		Drawable toggleDrawable = mToggleInterceptor.getDrawable(resId);
-		if (toggleDrawable != null)
-			return toggleDrawable;
-		
-		// Replace the underline drawables
-		Drawable underlineDrawable = mUnderlineInterceptor.getDrawable(resId);
-		if (underlineDrawable != null)
-			return underlineDrawable;
-		
-		// Replace the solid color drawables
-		Drawable solidColorDrawable = mSolidColorInterceptor.getDrawable(resId);
-		if (solidColorDrawable != null)
-			return solidColorDrawable;
-		
-		// Replace the rect drawables
-		Drawable rectColorDrawable = mRectInterceptor.getDrawable(resId);
-		if (rectColorDrawable != null)
-			return rectColorDrawable;
-		
-		// Replace the round rect drawables
-		Drawable roundRectDrawable = mRoundRectInterceptor.getDrawable(resId);
-		if (roundRectDrawable != null)
-			return roundRectDrawable;
-		
-		// Replace the circle drawables
-		Drawable circleDrawable = mCircleInterceptor.getDrawable(resId);
-		if (circleDrawable != null)
-			return circleDrawable;
-		
-		// Replace the seekbar selector drawables
-		Drawable scrubberDrawable = mScrubberInterceptor.getDrawable(resId);
-		if (scrubberDrawable != null)
-			return scrubberDrawable;
-		
-		// Replace the text select handle drawables if required
-		Drawable textSelectHandleDrawable = mTextSelectHandleInterceptor.getDrawable(resId);
-		if (textSelectHandleDrawable != null)
-			return textSelectHandleDrawable;
-		
-		// Replace the fastscroll drawables if required
-		Drawable fastscrollDrawable = mFastScrollInterceptor.getDrawable(resId);
-		if (fastscrollDrawable != null)
-			return fastscrollDrawable;
-		
-		// Replace the indetermined horizontal drawables if required
-		Drawable indeterminedDrawable = mIndeterminateInterceptor.getDrawable(resId);
-		if (indeterminedDrawable != null)
-			return indeterminedDrawable;
-		
-		// Give the OverScroll intercepter a chance to override the drawable
-		Drawable overScrollDrawable = mOverScrollInterceptor.getDrawable(resId);
-		if (overScrollDrawable != null)
-			return overScrollDrawable;
-		
-		// Check whether it is the radio on dot
-		if (resId == R.drawable.radio_on_dot)
-			return new RadioOnDrawable(getDisplayMetrics(), mPalette);
+		// Give a chance to the interceptors to replace the drawable
+		Drawable result;
+		for(Interceptor interceptor : mIterceptors) {
+			result = interceptor.getDrawable(this, mPalette, resId);
+			if (result != null)
+				return result;
+		}
 		
 		return super.getDrawable(resId);
 	}
@@ -265,202 +185,11 @@ public class AccentResources extends Resources {
 	}
 	
 	/**
-	 * Inner class holding the logic for replacing the toogle button's foreground 
-	 * light that represents the state of the button
-	 */
-	private class ToggleInterceptor {
-
-		private final int COLOR_ON_PRESSED = Color.rgb(255, 255, 255);
-		private final int COLOR_OFF = Color.argb(128, 0, 0, 0);
-		private final int COLOR_OFF_DISABLED = Color.argb(64, 0, 0, 0);
-
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.btn_toggle_comp_on_foreground)
-				return new ToggleForegroundDrawable(AccentResources.this, mPalette.accentColor);
-			if (resId == R.drawable.btn_toggle_comp_on_foreground_pressed)
-				return new ToggleForegroundDrawable(AccentResources.this, COLOR_ON_PRESSED);
-			if (resId == R.drawable.btn_toggle_comp_on_foreground_disabled)
-				return new ToggleForegroundDrawable(AccentResources.this, mPalette.getTranslucent(128));
-			if (resId == R.drawable.btn_toggle_comp_off_foreground)
-				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF);
-			if (resId == R.drawable.btn_toggle_comp_off_foreground_disabled)
-				return new ToggleForegroundDrawable(AccentResources.this, COLOR_OFF_DISABLED);
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing underline drawables */
-	private class UnderlineInterceptor {
-
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.underline_1_5)
-				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 1.5f);
-			if (resId == R.drawable.underline_3)
-				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 3f);
-			if (resId == R.drawable.underline_6)
-				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 6f);
-			// overline
-			if (resId == R.drawable.overline_3)
-				return new UnderlineDrawable(AccentResources.this, mPalette.accentColor, 3f, true);
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing solid color drawables */
-	private class SolidColorInterceptor {
-		private static final int PRESSED_ALPHA = 0xAA;
-		private static final int FOCUSED_ALPHA = 0x55;
-		private static final int FOCUSED_DIMMED_ALPHA = 0x22;
-
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.solid_pressed)
-				return new ColorDrawable(mPalette.getTranslucent(PRESSED_ALPHA));
-			if (resId == R.drawable.solid_focused)
-				return new ColorDrawable(mPalette.getTranslucent(FOCUSED_ALPHA));
-			if (resId == R.drawable.solid_focused_dimmed)
-				return new ColorDrawable(mPalette.getTranslucent(FOCUSED_DIMMED_ALPHA));
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing rectangle drawables */
-	private class RectInterceptor {
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.rect_focused_background) {
-				int backColor = mPalette.getTranslucent(0x55);
-				int borderColor = mPalette.getTranslucent(0xAA);
-				return new RectDrawable(AccentResources.this, backColor, 2f, borderColor);
-			}
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing rounded rectangle drawables */
-	private class RoundRectInterceptor {
-
-		private static final float BORDER_WIDTH_DP = 2f;
-		private static final float CORNER_RADIUS_DP = 1.5f;
-		private static final float BUTTION_GLOW_CORNER_RADIUS_DP = 5f;
-		
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.roundrect_check_pressed)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x88), CORNER_RADIUS_DP);
-			if (resId == R.drawable.roundrect_spinner_pressed)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0xAA), CORNER_RADIUS_DP);
-			if (resId == R.drawable.roundrect_spinner_focussed)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
-			if (resId == R.drawable.roundrect_button_pressed_glow)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
-			if (resId == R.drawable.roundrect_button_pressed_fill)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.accentColor, CORNER_RADIUS_DP);
-			if (resId == R.drawable.roundrect_button_pressed_fill_colored)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x55), CORNER_RADIUS_DP);
-			if (resId == R.drawable.roundrect_button_focused)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0xAA), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
-			if (resId == R.drawable.roundrect_button_disabled_focused)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.getTranslucent(0x55), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
-			if (resId == R.drawable.roundrect_button_normal_colored)
-				return new RoundRectDrawable(getDisplayMetrics(), mPalette.accentColor, CORNER_RADIUS_DP);
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing rectangle drawables */
-	private class CircleInterceptor {
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.circle_pressed) {
-				int backColor = mPalette.getTranslucent(0x88);
-				return new CircleDrawable(AccentResources.this, 16f, backColor, 0f, Color.TRANSPARENT);
-			}
-			if (resId == R.drawable.circle_focused) {
-				int borderColor = mPalette.getTranslucent(0xAA);
-				return new CircleDrawable(AccentResources.this, 11f, Color.TRANSPARENT, 1.5f, borderColor);
-			}
-			if (resId == R.drawable.circle_disabled_focused) {
-				int borderColor = mPalette.getTranslucent(0x55);
-				return new CircleDrawable(AccentResources.this, 11f, Color.TRANSPARENT, 1.5f, borderColor);
-			}
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing SeekBar selector drawables */
-	private class ScrubberInterceptor {
-		public Drawable getDrawable(int resId) {
-			// control selector
-			if (resId == R.drawable.scrubber_control_disabled)
-				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.DISABLED);
-			if (resId == R.drawable.scrubber_control_focused)
-				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.FOCUSED);
-			if (resId == R.drawable.scrubber_control_normal)
-				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.NORMAL);
-			if (resId == R.drawable.scrubber_control_pressed)
-				return new ScrubberControlSelectorDrawable(getDisplayMetrics(), mPalette, SelectorType.PRESSED);
-			
-			// progress indicators
-			if (resId == R.drawable.scrubber_comp_primary)
-				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette);
-			if (resId == R.drawable.scrubber_comp_secondary)
-				return new ScrubberProgressDrawable(getDisplayMetrics(), mPalette, 77);
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing text select handlel drawables */
-	private class TextSelectHandleInterceptor {
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.text_select_handle_left_accent)
-				return new TextSelectHandleDrawable(getDisplayMetrics(), mPalette, HandleType.LEFT);
-			if (resId == R.drawable.text_select_handle_right_accent)
-				return new TextSelectHandleDrawable(getDisplayMetrics(), mPalette, HandleType.RIGHT);
-			if (resId == R.drawable.text_select_handle_middle_accent)
-				return new TextSelectHandleDrawable(getDisplayMetrics(), mPalette, HandleType.MIDDLE);
-			return null;
-		}
-	}
-	
-	/** Inner class holding the logic for replacing SeekBar selector drawables */
-	private class FastScrollInterceptor {
-		public Drawable getDrawable(int resId) {
-			if (resId == R.drawable.fastscroll_thumb_default)
-				return new FastScrollDrawable(getDisplayMetrics(), mPalette, false);
-			if (resId == R.drawable.fastscroll_thumb_pressed)
-				return new FastScrollDrawable(getDisplayMetrics(), mPalette, true);
-			return null;
-		}
-	}
-	
-	/**
-	 * Inner class holding the logic for replacing the indeterminate 
-	 * horizontal progress bar drawables.
-	 */
-	private class IndeterminateInterceptor {
-
-		private final int[] INDETERMINED_DRAWABLE_IDS = new int[] {
-			R.drawable.progressbar_indeterminate_1,
-			R.drawable.progressbar_indeterminate_2,
-			R.drawable.progressbar_indeterminate_3,
-			R.drawable.progressbar_indeterminate_4,
-			R.drawable.progressbar_indeterminate_5,
-			R.drawable.progressbar_indeterminate_6,
-			R.drawable.progressbar_indeterminate_7,
-			R.drawable.progressbar_indeterminate_8
-		};
-
-		public Drawable getDrawable(int resId) {
-			for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
-				if (resId == INDETERMINED_DRAWABLE_IDS[i])
-					return new IndeterminedProgressDrawable(AccentResources.this, mPalette.accentColor, i);
-			}
-			return null;
-		}
-	}
-	
-	/**
 	 * Inner class holding the logic for applying a ColorFilter to the OverScroll 
-	 * drawables.
+	 * drawables. It is implemented a an inner class because it needs to access 
+	 * the parents implementation of getDrawable().
 	 */
-	private class OverScrollIntercepter {
+	private class OverScrollInterceptor implements Interceptor {
 
 		private static final String RESOURCE_TYPE = "drawable";
 		private static final String RESOURCE_PACKAGE = "android";
@@ -470,12 +199,13 @@ public class AccentResources extends Resources {
 		private final int mOverscrollEdgeId;
 		private final int mOverscrollGlowId;
 		
-		public OverScrollIntercepter() {
+		public OverScrollInterceptor() {
 			mOverscrollEdgeId = getIdentifier(RESOURCE_NAME_EDGE, RESOURCE_TYPE, RESOURCE_PACKAGE);
 			mOverscrollGlowId = getIdentifier(RESOURCE_NAME_GLOW, RESOURCE_TYPE, RESOURCE_PACKAGE);
 		}
 
-		public Drawable getDrawable(int resId) {
+		@Override
+		public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 			if (resId == mOverscrollEdgeId)
 				return getEdgeDrawable();
 			if (resId == mOverscrollGlowId)
