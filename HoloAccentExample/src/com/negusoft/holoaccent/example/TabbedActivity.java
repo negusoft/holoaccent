@@ -20,7 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.negusoft.holoaccent.ResourceHelper;
+import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
 import com.negusoft.holoaccent.example.fragment.BarFragment;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
@@ -90,10 +90,10 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 		}
 	}
 	
-	private final ResourceHelper mResourceHelper = new ResourceHelper();
+	private final AccentHelper mAccentHelper = new AccentHelper();
 	@Override
 	public Resources getResources() {
-		return mResourceHelper.getResources(this, super.getResources());
+		return mAccentHelper.getResources(this, super.getResources());
 	}
 	
 	@Override
@@ -166,9 +166,6 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 								// negative action
 							}
 						});
-
-//        AlertDialog d = builder.create();
-//        d.show();
 		builder.show();
 	}
 

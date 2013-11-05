@@ -16,53 +16,66 @@
 
 package com.negusoft.holoaccent;
 
+import com.negusoft.holoaccent.dialog.DividerPainter;
+
 import android.content.Context;
 import android.content.res.Resources;
+import android.view.Window;
 
 /**
  * Helper class to lazily initialize AccentResources from your activities. 
- * Simply add the following code to replace the default android Resources 
- * implementation for AccentResources:
+ * Simply add the following code to your activity in order to replace the 
+ * default android Resources implementation by AccentResources:
  * <pre><code>
-private final ResourceHelper mResourceHelper = new ResourceHelper();
+private final AccentHelper mAccentHelper = new AccentHelper();
 {@literal @}Override
 public Resources getResources() {
-	return mResourceHelper.getResources(this, super.getResources());
+	return mAccentHelper.getResources(this, super.getResources());
 }
  * </code></pre>
  * And don't forget to add the corresponding imports:
  * <pre><code>
-import com.negusoft.holoaccent.ResourceHelper;
+import com.negusoft.holoaccent.AccentHelper;
 import android.content.res.Resources;
  * </code></pre>
  */
-public class ResourceHelper {
+public class AccentHelper {
 	
-	private AccentResources mInstance;
+	private AccentResources mAccentResources;
 	private boolean initializingFlag = false;
+
+	private DividerPainter mDividerPainter;
 	
 	private final boolean mOverrideThemeColor;
 	private final int mOverrideColor;
 	
-	public ResourceHelper() {
+	public AccentHelper() {
 		mOverrideThemeColor = false;
 		mOverrideColor = 0;
 	}
 	
-	public ResourceHelper(int color) {
+	public AccentHelper(int color) {
 		mOverrideThemeColor = true;
 		mOverrideColor = color;
 	}
 	
+	/** @return The AccentResources instance, properly initialized. */
 	public Resources getResources(Context c, Resources resources) {
-		if (mInstance == null) {
+		if (mAccentResources == null) {
 			if (initializingFlag)
 				return resources;
 			
 			initializingFlag = true;
-			mInstance = createInstance(c, resources);
+			mAccentResources = createInstance(c, resources);
 		}
-		return mInstance;
+		return mAccentResources;
+	}
+	
+	/** Paint the dialog's divider if required to correctly customize it. */
+	public void prepareDialog(Context c, Window window) {
+		if (mDividerPainter == null)
+			mDividerPainter = new DividerPainter(c);
+		mDividerPainter.paint(window);
 	}
 	
 	private AccentResources createInstance(Context c, Resources resources) {

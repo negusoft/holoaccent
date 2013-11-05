@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.negusoft.holoaccent.ResourceHelper;
+import com.negusoft.holoaccent.AccentHelper;
 
 public class SpinnerActivity extends Activity {
 
@@ -47,10 +47,10 @@ public class SpinnerActivity extends Activity {
 		spinner2.setAdapter(new MyArrayAdapter());
 	}
 	
-	private final ResourceHelper mResourceHelper = new ResourceHelper();
+	private final AccentHelper mAccentHelper = new AccentHelper();
 	@Override
 	public Resources getResources() {
-		return mResourceHelper.getResources(this, super.getResources());
+		return mAccentHelper.getResources(this, super.getResources());
 	}
 
 	@Override
