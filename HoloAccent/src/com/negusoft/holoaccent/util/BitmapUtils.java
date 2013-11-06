@@ -50,24 +50,6 @@ public class BitmapUtils {
 	 * @param accentColor The color to apply to every pixel.
 	 * @return A copy of the given bitmap with the accent color applied.
 	 */
-//	public static Bitmap applyColor(Bitmap bitmap, int accentColor) {
-//		int r = Color.red(accentColor);
-//		int g = Color.green(accentColor);
-//		int b = Color.blue(accentColor);
-//		
-//		int width = bitmap.getWidth();
-//		int height = bitmap.getHeight();
-//		Bitmap result = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-//		for (int x=0; x<width; x++) {
-//			for (int y=0; y<height; y++) {
-//				int color = bitmap.getPixel(x, y);
-//				int alpha = Color.alpha(color);
-//				result.setPixel(x, y, Color.argb(alpha, r, g, b));
-//			}
-//		}
-//		return result;
-//	}
-	
 	public static Bitmap applyColor(Bitmap bitmap, int accentColor) {
 		int r = Color.red(accentColor);
 		int g = Color.green(accentColor);
@@ -84,7 +66,6 @@ public class BitmapUtils {
 			pixels[i] = Color.argb(alpha, r, g, b);
 		}
 		return Bitmap.createBitmap(pixels, width, height, Bitmap.Config.ARGB_8888);
-//		return Bitmap.createBitmap(pixels, 0, width, width, height, Bitmap.Config.ARGB_8888);
 	}
 	
 	/**

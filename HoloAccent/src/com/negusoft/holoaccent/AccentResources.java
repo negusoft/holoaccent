@@ -51,14 +51,14 @@ import com.negusoft.holoaccent.util.BitmapUtils;
 
 /**
  * Extends the default android Resources to replace and modify 
- * drawables on runtime and apply the accent color.
+ * drawables at runtime and apply the accent color.
  * <br/><br/>
  * "openRawResource()" and "getDrawable()" are called when inflating 
  * XML drawable resources. By overriding them, we can replace the 
  * components that form the drawables at runtime.
  * <br/><br/>
  * For the OverScroll, the native android drawables are modified 
- * directly. We look up their id by name, and the we replace the 
+ * directly. We look up their id by name, and then we replace the 
  * drawable with a tinted version by applying a ColorFilter.
  */
 public class AccentResources extends Resources {

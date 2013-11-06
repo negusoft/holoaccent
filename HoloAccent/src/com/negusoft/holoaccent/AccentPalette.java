@@ -17,6 +17,11 @@ package com.negusoft.holoaccent;
 
 import android.graphics.Color;
 
+/**
+ * Represents the accent color and makes it easy to 
+ * access derived versions of it: Like translucent or 
+ * dark versions.
+ */
 public class AccentPalette {
 	
 	private static final float DARK_ACCENT_PERCENTAGE = 0.85f;

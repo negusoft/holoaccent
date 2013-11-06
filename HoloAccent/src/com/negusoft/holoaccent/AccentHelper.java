@@ -53,6 +53,9 @@ public Resources getResources() {
 import com.negusoft.holoaccent.AccentHelper;
 import android.content.res.Resources;
  * </code></pre>
+ * 
+ * In addition, it allows to easily prepare dialogs for display by calling: 
+ * prepareDialog().
  */
 public class AccentHelper {
 	
