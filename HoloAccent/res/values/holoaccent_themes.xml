@@ -19,137 +19,239 @@
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
         <item name="accentColor">@color/key</item>
         <item name="accentColorTranslucent">@color/key_translucent</item>
+
+        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+
+        <item name="android:colorPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
+        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
         <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
         <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
-        
-        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
-        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
-        
-        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
-        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
-        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <item name="android:textColorLink">?attr/accentColor</item>
+        <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
         <item name="android:editTextBackground">@drawable/textfield</item>
-        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-        <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
-        
+<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
-        
-    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
+<!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
-        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
+
+<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
         
-    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
-    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
-        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
-        
+<!--         <item name="android:presentationTheme">@android:style/Theme.Holo.Dialog.Presentation</item> -->
+<!--         <item name="android:panelMenuListTheme">@android:style/Theme.Holo.CompactMenu</item> -->
+
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
+<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
+        
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
+        <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
+<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
+    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
+<!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
+<!--         <item name="ratingBarStyleIndicator">@android:style/Widget.Holo.RatingBar.Indicator</item> -->
+<!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
+    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
+<!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
+<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
+<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
+<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
+        
+<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
+<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
+
+<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
+<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
+<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
+<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
+
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        
     </style>
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         <item name="accentColor">@color/key</item>
         <item name="accentColorTranslucent">@color/key_translucent</item>
+
+        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+
+        <item name="android:colorPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
+        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
         <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
         <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
-        
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
-        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
-        
-        <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
-        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
-        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
+        <item name="android:textColorLink">?attr/accentColor</item>
+        <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
-        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
-        <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
-        
+<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
-        
-    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
+<!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
-        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
+
+<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
         
-    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
-    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
-        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
-        
+<!--         <item name="android:presentationTheme">@android:style/Theme.Holo.Dialog.Presentation</item> -->
+<!--         <item name="android:panelMenuListTheme">@android:style/Theme.Holo.CompactMenu</item> -->
+
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
+<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
+        
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
+        <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
+<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
+    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
+<!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
+<!--         <item name="ratingBarStyleIndicator">@android:style/Widget.Holo.RatingBar.Indicator</item> -->
+<!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
+    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
+<!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
+<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
+<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
+<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
+        <!-- "actionBarStyle": it is not required for this theme -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
+        
+<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
+<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
+
+<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
+<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
+<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
+<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
+
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
     </style>
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="accentColor">@color/key</item>
         <item name="accentColorTranslucent">@color/key_translucent</item>
+
+        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+
+        <item name="android:colorPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
+        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
         <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
         <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
-        
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
-        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
-        
-        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
-        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
-        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <item name="android:textColorLink">?attr/accentColor</item>
+        <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
-        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-        <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
-        
+<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
-        
-    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
+<!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
-        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
+
+<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
         
-    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
-    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
-        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
-        
+<!--         <item name="android:presentationTheme">@android:style/Theme.Holo.Dialog.Presentation</item> -->
+<!--         <item name="android:panelMenuListTheme">@android:style/Theme.Holo.CompactMenu</item> -->
+
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
+<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
+        
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
+        <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
+<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
+    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
+<!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
+<!--         <item name="ratingBarStyleIndicator">@android:style/Widget.Holo.RatingBar.Indicator</item> -->
+<!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
+    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
+<!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
+<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
+<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
+<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <!-- "actionBarStyle": it is not required for this theme -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
+        
+<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
+<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
+
+<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
+<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
+<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
+<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
+
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        
+        <!-- DarkActionBar specific -->
+        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
     </style>
     
     <!-- 
@@ -159,93 +261,162 @@
      -->
     <!-- @hide -->
     <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
+        <!-- Copy of Theme.HoloAccents, except the 'accentColor' and 'accentColorTranslucent' attributes -->
+
+        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+
+        <item name="android:colorPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
+        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        
         <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
         <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
-        
-        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
-        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
-        
-        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
-        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
-        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <item name="android:textColorLink">?attr/accentColor</item>
+        <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
         <item name="android:editTextBackground">@drawable/textfield</item>
-        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-        <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
-        
-    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
+<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
+<!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
-        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
+
+<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
         
-    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
-    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
-        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Alert</item>
-        
+<!--         <item name="android:presentationTheme">@android:style/Theme.Holo.Dialog.Presentation</item> -->
+<!--         <item name="android:panelMenuListTheme">@android:style/Theme.Holo.CompactMenu</item> -->
+
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
+<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
         
-        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
+        <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
+<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
+    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
+<!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
+<!--         <item name="ratingBarStyleIndicator">@android:style/Widget.Holo.RatingBar.Indicator</item> -->
+<!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
+    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
+<!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
+<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
+<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
+<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
+        
+<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
+<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
+
+<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
+<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
+<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
+<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
+
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
     </style>
     <!-- @hide -->
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
+        <!-- Copy of Theme.HoloAccents.Light, except the 'accentColor' and 'accentColorTranslucent' attributes -->
+
+        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+
+        <item name="android:colorPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
+        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
+        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        
         <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
         <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
-        
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_item_background</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
-        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
-        
-        <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
-        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
-        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
+        <item name="android:textColorLink">?attr/accentColor</item>
+        <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
-        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         
         <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
-        <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
-        
-    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
+<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
+<!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
         
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio_light</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
-        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
+
+<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
         
-    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
-    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
-        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:dialogTheme">@style/BaseDialogTheme.Light</item>
         <item name="android:alertDialogTheme">@style/BaseDialogTheme.Light.Alert</item>
-        
+<!--         <item name="android:presentationTheme">@android:style/Theme.Holo.Dialog.Presentation</item> -->
+<!--         <item name="android:panelMenuListTheme">@android:style/Theme.Holo.CompactMenu</item> -->
+
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
+<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
         
-        <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
+        <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
+        <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
+<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
+    	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
+    	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
+<!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
+<!--         <item name="ratingBarStyleIndicator">@android:style/Widget.Holo.RatingBar.Indicator</item> -->
+<!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
+    	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
+<!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
+<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
+<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
+<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+        <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
+        <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
+        <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
+        <!-- "actionBarStyle": it is not required for this theme -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
+        
+<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
+<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
+
+<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
+<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
+<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
+<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
+
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
     </style>
     
     <!--
-        Dialog themes (attributes copied from Theme.HoloAccent)
-    	If you apply the themes to an Activity, you will need to programatically modify 
+        Dialog themes.
+        If you apply the themes to an Activity, you will need to programatically modify 
     	the title divider color. See DividerPainter for more information.
     -->
     <style name="Theme.HoloAccent.Dialog" parent="BaseDialogTheme">
