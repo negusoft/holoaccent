@@ -47,7 +47,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
 
-<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
@@ -126,7 +126,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
 
-<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
@@ -204,7 +204,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
 
-<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
@@ -290,7 +290,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
 
-<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
@@ -367,7 +367,7 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_light</item>
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_light</item>
 
-<!--         <item name="activatedBackgroundIndicator">@android:drawable/activated_background_holo_dark</item> -->
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
         
