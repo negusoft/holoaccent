@@ -36,7 +36,7 @@
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
 <!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
@@ -59,11 +59,9 @@
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
-<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
-        
+
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
-<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
 <!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
@@ -82,9 +80,6 @@
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-        
-<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
-<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
 <!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
@@ -115,7 +110,7 @@
         
         <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
-<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleInset">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
 <!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
@@ -138,11 +133,9 @@
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
-<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
-        
+
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
-<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
 <!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
@@ -161,9 +154,6 @@
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <!-- "actionBarStyle": it is not required for this theme -->
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
-        
-<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
-<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
 <!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
@@ -193,7 +183,7 @@
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleInset">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
 <!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
@@ -216,11 +206,9 @@
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
-<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
-        
+
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
-<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
 <!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
@@ -239,9 +227,6 @@
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <!-- "actionBarStyle": it is not required for this theme -->
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-        
-<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
-<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
 <!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
@@ -279,7 +264,7 @@
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleInset">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
 <!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
@@ -302,11 +287,9 @@
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
-<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
-        
+
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView</item>
         <item name="android:imageButtonStyle">@style/HoloAccent.ImageButton</item>
-<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar</item>
 <!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
@@ -325,9 +308,6 @@
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-        
-<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
-<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
 <!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
@@ -356,7 +336,7 @@
         
         <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
-<!--         <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button.Inset</item> -->
+        <item name="android:buttonStyleInset">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
 <!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
@@ -379,11 +359,9 @@
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>
         <item name="android:textSelectHandle">@drawable/text_select_handle_middle</item>
-<!--         <item name="android:textSuggestionsWindowStyle">@android:style/Widget.Holo.TextSuggestionsPopupWindow</item> -->
-        
+
         <item name="android:autoCompleteTextViewStyle">@style/HoloAccent.AutoCompleteTextView.Light</item>
         <item name="android:imageButtonStyle">@style/HoloAccent.Light.ImageButton</item>
-<!--         <item name="android:imageWellStyle">@android:style/Widget.Holo.ImageWell</item> -->
     	<item name="android:progressBarStyleHorizontal">@style/HoloAccent.Light.ProgressBar.Horizontal</item>
     	<item name="android:seekBarStyle">@style/HoloAccent.SeekBar.Light</item>
 <!--         <item name="ratingBarStyle">@android:style/Widget.Holo.RatingBar</item> -->
@@ -402,9 +380,6 @@
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <!-- "actionBarStyle": it is not required for this theme -->
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
-        
-<!--         <item name="searchDropdownBackground">@android:drawable/search_dropdown_dark</item> -->
-<!--         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item> -->
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
 <!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
