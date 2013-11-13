@@ -27,5 +27,12 @@
     <dimen name="btn_default_fill_margin">6dp</dimen>
     <dimen name="btn_fill_corner_radius">1.5dp</dimen>
     <dimen name="btn_border_corner_radius">1.0dp</dimen>
+    
+    <dimen name="switch_offset_horizontal">9.4dp</dimen>
+    <dimen name="switch_offset_vertical">-3dp</dimen>
+    <dimen name="switch_total_margin_horizontal">13.4dp</dimen>
+    <dimen name="switch_total_margin_vertical">1dp</dimen>
+    <dimen name="switch_rect_height">23dp</dimen>
+    <dimen name="switch_min_width">96dp</dimen>
 
 </resources>

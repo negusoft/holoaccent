@@ -141,5 +141,28 @@
     </style>
     <style name="TextAppearance.Holo.Light.Widget.PopupMenu.Small" parent="android:TextAppearance.Holo.Widget.PopupMenu.Small">
     </style>
+    
+    <!-- AccentSwitch style. It doens't extend any Holo style -->
+    <style name="AccentSwitch">
+        <item name="track">@drawable/switch_track</item>
+        <item name="thumb">@drawable/switch_thumb</item>
+        <item name="textOn">@string/switchOn</item>
+        <item name="textOff">@string/switchOff</item>
+        <item name="thumbTextPadding">12dip</item>
+        <item name="switchMinWidth">@dimen/switch_min_width</item>
+        <item name="switchPadding">16dip</item>
+        <item name="switchTextAppearance">@style/TextAppearanceSwitch</item>
+    </style>
+    <style name="AccentSwitch.Light">
+        <item name="track">@drawable/switch_track_light</item>
+        <item name="switchTextAppearance">@style/TextAppearanceSwitch.Light</item>
+    </style>
+    <style name="TextAppearanceSwitch">
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <item name="textSize">14sp</item>
+    </style>
+    <style name="TextAppearanceSwitch.Light">
+        <item name="textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
 
 </resources>

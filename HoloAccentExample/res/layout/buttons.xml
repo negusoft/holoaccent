@@ -83,6 +83,22 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="Inset Style" />
+		
+	
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+			
+			<com.negusoft.holoaccent.widget.AccentSwitch 
+			    android:enabled="true"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"/>
+			
+			<Switch 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"/>
+		</LinearLayout>
 	
 	</LinearLayout>
 </ScrollView>

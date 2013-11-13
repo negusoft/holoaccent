@@ -21,6 +21,7 @@
         <item name="accentColorTranslucent">@color/key_translucent</item>
 
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="accentSwitchStyle">@style/AccentSwitch</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
         <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
@@ -36,9 +37,8 @@
         
         <item name="android:buttonStyle">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-        <item name="android:buttonStyleInset">@android:style/Widget.Holo.Button</item>
+        <item name="android:buttonStyleInset">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
-<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
 
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
@@ -95,6 +95,7 @@
         <item name="accentColorTranslucent">@color/key_translucent</item>
 
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
         <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
@@ -112,7 +113,6 @@
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
         <item name="android:buttonStyleInset">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
-<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
 
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
@@ -168,6 +168,7 @@
         <item name="accentColorTranslucent">@color/key_translucent</item>
 
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
         <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
@@ -185,7 +186,6 @@
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
         <item name="android:buttonStyleInset">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
-<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
 
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
@@ -249,6 +249,7 @@
         <!-- Copy of Theme.HoloAccents, except the 'accentColor' and 'accentColorTranslucent' attributes -->
 
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="accentSwitchStyle">@style/AccentSwitch</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
         <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
@@ -266,7 +267,6 @@
         <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
         <item name="android:buttonStyleInset">@style/HoloAccent.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Button.Toggle</item>
-<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
 
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>
@@ -321,6 +321,7 @@
         <!-- Copy of Theme.HoloAccents.Light, except the 'accentColor' and 'accentColorTranslucent' attributes -->
 
         <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
         <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
@@ -338,7 +339,6 @@
         <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
         <item name="android:buttonStyleInset">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
-<!--         <item name="android:switchStyle">@android:style/Widget.Holo.CompoundButton.Switch</item> -->
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
 
         <item name="android:selectableItemBackground">@drawable/actionbar_item_background</item>

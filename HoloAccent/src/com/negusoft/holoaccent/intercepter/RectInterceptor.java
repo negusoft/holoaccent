@@ -32,6 +32,8 @@ public class RectInterceptor implements AccentResources.Interceptor {
 			int borderColor = palette.getTranslucent(0xAA);
 			return new RectDrawable(res, backColor, 2f, borderColor);
 		}
+		if (resId == R.drawable.rect_focused_border)
+			return new RectDrawable(res, 0, 1f, palette.getTranslucent(0x99));
 		return null;
 	}
 
