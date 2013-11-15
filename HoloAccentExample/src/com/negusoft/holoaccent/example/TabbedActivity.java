@@ -120,6 +120,9 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 		case R.id.holo_theme_activity:
             startActivity(new Intent(this, TabbetHoloActivity.class));
             return true;
+		case R.id.preferences_activity:
+            startActivity(new Intent(this, PreferencesActivity.class));
+            return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}

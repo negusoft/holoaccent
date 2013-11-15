@@ -9,6 +9,7 @@
     <string name="action_code_override_activity">Code Override</string>
     <string name="action_theme_override_activity">Theme Override</string>
     <string name="action_holo_theme_activity">Holo Theme</string>
+    <string name="action_preferences_activity">Preferences</string>
 
     <string-array name="list_items">
         <item>one</item>
@@ -25,5 +26,7 @@
         <item>twelve</item>
         <item>thirteen</item>
     </string-array>
+    
+    <string-array name="empty_array"/>
 
 </resources>

@@ -13,16 +13,15 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.HoloAccent.Light" >
-
         <activity
             android:name="com.negusoft.holoaccent.example.TabbedActivity"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.negusoft.holoaccent.example.TabbetHoloActivity"
             android:theme="@android:style/Theme.Holo.Light" />
@@ -30,15 +29,17 @@
             android:name="com.negusoft.holoaccent.example.SpinnerActivity"
             android:uiOptions="splitActionBarWhenNarrow" >
         </activity>
-
         <activity android:name="com.negusoft.holoaccent.example.CodeOverrideActivity" />
-        <activity 
+        <activity
             android:name="com.negusoft.holoaccent.example.ThemeOverrideActivity"
             android:theme="@style/Theme.HoloAccent.Override" />
-        <activity 
+        <activity
             android:name="com.negusoft.holoaccent.example.DialogActivity"
             android:theme="@style/Theme.HoloAccent.Light.Dialog" />
-        
+        <activity
+            android:name="com.negusoft.holoaccent.example.PreferencesActivity"
+            android:label="@string/title_activity_preferences"
+            android:parentActivityName="com.negusoft.holoaccent.example.TabbedActivity" />
     </application>
 
 </manifest>
