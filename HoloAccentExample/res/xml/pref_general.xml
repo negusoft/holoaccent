@@ -40,5 +40,13 @@
         android:entries="@array/pref_example_list_titles"
         android:entryValues="@array/pref_example_list_values"
         android:defaultValue="@array/empty_array" />
+    
+    <com.negusoft.holoaccent.preference.SwitchPreference
+        android:key="example_switch"
+        android:title="Switch Preference"
+        android:summaryOn="Summary on text"
+        android:summaryOff="Summary off text"
+        android:switchTextOn="pref. on"
+        android:switchTextOff="pref. off" />
 
 </PreferenceScreen>
