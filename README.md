@@ -9,7 +9,7 @@ Description
 
 Android library project to customize the Holo theme with a custom accent color.
 
-It currently supports Android 3.0+ projects (for the moment). Each theme defined in the project corresponds to a default android theme:
+It currently supports Android 4.0+ projects (minSdkVersion="14"). Each theme defined in the project corresponds to a default android theme:
 - Theme.Holo > Theme.HoloAccent
 - Theme.Holo.Light > Theme.HoloAccent.Light
 - Theme.Holo.Light.DarkActionBar > Theme.HoloAccent.Light.DarkActionBar
@@ -41,11 +41,3 @@ License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-
-Coming Up Next...
-=================
-
-Next, the objective is to support older versions of android. For this purpose, the idea is to extend the project to support ActionBarSherlock and ActionBarCompat.
-
-And finally, a lot of testing, documentation... still a lot of work to do.
