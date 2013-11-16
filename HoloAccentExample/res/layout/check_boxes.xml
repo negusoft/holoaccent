@@ -15,20 +15,20 @@
             android:background="@drawable/btn_check_on_pressed" />
 
         <CheckBox
-            android:id="@+id/radioButton1"
+            android:id="@+id/checkBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="RadioButton" />
+            android:text="CheckBox" />
 
     </LinearLayout>
 
     <CheckBox
-        android:id="@+id/radioButton2"
+        android:id="@+id/checkBox2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="true"
-        android:text="RadioButton" />
+        android:text="CheckBox" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,20 +41,20 @@
             android:background="@drawable/btn_radio_off_disabled_focused_light" />
 
         <CheckBox
-            android:id="@+id/RadioButton01"
+            android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
             android:enabled="false"
-            android:text="RadioButton" />
+            android:text="CheckBox" />
         
     </LinearLayout>
 
     <CheckBox
-        android:id="@+id/radioButton3"
+        android:id="@+id/checkBox4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
-        android:text="RadioButton" />
+        android:text="CheckBox" />
 
 </LinearLayout>
