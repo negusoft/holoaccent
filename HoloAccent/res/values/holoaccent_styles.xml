@@ -109,6 +109,14 @@
         <item name="android:dropDownSelector">?android:attr/listChoiceBackgroundIndicator</item>
     </style>
     
+    <!-- ListPopupWindow styles -->
+    <style name="HoloAccent.ListPopupWindow" parent="android:Widget.Holo.ListPopupWindow">
+        <item name="android:dropDownSelector">?android:attr/listChoiceBackgroundIndicator</item>
+    </style>
+    <style name="HoloAccent.ListPopupWindow.Light" parent="android:Widget.Holo.Light.ListPopupWindow">
+        <item name="android:dropDownSelector">?android:attr/listChoiceBackgroundIndicator</item>
+    </style>
+    
     <!-- Horizontal progress bar (must be set on the layout XML directly) -->
     <style name="HoloAccent.ProgressBar.Horizontal" parent="android:Widget.Holo.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal</item>

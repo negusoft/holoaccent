@@ -69,9 +69,8 @@
 <!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
 <!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
-<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
-<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
-<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+        <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow</item>
+        <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow</item>
 
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
@@ -143,16 +142,14 @@
 <!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
 <!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
-<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
-<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
-<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+        <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow.Light</item>
+        <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.Light</item>
 
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
-        <!-- "actionBarStyle": it is not required for this theme -->
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
@@ -216,16 +213,14 @@
 <!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
 <!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
-<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
-<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
-<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+        <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow.Light</item>
+        <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.Light</item>
 
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
-        <!-- "actionBarStyle": it is not required for this theme -->
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
@@ -297,9 +292,8 @@
 <!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner</item>
 <!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
-<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
-<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
-<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+        <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow</item>
+        <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow</item>
 
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
@@ -369,16 +363,14 @@
 <!--         <item name="ratingBarStyleSmall">@android:style/Widget.Holo.RatingBar.Small</item> -->
     	<item name="android:dropDownSpinnerStyle">@style/HoloAccent.Spinner.Light</item>
 <!--         <item name="starStyle">@android:style/Widget.Holo.CompoundButton.Star</item> -->
-<!--         <item name="listPopupWindowStyle">@android:style/Widget.Holo.ListPopupWindow</item> -->
-<!--         <item name="popupMenuStyle">@android:style/Widget.Holo.PopupMenu</item> -->
-<!--         <item name="stackViewStyle">@android:style/Widget.Holo.StackView</item> -->
+        <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow.Light</item>
+        <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.Light</item>
 
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
-        <!-- "actionBarStyle": it is not required for this theme -->
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
 <!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->

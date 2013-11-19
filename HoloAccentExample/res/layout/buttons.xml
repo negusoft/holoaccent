@@ -11,12 +11,14 @@
 	    android:orientation="vertical" >
 	
 		<Button
+		    android:id="@+id/coloredButton"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:background="@drawable/btn_default_colored"
 		    android:text="From theme" />
 	
 		<Button
+		    android:id="@+id/listPopupButton"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="From theme" />
