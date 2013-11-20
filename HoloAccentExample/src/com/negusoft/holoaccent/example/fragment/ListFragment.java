@@ -13,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.negusoft.holoaccent.example.R;
 
@@ -37,7 +36,6 @@ public class ListFragment extends Fragment implements OnItemLongClickListener {
 
 	@Override
 	public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		Toast.makeText(getActivity(), "long click", Toast.LENGTH_SHORT).show();
 		getActivity().startActionMode(mActionModeCallback);
 		return false;
 	}

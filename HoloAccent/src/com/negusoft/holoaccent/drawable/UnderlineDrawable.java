@@ -57,9 +57,8 @@ public class UnderlineDrawable extends Drawable {
 	@Override
 	public void draw(Canvas canvas) {
 		Rect r = getBounds();
-		float posY = mPaint.getStrokeWidth() / 2f;
-		if (!mState.mOverline)
-			posY = r.bottom - posY;
+		float margin = mPaint.getStrokeWidth() / 2f;
+		float posY = mState.mOverline ? r.top + margin : r.bottom - margin;
 		canvas.drawLine(r.left, posY, r.right, posY, mPaint);
 	}
 

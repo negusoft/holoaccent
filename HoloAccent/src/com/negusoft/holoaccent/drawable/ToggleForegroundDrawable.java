@@ -75,6 +75,10 @@ public class ToggleForegroundDrawable extends Drawable {
 		return result;
 	}
 	
+	/**
+	 * It is based on the canvas width and height instead of the bounds 
+	 * in order not to consider the margins of the button it is drawn in.
+	 */
 	@Override
 	public void draw(Canvas canvas) {
 		float width = canvas.getWidth();

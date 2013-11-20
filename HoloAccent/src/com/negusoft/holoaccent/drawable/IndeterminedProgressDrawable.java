@@ -22,6 +22,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -113,24 +114,26 @@ public class IndeterminedProgressDrawable extends Drawable {
 	@Override
 	public void draw(Canvas canvas) {
 		
-		float canvasWidth = canvas.getWidth();
+		Rect bounds = getBounds();
+		
+		float totalWidth = bounds.width();
 		float minWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, MIN_WIDTH_DP, mDisplayMetrics);
-		if (canvasWidth < minWidth)
-			canvasWidth = minWidth;
+		if (totalWidth < minWidth)
+			totalWidth = minWidth;
         
-        float centerY = canvas.getHeight() / 2f;
-        float startX = 0f;
+        float centerY = bounds.exactCenterY();
+        float startX = bounds.left;
         float stopX;
 //        float gapWidth = canvasWidth * GAP_WIDTH_PERCENTAGE;
         float gapWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, GAP_WIDTH_DP, mDisplayMetrics);
         
         // Draw the lines before the gaps
         for (float startPercentage : mGapPercentages) {
-        	stopX = canvasWidth * startPercentage;
+        	stopX = totalWidth * startPercentage;
         	canvas.drawLine(startX, centerY, stopX, centerY, mPaint);
         	startX = stopX + gapWidth;
         }
-    	canvas.drawLine(startX, centerY, canvasWidth, centerY, mPaint);
+    	canvas.drawLine(startX, centerY, totalWidth, centerY, mPaint);
 	}
 
 	@Override

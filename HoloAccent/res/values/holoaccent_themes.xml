@@ -80,11 +80,6 @@
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
-<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
-<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
-<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
-<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
-
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
     </style>
@@ -152,11 +147,6 @@
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
-<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
-<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
-<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
-<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
-
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
     </style>
     
@@ -222,11 +212,6 @@
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
-
-<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
-<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
-<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
-<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
 
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
         
@@ -303,11 +288,6 @@
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
-<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
-<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
-<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
-<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
-
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
     </style>
     <!-- @hide -->
@@ -372,11 +352,6 @@
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
-
-<!--         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item> -->
-<!--         <item name="calendarViewStyle">@style/Widget.Holo.CalendarView</item> -->
-<!--         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item> -->
-<!--         <item name="datePickerStyle">@style/Widget.Holo.DatePicker</item> -->
 
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
     </style>
