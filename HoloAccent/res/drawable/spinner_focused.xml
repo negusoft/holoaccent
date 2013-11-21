@@ -23,9 +23,6 @@
         android:bottom="2dp" />
     
     <item android:drawable="@drawable/roundrect_spinner_focussed" />
-    
-    <item>
-        <nine-patch android:src="@drawable/spinner_default_holo_dark"/>
-    </item>
+    <item android:drawable="@drawable/spinner_default" />
     
 </layer-list>

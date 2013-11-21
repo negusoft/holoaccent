@@ -44,6 +44,7 @@ import com.negusoft.holoaccent.intercepter.RectInterceptor;
 import com.negusoft.holoaccent.intercepter.RoundRectInterceptor;
 import com.negusoft.holoaccent.intercepter.ScrubberInterceptor;
 import com.negusoft.holoaccent.intercepter.SolidColorInterceptor;
+import com.negusoft.holoaccent.intercepter.SpinnerInterceptor;
 import com.negusoft.holoaccent.intercepter.TextSelectHandleInterceptor;
 import com.negusoft.holoaccent.intercepter.ToggleInterceptor;
 import com.negusoft.holoaccent.intercepter.UnderlineInterceptor;
@@ -124,6 +125,7 @@ public class AccentResources extends Resources {
 		mIterceptors.add(new IndeterminateInterceptor());
 		mIterceptors.add(new RadioOnInterceptor());
 		mIterceptors.add(new OverScrollInterceptor());
+		mIterceptors.add(new SpinnerInterceptor());
 	}
 
 	@Override

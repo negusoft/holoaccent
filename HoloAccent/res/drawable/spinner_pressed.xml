@@ -17,8 +17,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
     <item android:drawable="@drawable/roundrect_spinner_pressed" />
-    <item>
-        <nine-patch android:src="@drawable/spinner_default_holo_dark"/>
-    </item>
+    <item android:drawable="@drawable/spinner_default" />
     
 </layer-list>
