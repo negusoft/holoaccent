@@ -72,7 +72,7 @@
         <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow</item>
         <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow</item>
 
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
@@ -140,7 +140,7 @@
         <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow.Light</item>
         <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.Light</item>
 
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
@@ -206,7 +206,7 @@
         <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow.Light</item>
         <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.Light</item>
 
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
@@ -280,7 +280,7 @@
         <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow</item>
         <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow</item>
 
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner</item>
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
@@ -346,7 +346,7 @@
         <item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow.Light</item>
         <item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.Light</item>
 
-    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light</item>
+    	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/actionmode_background_top_light</item>
         <item name="android:actionModeSplitBackground">@drawable/actionmode_background_bottom_light</item>
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>

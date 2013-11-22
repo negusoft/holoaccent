@@ -88,6 +88,12 @@
     <style name="HoloAccent.Spinner.Light" parent="android:Widget.Holo.Light.Spinner">
         <item name="android:background">@drawable/spinner_background_light</item>
     </style>
+    <style name="HoloAccent.Spinner.ActionBar">
+        <item name="android:background">@drawable/ab_spinner_background</item>
+    </style>
+    <style name="HoloAccent.Spinner.Light.ActionBar">
+        <item name="android:background">@drawable/ab_spinner_background_light</item>
+    </style>
     
     <!-- SeekBar styles -->
     <style name="HoloAccent.SeekBar" parent="android:Widget.Holo.SeekBar">

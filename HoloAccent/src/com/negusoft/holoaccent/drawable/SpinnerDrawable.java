@@ -17,8 +17,9 @@ public class SpinnerDrawable extends Drawable {
 	private static final float LINE_WIDTH_DP = 0.5f;
 	private static final float TRIANGLE_SIDE_DP = 12f;
 	private static final float VERTICAL_OFFSET_DP = 4f;
+	private static final float AB_BOTTOM_MARGIN_DP = 2f;
 	
-	public enum Type { DEFAULT, DEFAULT_INVERSE, NO_LINE, NO_LINE_INVERSE };
+	public enum Type { DEFAULT, DEFAULT_INVERSE, ACTIONBAR, ACTIONBAR_INVERSE };
 
 	private final SpinnerConstantState mState;
 	private final Paint mPaint;
@@ -57,10 +58,10 @@ public class SpinnerDrawable extends Drawable {
 			return getPathDefault(bounds);
 		case DEFAULT_INVERSE:
 			return getPathDefaultInverse(bounds);
-		case NO_LINE:
-			return getPathNoLine(bounds);
-		case NO_LINE_INVERSE:
-			return getPathNoLineInverse(bounds);
+		case ACTIONBAR:
+			return getPathActionbar(bounds);
+		case ACTIONBAR_INVERSE:
+			return getPathActionbarInverse(bounds);
 		default:
 			return getPathDefault(bounds);
 		}
@@ -116,15 +117,14 @@ public class SpinnerDrawable extends Drawable {
 		return result;
 	}
 
-	private Path getPathNoLine(Rect bounds) {
-		float lineWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, LINE_WIDTH_DP, mState.mDisplayMetrics);
+	private Path getPathActionbar(Rect bounds) {
 		float triangleSide = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, TRIANGLE_SIDE_DP, mState.mDisplayMetrics);
-		float verticalOffset = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_OFFSET_DP, mState.mDisplayMetrics);
+		float margin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, AB_BOTTOM_MARGIN_DP, mState.mDisplayMetrics);
 
-		float left = bounds.right - lineWidth;
+		float left = bounds.right;
 		float right = bounds.right + triangleSide;
-		float bottom = bounds.bottom + verticalOffset;
-		float top = bottom - triangleSide - lineWidth;
+		float bottom = bounds.bottom - margin;
+		float top = bottom - triangleSide;
 		
 		Path result = new Path();
 		//start from the top corner and go down
@@ -136,15 +136,14 @@ public class SpinnerDrawable extends Drawable {
 		return result;
 	}
 
-	private Path getPathNoLineInverse(Rect bounds) {
-		float lineWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, LINE_WIDTH_DP, mState.mDisplayMetrics);
+	private Path getPathActionbarInverse(Rect bounds) {
 		float triangleSide = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, TRIANGLE_SIDE_DP, mState.mDisplayMetrics);
-		float verticalOffset = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, VERTICAL_OFFSET_DP, mState.mDisplayMetrics);
+		float margin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, AB_BOTTOM_MARGIN_DP, mState.mDisplayMetrics);
 
 		float left = bounds.left - triangleSide;
-		float right = bounds.left + lineWidth;
-		float bottom = bounds.bottom + verticalOffset;
-		float top = bottom - triangleSide - lineWidth;
+		float right = bounds.left;
+		float bottom = bounds.bottom - margin;
+		float top = bottom - triangleSide;
 		
 		Path result = new Path();
 		//start from the top corner and go down

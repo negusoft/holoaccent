@@ -52,6 +52,26 @@ public class SpinnerInterceptor implements AccentResources.Interceptor {
 		if (resId == R.drawable.spinner_indicator_rtl_disabled_light)
 			return new SpinnerDrawable(res, COLOR_DISABLED_LIGHT, SpinnerDrawable.Type.DEFAULT_INVERSE);
 		
+		// ActionBar - Default
+		if (resId == R.drawable.ab_spinner_indicator)
+			return new SpinnerDrawable(res, COLOR_DEFAULT_DARK, SpinnerDrawable.Type.ACTIONBAR);
+		if (resId == R.drawable.ab_spinner_indicator_disabled)
+			return new SpinnerDrawable(res, COLOR_DISABLED_DARK, SpinnerDrawable.Type.ACTIONBAR);
+		if (resId == R.drawable.ab_spinner_indicator_light)
+			return new SpinnerDrawable(res, COLOR_DEFAULT_LIGHT, SpinnerDrawable.Type.ACTIONBAR);
+		if (resId == R.drawable.ab_spinner_indicator_disabled_light)
+			return new SpinnerDrawable(res, COLOR_DISABLED_LIGHT, SpinnerDrawable.Type.ACTIONBAR);
+		
+		// ActionBar - Inverse (right to left)
+		if (resId == R.drawable.ab_spinner_indicator_rtl)
+			return new SpinnerDrawable(res, COLOR_DEFAULT_DARK, SpinnerDrawable.Type.ACTIONBAR_INVERSE);
+		if (resId == R.drawable.ab_spinner_indicator_rtl_disabled)
+			return new SpinnerDrawable(res, COLOR_DISABLED_DARK, SpinnerDrawable.Type.ACTIONBAR_INVERSE);
+		if (resId == R.drawable.ab_spinner_indicator_rtl_light)
+			return new SpinnerDrawable(res, COLOR_DEFAULT_LIGHT, SpinnerDrawable.Type.ACTIONBAR_INVERSE);
+		if (resId == R.drawable.ab_spinner_indicator_rtl_disabled_light)
+			return new SpinnerDrawable(res, COLOR_DISABLED_LIGHT, SpinnerDrawable.Type.ACTIONBAR_INVERSE);
+		
 		return null;
 	}
 
