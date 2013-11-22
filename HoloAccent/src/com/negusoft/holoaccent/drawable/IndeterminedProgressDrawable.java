@@ -39,12 +39,11 @@ import com.negusoft.holoaccent.R;
  */
 public class IndeterminedProgressDrawable extends Drawable {
 
-//	private static final float MIN_WIDTH_DP = 606.0f;
-	private static final float MIN_WIDTH_DP = 240.0f;
+	private static final float MIN_NATIVE_WIDTH_DP = 606.0f;
+	private static final float MIN_WIDTH_DP = 64.0f;
 	private static final float MIN_HEIGHT_DP = 16.0f;
 	private static final float LINE_WIDTH_DP = 4.0f;
 	private static final float GAP_WIDTH_DP = 4.0f;
-//	private static final float GAP_WIDTH_PERCENTAGE = 0.007f;
 	
 	// Percentages taken from the original PNG files
 	private final float[] GAP_PERCENTAGES_1 = new float[] { 0.07920792f, 0.33333334f, 0.6386139f, 0.8679868f, 0.97359735f };
@@ -64,8 +63,9 @@ public class IndeterminedProgressDrawable extends Drawable {
 	private final DisplayMetrics mDisplayMetrics;
     private final Paint mPaint;
     private final float[] mGapPercentages;
+    private final boolean mEnhanced;
 	
-	public IndeterminedProgressDrawable(Context c, int index) {
+	public IndeterminedProgressDrawable(Context c, int index, boolean enhanced) {
 		Resources res = c.getResources();
 		mDisplayMetrics = res.getDisplayMetrics();
 
@@ -73,14 +73,20 @@ public class IndeterminedProgressDrawable extends Drawable {
 		int color = attrs.getColor(R.styleable.HoloAccent_accentColor, res.getColor(R.color.key));
 		attrs.recycle();
 
+		mEnhanced = enhanced;
         mPaint = getPaint(mDisplayMetrics, color);
         
         mGapPercentages = getGapPercentages(index);
 	}
 	
 	public IndeterminedProgressDrawable(Resources res, int color, int index) {
+		this(res, color, index, true);
+	}
+	
+	public IndeterminedProgressDrawable(Resources res, int color, int index, boolean enhanced) {
 		mDisplayMetrics = res.getDisplayMetrics();
         mPaint = getPaint(mDisplayMetrics, color);
+        mEnhanced = enhanced;
         mGapPercentages = getGapPercentages(index);
 	}
 	
@@ -117,14 +123,14 @@ public class IndeterminedProgressDrawable extends Drawable {
 		Rect bounds = getBounds();
 		
 		float totalWidth = bounds.width();
-		float minWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, MIN_WIDTH_DP, mDisplayMetrics);
+		float minWidthDp = mEnhanced ? MIN_WIDTH_DP : MIN_NATIVE_WIDTH_DP;
+		float minWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minWidthDp, mDisplayMetrics);
 		if (totalWidth < minWidth)
 			totalWidth = minWidth;
         
         float centerY = bounds.exactCenterY();
         float startX = bounds.left;
         float stopX;
-//        float gapWidth = canvasWidth * GAP_WIDTH_PERCENTAGE;
         float gapWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, GAP_WIDTH_DP, mDisplayMetrics);
         
         // Draw the lines before the gaps
