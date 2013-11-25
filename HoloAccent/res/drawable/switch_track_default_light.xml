@@ -14,8 +14,15 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle" >
-    <solid android:color="#4D999999" />
-    <size android:width="@dimen/switch_min_width" android:height="@dimen/switch_rect_height"/>
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:left="@dimen/switch_track_margin_horizontal"
+        android:right="@dimen/switch_track_margin_horizontal">
+        <shape android:shape="rectangle" >
+            <solid android:color="#4D999999" />
+            <size
+                android:height="@dimen/switch_rect_height"
+                android:width="@dimen/switch_min_width" />
+        </shape>
+    </item>
+</layer-list>
