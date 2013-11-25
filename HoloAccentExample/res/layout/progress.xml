@@ -12,64 +12,88 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin" >
 
-        <!-- Normal -->
+        <!-- Inteterminate -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/edittext_title" />
+            android:text="@string/progress_indeterminate" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
             android:background="@drawable/background_accent" />
-        
-        <EditText
+
+        <ProgressBar
+            style="?android:progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/edittext_default" />
+            android:indeterminate="true" />
 
-        <EditText
-            android:layout_width="match_parent"
+        <ProgressBar
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:inputType="text"
-            android:hint="@string/edittext_disabled" />
+            android:indeterminate="true" />
 
-        <EditText
-            android:layout_width="match_parent"
+        <ProgressBar
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="@string/edittext_input_text" />
+            android:indeterminate="true" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/edittext_input_password" />
-
-        <!-- Auto complete -->
+        <!-- Default -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/edittext_title" />
+            android:text="@string/progress_default" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
             android:background="@drawable/background_accent" />
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView1"
+        <ProgressBar
+            style="?android:progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/edittext_autocomplete" />
+            android:progress="10" />
 
-        <MultiAutoCompleteTextView
-            android:id="@+id/autoCompleteTextView2"
+        <ProgressBar
+            style="?android:progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/edittext_multi_autocomplete" />
+            android:progress="50" />
+
+        <ProgressBar
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="80" />
+
+        <!-- SeekBars -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/progress_seekbars" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/background_accent" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="62" />
+
+        <SeekBar
+            android:id="@+id/myseekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:progress="48" />
     </LinearLayout>
 
 </ScrollView>

@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 
 import com.negusoft.holoaccent.example.R;
 
-public class BarFragment extends Fragment {
+public class ProgressFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.bars, null);
+		return inflater.inflate(R.layout.progress, null);
 	}
 	
 	@Override

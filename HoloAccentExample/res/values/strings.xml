@@ -2,6 +2,13 @@
 <resources>
 
     <string name="app_name">HoloAccent</string>
+    
+    <string name="tab_buttons">Buttons</string>
+    <string name="tab_choices">Choices</string>
+    <string name="tab_progress">Progress</string>
+    <string name="tab_list">List</string>
+    <string name="tab_text_fields">Text Fields</string>
+    
     <string name="action_dummie">Dummie item</string>
     <string name="action_alert_dialog">Alert Dialog</string>
     <string name="action_dialog_activity">Dialog Activity</string>
@@ -10,6 +17,36 @@
     <string name="action_theme_override_activity">Theme Override</string>
     <string name="action_holo_theme_activity">Holo Theme</string>
     <string name="action_preferences_activity">Preferences</string>
+    
+    <string name="button_colored">Colored Button</string>
+    <string name="button_default">Button</string>
+    <string name="button_disabled">Disabled</string>
+    <string name="button_small">Small Style</string>
+    <string name="button_borderless">Borderless Style</string>
+    <string name="button_image">Image Button</string>
+    <string name="button_inset">Inset Style</string>
+    
+    <string name="checkbox_title">Check Boxes</string>
+    <string name="checkbox_enabled">Enabled</string>
+    <string name="checkbox_disabled">Disabled</string>
+    
+    <string name="radio_title">Radio Buttons</string>
+    <string name="radio_enabled_1">Option 1</string>
+    <string name="radio_enabled_2">Option 2</string>
+    <string name="radio_disabled_1">Disabled 1</string>
+    <string name="radio_disabled_2">Disabled 2</string>
+    
+    <string name="progress_indeterminate">Indeterminate</string>
+    <string name="progress_default">Default</string>
+    <string name="progress_seekbars">SeekBars</string>
+    
+    <string name="edittext_title">Normal</string>
+    <string name="edittext_default">default</string>
+    <string name="edittext_disabled">disabled</string>
+    <string name="edittext_input_text">input: text</string>
+    <string name="edittext_input_password">input: password</string>
+    <string name="edittext_autocomplete">autocomplete</string>
+    <string name="edittext_multi_autocomplete">multi autocomplete</string>
 
     <string-array name="list_items">
         <item>one</item>

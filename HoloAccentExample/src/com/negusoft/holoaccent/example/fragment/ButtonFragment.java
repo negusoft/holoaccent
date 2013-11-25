@@ -41,6 +41,7 @@ public class ButtonFragment extends Fragment {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private View.OnLongClickListener mPopupListener = new View.OnLongClickListener() {
 		@Override public boolean onLongClick(View v) {
 			String[] versions = { "Camera", "Laptop", "Watch", "Smartphone",

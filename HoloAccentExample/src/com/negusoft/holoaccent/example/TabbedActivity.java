@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,36 +15,19 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
-import com.negusoft.holoaccent.example.fragment.BarFragment;
+import com.negusoft.holoaccent.example.fragment.ProgressFragment;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
-import com.negusoft.holoaccent.example.fragment.CheckFragment;
+import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
-import com.negusoft.holoaccent.example.fragment.RadioFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
 
 public class TabbedActivity extends FragmentActivity implements ActionBar.TabListener {
 
-	/**
-	 * The {@link android.support.v4.view.PagerAdapter} that will provide
-	 * fragments for each of the sections. We use a
-	 * {@link android.support.v4.app.FragmentPagerAdapter} derivative, which
-	 * will keep every loaded fragment in memory. If this becomes too memory
-	 * intensive, it may be best to switch to a
-	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
-
-	/**
-	 * The {@link ViewPager} that will host the section contents.
-	 */
 	ViewPager mViewPager;
 
 	@Override
@@ -57,35 +41,23 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 			
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-			// Create the adapter that will return a fragment for each of the three
-			// primary sections of the app.
-			mSectionsPagerAdapter = new SectionsPagerAdapter(
-					getSupportFragmentManager());
-
-			// Set up the ViewPager with the sections adapter.
+			FragmentManager fragmentManager = getSupportFragmentManager();
+			mSectionsPagerAdapter = new SectionsPagerAdapter(fragmentManager);
 			mViewPager = (ViewPager) findViewById(R.id.pager);
 			mViewPager.setAdapter(mSectionsPagerAdapter);
 
-			// When swiping between different sections, select the corresponding
-			// tab. We can also use ActionBar.Tab#select() to do this if we have
-			// a reference to the Tab.
-			mViewPager
-					.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-						@Override
-						public void onPageSelected(int position) {
+			mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+						@Override public void onPageSelected(int position) {
 							actionBar.setSelectedNavigationItem(position);
 						}
 					});
 
 			// For each of the sections in the app, add a tab to the action bar.
 			for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-				// Create a tab with text corresponding to the page title defined by
-				// the adapter. Also specify this Activity object, which implements
-				// the TabListener interface, as the callback (listener) for when
-				// this tab is selected.
-				actionBar.addTab(actionBar.newTab()
+				Tab newTab = actionBar.newTab()
 						.setText(mSectionsPagerAdapter.getPageTitle(i))
-						.setTabListener(this));
+						.setTabListener(this);
+				actionBar.addTab(newTab);
 			}
 		}
 	}
@@ -171,29 +143,33 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 						});
 		builder.show();
 	}
+	
+	private final class FragmentTabHolder {
+		public final Fragment fragment;
+		public final String title;
+		public FragmentTabHolder(Fragment fragment, int titleResId) {
+			this.fragment = fragment;
+			this.title = getString(titleResId);
+		}
+	}
 
-	/**
-	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-	 * one of the sections/tabs/pages.
-	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 		
-		private final List<Fragment> mFragments;
+		private final List<FragmentTabHolder> mFragments;
 
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
-			mFragments = new ArrayList<Fragment>();
-			mFragments.add(new CheckFragment());
-			mFragments.add(new BarFragment());
-			mFragments.add(new TextviewFragment());
-			mFragments.add(new ListFragment());
-			mFragments.add(new RadioFragment());
-			mFragments.add(new ButtonFragment());
+			mFragments = new ArrayList<FragmentTabHolder>();
+			mFragments.add(new FragmentTabHolder(new ChoicesFragment(), R.string.tab_choices));
+			mFragments.add(new FragmentTabHolder(new ButtonFragment(), R.string.tab_buttons));
+			mFragments.add(new FragmentTabHolder(new ListFragment(), R.string.tab_list));
+			mFragments.add(new FragmentTabHolder(new TextviewFragment(), R.string.tab_text_fields));
+			mFragments.add(new FragmentTabHolder(new ProgressFragment(), R.string.tab_progress));
 		}
 
 		@Override
 		public Fragment getItem(int position) {
-			return mFragments.get(position);
+			return mFragments.get(position).fragment;
 		}
 
 		@Override
@@ -203,34 +179,7 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			return "Section " + position;
-		}
-	}
-
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class DummySectionFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
-
-		public DummySectionFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_tabbed_dummy,
-					container, false);
-			TextView dummyTextView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-			return rootView;
+			return mFragments.get(position).title;
 		}
 	}
 

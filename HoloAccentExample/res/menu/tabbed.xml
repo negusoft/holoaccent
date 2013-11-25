@@ -35,53 +35,5 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_preferences_activity"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
-    <item
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_dummie"/>
 
 </menu>
