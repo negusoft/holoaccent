@@ -31,6 +31,10 @@ public class SolidColorInterceptor implements AccentResources.Interceptor {
 
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
+		if (resId == R.drawable.solid_accent)
+			return new ColorDrawable(palette.accentColor);
+		if (resId == R.drawable.solid_accent_dark)
+			return new ColorDrawable(palette.getDarkAccentColor());
 		if (resId == R.drawable.solid_pressed)
 			return new ColorDrawable(palette.getTranslucent(PRESSED_ALPHA));
 		if (resId == R.drawable.solid_focused)
