@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!--     android:layout_width="match_parent" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:background="@drawable/list_item_background" > -->
+
+<!--     <TextView -->
+<!--         android:id="@android:id/text1" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:gravity="center_vertical" -->
+<!--         android:minHeight="?android:attr/listPreferredItemHeightSmall" -->
+<!--         android:paddingEnd="8dp" -->
+<!--         android:paddingStart="8dp" -->
+<!--         android:textAppearance="?android:attr/textAppearanceListItemSmall" /> -->
+
+<!-- </FrameLayout> -->
+
+    <com.negusoft.holoaccent.example.view.CheckableTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
