@@ -22,15 +22,9 @@ import android.view.Window;
 
 import com.negusoft.holoaccent.dialog.DividerPainter;
 
-public class DialogPreference
-	extends android.preference.EditTextPreference {
+public abstract class DialogPreference extends android.preference.DialogPreference {
 	
 	private final DividerPainter mPainter;
-
-	public DialogPreference(Context context) {
-		super(context);
-		mPainter = new DividerPainter(context);
-	}
 
 	public DialogPreference(Context context, AttributeSet attrs) {
 		super(context, attrs);
