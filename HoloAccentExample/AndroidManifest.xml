@@ -38,7 +38,7 @@
             android:theme="@style/Theme.HoloAccent.Light.Dialog" />
         <activity
             android:name="com.negusoft.holoaccent.example.PreferencesActivity"
-            android:label="@string/title_activity_preferences"
+            android:label="@string/pref_title"
             android:parentActivityName="com.negusoft.holoaccent.example.TabbedActivity" />
     </application>
 

@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="pref_title">Preferences</string>
+
+    <string name="pref_category_dialog">Dialogs</string>
+    <string name="pref_category_misc">Misc</string>
+    
+    <string name="pref_title_checkbox">Check box</string>
+    <string name="pref_description_checkbox">Just the native CheckBoxPreference</string>
+    
+    <string name="pref_title_edittext">EditTextPreference</string>
+    <string name="pref_default_edittext">Default Value</string>
+    
+    <string name="pref_title_list">ListPreference</string>
+    <string name="pref_title_multi_list">MultiSelectListPreference</string>
+
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+    
+    <string name="pref_title_switch">SwitchPreference</string>
+    <string name="pref_summary_on_switch">Switch on</string>
+    <string name="pref_summary_off_switch">Switch off</string>
+    <string name="pref_text_on_switch">pref. on</string>
+    <string name="pref_text_off_switch">pref. off</string>
+    
+    <string name="pref_title_custom_dialog">Custom Dialog</string>
+    <string name="pref_message_dialog">The preference doesn\'t actually do anything but it is an example on how to extend DialogPreference</string>
+
+</resources>
