@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Overrides the accent color -->
     <style name="Theme.HoloAccent.Override" parent="Theme.HoloAccent.Light">
-        <item name="accentColor">#f00</item>
+        <item name="accentColor">#ff0000</item>
+        <item name="accentColorTranslucent">#66ff0000</item>
     </style>
 
 </resources>
