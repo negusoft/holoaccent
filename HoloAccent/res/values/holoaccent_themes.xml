@@ -20,7 +20,9 @@
         <item name="accentColor">@color/key</item>
         <item name="accentColorTranslucent">@color/key_translucent</item>
 
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="coloredButtonStyle">@style/HoloAccent.Button.Colored</item>
+        <item name="coloredButtonStyleSmall">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="coloredImageButtonStyle">@style/HoloAccent.ImageButton.Colored</item>
         <item name="accentSwitchStyle">@style/AccentSwitch</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -88,7 +90,9 @@
         <item name="accentColor">@color/key</item>
         <item name="accentColorTranslucent">@color/key_translucent</item>
 
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="coloredButtonStyle">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="coloredButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="coloredImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored</item>
         <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -154,7 +158,9 @@
         <item name="accentColor">@color/key</item>
         <item name="accentColorTranslucent">@color/key_translucent</item>
 
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="coloredButtonStyle">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="coloredButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="coloredImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored</item>
         <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -169,9 +175,9 @@
         
         <item name="android:editTextBackground">@drawable/textfield_light</item>
         
-        <item name="android:buttonStyle">@style/HoloAccent.Button</item>
-        <item name="android:buttonStyleSmall">@style/HoloAccent.Button.Small</item>
-        <item name="android:buttonStyleInset">@style/HoloAccent.Button</item>
+        <item name="android:buttonStyle">@style/HoloAccent.Light.Button</item>
+        <item name="android:buttonStyleSmall">@style/HoloAccent.Light.Button.Small</item>
+        <item name="android:buttonStyleInset">@style/HoloAccent.Light.Button</item>
         <item name="android:buttonStyleToggle">@style/Widget.HoloAccent.Light.Button.Toggle</item>
 <!--         <item name="android:mediaRouteButtonStyle">@android:style/Widget.Holo.MediaRouteButton</item> -->
 
@@ -228,7 +234,9 @@
     <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
         <!-- Copy of Theme.HoloAccents, except the 'accentColor' and 'accentColorTranslucent' attributes -->
 
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="coloredButtonStyle">@style/HoloAccent.Button.Colored</item>
+        <item name="coloredButtonStyleSmall">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="coloredImageButtonStyle">@style/HoloAccent.ImageButton.Colored</item>
         <item name="accentSwitchStyle">@style/AccentSwitch</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -294,7 +302,9 @@
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
         <!-- Copy of Theme.HoloAccents.Light, except the 'accentColor' and 'accentColorTranslucent' attributes -->
 
-        <item name="coloredButtonBackground">@drawable/btn_default_colored</item>
+        <item name="coloredButtonStyle">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="coloredButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="coloredImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored</item>
         <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>

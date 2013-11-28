@@ -15,7 +15,9 @@
 -->
 <resources>
     
-    <attr name="coloredButtonBackground" format="reference" />
+    <attr name="coloredButtonStyle" format="reference" />
+    <attr name="coloredButtonStyleSmall" format="reference" />
+    <attr name="coloredImageButtonStyle" format="reference" />
 
     <declare-styleable name="HoloAccent">
         <attr name="accentColor" format="color|reference" />
