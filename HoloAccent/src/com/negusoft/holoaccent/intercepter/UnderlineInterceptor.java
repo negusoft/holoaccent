@@ -27,14 +27,14 @@ public class UnderlineInterceptor implements AccentResources.Interceptor {
 
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.underline_1_5)
+		if (resId == R.drawable.ha__underline_1_5)
 			return new UnderlineDrawable(res, palette.accentColor, 1.5f);
-		if (resId == R.drawable.underline_3)
+		if (resId == R.drawable.ha__underline_3)
 			return new UnderlineDrawable(res, palette.accentColor, 3f);
-		if (resId == R.drawable.underline_6)
+		if (resId == R.drawable.ha__underline_6)
 			return new UnderlineDrawable(res, palette.accentColor, 6f);
 		// overline
-		if (resId == R.drawable.overline_3)
+		if (resId == R.drawable.ha__overline_3)
 			return new UnderlineDrawable(res, palette.accentColor, 3f, true);
 		return null;
 	}

@@ -27,9 +27,9 @@ public class FastScrollInterceptor implements AccentResources.Interceptor {
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.fastscroll_thumb_default)
+		if (resId == R.drawable.ha__fastscroll_thumb_default)
 			return new FastScrollDrawable(res.getDisplayMetrics(), palette, false);
-		if (resId == R.drawable.fastscroll_thumb_pressed)
+		if (resId == R.drawable.ha__fastscroll_thumb_pressed)
 			return new FastScrollDrawable(res.getDisplayMetrics(), palette, true);
 		return null;
 	}

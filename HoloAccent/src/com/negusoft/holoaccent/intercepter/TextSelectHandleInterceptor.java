@@ -28,11 +28,11 @@ public class TextSelectHandleInterceptor implements AccentResources.Interceptor 
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.text_select_handle_left_accent)
+		if (resId == R.drawable.ha__text_select_handle_left_accent)
 			return new TextSelectHandleDrawable(res.getDisplayMetrics(), palette, HandleType.LEFT);
-		if (resId == R.drawable.text_select_handle_right_accent)
+		if (resId == R.drawable.ha__text_select_handle_right_accent)
 			return new TextSelectHandleDrawable(res.getDisplayMetrics(), palette, HandleType.RIGHT);
-		if (resId == R.drawable.text_select_handle_middle_accent)
+		if (resId == R.drawable.ha__text_select_handle_middle_accent)
 			return new TextSelectHandleDrawable(res.getDisplayMetrics(), palette, HandleType.MIDDLE);
 		return null;
 	}

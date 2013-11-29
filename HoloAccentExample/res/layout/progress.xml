@@ -21,7 +21,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/background_accent" />
+            android:background="@drawable/ha__background_accent" />
 
         <ProgressBar
             style="?android:progressBarStyleHorizontal"
@@ -51,7 +51,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/background_accent" />
+            android:background="@drawable/ha__background_accent" />
 
         <ProgressBar
             style="?android:progressBarStyleHorizontal"
@@ -81,7 +81,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/background_accent" />
+            android:background="@drawable/ha__background_accent" />
 
         <SeekBar
             android:layout_width="match_parent"

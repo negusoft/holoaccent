@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2013 NEGU Soft
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+    
+    <dimen name="ha__radio_size">32dp</dimen>
+    <dimen name="ha__radio_outer_ring_inner_radius">8dp</dimen>
+    <dimen name="ha__radio_outer_ring_thickness">1dp</dimen>
+    <dimen name="ha__radio_glow_inner_radius">4dp</dimen>
+    <dimen name="ha__radio_glow_thickness">25dp</dimen>
+    <dimen name="ha__radio_center_margin">11.5dp</dimen>
+    <dimen name="ha__radio_center_glow_margin">12dp</dimen>
+    
+    <dimen name="ha__btn_default_margin">4dp</dimen>
+    <dimen name="ha__btn_default_fill_margin">6dp</dimen>
+    <dimen name="ha__btn_fill_corner_radius">1.5dp</dimen>
+    <dimen name="ha__btn_border_corner_radius">1.0dp</dimen>
+    
+    <dimen name="ha__switch_track_margin_horizontal">2dp</dimen>
+    <dimen name="ha__switch_offset_horizontal">11.4dp</dimen>
+    <dimen name="ha__switch_offset_vertical">-3dp</dimen>
+    <dimen name="ha__switch_total_margin_horizontal">15.4dp</dimen>
+    <dimen name="ha__switch_total_margin_vertical">1dp</dimen>
+    <dimen name="ha__switch_rect_height">23dp</dimen>
+    <dimen name="ha__switch_min_width">96dp</dimen>
+
+</resources>

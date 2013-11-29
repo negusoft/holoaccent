@@ -59,17 +59,17 @@ public class SwitchPreference extends android.preference.SwitchPreference {
 
 	public SwitchPreference(Context context) {
 		super(context);
-		setWidgetLayoutResource(R.layout.switch_preference);
+		setWidgetLayoutResource(R.layout.ha__switch_preference);
 	}
 
 	public SwitchPreference(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		setWidgetLayoutResource(R.layout.switch_preference);
+		setWidgetLayoutResource(R.layout.ha__switch_preference);
 	}
 
 	public SwitchPreference(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		setWidgetLayoutResource(R.layout.switch_preference);
+		setWidgetLayoutResource(R.layout.ha__switch_preference);
 	}
 
     @Override

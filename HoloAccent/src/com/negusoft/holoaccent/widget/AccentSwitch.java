@@ -166,19 +166,19 @@ public class AccentSwitch extends CompoundButton {
 
 		mThumbDrawable = a.getDrawable(R.styleable.AccentSwitch_thumb);
 		if (mThumbDrawable == null)
-			mThumbDrawable = getResources().getDrawable(R.drawable.switch_thumb);
+			mThumbDrawable = getResources().getDrawable(R.drawable.ha__switch_thumb);
 		
 		mTrackDrawable = a.getDrawable(R.styleable.AccentSwitch_track);
 		if (mTrackDrawable == null)
-			mTrackDrawable = getResources().getDrawable(R.drawable.switch_track);
+			mTrackDrawable = getResources().getDrawable(R.drawable.ha__switch_track);
 		
 		mTextOn = a.getText(R.styleable.AccentSwitch_textOn);
 		if (mTextOn == null)
-			mTextOn = getResources().getString(R.string.switchOn);
+			mTextOn = getResources().getString(R.string.ha__switchOn);
 		
 		mTextOff = a.getText(R.styleable.AccentSwitch_textOff);
 		if (mTextOff == null)
-			mTextOff = getResources().getString(R.string.switchOff);
+			mTextOff = getResources().getString(R.string.ha__switchOff);
 		
 		mThumbTextPadding = a.getDimensionPixelSize(
 				R.styleable.AccentSwitch_thumbTextPadding, 0);
@@ -221,13 +221,13 @@ public class AccentSwitch extends CompoundButton {
 	 */
 	public void setSwitchTextAppearance(Context context, int resid) {
 		TypedArray appearance = context.obtainStyledAttributes(resid,
-				R.styleable.TextAppearanceSwitch);
+				R.styleable.TextAppearanceAccentSwitch);
 
 		ColorStateList colors;
 		int ts;
 
 		colors = appearance
-				.getColorStateList(R.styleable.TextAppearanceSwitch_textColor);
+				.getColorStateList(R.styleable.TextAppearanceAccentSwitch_textColor);
 		if (colors != null) {
 			mTextColors = colors;
 		} else {
@@ -237,7 +237,7 @@ public class AccentSwitch extends CompoundButton {
 		}
 
 		ts = appearance.getDimensionPixelSize(
-				R.styleable.TextAppearanceSwitch_textSize, 0);
+				R.styleable.TextAppearanceAccentSwitch_textSize, 0);
 		if (ts != 0) {
 			if (ts != mTextPaint.getTextSize()) {
 				mTextPaint.setTextSize(ts);
@@ -248,14 +248,14 @@ public class AccentSwitch extends CompoundButton {
 		int typefaceIndex, styleIndex;
 
 		typefaceIndex = appearance.getInt(
-				R.styleable.TextAppearanceSwitch_typeface, -1);
+				R.styleable.TextAppearanceAccentSwitch_typeface, -1);
 		styleIndex = appearance.getInt(
-				R.styleable.TextAppearanceSwitch_textStyle, -1);
+				R.styleable.TextAppearanceAccentSwitch_textStyle, -1);
 
 		setSwitchTypefaceByIndex(typefaceIndex, styleIndex);
 
 		boolean allCaps = appearance.getBoolean(
-				R.styleable.TextAppearanceSwitch_textAllCaps, false);
+				R.styleable.TextAppearanceAccentSwitch_textAllCaps, false);
 		if (allCaps) {
 			mSwitchTransformationMethod = new AllCapsTransformationMethod(
 					getContext());

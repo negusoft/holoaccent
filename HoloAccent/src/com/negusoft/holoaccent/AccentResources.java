@@ -73,21 +73,21 @@ public class AccentResources extends Resources {
 	}
 	
 	private static final int[] TINT_DRAWABLE_IDS = new int[] {
-		R.drawable.textfield_comp_activated_left,
-		R.drawable.textfield_comp_activated_main,
-		R.drawable.textfield_comp_activated_right,
-		R.drawable.textfield_comp_focused_left,
-		R.drawable.textfield_comp_focused_main,
-		R.drawable.textfield_comp_focused_right,
-		R.drawable.btn_check_comp_off_focus,
-		R.drawable.btn_check_comp_on_focus,
-		R.drawable.progress_comp_primary,
-		R.drawable.scrubber_comp_primary,
-		R.drawable.scrubber_comp_secondary
+		R.drawable.ha__textfield_comp_activated_left,
+		R.drawable.ha__textfield_comp_activated_main,
+		R.drawable.ha__textfield_comp_activated_right,
+		R.drawable.ha__textfield_comp_focused_left,
+		R.drawable.ha__textfield_comp_focused_main,
+		R.drawable.ha__textfield_comp_focused_right,
+		R.drawable.ha__btn_check_comp_off_focus,
+		R.drawable.ha__btn_check_comp_on_focus,
+		R.drawable.ha__progress_comp_primary,
+		R.drawable.ha__scrubber_comp_primary,
+		R.drawable.ha__scrubber_comp_secondary
 	};
 	
 	private static final int[] DARK_TINT_DRAWABLE_IDS = new int[] {
-		R.drawable.btn_check_comp_on_accent
+		R.drawable.ha__btn_check_comp_on_accent
 	};
 
 	private final AccentPalette mPalette;
@@ -215,13 +215,13 @@ public class AccentResources extends Resources {
 		}
 		
 		private Drawable getEdgeDrawable() {
-			Drawable result = AccentResources.super.getDrawable(R.drawable.overscroll_edge);
+			Drawable result = AccentResources.super.getDrawable(R.drawable.ha__overscroll_edge);
 			result.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
 			return result;
 		}
 		
 		private Drawable getGlowDrawable() {
-			Drawable result = AccentResources.super.getDrawable(R.drawable.overscroll_glow);
+			Drawable result = AccentResources.super.getDrawable(R.drawable.ha__overscroll_glow);
 			result.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
 			return result;
 		}

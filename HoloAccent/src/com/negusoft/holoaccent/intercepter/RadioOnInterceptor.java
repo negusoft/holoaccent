@@ -27,7 +27,7 @@ public class RadioOnInterceptor implements AccentResources.Interceptor {
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.radio_on_dot)
+		if (resId == R.drawable.ha__radio_on_dot)
 			return new RadioOnDrawable(res.getDisplayMetrics(), palette);
 		return null;
 	}

@@ -26,14 +26,14 @@ import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
 public class IndeterminateInterceptor implements AccentResources.Interceptor {
 
 	private final int[] INDETERMINED_DRAWABLE_IDS = new int[] {
-		R.drawable.progressbar_indeterminate_1,
-		R.drawable.progressbar_indeterminate_2,
-		R.drawable.progressbar_indeterminate_3,
-		R.drawable.progressbar_indeterminate_4,
-		R.drawable.progressbar_indeterminate_5,
-		R.drawable.progressbar_indeterminate_6,
-		R.drawable.progressbar_indeterminate_7,
-		R.drawable.progressbar_indeterminate_8
+		R.drawable.ha__progressbar_indeterminate_1,
+		R.drawable.ha__progressbar_indeterminate_2,
+		R.drawable.ha__progressbar_indeterminate_3,
+		R.drawable.ha__progressbar_indeterminate_4,
+		R.drawable.ha__progressbar_indeterminate_5,
+		R.drawable.ha__progressbar_indeterminate_6,
+		R.drawable.ha__progressbar_indeterminate_7,
+		R.drawable.ha__progressbar_indeterminate_8
 	};
 	
 	@Override
