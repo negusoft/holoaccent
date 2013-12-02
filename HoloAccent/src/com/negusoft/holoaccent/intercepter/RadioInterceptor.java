@@ -21,12 +21,19 @@ import android.graphics.drawable.Drawable;
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
+import com.negusoft.holoaccent.drawable.RadialGradientDrawable;
 import com.negusoft.holoaccent.drawable.RadioOnDrawable;
 
-public class RadioOnInterceptor implements AccentResources.Interceptor {
+public class RadioInterceptor implements AccentResources.Interceptor {
+
+	private static final int DISABLED_GLOW_COLOR = 0x22ffffff;
+	private static final float DISABLED_GLOW_INNER_RADIUS_DP = 4.5f;
+	private static final float DISABLED_GLOW_OUTER_RADIUS_DP = 8.5f;
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
+		if (resId == R.drawable.ha__gradient_radio_on_disabled)
+			return new RadialGradientDrawable(res.getDisplayMetrics(), DISABLED_GLOW_COLOR, DISABLED_GLOW_INNER_RADIUS_DP, DISABLED_GLOW_OUTER_RADIUS_DP);
 		if (resId == R.drawable.ha__radio_on_dot)
 			return new RadioOnDrawable(res.getDisplayMetrics(), palette);
 		return null;

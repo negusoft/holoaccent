@@ -30,20 +30,6 @@
     <!-- Background colored fill -->
     <item android:drawable="@drawable/ha__circle_pressed"/>
     
-    <!-- glow around -->
-    <item>
-        <shape android:shape="ring"
-            android:innerRadius="@dimen/ha__radio_glow_inner_radius"
-            android:thickness="@dimen/ha__radio_glow_thickness"
-            android:useLevel="false" >
-        <gradient
-            android:type="radial"
-            android:gradientRadius="@dimen/ha__radio_glow_gradient_radius"
-            android:startColor="#afff"
-            android:endColor="#0000" />
-        </shape>
-    </item>
-    
     <!-- Outer ring -->
     <item>
         <shape

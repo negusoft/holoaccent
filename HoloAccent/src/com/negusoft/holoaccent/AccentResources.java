@@ -39,7 +39,7 @@ import android.util.TypedValue;
 import com.negusoft.holoaccent.intercepter.CircleInterceptor;
 import com.negusoft.holoaccent.intercepter.FastScrollInterceptor;
 import com.negusoft.holoaccent.intercepter.IndeterminateInterceptor;
-import com.negusoft.holoaccent.intercepter.RadioOnInterceptor;
+import com.negusoft.holoaccent.intercepter.RadioInterceptor;
 import com.negusoft.holoaccent.intercepter.RectInterceptor;
 import com.negusoft.holoaccent.intercepter.RoundRectInterceptor;
 import com.negusoft.holoaccent.intercepter.ScrubberInterceptor;
@@ -123,9 +123,9 @@ public class AccentResources extends Resources {
 		mIterceptors.add(new TextSelectHandleInterceptor());
 		mIterceptors.add(new FastScrollInterceptor());
 		mIterceptors.add(new IndeterminateInterceptor());
-		mIterceptors.add(new RadioOnInterceptor());
-		mIterceptors.add(new OverScrollInterceptor());
+		mIterceptors.add(new RadioInterceptor());
 		mIterceptors.add(new SpinnerInterceptor());
+		mIterceptors.add(new OverScrollInterceptor());
 	}
 
 	@Override
