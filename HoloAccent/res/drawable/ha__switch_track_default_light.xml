@@ -16,6 +16,8 @@
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
+        android:top="@dimen/ha__switch_track_margin_vertical"
+        android:bottom="@dimen/ha__switch_track_margin_vertical"
         android:left="@dimen/ha__switch_track_margin_horizontal"
         android:right="@dimen/ha__switch_track_margin_horizontal">
         <shape android:shape="rectangle" >

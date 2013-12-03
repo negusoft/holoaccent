@@ -30,10 +30,11 @@
     <dimen name="ha__btn_border_corner_radius">1.0dp</dimen>
     
     <dimen name="ha__switch_track_margin_horizontal">2dp</dimen>
+    <dimen name="ha__switch_track_margin_vertical">2dp</dimen>
     <dimen name="ha__switch_offset_horizontal">11.4dp</dimen>
-    <dimen name="ha__switch_offset_vertical">-3dp</dimen>
+    <dimen name="ha__switch_offset_vertical">-1dp</dimen>
     <dimen name="ha__switch_total_margin_horizontal">15.4dp</dimen>
-    <dimen name="ha__switch_total_margin_vertical">1dp</dimen>
+    <dimen name="ha__switch_total_margin_vertical">3dp</dimen>
     <dimen name="ha__switch_rect_height">23dp</dimen>
     <dimen name="ha__switch_min_width">96dp</dimen>
 
