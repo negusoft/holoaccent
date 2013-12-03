@@ -11,73 +11,198 @@
 	    android:paddingRight="@dimen/activity_horizontal_margin"
 	    android:paddingTop="@dimen/activity_vertical_margin"
 	    android:paddingBottom="@dimen/activity_vertical_margin" >
+	    
+        <!-- Button (Default) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_category_default" />
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
 
 		<LinearLayout
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >
-
-			<LinearLayout
+			<Button
+			    style="@null"
+			    android:id="@+id/listPopupButton"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:orientation="vertical" >
-				<Button
-				    android:id="@+id/listPopupButton"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="@string/button_default" />
-			
-				<Button
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:enabled="false"
-				    android:text="@string/button_disabled" />
-			
-				<Button
-				    style="?android:attr/buttonStyleSmall"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="@string/button_small" />
-			</LinearLayout>
-
-			<LinearLayout
+			    android:text="@string/button_default" />
+		
+			<Button
+			    style="@null"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:orientation="vertical" >
-				<Button
-				    style="?attr/coloredButtonStyle"
-				    android:id="@+id/coloredButton"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="@string/button_default" />
+			    android:enabled="false"
+			    android:text="@string/button_disabled" />
+		
+			<Button
+			    style="?android:attr/buttonStyleSmall"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_small" />
+		</LinearLayout>
+
+        <!-- Colored button -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_colored" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+			<Button
+			    style="?attr/coloredButtonStyle"
+			    android:id="@+id/coloredButton"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_default" />
+		
+			<Button
+			    style="?attr/coloredButtonStyle"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:enabled="false"
+			    android:text="@string/button_disabled" />
+		
+			<Button
+			    style="?attr/coloredButtonStyleSmall"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_small" />
+		</LinearLayout>
+
+        <!-- Colored button (bright) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_colored_bright" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+			<Button
+			    style="?attr/coloredBrightButtonStyle"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_default" />
+		
+			<Button
+			    style="?attr/coloredBrightButtonStyle"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:enabled="false"
+			    android:text="@string/button_disabled" />
+		
+			<Button
+			    style="?attr/coloredBrightButtonStyleSmall"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_small" />
+		</LinearLayout>
+
+		<!-- Other button styles -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_other_buttons" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+        
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
 			
-				<Button
-				    style="?attr/coloredButtonStyle"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:enabled="false"
-				    android:text="@string/button_disabled" />
-			
-				<Button
-				    style="?attr/coloredButtonStyleSmall"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="@string/button_small" />
-			</LinearLayout>
+			<Button
+			    style="?android:attr/borderlessButtonStyle"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_borderless" />
+	
+			<Button
+			    style="?android:attr/buttonStyleInset"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/button_inset" />
+
 		</LinearLayout>
 	
-		<Button
-		    style="?android:attr/borderlessButtonStyle"
+	
+		<!-- Image buttons -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_imagebutton" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+        
+		<LinearLayout
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="@string/button_borderless" />
+		    android:orientation="horizontal" >
+			
+			<ImageButton
+			    android:contentDescription="@string/button_image_default"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/ic_launcher" />
+			
+			<ImageButton
+			    style="?attr/coloredImageButtonStyle"
+			    android:contentDescription="@string/button_image_colored"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/ic_launcher" />
+			
+			<ImageButton
+			    style="?attr/coloredBrightImageButtonStyle"
+			    android:contentDescription="@string/button_image_colored_bright"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/ic_launcher" />
+			
+		</LinearLayout>
 	
-		<ImageButton
-		    android:contentDescription="@string/button_image"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:src="@drawable/ic_launcher" />
-	
+		<!-- Toggle Button -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_toggle" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+        
 		<LinearLayout
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
@@ -96,12 +221,38 @@
 			    android:enabled="false"
 			    android:checked="true" />
 		</LinearLayout>
+		
 	
-		<Button
-		    style="?android:attr/buttonStyleInset"
+		<!-- Switch -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_switch" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+        
+		<LinearLayout
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="@string/button_inset" />
+		    android:orientation="horizontal" >
+			<com.negusoft.holoaccent.widget.AccentSwitch
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content" />
+			<com.negusoft.holoaccent.widget.AccentSwitch
+			    android:enabled="false"
+			    android:checked="true"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content" />
+			<com.negusoft.holoaccent.widget.AccentSwitch
+			    android:enabled="false"
+			    android:checked="false"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content" />
+		</LinearLayout>
 	
 	</LinearLayout>
 </ScrollView>

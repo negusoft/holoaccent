@@ -18,13 +18,21 @@
     <string name="action_holo_theme_activity">Holo Theme</string>
     <string name="action_preferences_activity">Preferences</string>
     
-    <string name="button_colored">Colored Button</string>
-    <string name="button_default">Button</string>
+    <string name="button_category_default">Buttons (Default)</string>
+    <string name="button_category_colored">Colored Buttons</string>
+    <string name="button_category_colored_bright">Colored Buttons (Bright)</string>
+    <string name="button_category_other_buttons">Other Button Styles</string>
+    <string name="button_category_imagebutton">ImageButtons</string>
+    <string name="button_category_toggle">ToggleButton</string>
+    <string name="button_category_switch">Switch</string>
+    <string name="button_default">Default</string>
     <string name="button_disabled">Disabled</string>
     <string name="button_small">Small Style</string>
     <string name="button_borderless">Borderless Style</string>
-    <string name="button_image">Image Button</string>
     <string name="button_inset">Inset Style</string>
+    <string name="button_image_default">Default</string>
+    <string name="button_image_colored">Colored (Default)</string>
+    <string name="button_image_colored_bright">Colored Bright</string>
     
     <string name="checkbox_title">Check Boxes</string>
     <string name="checkbox_enabled">Enabled</string>
