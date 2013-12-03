@@ -240,7 +240,6 @@
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >
 			<com.negusoft.holoaccent.widget.AccentSwitch
-			    android:focusable="true"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content" />
 			<com.negusoft.holoaccent.widget.AccentSwitch

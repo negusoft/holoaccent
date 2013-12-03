@@ -200,6 +200,7 @@
         <item name="switchMinWidth">@dimen/ha__switch_min_width</item>
         <item name="switchPadding">16dip</item>
         <item name="switchTextAppearance">@style/TextAppearanceSwitch</item>
+        <item name="android:focusable">true</item>
     </style>
     <style name="AccentSwitch.Light">
         <item name="track">@drawable/ha__switch_track_light</item>
