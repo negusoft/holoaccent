@@ -48,9 +48,11 @@ public class RoundRectInterceptor implements AccentResources.Interceptor {
 		if (resId == R.drawable.ha__roundrect_button_disabled_focused)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x55), CORNER_RADIUS_DP, BORDER_WIDTH_DP);
 		if (resId == R.drawable.ha__roundrect_button_normal_colored)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.accentColor, CORNER_RADIUS_DP);
-		if (resId == R.drawable.ha__roundrect_button_normal_colored_dark)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getDarkAccentColor(), CORNER_RADIUS_DP);
+		if (resId == R.drawable.ha__roundrect_button_normal_colored_bright)
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.accentColor, CORNER_RADIUS_DP);
+//		if (resId == R.drawable.ha__roundrect_button_normal_colored_dark)
+//			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getDarkAccentColor(), CORNER_RADIUS_DP);
 		return null;
 	}
 

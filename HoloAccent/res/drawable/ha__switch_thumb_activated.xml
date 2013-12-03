@@ -17,7 +17,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
     <item
-        android:drawable="@drawable/ha__roundrect_button_normal_colored_dark"
+        android:drawable="@drawable/ha__roundrect_button_normal_colored"
         android:top="@dimen/ha__switch_total_margin_vertical"
         android:bottom="@dimen/ha__switch_total_margin_vertical"
         android:right="@dimen/ha__switch_total_margin_horizontal"
