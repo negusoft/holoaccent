@@ -95,13 +95,13 @@
     
     <!-- Bright colored button styles -->
     <style name="HoloAccent.Button.Colored.Bright" parent="android:Widget.Holo.Button">
-        <item name="android:background">@drawable/ha__btn_default_colored</item>
+        <item name="android:background">@drawable/ha__btn_default_colored_bright</item>
     </style>
     <style name="HoloAccent.Button.Small.Colored.Bright" parent="android:Widget.Holo.Button.Small">
-        <item name="android:background">@drawable/ha__btn_default_colored</item>
+        <item name="android:background">@drawable/ha__btn_default_colored_bright</item>
     </style>
     <style name="HoloAccent.ImageButton.Colored.Bright" parent="android:Widget.Holo.ImageButton">
-        <item name="android:background">@drawable/ha__btn_default_colored</item>
+        <item name="android:background">@drawable/ha__btn_default_colored_bright</item>
     </style>
     
     <!-- Bright colored button styles (Light) -->
