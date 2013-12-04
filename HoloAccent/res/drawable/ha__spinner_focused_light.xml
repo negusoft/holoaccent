@@ -15,12 +15,6 @@
   limitations under the License.
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <item android:drawable="@drawable/ha__solid_focused"
-        android:left="2dp"
-        android:top="2dp"
-        android:right="2dp"
-        android:bottom="2dp" />
     
     <item android:drawable="@drawable/ha__roundrect_spinner_focussed" />
     <item android:drawable="@drawable/ha__spinner_default_light" />

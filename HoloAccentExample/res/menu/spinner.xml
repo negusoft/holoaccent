@@ -13,7 +13,7 @@
         android:showAsAction="ifRoom"
         android:title="@string/action_dummie"/>
     <item
-        android:id="@+id/action_if_room"
+        android:id="@+id/action_camera"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:enabled="false"

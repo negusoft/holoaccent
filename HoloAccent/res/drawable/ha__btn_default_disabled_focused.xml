@@ -22,10 +22,4 @@
         android:bottom="@dimen/ha__btn_default_margin"
         android:left="@dimen/ha__btn_default_margin"/>
     
-    <item android:drawable="@drawable/ha__solid_focused_dimmed"
-        android:top="@dimen/ha__btn_default_fill_margin"
-        android:right="@dimen/ha__btn_default_fill_margin"
-        android:bottom="@dimen/ha__btn_default_fill_margin"
-        android:left="@dimen/ha__btn_default_fill_margin"/>
-    
 </layer-list>
