@@ -76,7 +76,9 @@ public class RectDrawable extends Drawable {
 	public void draw(Canvas canvas) {
 		Rect r = getBounds();
 		if (mFillPaint != null) {
-			float fillMargin = mBorderPaint == null ? 0f : mState.mBorderWidth;
+			float fillMargin = 0f;
+			if (mBorderPaint != null)
+				fillMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mState.mBorderWidth, mState.mDisplayMetrics);
 			float left = r.left + fillMargin;
 			float top = r.top + fillMargin;
 			float right = r.right - fillMargin;
@@ -85,7 +87,8 @@ public class RectDrawable extends Drawable {
 			canvas.drawRect(fillRect, mFillPaint);
 		}
 		if (mBorderPaint != null) {
-			float borderMargin = mState.mBorderWidth / 2f;
+			float borderMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mState.mBorderWidth, mState.mDisplayMetrics);
+			borderMargin = borderMargin / 2f;
 			float left = r.left + borderMargin;
 			float top = r.top + borderMargin;
 			float right = r.right - borderMargin;
