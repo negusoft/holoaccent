@@ -13,31 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.negusoft.holoaccent.intercepter;
+package com.negusoft.holoaccent.interceptor;
 
 import android.content.res.Resources;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
+import com.negusoft.holoaccent.drawable.UnderlineDrawable;
 
-public class SolidColorInterceptor implements AccentResources.Interceptor {
-
-	private static final int PRESSED_ALPHA = 0xAA;
-	private static final int FOCUSED_ALPHA = 0x55;
+public class UnderlineInterceptor implements AccentResources.Interceptor {
 
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__solid_accent)
-			return new ColorDrawable(palette.accentColor);
-		if (resId == R.drawable.ha__solid_accent_dark)
-			return new ColorDrawable(palette.getDarkAccentColor());
-		if (resId == R.drawable.ha__solid_pressed)
-			return new ColorDrawable(palette.getTranslucent(PRESSED_ALPHA));
-		if (resId == R.drawable.ha__solid_focused)
-			return new ColorDrawable(palette.getTranslucent(FOCUSED_ALPHA));
+		if (resId == R.drawable.ha__underline_1_5)
+			return new UnderlineDrawable(res, palette.accentColor, 1.5f);
+		if (resId == R.drawable.ha__underline_3)
+			return new UnderlineDrawable(res, palette.accentColor, 3f);
+		if (resId == R.drawable.ha__underline_6)
+			return new UnderlineDrawable(res, palette.accentColor, 6f);
+		// overline
+		if (resId == R.drawable.ha__overline_3)
+			return new UnderlineDrawable(res, palette.accentColor, 3f, true);
 		return null;
 	}
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.negusoft.holoaccent.intercepter;
+package com.negusoft.holoaccent.interceptor;
 
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -21,27 +21,21 @@ import android.graphics.drawable.Drawable;
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
-import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
+import com.negusoft.holoaccent.drawable.RadialGradientDrawable;
+import com.negusoft.holoaccent.drawable.RadioOnDrawable;
 
-public class IndeterminateInterceptor implements AccentResources.Interceptor {
+public class RadioInterceptor implements AccentResources.Interceptor {
 
-	private final int[] INDETERMINED_DRAWABLE_IDS = new int[] {
-		R.drawable.ha__progressbar_indeterminate_1,
-		R.drawable.ha__progressbar_indeterminate_2,
-		R.drawable.ha__progressbar_indeterminate_3,
-		R.drawable.ha__progressbar_indeterminate_4,
-		R.drawable.ha__progressbar_indeterminate_5,
-		R.drawable.ha__progressbar_indeterminate_6,
-		R.drawable.ha__progressbar_indeterminate_7,
-		R.drawable.ha__progressbar_indeterminate_8
-	};
+	private static final int DISABLED_GLOW_COLOR = 0x22ffffff;
+	private static final float DISABLED_GLOW_INNER_RADIUS_DP = 4.5f;
+	private static final float DISABLED_GLOW_OUTER_RADIUS_DP = 8.5f;
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
-			if (resId == INDETERMINED_DRAWABLE_IDS[i])
-				return new IndeterminedProgressDrawable(res, palette.accentColor, i);
-		}
+		if (resId == R.drawable.ha__gradient_radio_on_disabled)
+			return new RadialGradientDrawable(res.getDisplayMetrics(), DISABLED_GLOW_COLOR, DISABLED_GLOW_INNER_RADIUS_DP, DISABLED_GLOW_OUTER_RADIUS_DP);
+		if (resId == R.drawable.ha__radio_on_dot)
+			return new RadioOnDrawable(res.getDisplayMetrics(), palette);
 		return null;
 	}
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.negusoft.holoaccent.intercepter;
+package com.negusoft.holoaccent.interceptor;
 
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -21,19 +21,27 @@ import android.graphics.drawable.Drawable;
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
-import com.negusoft.holoaccent.drawable.TextSelectHandleDrawable;
-import com.negusoft.holoaccent.drawable.TextSelectHandleDrawable.HandleType;
+import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
 
-public class TextSelectHandleInterceptor implements AccentResources.Interceptor {
+public class IndeterminateInterceptor implements AccentResources.Interceptor {
+
+	private final int[] INDETERMINED_DRAWABLE_IDS = new int[] {
+		R.drawable.ha__progressbar_indeterminate_1,
+		R.drawable.ha__progressbar_indeterminate_2,
+		R.drawable.ha__progressbar_indeterminate_3,
+		R.drawable.ha__progressbar_indeterminate_4,
+		R.drawable.ha__progressbar_indeterminate_5,
+		R.drawable.ha__progressbar_indeterminate_6,
+		R.drawable.ha__progressbar_indeterminate_7,
+		R.drawable.ha__progressbar_indeterminate_8
+	};
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__text_select_handle_left_accent)
-			return new TextSelectHandleDrawable(res.getDisplayMetrics(), palette, HandleType.LEFT);
-		if (resId == R.drawable.ha__text_select_handle_right_accent)
-			return new TextSelectHandleDrawable(res.getDisplayMetrics(), palette, HandleType.RIGHT);
-		if (resId == R.drawable.ha__text_select_handle_middle_accent)
-			return new TextSelectHandleDrawable(res.getDisplayMetrics(), palette, HandleType.MIDDLE);
+		for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
+			if (resId == INDETERMINED_DRAWABLE_IDS[i])
+				return new IndeterminedProgressDrawable(res, palette.accentColor, i);
+		}
 		return null;
 	}
 

@@ -13,29 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.negusoft.holoaccent.intercepter;
+package com.negusoft.holoaccent.interceptor;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
-import com.negusoft.holoaccent.drawable.RadialGradientDrawable;
-import com.negusoft.holoaccent.drawable.RadioOnDrawable;
+import com.negusoft.holoaccent.drawable.ToggleForegroundDrawable;
 
-public class RadioInterceptor implements AccentResources.Interceptor {
+public class ToggleInterceptor implements AccentResources.Interceptor {
 
-	private static final int DISABLED_GLOW_COLOR = 0x22ffffff;
-	private static final float DISABLED_GLOW_INNER_RADIUS_DP = 4.5f;
-	private static final float DISABLED_GLOW_OUTER_RADIUS_DP = 8.5f;
-	
+	private final int COLOR_ON_PRESSED = Color.rgb(255, 255, 255);
+	private final int COLOR_OFF = Color.argb(128, 0, 0, 0);
+	private final int COLOR_OFF_DISABLED = Color.argb(64, 0, 0, 0);
+
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__gradient_radio_on_disabled)
-			return new RadialGradientDrawable(res.getDisplayMetrics(), DISABLED_GLOW_COLOR, DISABLED_GLOW_INNER_RADIUS_DP, DISABLED_GLOW_OUTER_RADIUS_DP);
-		if (resId == R.drawable.ha__radio_on_dot)
-			return new RadioOnDrawable(res.getDisplayMetrics(), palette);
+		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground)
+			return new ToggleForegroundDrawable(res, palette.accentColor);
+		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_pressed)
+			return new ToggleForegroundDrawable(res, COLOR_ON_PRESSED);
+		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_disabled)
+			return new ToggleForegroundDrawable(res, palette.getTranslucent(128));
+		if (resId == R.drawable.ha__btn_toggle_comp_off_foreground)
+			return new ToggleForegroundDrawable(res, COLOR_OFF);
+		if (resId == R.drawable.ha__btn_toggle_comp_off_foreground_disabled)
+			return new ToggleForegroundDrawable(res, COLOR_OFF_DISABLED);
 		return null;
 	}
 
