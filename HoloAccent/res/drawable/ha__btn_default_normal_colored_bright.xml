@@ -22,8 +22,6 @@
         android:bottom="@dimen/ha__btn_default_margin"
         android:left="@dimen/ha__btn_default_margin"/>
     
-    <item>
-        <nine-patch android:src="@drawable/ha__btn_default_frame"/>
-    </item>
+    <item android:drawable="@drawable/ha__btn_default_frame"></item>
     
 </layer-list>

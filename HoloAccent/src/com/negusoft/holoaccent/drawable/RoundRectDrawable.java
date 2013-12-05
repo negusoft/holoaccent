@@ -15,6 +15,7 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.drawable;
 
+import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -188,6 +189,11 @@ public class RoundRectDrawable extends Drawable {
 		@Override
 		public Drawable newDrawable() {
 			return new RoundRectDrawable(mDisplayMetrics, mColor, mBorderWidth, mBorderColor, mCorenerSize);
+		}
+		
+		@Override
+		public Drawable newDrawable(Resources res) {
+			return new RoundRectDrawable(res.getDisplayMetrics(), mColor, mBorderWidth, mBorderColor, mCorenerSize);
 		}
 		
 	}

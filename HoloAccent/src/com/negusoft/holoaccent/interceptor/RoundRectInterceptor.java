@@ -26,6 +26,7 @@ import com.negusoft.holoaccent.drawable.RoundRectDrawable;
 public class RoundRectInterceptor implements AccentResources.Interceptor {
 
 	private static final float BORDER_WIDTH_DP = 2.0f;
+	private static final float BORDER_WIDTH_DISABLED_DP = 0.8f;
 	private static final float CORNER_RADIUS_DP = 3f;
 	private static final float BUTTION_GLOW_CORNER_RADIUS_DP = 10f;
 	
@@ -51,6 +52,10 @@ public class RoundRectInterceptor implements AccentResources.Interceptor {
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getDarkAccentColor(), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_normal_colored_bright)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.accentColor, CORNER_RADIUS_DP);
+		if (resId == R.drawable.ha__roundrect_button_disabled_colored)
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x22), BORDER_WIDTH_DISABLED_DP, palette.getTranslucent(0x55), CORNER_RADIUS_DP);
+		if (resId == R.drawable.ha__roundrect_button_disabled_focused_colored)
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x22), BORDER_WIDTH_DP, palette.getTranslucent(0x88), CORNER_RADIUS_DP);
 		return null;
 	}
 
