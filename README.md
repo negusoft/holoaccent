@@ -22,6 +22,7 @@ Features
 - Change the accent color in one place and apply it everywhere
 - All the ui components from "Holo Colors Generator" supported
 - Allows themes with different accent colors within the same app
+- Full focused state support (navigate with hardware keys)
 - Colored button style
 - Overscroll glow color customization
 - Dialog customization with divider color correctly set
