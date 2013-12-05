@@ -15,7 +15,9 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.interceptor;
 
+import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 
 import com.negusoft.holoaccent.AccentPalette;
@@ -36,11 +38,23 @@ public class IndeterminateInterceptor implements AccentResources.Interceptor {
 		R.drawable.ha__progressbar_indeterminate_8
 	};
 	
+	private final boolean mEnhanced;
+	
+	public IndeterminateInterceptor(Context c) {
+		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.IndeterminateProgress);
+		mEnhanced = attrs.getBoolean(R.styleable.IndeterminateProgress_enhancedIndeterminateProgress, true);
+		attrs.recycle();
+	}
+	
+	public IndeterminateInterceptor(boolean enhanced) {
+		mEnhanced = enhanced;
+	}
+	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 		for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
 			if (resId == INDETERMINED_DRAWABLE_IDS[i])
-				return new IndeterminedProgressDrawable(res, palette.accentColor, i);
+				return new IndeterminedProgressDrawable(res, palette.accentColor, i, mEnhanced);
 		}
 		return null;
 	}

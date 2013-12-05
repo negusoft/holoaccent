@@ -98,8 +98,8 @@ public class AccentHelper {
 	
 	private AccentResources createInstance(Context c, Resources resources) {
 		if (mOverrideThemeColor) {
-			return new AccentResources(mOverrideColor, resources.getAssets(), 
-					resources.getDisplayMetrics(), resources.getConfiguration());
+			return new AccentResources(c, resources.getAssets(), resources.getDisplayMetrics(),
+					resources.getConfiguration(), mOverrideColor);
 		}
 		else {
 			return new AccentResources(c, resources.getAssets(), 

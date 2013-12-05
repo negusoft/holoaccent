@@ -93,11 +93,11 @@ public class AccentResources extends Resources {
 	private final AccentPalette mPalette;
 	private final List<Interceptor> mIterceptors;
 
-	public AccentResources(int accentColor, AssetManager assets, DisplayMetrics metrics, Configuration config) {
+	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config, int accentColor) {
 		super(assets, metrics, config);
 		mPalette = new AccentPalette(accentColor);
 		mIterceptors = new ArrayList<Interceptor>();
-		addInterceptors();
+		addInterceptors(c);
 	}
 
 	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config) {
@@ -109,10 +109,10 @@ public class AccentResources extends Resources {
 		attrs.recycle();
 
 		mIterceptors = new ArrayList<Interceptor>();
-		addInterceptors();
+		addInterceptors(c);
 	}
 	
-	private void addInterceptors() {
+	private void addInterceptors(Context c) {
 		mIterceptors.add(new ToggleInterceptor());
 		mIterceptors.add(new UnderlineInterceptor());
 		mIterceptors.add(new SolidColorInterceptor());
@@ -122,7 +122,7 @@ public class AccentResources extends Resources {
 		mIterceptors.add(new ScrubberInterceptor());
 		mIterceptors.add(new TextSelectHandleInterceptor());
 		mIterceptors.add(new FastScrollInterceptor());
-		mIterceptors.add(new IndeterminateInterceptor());
+		mIterceptors.add(new IndeterminateInterceptor(c));
 		mIterceptors.add(new RadioInterceptor());
 		mIterceptors.add(new SpinnerInterceptor());
 		mIterceptors.add(new OverScrollInterceptor());

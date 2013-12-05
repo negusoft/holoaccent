@@ -54,4 +54,8 @@
         <attr name="textColorLink" format="color" />
         <attr name="textAllCaps" format="boolean" />
     </declare-styleable>
+    
+    <declare-styleable name="IndeterminateProgress">
+	    <attr name="enhancedIndeterminateProgress" format="reference|boolean" />
+    </declare-styleable>
 </resources>
