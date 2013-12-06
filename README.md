@@ -14,16 +14,16 @@ It currently supports Android 4.0+ projects (minSdkVersion="14"). Each theme def
 - Theme.Holo.Light > Theme.HoloAccent.Light
 - Theme.Holo.Light.DarkActionBar > Theme.HoloAccent.Light.DarkActionBar
 
-The library is still in an early development stage.
+See the 'Getting Started' section for links to get more information.
 
 
 Features
 ========
 - Change the accent color in one place and apply it everywhere
-- All the ui components from "Holo Colors Generator" supported
-- Allows themes with different accent colors within the same app
+- All the UI components from "Holo Colors Generator" supported
+- Themes with different accent colors within the same app
 - Full focused state support (navigate with hardware keys)
-- Colored button style
+- Colored button styles
 - Overscroll glow color customization
 - Dialog customization with divider color correctly set
 - Switch and SwitchPreference implementation
