@@ -16,13 +16,14 @@
 -->
 <resources>
     
-    <attr name="coloredButtonStyle" format="reference" />
-    <attr name="coloredButtonStyleSmall" format="reference" />
-    <attr name="coloredImageButtonStyle" format="reference" />
+    <attr name="buttonStyleColored" format="reference" />
+    <attr name="buttonStyleColoredBright" format="reference" />
     
-    <attr name="coloredBrightButtonStyle" format="reference" />
-    <attr name="coloredBrightButtonStyleSmall" format="reference" />
-    <attr name="coloredBrightImageButtonStyle" format="reference" />
+    <attr name="buttonStyleSmallColored" format="reference" />
+    <attr name="buttonStyleSmallColoredBright" format="reference" />
+    
+    <attr name="imageButtonStyleColored" format="reference" />
+    <attr name="imageButtonStyleColoredBright" format="reference" />
 
     <declare-styleable name="HoloAccent">
         <attr name="accentColor" format="color|reference" />

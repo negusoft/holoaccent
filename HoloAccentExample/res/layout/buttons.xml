@@ -64,21 +64,21 @@
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >
 			<Button
-			    style="?attr/coloredButtonStyle"
+			    style="?attr/buttonStyleColored"
 			    android:id="@+id/coloredButton"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:text="@string/button_default" />
 		
 			<Button
-			    style="?attr/coloredButtonStyle"
+			    style="?attr/buttonStyleColored"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:enabled="false"
 			    android:text="@string/button_disabled" />
 		
 			<Button
-			    style="?attr/coloredButtonStyleSmall"
+			    style="?attr/buttonStyleSmallColored"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:text="@string/button_small" />
@@ -101,20 +101,20 @@
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >
 			<Button
-			    style="?attr/coloredBrightButtonStyle"
+			    style="?attr/buttonStyleColoredBright"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:text="@string/button_default" />
 		
 			<Button
-			    style="?attr/coloredBrightButtonStyle"
+			    style="?attr/buttonStyleColoredBright"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:enabled="false"
 			    android:text="@string/button_disabled" />
 		
 			<Button
-			    style="?attr/coloredBrightButtonStyleSmall"
+			    style="?attr/buttonStyleSmallColoredBright"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:text="@string/button_small" />
@@ -176,14 +176,14 @@
 			    android:src="@drawable/ic_launcher" />
 			
 			<ImageButton
-			    style="?attr/coloredImageButtonStyle"
+			    style="?attr/imageButtonStyleColored"
 			    android:contentDescription="@string/button_image_colored"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:src="@drawable/ic_launcher" />
 			
 			<ImageButton
-			    style="?attr/coloredBrightImageButtonStyle"
+			    style="?attr/imageButtonStyleColoredBright"
 			    android:contentDescription="@string/button_image_colored_bright"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
@@ -240,6 +240,7 @@
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >
 			<com.negusoft.holoaccent.widget.AccentSwitch
+			    android:checked="true"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content" />
 			<com.negusoft.holoaccent.widget.AccentSwitch

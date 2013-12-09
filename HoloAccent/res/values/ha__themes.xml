@@ -21,12 +21,12 @@
         <item name="accentColor">@color/ha__accent</item>
         <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
 
-        <item name="coloredButtonStyle">@style/HoloAccent.Button.Colored</item>
-        <item name="coloredButtonStyleSmall">@style/HoloAccent.Button.Small.Colored</item>
-        <item name="coloredImageButtonStyle">@style/HoloAccent.ImageButton.Colored</item>
-        <item name="coloredBrightButtonStyle">@style/HoloAccent.Button.Colored.Bright</item>
-        <item name="coloredBrightButtonStyleSmall">@style/HoloAccent.Button.Small.Colored.Bright</item>
-        <item name="coloredBrightImageButtonStyle">@style/HoloAccent.ImageButton.Colored.Bright</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
         <item name="accentSwitchStyle">@style/AccentSwitch</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -93,13 +93,13 @@
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         <item name="accentColor">@color/ha__accent</item>
         <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
-
-        <item name="coloredButtonStyle">@style/HoloAccent.Light.Button.Colored</item>
-        <item name="coloredButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored</item>
-        <item name="coloredImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored</item>
-        <item name="coloredBrightButtonStyle">@style/HoloAccent.Light.Button.Colored.Bright</item>
-        <item name="coloredBrightButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
-        <item name="coloredBrightImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
+        
+        <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.Light.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
         <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -165,12 +165,12 @@
         <item name="accentColor">@color/ha__accent</item>
         <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
 
-        <item name="coloredButtonStyle">@style/HoloAccent.Light.Button.Colored</item>
-        <item name="coloredButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored</item>
-        <item name="coloredImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored</item>
-        <item name="coloredBrightButtonStyle">@style/HoloAccent.Light.Button.Colored.Bright</item>
-        <item name="coloredBrightButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
-        <item name="coloredBrightImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.Light.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
         <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -244,12 +244,12 @@
     <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
         <!-- Copy of Theme.HoloAccents, except the 'accentColor' and 'accentColorTranslucent' attributes -->
 
-        <item name="coloredButtonStyle">@style/HoloAccent.Button.Colored</item>
-        <item name="coloredButtonStyleSmall">@style/HoloAccent.Button.Small.Colored</item>
-        <item name="coloredImageButtonStyle">@style/HoloAccent.ImageButton.Colored</item>
-        <item name="coloredBrightButtonStyle">@style/HoloAccent.Button.Colored.Bright</item>
-        <item name="coloredBrightButtonStyleSmall">@style/HoloAccent.Button.Small.Colored.Bright</item>
-        <item name="coloredBrightImageButtonStyle">@style/HoloAccent.ImageButton.Colored.Bright</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
         <item name="accentSwitchStyle">@style/AccentSwitch</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
@@ -315,12 +315,12 @@
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
         <!-- Copy of Theme.HoloAccents.Light, except the 'accentColor' and 'accentColorTranslucent' attributes -->
 
-        <item name="coloredButtonStyle">@style/HoloAccent.Light.Button.Colored</item>
-        <item name="coloredButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored</item>
-        <item name="coloredImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored</item>
-        <item name="coloredBrightButtonStyle">@style/HoloAccent.Light.Button.Colored.Bright</item>
-        <item name="coloredBrightButtonStyleSmall">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
-        <item name="coloredBrightImageButtonStyle">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.Light.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
         <item name="accentSwitchStyle">@style/AccentSwitch.Light</item>
 
         <item name="android:colorPressedHighlight">?attr/accentColor</item>
