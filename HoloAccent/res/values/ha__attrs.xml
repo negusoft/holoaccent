@@ -32,27 +32,27 @@
     <attr name="accentSwitchStyle" format="reference" />
     
     <declare-styleable name="AccentSwitch">
-        <attr name="thumb" format="reference" />
-        <attr name="track" format="reference" />
-        <attr name="textOn" format="string" />
-        <attr name="textOff" format="string" />
-        <attr name="thumbTextPadding" format="dimension" />
-        <attr name="switchTextAppearance" format="reference" />
-        <attr name="switchMinWidth" format="dimension" />
-        <attr name="switchPadding" format="dimension" />
-        <attr name="textAppearance" format="reference" />
+        <attr name="android:thumb" />
+        <attr name="android:track" />
+        <attr name="android:textOn" />
+        <attr name="android:textOff" />
+        <attr name="android:thumbTextPadding" />
+        <attr name="android:switchTextAppearance" />
+        <attr name="android:switchMinWidth" />
+        <attr name="android:switchPadding" />
+        <attr name="android:textAppearance" />
     </declare-styleable>
     
     <declare-styleable name="TextAppearanceAccentSwitch">
-        <attr name="textColor" format="color" />
-        <attr name="textSize" format="dimension" />
-        <attr name="textStyle" format="reference" />
-        <attr name="typeface" format="reference" />
-        <attr name="fontFamily" format="reference" />
-        <attr name="textColorHighlight" format="color" />
-        <attr name="textColorHint" format="color" />
-        <attr name="textColorLink" format="color" />
-        <attr name="textAllCaps" format="boolean" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:textStyle" />
+        <attr name="android:typeface" />
+        <attr name="android:fontFamily" />
+        <attr name="android:textColorHighlight" />
+        <attr name="android:textColorHint" />
+        <attr name="android:textColorLink" />
+        <attr name="android:textAllCaps" />
     </declare-styleable>
     
     <declare-styleable name="IndeterminateProgress">

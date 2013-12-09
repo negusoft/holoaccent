@@ -164,31 +164,31 @@ public class AccentSwitch extends CompoundButton {
 		TypedArray a = context.obtainStyledAttributes(attrs,
 				R.styleable.AccentSwitch, defStyle, 0);
 
-		mThumbDrawable = a.getDrawable(R.styleable.AccentSwitch_thumb);
+		mThumbDrawable = a.getDrawable(R.styleable.AccentSwitch_android_thumb);
 		if (mThumbDrawable == null)
 			mThumbDrawable = getResources().getDrawable(R.drawable.ha__switch_thumb);
 		
-		mTrackDrawable = a.getDrawable(R.styleable.AccentSwitch_track);
+		mTrackDrawable = a.getDrawable(R.styleable.AccentSwitch_android_track);
 		if (mTrackDrawable == null)
 			mTrackDrawable = getResources().getDrawable(R.drawable.ha__switch_track);
 		
-		mTextOn = a.getText(R.styleable.AccentSwitch_textOn);
+		mTextOn = a.getText(R.styleable.AccentSwitch_android_textOn);
 		if (mTextOn == null)
 			mTextOn = getResources().getString(R.string.ha__switchOn);
 		
-		mTextOff = a.getText(R.styleable.AccentSwitch_textOff);
+		mTextOff = a.getText(R.styleable.AccentSwitch_android_textOff);
 		if (mTextOff == null)
 			mTextOff = getResources().getString(R.string.ha__switchOff);
 		
 		mThumbTextPadding = a.getDimensionPixelSize(
-				R.styleable.AccentSwitch_thumbTextPadding, 0);
+				R.styleable.AccentSwitch_android_thumbTextPadding, 0);
 		mSwitchMinWidth = a.getDimensionPixelSize(
-				R.styleable.AccentSwitch_switchMinWidth, 0);
+				R.styleable.AccentSwitch_android_switchMinWidth, 0);
 		mSwitchPadding = a.getDimensionPixelSize(
-				R.styleable.AccentSwitch_switchPadding, 0);
+				R.styleable.AccentSwitch_android_switchPadding, 0);
 
 		int appearance = a.getResourceId(
-				R.styleable.AccentSwitch_switchTextAppearance, 0);
+				R.styleable.AccentSwitch_android_switchTextAppearance, 0);
 		if (appearance != 0) {
 			setSwitchTextAppearance(context, appearance);
 		}
@@ -227,7 +227,7 @@ public class AccentSwitch extends CompoundButton {
 		int ts;
 
 		colors = appearance
-				.getColorStateList(R.styleable.TextAppearanceAccentSwitch_textColor);
+				.getColorStateList(R.styleable.TextAppearanceAccentSwitch_android_textColor);
 		if (colors != null) {
 			mTextColors = colors;
 		} else {
@@ -237,7 +237,7 @@ public class AccentSwitch extends CompoundButton {
 		}
 
 		ts = appearance.getDimensionPixelSize(
-				R.styleable.TextAppearanceAccentSwitch_textSize, 0);
+				R.styleable.TextAppearanceAccentSwitch_android_textSize, 0);
 		if (ts != 0) {
 			if (ts != mTextPaint.getTextSize()) {
 				mTextPaint.setTextSize(ts);
@@ -248,14 +248,14 @@ public class AccentSwitch extends CompoundButton {
 		int typefaceIndex, styleIndex;
 
 		typefaceIndex = appearance.getInt(
-				R.styleable.TextAppearanceAccentSwitch_typeface, -1);
+				R.styleable.TextAppearanceAccentSwitch_android_typeface, -1);
 		styleIndex = appearance.getInt(
-				R.styleable.TextAppearanceAccentSwitch_textStyle, -1);
+				R.styleable.TextAppearanceAccentSwitch_android_textStyle, -1);
 
 		setSwitchTypefaceByIndex(typefaceIndex, styleIndex);
 
 		boolean allCaps = appearance.getBoolean(
-				R.styleable.TextAppearanceAccentSwitch_textAllCaps, false);
+				R.styleable.TextAppearanceAccentSwitch_android_textAllCaps, false);
 		if (allCaps) {
 			mSwitchTransformationMethod = new AllCapsTransformationMethod(
 					getContext());
