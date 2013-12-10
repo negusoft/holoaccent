@@ -14,12 +14,14 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import com.negusoft.holoaccent.example.R;
 
 public class ListFragment extends Fragment implements OnItemClickListener {
 	
 	private ListView mListView;
+	private ArrayAdapter<String> mAdapter;
 	private ActionMode mActionMode;
 	
 	@Override
@@ -27,19 +29,49 @@ public class ListFragment extends Fragment implements OnItemClickListener {
 		View result = inflater.inflate(R.layout.list, null);
 		
 		mListView = (ListView)result.findViewById(R.id.listView);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), 
+		mAdapter = new ArrayAdapter<String>(getActivity(), 
 				R.layout.list_item_multiple_choice,
 				android.R.id.text1,
 				getResources().getStringArray(R.array.list_items));
 		mListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-		mListView.setAdapter(adapter);
+		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(this);
 		mListView.setMultiChoiceModeListener(mMultiChoiceModeListener);
 		mListView.setFastScrollEnabled(true);
 		mListView.setFastScrollAlwaysVisible(true);
 		
+		setHasOptionsMenu(true);
+		
 		return result;
 	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		inflater.inflate(R.menu.list, menu);
+		SearchView searchView = (SearchView)menu.findItem(R.id.search).getActionView();
+		searchView.setOnQueryTextListener(mOnQueryTextListener);
+		searchView.setOnCloseListener(mOnCloseListener);
+		
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+	
+	private final SearchView.OnQueryTextListener mOnQueryTextListener = new SearchView.OnQueryTextListener() {
+		@Override public boolean onQueryTextChange(String newText) {
+			mAdapter.getFilter().filter(newText);
+			return true;
+		}
+		@Override public boolean onQueryTextSubmit(String query) {
+			mAdapter.getFilter().filter(query);
+			return true;
+		}
+	};
+
+	private final SearchView.OnCloseListener mOnCloseListener = new SearchView.OnCloseListener() {
+		@Override public boolean onClose() {
+			mAdapter.getFilter().filter(null);
+			return false;
+		}
+	};
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -15,7 +15,14 @@
   limitations under the License.
 -->
 <resources>
+
+    <!-- Accent color definition -->
+    <declare-styleable name="HoloAccent">
+        <attr name="accentColor" format="color|reference" />
+        <attr name="accentColorTranslucent" format="color|reference" />
+    </declare-styleable>
     
+    <!-- Colored button styles -->
     <attr name="buttonStyleColored" format="reference" />
     <attr name="buttonStyleColoredBright" format="reference" />
     
@@ -24,14 +31,15 @@
     
     <attr name="imageButtonStyleColored" format="reference" />
     <attr name="imageButtonStyleColoredBright" format="reference" />
-
-    <declare-styleable name="HoloAccent">
-        <attr name="accentColor" format="color|reference" />
-        <attr name="accentColorTranslucent" format="color|reference" />
+    
+    <!-- AccentSearchView -->
+    <attr name="accentSearchViewStyle" format="reference" />
+    <declare-styleable name="AccentSearchView">
+        <attr name="android:background" />
     </declare-styleable>
     
+    <!-- AccentSwitch -->
     <attr name="accentSwitchStyle" format="reference" />
-    
     <declare-styleable name="AccentSwitch">
         <attr name="android:thumb" />
         <attr name="android:track" />
@@ -43,7 +51,6 @@
         <attr name="android:switchPadding" />
         <attr name="android:textAppearance" />
     </declare-styleable>
-    
     <declare-styleable name="TextAppearanceAccentSwitch">
         <attr name="android:textColor" />
         <attr name="android:textSize" />
@@ -56,6 +63,7 @@
         <attr name="android:textAllCaps" />
     </declare-styleable>
     
+    <!-- ProgressBar enhancement configuration -->
     <declare-styleable name="IndeterminateProgress">
 	    <attr name="enhancedIndeterminateProgress" format="reference|boolean" />
     </declare-styleable>

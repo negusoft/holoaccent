@@ -16,6 +16,11 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     
+    <!-- Empty style to be able to define substyles (ex. 'HoloAccent.XXX') -->
+    <style name="HoloAccent" />
+    <style name="TextAppearance" />
+    <style name="TextAppearance.HoloAccent" />
+    
     <!-- Actionbar customization -->
     <style name="HoloAccent.ActionBar" parent="android:Widget.Holo.ActionBar">
         <item name="android:background">@drawable/ha__actionbar_background</item>
@@ -184,14 +189,8 @@
     <style name="DialogWindowTitle.HoloAccent">
     </style>
     
-    <!-- Exact copies of the default holo styles -->
-    <style name="TextAppearance.Holo.Light.Widget.PopupMenu.Large" parent="android:TextAppearance.Holo.Widget.PopupMenu.Large">
-    </style>
-    <style name="TextAppearance.Holo.Light.Widget.PopupMenu.Small" parent="android:TextAppearance.Holo.Widget.PopupMenu.Small">
-    </style>
-    
     <!-- AccentSwitch style. It doens't extend any Holo style -->
-    <style name="AccentSwitch">
+    <style name="HoloAccent.AccentSwitch">
         <item name="android:track">@drawable/ha__switch_track</item>
         <item name="android:thumb">@drawable/ha__switch_thumb</item>
         <item name="android:textOn">@string/ha__switchOn</item>
@@ -199,19 +198,27 @@
         <item name="android:thumbTextPadding">12dip</item>
         <item name="android:switchMinWidth">@dimen/ha__switch_min_width</item>
         <item name="android:switchPadding">16dip</item>
-        <item name="android:switchTextAppearance">@style/TextAppearanceSwitch</item>
+        <item name="android:switchTextAppearance">@style/TextAppearance.HoloAccent.Switch</item>
         <item name="android:focusable">true</item>
     </style>
-    <style name="AccentSwitch.Light">
+    <style name="HoloAccent.AccentSwitch.Light">
         <item name="android:track">@drawable/ha__switch_track_light</item>
-        <item name="android:switchTextAppearance">@style/TextAppearanceSwitch.Light</item>
+        <item name="android:switchTextAppearance">@style/TextAppearance.HoloAccent.Switch.Light</item>
     </style>
-    <style name="TextAppearanceSwitch">
+    <style name="TextAppearance.HoloAccent.Switch">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:textSize">14sp</item>
     </style>
-    <style name="TextAppearanceSwitch.Light">
+    <style name="TextAppearance.HoloAccent.Switch.Light">
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+    
+    <!-- AccentSwitch style. It doens't extend any Holo style -->
+    <style name="HoloAccent.AccentSearchView">
+        <item name="android:background">@drawable/ha__searchview_textfield</item>
+    </style>
+    <style name="HoloAccent.AccentSearchView.Light">
+        <item name="android:background">@drawable/ha__searchview_textfield_light</item>
     </style>
 
 </resources>
