@@ -31,11 +31,11 @@
 
 package com.negusoft.holoaccent;
 
-import com.negusoft.holoaccent.dialog.DividerPainter;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.Window;
+
+import com.negusoft.holoaccent.dialog.DividerPainter;
 
 /**
  * Helper class to lazily initialize AccentResources from your activities. 
@@ -60,8 +60,6 @@ import android.content.res.Resources;
 public class AccentHelper {
 	
 	private AccentResources mAccentResources;
-	private boolean initializingFlag = false;
-
 	private DividerPainter mDividerPainter;
 	
 	private final boolean mOverrideThemeColor;
@@ -79,13 +77,8 @@ public class AccentHelper {
 	
 	/** @return The AccentResources instance, properly initialized. */
 	public Resources getResources(Context c, Resources resources) {
-		if (mAccentResources == null) {
-			if (initializingFlag)
-				return resources;
-			
-			initializingFlag = true;
+		if (mAccentResources == null)
 			mAccentResources = createInstance(c, resources);
-		}
 		return mAccentResources;
 	}
 	
@@ -97,14 +90,9 @@ public class AccentHelper {
 	}
 	
 	private AccentResources createInstance(Context c, Resources resources) {
-		if (mOverrideThemeColor) {
-			return new AccentResources(c, resources.getAssets(), resources.getDisplayMetrics(),
-					resources.getConfiguration(), mOverrideColor);
-		}
-		else {
-			return new AccentResources(c, resources.getAssets(), 
-					resources.getDisplayMetrics(), resources.getConfiguration());
-		}
+		if (mOverrideThemeColor)
+			return new AccentResources(c, resources, mOverrideColor);
+		return new AccentResources(c, resources);
 	}
 
 }

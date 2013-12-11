@@ -23,8 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -33,7 +31,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
 import com.negusoft.holoaccent.interceptor.CircleInterceptor;
@@ -91,26 +88,66 @@ public class AccentResources extends Resources {
 		R.drawable.ha__btn_check_comp_on_accent
 	};
 
-	private final AccentPalette mPalette;
-	private final List<Interceptor> mIterceptors;
-
-	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config, int accentColor) {
-		super(assets, metrics, config);
-		mPalette = new AccentPalette(accentColor);
-		mIterceptors = new ArrayList<Interceptor>();
-		addInterceptors(c);
+	private final Context mContext;
+	private final int mExplicitColor;
+	
+	private boolean mInitialized = false;
+	private AccentPalette mPalette;
+	private List<Interceptor> mIterceptors;
+	
+	public AccentResources(Context c, Resources resources) {
+		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
+		mContext = c;
+		mExplicitColor = 0;
+	}
+	
+	public AccentResources(Context c, Resources resources, int color) {
+		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
+		mContext = c;
+		mExplicitColor = color;
 	}
 
-	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config) {
-		super(assets, metrics, config);
-		
-		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
-		int accentColor = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
-		mPalette = new AccentPalette(accentColor);
-		attrs.recycle();
-
+//	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config, int accentColor) {
+//		super(assets, metrics, config);
+//	}
+//
+//	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config) {
+//		super(assets, metrics, config);
+//	}
+	
+//	private void initialize(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config, int accentColor) {
+//		mPalette = new AccentPalette(accentColor);
+//		mIterceptors = new ArrayList<Interceptor>();
+//		addInterceptors(c);
+//	}
+//	
+	
+	/**
+	 * Make sure that the instance is initialized. It will check the 'mInitialized' 
+	 * flag even if it is done within 'initialize()', to avoid getting into the 
+	 * synchronized block every time.
+	 */
+	private void checkInitialized() {
+		if (mInitialized)
+			return;
+		initialize(mContext, mExplicitColor);
+	}
+	
+	private synchronized void initialize(Context c, int explicitColor) {
+		if (mInitialized)
+			return;
+		int color = explicitColor != 0 ? explicitColor : getColorFromTheme(c);
+		mPalette = new AccentPalette(color);
 		mIterceptors = new ArrayList<Interceptor>();
 		addInterceptors(c);
+		mInitialized = true;
+	}
+	
+	private int getColorFromTheme(Context c) {
+		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
+		int result = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
+		attrs.recycle();
+		return result;
 	}
 	
 	private void addInterceptors(Context c) {
@@ -132,6 +169,8 @@ public class AccentResources extends Resources {
 
 	@Override
 	public Drawable getDrawable(int resId) throws Resources.NotFoundException {
+		checkInitialized();
+		
 		// Give a chance to the interceptors to replace the drawable
 		Drawable result;
 		for(Interceptor interceptor : mIterceptors) {
@@ -146,6 +185,8 @@ public class AccentResources extends Resources {
 	@Override
 	public InputStream openRawResource(int resId, TypedValue value)
 			throws NotFoundException {
+		checkInitialized();
+		
 		for (int id : TINT_DRAWABLE_IDS) {
 			if (resId == id)
 				return getTintendResourceStream(resId, value, mPalette.accentColor);
@@ -162,6 +203,8 @@ public class AccentResources extends Resources {
 	 * but with the accent color applied to it.
 	 */
 	private InputStream getTintendResourceStream(int id, TypedValue value, int color) {
+		checkInitialized();
+		
 		// Get the bitmap form the resources
 		InputStream original = super.openRawResource(id, value);
 		value.density = getDisplayMetrics().densityDpi;

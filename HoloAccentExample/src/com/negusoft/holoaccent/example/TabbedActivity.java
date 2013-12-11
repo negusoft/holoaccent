@@ -69,6 +69,11 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 	}
 	
 	@Override
+	public void setTheme(int resid) {
+		super.setTheme(resid);
+	}
+	
+	@Override
 	public boolean onOptionsItemSelected(android.view.MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
