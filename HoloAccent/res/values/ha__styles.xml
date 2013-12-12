@@ -193,8 +193,8 @@
     <style name="HoloAccent.AccentSwitch">
         <item name="android:track">@drawable/ha__switch_track</item>
         <item name="android:thumb">@drawable/ha__switch_thumb</item>
-        <item name="android:textOn">@string/ha__switchOn</item>
-        <item name="android:textOff">@string/ha__switchOff</item>
+<!--         <item name="android:textOn">@string/ha__switchOn</item> -->
+<!--         <item name="android:textOff">@string/ha__switchOff</item> -->
         <item name="android:thumbTextPadding">12dip</item>
         <item name="android:switchMinWidth">@dimen/ha__switch_min_width</item>
         <item name="android:switchPadding">16dip</item>

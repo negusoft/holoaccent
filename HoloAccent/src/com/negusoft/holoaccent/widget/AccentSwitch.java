@@ -67,6 +67,15 @@ import com.negusoft.holoaccent.R;
  * @attr ref android.R.styleable#Switch_track
  */
 public class AccentSwitch extends CompoundButton {
+
+	private static final String RESOURCE_TYPE = "string";
+	private static final String RESOURCE_PACKAGE = "android";
+	private static final String RESOURCE_NAME_ON = "capital_on";
+	private static final String RESOURCE_NAME_OFF = "capital_off";
+	private static final String DEFAULT_TEXT_ON = "ON";
+	private static final String DEFAULT_TEXT_OFF = "OFF";
+	
+	
 	private static final int TOUCH_MODE_IDLE = 0;
 	private static final int TOUCH_MODE_DOWN = 1;
 	private static final int TOUCH_MODE_DRAGGING = 2;
@@ -174,11 +183,11 @@ public class AccentSwitch extends CompoundButton {
 		
 		mTextOn = a.getText(R.styleable.AccentSwitch_android_textOn);
 		if (mTextOn == null)
-			mTextOn = getResources().getString(R.string.ha__switchOn);
+			mTextOn = getDefaultOnString();
 		
 		mTextOff = a.getText(R.styleable.AccentSwitch_android_textOff);
 		if (mTextOff == null)
-			mTextOff = getResources().getString(R.string.ha__switchOff);
+			mTextOff = getDefaultOffString();
 		
 		mThumbTextPadding = a.getDimensionPixelSize(
 				R.styleable.AccentSwitch_android_thumbTextPadding, 0);
@@ -211,6 +220,18 @@ public class AccentSwitch extends CompoundButton {
 				// do nothing
 			}
 		});
+	}
+	
+	private String getDefaultOnString() {
+		Resources res = Resources.getSystem();
+		int id = res.getIdentifier(RESOURCE_NAME_ON, RESOURCE_TYPE, RESOURCE_PACKAGE);
+		return id == 0 ? DEFAULT_TEXT_ON :  res.getString(id);
+	}
+	
+	private String getDefaultOffString() {
+		Resources res = Resources.getSystem();
+		int id = res.getIdentifier(RESOURCE_NAME_OFF, RESOURCE_TYPE, RESOURCE_PACKAGE);
+		return id == 0 ? DEFAULT_TEXT_OFF :  res.getString(id);
 	}
 
 	/**
