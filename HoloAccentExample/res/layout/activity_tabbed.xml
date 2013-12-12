@@ -4,4 +4,6 @@
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textDirection="locale"
+    android:layoutDirection="locale"
     tools:context=".TabbedActivity" />
