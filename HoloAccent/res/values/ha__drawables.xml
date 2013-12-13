@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2013 NEGU Soft
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+    
+    <!-- Drawable references that will be overriden at runtime -->
+	<item name="ha__ab_searchview_textfield_default_light" type="drawable"/>
+	<item name="ha__ab_searchview_textfield_default" type="drawable"/>
+	<item name="ha__ab_searchview_textfield_focused" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_disabled_light" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_disabled" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_light" type="drawable"/>
+	<item name="ha__ab_spinner_indicator" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_rtl_disabled_light" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_rtl_disabled" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_rtl_light" type="drawable"/>
+	<item name="ha__ab_spinner_indicator_rtl" type="drawable"/>
+	<item name="ha__btn_toggle_comp_off_foreground_disabled" type="drawable"/>
+	<item name="ha__btn_toggle_comp_off_foreground" type="drawable"/>
+	<item name="ha__btn_toggle_comp_on_foreground_disabled" type="drawable"/>
+	<item name="ha__btn_toggle_comp_on_foreground" type="drawable"/>
+	<item name="ha__btn_toggle_comp_on_foreground_pressed" type="drawable"/>
+	<item name="ha__circle_disabled_focused" type="drawable"/>
+	<item name="ha__circle_focused" type="drawable"/>
+	<item name="ha__circle_pressed" type="drawable"/>
+	<item name="ha__fastscroll_thumb_default" type="drawable"/>
+	<item name="ha__fastscroll_thumb_pressed" type="drawable"/>
+	<item name="ha__gradient_radio_on_disabled" type="drawable"/>
+	<item name="ha__overline_3" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_1" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_2" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_3" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_4" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_5" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_6" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_7" type="drawable"/>
+	<item name="ha__progressbar_indeterminate_8" type="drawable"/>
+	<item name="ha__radio_on_dot" type="drawable"/>
+	<item name="ha__rect_focused_background" type="drawable"/>
+	<item name="ha__rect_focused_border" type="drawable"/>
+	<item name="ha__roundrect_button_disabled_colored" type="drawable"/>
+	<item name="ha__roundrect_button_disabled_focused_colored" type="drawable"/>
+	<item name="ha__roundrect_button_disabled_focused" type="drawable"/>
+	<item name="ha__roundrect_button_focused" type="drawable"/>
+	<item name="ha__roundrect_button_normal_colored_bright" type="drawable"/>
+	<item name="ha__roundrect_button_normal_colored" type="drawable"/>
+	<item name="ha__roundrect_button_pressed_fill_colored" type="drawable"/>
+	<item name="ha__roundrect_button_pressed_fill" type="drawable"/>
+	<item name="ha__roundrect_button_pressed_glow" type="drawable"/>
+	<item name="ha__roundrect_check_pressed" type="drawable"/>
+	<item name="ha__roundrect_spinner_focussed" type="drawable"/>
+	<item name="ha__roundrect_spinner_pressed" type="drawable"/>
+	<item name="ha__scrubber_comp_primary" type="drawable"/>
+	<item name="ha__scrubber_comp_secondary" type="drawable"/>
+	<item name="ha__scrubber_control_disabled" type="drawable"/>
+	<item name="ha__scrubber_control_focused" type="drawable"/>
+	<item name="ha__scrubber_control_normal" type="drawable"/>
+	<item name="ha__scrubber_control_pressed" type="drawable"/>
+	<item name="ha__solid_accent_dark" type="drawable"/>
+	<item name="ha__solid_accent" type="drawable"/>
+	<item name="ha__solid_focused" type="drawable"/>
+	<item name="ha__solid_pressed" type="drawable"/>
+	<item name="ha__spinner_indicator_disabled_light" type="drawable"/>
+	<item name="ha__spinner_indicator_disabled" type="drawable"/>
+	<item name="ha__spinner_indicator_light" type="drawable"/>
+	<item name="ha__spinner_indicator" type="drawable"/>
+	<item name="ha__spinner_indicator_rtl_disabled_light" type="drawable"/>
+	<item name="ha__spinner_indicator_rtl_disabled" type="drawable"/>
+	<item name="ha__spinner_indicator_rtl_light" type="drawable"/>
+	<item name="ha__spinner_indicator_rtl" type="drawable"/>
+	<item name="ha__text_select_handle_left_accent" type="drawable"/>
+	<item name="ha__text_select_handle_middle_accent" type="drawable"/>
+	<item name="ha__text_select_handle_right_accent" type="drawable"/>
+	<item name="ha__underline_1_5" type="drawable"/>
+	<item name="ha__underline_3" type="drawable"/>
+	<item name="ha__underline_6" type="drawable"/>
+    
+</resources>
