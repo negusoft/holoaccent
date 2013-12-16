@@ -16,6 +16,6 @@
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item android:drawable="@drawable/ha__solid_accent"/>
+    <item android:drawable="@drawable/ha__solid_accent_dark"/>
 
 </layer-list>

@@ -17,6 +17,7 @@
         android:orderInCategory="100"
         android:showAsAction="always"
         android:enabled="false"
+        android:title="@string/action_dummie"
         android:icon="@android:drawable/ic_menu_camera"/>
     <item
         android:id="@+id/action_with_text"
