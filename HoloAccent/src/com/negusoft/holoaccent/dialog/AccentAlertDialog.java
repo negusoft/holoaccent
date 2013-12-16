@@ -15,12 +15,14 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.dialog;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -280,7 +282,8 @@ public class AccentAlertDialog extends AlertDialog {
          *
          * @return This Builder object to allow for chaining of calls to set methods
          */
-        public Builder setOnDismissListener(OnDismissListener onDismissListener) {
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+		public Builder setOnDismissListener(OnDismissListener onDismissListener) {
         	mBuilder.setOnDismissListener(onDismissListener);
             return this;
         }
