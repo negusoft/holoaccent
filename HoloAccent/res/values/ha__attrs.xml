@@ -20,6 +20,7 @@
     <declare-styleable name="HoloAccent">
         <attr name="accentColor" format="color|reference" />
         <attr name="accentColorTranslucent" format="color|reference" />
+        <attr name="accentColorDark" format="color|reference" />
     </declare-styleable>
     
     <!-- Colored button styles -->

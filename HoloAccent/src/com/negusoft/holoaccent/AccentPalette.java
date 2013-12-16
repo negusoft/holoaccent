@@ -31,11 +31,41 @@ public class AccentPalette {
 	public final int green;
 	public final int blue;
 	
+	public final int accentColorDark;
+	public final int redDark;
+	public final int greenDark;
+	public final int blueDark;
+	
 	public AccentPalette(int color) {
 		red = Color.red(color);
 		green = Color.green(color);
 		blue = Color.blue(color);
 		accentColor = Color.rgb(red, green, blue);
+
+		redDark = (int)(red * DARK_ACCENT_PERCENTAGE);
+		greenDark = (int)(green * DARK_ACCENT_PERCENTAGE);
+		blueDark = (int)(blue * DARK_ACCENT_PERCENTAGE);
+		accentColorDark = Color.rgb(redDark, greenDark, blueDark);
+	}
+	
+	public AccentPalette(int color, int colorDark) {
+		red = Color.red(color);
+		green = Color.green(color);
+		blue = Color.blue(color);
+		accentColor = Color.rgb(red, green, blue);
+		
+		if (colorDark == 0) {
+			redDark = (int)(red * DARK_ACCENT_PERCENTAGE);
+			greenDark = (int)(green * DARK_ACCENT_PERCENTAGE);
+			blueDark = (int)(blue * DARK_ACCENT_PERCENTAGE);
+			accentColorDark = Color.rgb(redDark, greenDark, blueDark);
+		}
+		else {
+			redDark = Color.red(colorDark);
+			greenDark = Color.green(colorDark);
+			blueDark = Color.blue(colorDark);
+			accentColorDark = Color.rgb(redDark, greenDark, blueDark);
+		}
 	}
 	
 	public AccentPalette(int r, int g, int b) {
@@ -43,6 +73,11 @@ public class AccentPalette {
 		red = r;
 		green = g;
 		blue = b;
+
+		redDark = Color.red((int)(red * DARK_ACCENT_PERCENTAGE));
+		greenDark = Color.green((int)(green * DARK_ACCENT_PERCENTAGE));
+		blueDark = Color.blue((int)(blue * DARK_ACCENT_PERCENTAGE));
+		accentColorDark = Color.rgb(redDark, greenDark, blueDark);
 	}
 	
 	public int getTranslucent(int alpha) {
@@ -50,14 +85,11 @@ public class AccentPalette {
 	}
 	
 	public int getDarkAccentColor() {
-		return getDarkAccentColor(255);
+		return accentColorDark;
 	}
 	
 	public int getDarkAccentColor(int alpha) {
-		int r = (int)(red * DARK_ACCENT_PERCENTAGE);
-		int g = (int)(green * DARK_ACCENT_PERCENTAGE);
-		int b = (int)(blue * DARK_ACCENT_PERCENTAGE);
-		return Color.argb(alpha, r, g, b);
+		return Color.argb(alpha, redDark, greenDark, blueDark);
 	}
 
 }

@@ -79,9 +79,7 @@ public class AccentResources extends Resources {
 		R.drawable.ha__textfield_comp_focused_right,
 		R.drawable.ha__btn_check_comp_off_focus,
 		R.drawable.ha__btn_check_comp_on_focus,
-		R.drawable.ha__progress_comp_primary,
-		R.drawable.ha__scrubber_comp_primary,
-		R.drawable.ha__scrubber_comp_secondary
+		R.drawable.ha__progress_comp_primary
 	};
 	
 	private static final int[] DARK_TINT_DRAWABLE_IDS = new int[] {
@@ -90,6 +88,7 @@ public class AccentResources extends Resources {
 
 	private final Context mContext;
 	private final int mExplicitColor;
+	private final int mExplicitColorDark;
 	
 	private boolean mInitialized = false;
 	private AccentPalette mPalette;
@@ -99,28 +98,22 @@ public class AccentResources extends Resources {
 		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
 		mContext = c;
 		mExplicitColor = 0;
+		mExplicitColorDark = 0;
 	}
 	
 	public AccentResources(Context c, Resources resources, int color) {
 		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
 		mContext = c;
 		mExplicitColor = color;
+		mExplicitColorDark = 0;
 	}
-
-//	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config, int accentColor) {
-//		super(assets, metrics, config);
-//	}
-//
-//	public AccentResources(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config) {
-//		super(assets, metrics, config);
-//	}
 	
-//	private void initialize(Context c, AssetManager assets, DisplayMetrics metrics, Configuration config, int accentColor) {
-//		mPalette = new AccentPalette(accentColor);
-//		mIterceptors = new ArrayList<Interceptor>();
-//		addInterceptors(c);
-//	}
-//	
+	public AccentResources(Context c, Resources resources, int color, int colorDark) {
+		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
+		mContext = c;
+		mExplicitColor = color;
+		mExplicitColorDark = colorDark;
+	}
 	
 	/**
 	 * Make sure that the instance is initialized. It will check the 'mInitialized' 
@@ -130,24 +123,27 @@ public class AccentResources extends Resources {
 	private void checkInitialized() {
 		if (mInitialized)
 			return;
-		initialize(mContext, mExplicitColor);
+		initialize(mContext, mExplicitColor, mExplicitColorDark);
 	}
 	
-	private synchronized void initialize(Context c, int explicitColor) {
+	private synchronized void initialize(Context c, int explicitColor, int explicitColorDark) {
 		if (mInitialized)
 			return;
-		int color = explicitColor != 0 ? explicitColor : getColorFromTheme(c);
-		mPalette = new AccentPalette(color);
+		mPalette = initPalette(c, explicitColor, explicitColorDark);
 		mIterceptors = new ArrayList<Interceptor>();
 		addInterceptors(c);
 		mInitialized = true;
 	}
 	
-	private int getColorFromTheme(Context c) {
+	private AccentPalette initPalette(Context c, int explicitColor, int explicitColorDark) {
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
-		int result = attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
-		attrs.recycle();
-		return result;
+		
+		int color = explicitColor != 0 ? explicitColor : 
+			attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
+		int colorDark = explicitColorDark != 0 ? explicitColorDark : 
+			attrs.getColor(R.styleable.HoloAccent_accentColorDark, 0);
+		
+		return new AccentPalette(color, colorDark);
 	}
 	
 	private void addInterceptors(Context c) {
