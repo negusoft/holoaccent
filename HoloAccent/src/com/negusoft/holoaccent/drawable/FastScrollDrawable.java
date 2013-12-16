@@ -96,12 +96,12 @@ public class FastScrollDrawable extends Drawable {
 		if (!pressed)
 			return palette.getDarkAccentColor(alpha);
 		int resultAlpha = FILL_ALPHA * alpha / 255;
-		return palette.getTranslucent(resultAlpha);
+		return palette.getAccentColor(resultAlpha);
 	}
 	
 	private int getGlowColor(AccentPalette palette, boolean pressed, int alpha) {
 		int resultAlpha = GLOW_ALPHA * alpha / 255;
-		return palette.getTranslucent(resultAlpha);
+		return palette.getAccentColor(resultAlpha);
 	}
 	
 	@Override

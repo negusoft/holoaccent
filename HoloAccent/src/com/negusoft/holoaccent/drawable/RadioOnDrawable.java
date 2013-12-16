@@ -59,7 +59,7 @@ public class RadioOnDrawable extends Drawable {
 	}
 	
 	private Paint getGlowPaint(AccentPalette palette, float centerX, float centerY, float radius) {
-		RadialGradient gradient = new RadialGradient(centerX, centerY, radius, palette.accentColor, palette.getTranslucent(0), TileMode.CLAMP);
+		RadialGradient gradient = new RadialGradient(centerX, centerY, radius, palette.accentColor, palette.getAccentColor(0), TileMode.CLAMP);
 		Paint result = new Paint();
 		result.setShader(gradient);
 		result.setStyle(Paint.Style.FILL);

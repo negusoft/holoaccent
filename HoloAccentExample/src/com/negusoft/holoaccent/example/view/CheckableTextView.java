@@ -61,7 +61,7 @@ public class CheckableTextView extends TextView implements Checkable {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		if (mChecked)
-			canvas.drawColor(mPalette.getTranslucent(BACKGROUND_ALPHA));
+			canvas.drawColor(mPalette.getAccentColor(BACKGROUND_ALPHA));
 		super.onDraw(canvas);
 	}
 

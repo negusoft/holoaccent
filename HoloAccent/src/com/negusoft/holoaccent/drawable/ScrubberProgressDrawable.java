@@ -49,7 +49,7 @@ public class ScrubberProgressDrawable extends Drawable {
 		float width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, LINE_WIDTH_DP, metrics);
 		Paint result = new Paint();
 		result.setStyle(Paint.Style.STROKE);
-		result.setColor(palette.getTranslucent(alpha));
+		result.setColor(palette.getAccentColor(alpha));
 		result.setStrokeWidth(width);
 		return result;
 	}
@@ -80,7 +80,7 @@ public class ScrubberProgressDrawable extends Drawable {
 	public void setAlpha(int alpha) {
 		float alphaPrecentage = alpha / 255f;
 		float resultAlpha = mState.mBaseAlpha * alphaPrecentage;
-		int color = mState.mPalette.getTranslucent((int)resultAlpha);
+		int color = mState.mPalette.getAccentColor((int)resultAlpha);
 		mPaint.setColor(color);
 	}
 

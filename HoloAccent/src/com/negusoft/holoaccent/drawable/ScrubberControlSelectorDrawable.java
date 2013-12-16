@@ -91,10 +91,10 @@ public class ScrubberControlSelectorDrawable extends Drawable {
 		if (type == SelectorType.DISABLED)
 			return COLOR_DISABLED;
 		if (type == SelectorType.FOCUSED)
-			return palette.getTranslucent(ALPHA_FOCUSED);
+			return palette.getAccentColor(ALPHA_FOCUSED);
 		if (type == SelectorType.PRESSED)
-			return palette.getTranslucent(ALPHA_PRESSED);
-		return palette.getTranslucent(ALPHA_DEFAULT);
+			return palette.getAccentColor(ALPHA_PRESSED);
+		return palette.getAccentColor(ALPHA_DEFAULT);
 	}
 	
 	private float initOuterRadius(DisplayMetrics metrics, SelectorType type) {

@@ -36,6 +36,10 @@ public class AccentPalette {
 	public final int greenDark;
 	public final int blueDark;
 	
+	/**
+	 * Create an instance with the specified color. The dark 
+	 * variant will be derived from it.
+	 */
 	public AccentPalette(int color) {
 		red = Color.red(color);
 		green = Color.green(color);
@@ -47,7 +51,11 @@ public class AccentPalette {
 		blueDark = (int)(blue * DARK_ACCENT_PERCENTAGE);
 		accentColorDark = Color.rgb(redDark, greenDark, blueDark);
 	}
-	
+
+	/**
+	 * Create an instance with the specified default and dark 
+	 * accent colors explicitly specified.
+	 */
 	public AccentPalette(int color, int colorDark) {
 		red = Color.red(color);
 		green = Color.green(color);
@@ -67,7 +75,11 @@ public class AccentPalette {
 			accentColorDark = Color.rgb(redDark, greenDark, blueDark);
 		}
 	}
-	
+
+	/**
+	 * Create an instance with the specified color components. The dark 
+	 * variant will be derived from them.
+	 */
 	public AccentPalette(int r, int g, int b) {
 		accentColor = Color.rgb(r, g, b);
 		red = r;
@@ -80,14 +92,28 @@ public class AccentPalette {
 		accentColorDark = Color.rgb(redDark, greenDark, blueDark);
 	}
 	
-	public int getTranslucent(int alpha) {
+	/** @return The accent color. Same as 'accentColor'. */
+	public int getAccentColor() {
+		return accentColor;
+	}
+
+	/** 
+	 * Get a translucent version of the accent color. 
+	 * @param alpha The opacity of the color [0..255]
+	 */
+	public int getAccentColor(int alpha) {
 		return Color.argb(alpha, red, green, blue);
 	}
-	
+
+	/** @return The accent color. Same as 'accentColorDark'. */
 	public int getDarkAccentColor() {
 		return accentColorDark;
 	}
-	
+
+	/** 
+	 * Get a translucent version of the dark variant of the accent color. 
+	 * @param alpha The opacity of the color [0..255]
+	 */
 	public int getDarkAccentColor(int alpha) {
 		return Color.argb(alpha, redDark, greenDark, blueDark);
 	}

@@ -33,29 +33,29 @@ public class RoundRectInterceptor implements AccentResources.Interceptor {
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 		if (resId == R.drawable.ha__roundrect_check_pressed)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x88), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x88), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_spinner_pressed)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0xAA), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0xAA), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_spinner_focussed)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x55), BORDER_WIDTH_DP, palette.getTranslucent(0xAA), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x55), BORDER_WIDTH_DP, palette.getAccentColor(0xAA), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_pressed_glow)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_pressed_fill)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.accentColor, CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_pressed_fill_colored)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x55), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x55), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_focused)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x66), BORDER_WIDTH_DP, palette.accentColor, CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x66), BORDER_WIDTH_DP, palette.accentColor, CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_disabled_focused)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x22), BORDER_WIDTH_DP, palette.getTranslucent(0x33), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x22), BORDER_WIDTH_DP, palette.getAccentColor(0x33), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_normal_colored)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getDarkAccentColor(), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_normal_colored_bright)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.accentColor, CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_disabled_colored)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x22), BORDER_WIDTH_DISABLED_DP, palette.getTranslucent(0x55), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x22), BORDER_WIDTH_DISABLED_DP, palette.getAccentColor(0x55), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_disabled_focused_colored)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getTranslucent(0x22), BORDER_WIDTH_DP, palette.getTranslucent(0x88), CORNER_RADIUS_DP);
+			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x22), BORDER_WIDTH_DP, palette.getAccentColor(0x88), CORNER_RADIUS_DP);
 		return null;
 	}
 
