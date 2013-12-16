@@ -16,13 +16,13 @@
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:state_multiline="true" android:state_window_focused="false" android:state_enabled="true"  android:drawable="@drawable/ha__textfield_default" />
-    <item android:state_multiline="true" android:state_window_focused="false" android:state_enabled="false" android:drawable="@drawable/ha__textfield_disabled" />
-    <item android:state_multiline="true" android:state_enabled="true" android:state_focused="true" android:drawable="@drawable/ha__textfield_activated" />
-    <item android:state_multiline="true" android:state_enabled="true" android:state_activated="true" android:drawable="@drawable/ha__textfield_focused_multiline" />
-    <item android:state_multiline="true" android:state_enabled="true" android:drawable="@drawable/ha__textfield_default" />
-    <item android:state_multiline="true" android:state_focused="true" android:drawable="@drawable/ha__textfield_disabled_focused" />
-    <item android:state_multiline="true" android:drawable="@drawable/ha__textfield_disabled" />
+<!--     <item android:state_multiline="true" android:state_window_focused="false" android:state_enabled="true"  android:drawable="@drawable/ha__textfield_default" /> -->
+<!--     <item android:state_multiline="true" android:state_window_focused="false" android:state_enabled="false" android:drawable="@drawable/ha__textfield_disabled" /> -->
+<!--     <item android:state_multiline="true" android:state_enabled="true" android:state_focused="true" android:drawable="@drawable/ha__textfield_activated" /> -->
+<!--     <item android:state_multiline="true" android:state_enabled="true" android:state_activated="true" android:drawable="@drawable/ha__textfield_focused" /> -->
+<!--     <item android:state_multiline="true" android:state_enabled="true" android:drawable="@drawable/ha__textfield_default" /> -->
+<!--     <item android:state_multiline="true" android:state_focused="true" android:drawable="@drawable/ha__textfield_disabled_focused" /> -->
+<!--     <item android:state_multiline="true" android:drawable="@drawable/ha__textfield_disabled" /> -->
 
     <item android:state_window_focused="false" android:state_enabled="true" android:drawable="@drawable/ha__textfield_default" />
     <item android:state_window_focused="false" android:state_enabled="false" android:drawable="@drawable/ha__textfield_disabled" />
@@ -31,4 +31,5 @@
     <item android:state_enabled="true" android:drawable="@drawable/ha__textfield_default" />
     <item android:state_focused="true" android:drawable="@drawable/ha__textfield_disabled_focused" />
     <item android:drawable="@drawable/ha__textfield_disabled" />
+    
 </selector>
