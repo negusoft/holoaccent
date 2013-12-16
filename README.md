@@ -27,7 +27,8 @@ Features
 - Overscroll glow color customization
 - Dialog customization with divider color correctly set
 - Switch and SwitchPreference implementation
-- And the themes can be extended to meet your needs
+- Full right-to-left locale support
+- Themes can be extended to meet your needs
 
 
 Getting Started
