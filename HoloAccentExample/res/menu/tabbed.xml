@@ -12,6 +12,11 @@
         android:showAsAction="never"
         android:title="@string/action_dialog_activity"/>
     <item
+        android:id="@+id/tab_strip_activity"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_tab_strip"/>
+    <item
         android:id="@+id/spinner_activity"
         android:orderInCategory="100"
         android:showAsAction="never"

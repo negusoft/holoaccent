@@ -11,6 +11,7 @@
     
     <string name="action_dummie">Dummie item</string>
     <string name="action_alert_dialog">Alert Dialog</string>
+    <string name="action_tab_strip">Tab Strip Activity</string>
     <string name="action_dialog_activity">Dialog Activity</string>
     <string name="action_spinner_activity">Spinner Activity</string>
     <string name="action_code_override_activity">Code Override</string>

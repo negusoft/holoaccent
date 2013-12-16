@@ -38,27 +38,32 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 		final ActionBar actionBar = getActionBar();
 		if (actionBar != null) {
 			actionBar.setHomeButtonEnabled(true);
-			
-			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			mSectionsPagerAdapter = new SectionsPagerAdapter(fragmentManager);
 			mViewPager = (ViewPager) findViewById(R.id.pager);
 			mViewPager.setAdapter(mSectionsPagerAdapter);
+			
+			configureTabs(actionBar, mViewPager);
+		}
+	}
+	
+	protected void configureTabs(final ActionBar actionBar, ViewPager viewPager) {
+		
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-			mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-						@Override public void onPageSelected(int position) {
-							actionBar.setSelectedNavigationItem(position);
-						}
-					});
+		viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+					@Override public void onPageSelected(int position) {
+						actionBar.setSelectedNavigationItem(position);
+					}
+				});
 
-			// For each of the sections in the app, add a tab to the action bar.
-			for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-				Tab newTab = actionBar.newTab()
-						.setText(mSectionsPagerAdapter.getPageTitle(i))
-						.setTabListener(this);
-				actionBar.addTab(newTab);
-			}
+		// For each of the sections in the app, add a tab to the action bar.
+		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
+			Tab newTab = actionBar.newTab()
+					.setText(mSectionsPagerAdapter.getPageTitle(i))
+					.setTabListener(this);
+			actionBar.addTab(newTab);
 		}
 	}
 	
@@ -84,6 +89,9 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
             return true;
 		case R.id.dialog_activity:
             startActivity(new Intent(this, DialogActivity.class));
+            return true;
+		case R.id.tab_strip_activity:
+            startActivity(new Intent(this, TabbedStripActivity.class));
             return true;
 		case R.id.spinner_activity:
             startActivity(new Intent(this, SpinnerActivity.class));

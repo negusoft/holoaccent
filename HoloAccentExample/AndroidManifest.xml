@@ -30,6 +30,7 @@
             android:name="com.negusoft.holoaccent.example.SpinnerActivity"
             android:uiOptions="splitActionBarWhenNarrow" >
         </activity>
+        <activity android:name="com.negusoft.holoaccent.example.TabbedStripActivity" />
         <activity android:name="com.negusoft.holoaccent.example.CodeOverrideActivity" />
         <activity
             android:name="com.negusoft.holoaccent.example.ThemeOverrideActivity"
