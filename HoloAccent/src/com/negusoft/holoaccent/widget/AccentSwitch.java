@@ -32,6 +32,8 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -68,13 +70,16 @@ import com.negusoft.holoaccent.R;
  */
 public class AccentSwitch extends CompoundButton {
 
-	private static final String RESOURCE_TYPE = "string";
+	private static final String RESOURCE_TYPE_STRING = "string";
 	private static final String RESOURCE_PACKAGE = "android";
 	private static final String RESOURCE_NAME_ON = "capital_on";
 	private static final String RESOURCE_NAME_OFF = "capital_off";
 	private static final String DEFAULT_TEXT_ON = "ON";
 	private static final String DEFAULT_TEXT_OFF = "OFF";
-	
+
+	private static final String RESOURCE_TYPE_DRAWABLE = "drawable";
+	private static final String RESOURCE_NAME_THUMB = "switch_inner_holo_dark";
+	private static final String RESOURCE_NAME_TRACK = "switch_track_holo_dark";
 	
 	private static final int TOUCH_MODE_IDLE = 0;
 	private static final int TOUCH_MODE_DOWN = 1;
@@ -175,11 +180,11 @@ public class AccentSwitch extends CompoundButton {
 
 		mThumbDrawable = a.getDrawable(R.styleable.AccentSwitch_android_thumb);
 		if (mThumbDrawable == null)
-			mThumbDrawable = getResources().getDrawable(R.drawable.ha__switch_thumb);
+			mThumbDrawable = getDefaultThumbDrawable();
 		
 		mTrackDrawable = a.getDrawable(R.styleable.AccentSwitch_android_track);
 		if (mTrackDrawable == null)
-			mTrackDrawable = getResources().getDrawable(R.drawable.ha__switch_track);
+			mTrackDrawable = getDefaultTrackDrawable();
 		
 		mTextOn = a.getText(R.styleable.AccentSwitch_android_textOn);
 		if (mTextOn == null)
@@ -189,15 +194,20 @@ public class AccentSwitch extends CompoundButton {
 		if (mTextOff == null)
 			mTextOff = getDefaultOffString();
 		
+		DisplayMetrics metrics = getResources().getDisplayMetrics();
+		
 		mThumbTextPadding = a.getDimensionPixelSize(
-				R.styleable.AccentSwitch_android_thumbTextPadding, 0);
+				R.styleable.AccentSwitch_android_thumbTextPadding, 
+				(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 12, metrics));
 		mSwitchMinWidth = a.getDimensionPixelSize(
-				R.styleable.AccentSwitch_android_switchMinWidth, 0);
+				R.styleable.AccentSwitch_android_switchMinWidth, 
+				(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 96, metrics));
 		mSwitchPadding = a.getDimensionPixelSize(
-				R.styleable.AccentSwitch_android_switchPadding, 0);
+				R.styleable.AccentSwitch_android_switchPadding, 
+				(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16, metrics));
 
 		int appearance = a.getResourceId(
-				R.styleable.AccentSwitch_android_switchTextAppearance, 0);
+				R.styleable.AccentSwitch_android_switchTextAppearance, R.style.TextAppearance_HoloAccent_Switch);
 		if (appearance != 0) {
 			setSwitchTextAppearance(context, appearance);
 		}
@@ -222,15 +232,27 @@ public class AccentSwitch extends CompoundButton {
 		});
 	}
 	
+	private Drawable getDefaultThumbDrawable() {
+		Resources res = Resources.getSystem();
+		int id = res.getIdentifier(RESOURCE_NAME_THUMB, RESOURCE_TYPE_DRAWABLE, RESOURCE_PACKAGE);
+		return res.getDrawable(id);
+	}
+	
+	private Drawable getDefaultTrackDrawable() {
+		Resources res = Resources.getSystem();
+		int id = res.getIdentifier(RESOURCE_NAME_TRACK, RESOURCE_TYPE_DRAWABLE, RESOURCE_PACKAGE);
+		return res.getDrawable(id);
+	}
+	
 	private String getDefaultOnString() {
 		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME_ON, RESOURCE_TYPE, RESOURCE_PACKAGE);
+		int id = res.getIdentifier(RESOURCE_NAME_ON, RESOURCE_TYPE_STRING, RESOURCE_PACKAGE);
 		return id == 0 ? DEFAULT_TEXT_ON :  res.getString(id);
 	}
 	
 	private String getDefaultOffString() {
 		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME_OFF, RESOURCE_TYPE, RESOURCE_PACKAGE);
+		int id = res.getIdentifier(RESOURCE_NAME_OFF, RESOURCE_TYPE_STRING, RESOURCE_PACKAGE);
 		return id == 0 ? DEFAULT_TEXT_OFF :  res.getString(id);
 	}
 
