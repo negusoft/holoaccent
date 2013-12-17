@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     android:textDirection="locale"
     android:layoutDirection="locale"
-    tools:context=".TabbedActivity" />
+    tools:context=".TabbedActivity">
+    <android.support.v4.view.PagerTabStrip
+        android:id="@+id/tabStrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/accentColor"
+        android:visibility="gone" />
+</android.support.v4.view.ViewPager>

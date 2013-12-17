@@ -33,7 +33,7 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tabbed);
+		setContentView(getLayoutId());
 
 		final ActionBar actionBar = getActionBar();
 		if (actionBar != null) {
@@ -46,6 +46,16 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 			
 			configureTabs(actionBar, mViewPager);
 		}
+	}
+	
+	private final AccentHelper mAccentHelper = new AccentHelper();
+	@Override
+	public Resources getResources() {
+		return mAccentHelper.getResources(this, super.getResources());
+	}
+	
+	protected int getLayoutId() {
+		return R.layout.activity_tabbed;
 	}
 	
 	protected void configureTabs(final ActionBar actionBar, ViewPager viewPager) {
@@ -65,12 +75,6 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 					.setTabListener(this);
 			actionBar.addTab(newTab);
 		}
-	}
-	
-	private final AccentHelper mAccentHelper = new AccentHelper();
-	@Override
-	public Resources getResources() {
-		return mAccentHelper.getResources(this, super.getResources());
 	}
 	
 	@Override

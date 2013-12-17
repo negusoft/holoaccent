@@ -14,6 +14,11 @@ public class TabbedStripActivity extends TabbedActivity {
 	}
 	
 	@Override
+	protected int getLayoutId() {
+		return R.layout.activity_tab_strip;
+	}
+	
+	@Override
 	protected void configureTabs(ActionBar actionBar, ViewPager viewPager) {
 		// EMPTY: don't configure the tabs not to show them
 	}
