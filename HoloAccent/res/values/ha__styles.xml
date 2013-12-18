@@ -172,6 +172,14 @@
         <item name="android:indeterminateDrawable">@drawable/ha__progress_indeterminate_horizontal</item>
     </style>
     
+    <!-- Horizontal progress bar like the native one (must be set on the layout XML directly) -->
+    <style name="HoloAccent.ProgressBar.Horizontal.Legacy">
+        <item name="android:indeterminateDrawable">@drawable/ha__progress_indeterminate_horizontal_legacy</item>
+    </style>
+    <style name="HoloAccent.Light.ProgressBar.Horizontal.Legacy">
+        <item name="android:indeterminateDrawable">@drawable/ha__progress_indeterminate_horizontal_legacy</item>
+    </style>
+    
     <!-- Text appearance -->
     <style name="TextAppearance.HoloAccent.DialogWindowTitle" parent="android:TextAppearance.Holo.DialogWindowTitle">
         <item name="android:textColor">?attr/accentColor</item>

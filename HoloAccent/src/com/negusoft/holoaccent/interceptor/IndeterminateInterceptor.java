@@ -15,46 +15,60 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.interceptor;
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
 import com.negusoft.holoaccent.drawable.IndeterminedProgressDrawable;
+import com.negusoft.holoaccent.drawable.IndeterminedProgressLegacyDrawable;
 
 public class IndeterminateInterceptor implements AccentResources.Interceptor {
 
-	private final int[] INDETERMINED_DRAWABLE_IDS = new int[] {
-		R.drawable.ha__progressbar_indeterminate_1,
-		R.drawable.ha__progressbar_indeterminate_2,
-		R.drawable.ha__progressbar_indeterminate_3,
-		R.drawable.ha__progressbar_indeterminate_4,
-		R.drawable.ha__progressbar_indeterminate_5,
-		R.drawable.ha__progressbar_indeterminate_6,
-		R.drawable.ha__progressbar_indeterminate_7,
-		R.drawable.ha__progressbar_indeterminate_8
+	private final int[] LEGACY_DRAWABLE_IDS = new int[] {
+			R.drawable.ha__progressbar_indeterminate_legacy_1,
+			R.drawable.ha__progressbar_indeterminate_legacy_2,
+			R.drawable.ha__progressbar_indeterminate_legacy_3,
+			R.drawable.ha__progressbar_indeterminate_legacy_4,
+			R.drawable.ha__progressbar_indeterminate_legacy_5,
+			R.drawable.ha__progressbar_indeterminate_legacy_6,
+			R.drawable.ha__progressbar_indeterminate_legacy_7,
+			R.drawable.ha__progressbar_indeterminate_legacy_8
 	};
-	
-	private final boolean mEnhanced;
-	
-	public IndeterminateInterceptor(Context c) {
-		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.IndeterminateProgress);
-		mEnhanced = attrs.getBoolean(R.styleable.IndeterminateProgress_enhancedIndeterminateProgress, true);
-		attrs.recycle();
-	}
-	
-	public IndeterminateInterceptor(boolean enhanced) {
-		mEnhanced = enhanced;
-	}
+
+	private final int[] INDETERMINATE_DRAWABLE_IDS = new int[] {
+			R.drawable.ha__progressbar_indeterminate_1,
+			R.drawable.ha__progressbar_indeterminate_2,
+			R.drawable.ha__progressbar_indeterminate_3,
+			R.drawable.ha__progressbar_indeterminate_4,
+			R.drawable.ha__progressbar_indeterminate_5,
+			R.drawable.ha__progressbar_indeterminate_6,
+			R.drawable.ha__progressbar_indeterminate_7,
+			R.drawable.ha__progressbar_indeterminate_8,
+			R.drawable.ha__progressbar_indeterminate_9,
+			R.drawable.ha__progressbar_indeterminate_10,
+			R.drawable.ha__progressbar_indeterminate_11,
+			R.drawable.ha__progressbar_indeterminate_12,
+			R.drawable.ha__progressbar_indeterminate_13,
+			R.drawable.ha__progressbar_indeterminate_14,
+			R.drawable.ha__progressbar_indeterminate_15,
+			R.drawable.ha__progressbar_indeterminate_16,
+			R.drawable.ha__progressbar_indeterminate_17,
+			R.drawable.ha__progressbar_indeterminate_18,
+			R.drawable.ha__progressbar_indeterminate_19,
+			R.drawable.ha__progressbar_indeterminate_20
+	};
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		for (int i=0; i< INDETERMINED_DRAWABLE_IDS.length; i++) {
-			if (resId == INDETERMINED_DRAWABLE_IDS[i])
-				return new IndeterminedProgressDrawable(res, palette.accentColor, i, mEnhanced);
+		for (int i=0; i< INDETERMINATE_DRAWABLE_IDS.length; i++) {
+			if (resId == INDETERMINATE_DRAWABLE_IDS[i])
+				return new IndeterminedProgressDrawable(res, palette.accentColor, i, INDETERMINATE_DRAWABLE_IDS.length);
+		}
+		for (int i=0; i< LEGACY_DRAWABLE_IDS.length; i++) {
+			if (resId == LEGACY_DRAWABLE_IDS[i])
+				return new IndeterminedProgressLegacyDrawable(res, palette.accentColor, i);
 		}
 		return null;
 	}

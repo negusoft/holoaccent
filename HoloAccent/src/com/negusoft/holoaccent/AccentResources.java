@@ -156,7 +156,7 @@ public class AccentResources extends Resources {
 		mIterceptors.add(new ScrubberInterceptor());
 		mIterceptors.add(new TextSelectHandleInterceptor());
 		mIterceptors.add(new FastScrollInterceptor());
-		mIterceptors.add(new IndeterminateInterceptor(c));
+		mIterceptors.add(new IndeterminateInterceptor());
 		mIterceptors.add(new RadioInterceptor());
 		mIterceptors.add(new SpinnerInterceptor());
 		mIterceptors.add(new SearchViewTextFieldInterceptor());

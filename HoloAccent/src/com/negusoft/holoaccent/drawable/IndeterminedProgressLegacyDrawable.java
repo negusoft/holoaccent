@@ -26,44 +26,44 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import android.view.animation.Interpolator;
 
 import com.negusoft.holoaccent.R;
 
 /**
- * Drawable implementation to replace the bitmaps that compose 
- * the "progress_indeterminate_horizontal" animation.
+ * Simple drawable implementation to replace the bitmaps that
+ * compose the "progress_indeterminate_horizontal_legacy" animation.
  * <br/><br/>
- * The gaps position is calculated when loading
+ * There are 8 variants with their own gap positions. The positions 
+ * are taken from the original drawables, and represented as a 
+ * percentage [0..1] of the whole width of the drawable.
  */
-public class IndeterminedProgressDrawable extends Drawable {
-	
-	private static final int DEFAULT_SECTION_NUMBER = 6;
+public class IndeterminedProgressLegacyDrawable extends Drawable {
 
-	private static final float MIN_WIDTH_DP = 64.0f;
+	private static final float MIN_WIDTH_DP = 606.0f;
 	private static final float MIN_HEIGHT_DP = 16.0f;
 	private static final float LINE_WIDTH_DP = 4.0f;
 	private static final float GAP_WIDTH_DP = 4.0f;
 	
+	// Percentages taken from the original PNG files
+	private final float[] GAP_PERCENTAGES_1 = new float[] { 0.07920792f, 0.33333334f, 0.6386139f, 0.8679868f, 0.97359735f };
+	private final float[] GAP_PERCENTAGES_2 = new float[] { 0.09405941f, 0.35643566f, 0.660066f, 0.87953794f, 0.9785479f };
+	private final float[] GAP_PERCENTAGES_3 = new float[] { 0.0066006603f, 0.15511551f, 0.44884488f, 0.7359736f, 0.9158416f, 0.98349833f };
+	private final float[] GAP_PERCENTAGES_4 = new float[] { 0.00990099f, 0.17986798f, 0.4768977f, 0.7590759f, 0.92574257f, 0.9867987f };
+	private final float[] GAP_PERCENTAGES_5 = new float[] { 0.02970297f, 0.20957096f, 0.5132013f, 0.7871287f, 0.9389439f, 0.9933993f };
+	private final float[] GAP_PERCENTAGES_6 = new float[] { 0.041254126f, 0.24257426f, 0.5478548f, 0.81353134f, 0.9521452f, 0.9966997f };
+	private final float[] GAP_PERCENTAGES_7 = new float[] { 0.04950495f, 0.2739274f, 0.5841584f, 0.8349835f, 0.96039605f, 0.99834985f };
+	private final float[] GAP_PERCENTAGES_8 = new float[] { 0.06435644f, 0.3069307f, 0.6171617f, 0.8547855f, 0.9686469f };
+	
+	//Holds all the gap percentages
+	private final float[][] GAP_PERCENTAGES_REFERENCE = new float[][] { 
+			GAP_PERCENTAGES_1, GAP_PERCENTAGES_2, GAP_PERCENTAGES_3, GAP_PERCENTAGES_4,
+			GAP_PERCENTAGES_5, GAP_PERCENTAGES_6, GAP_PERCENTAGES_7, GAP_PERCENTAGES_8 };
+	
 	private final DisplayMetrics mDisplayMetrics;
     private final Paint mPaint;
     private final float[] mGapPercentages;
-
-    /** Used to calculate the gap positions in a accelarate/decelarate shape. */
-    private Interpolator mInterpolator = new Interpolator() {
-		@Override public float getInterpolation(float value) {
-			if (value <= 0.5f)
-				return 2 * value * value;
-			float offset = value - 0.5f;
-			return 0.5f + (2*offset) - (2*offset*offset);
-		}
-	};
 	
-	public IndeterminedProgressDrawable(Context c, int frameIndex, int frameCount) {
-		this(c, frameIndex, frameCount, DEFAULT_SECTION_NUMBER);
-	}
-	
-	public IndeterminedProgressDrawable(Context c, int frameIndex, int frameCount, int sectionCount) {
+	public IndeterminedProgressLegacyDrawable(Context c, int index) {
 		Resources res = c.getResources();
 		mDisplayMetrics = res.getDisplayMetrics();
 
@@ -73,17 +73,13 @@ public class IndeterminedProgressDrawable extends Drawable {
 
         mPaint = getPaint(mDisplayMetrics, color);
         
-        mGapPercentages = getGapPercentages(frameIndex, frameCount, sectionCount);
+        mGapPercentages = getGapPercentages(index);
 	}
 	
-	public IndeterminedProgressDrawable(Resources res, int color, int frameIndex, int frameCount) {
-		this(res, color, frameIndex, frameCount, DEFAULT_SECTION_NUMBER);
-	}
-	
-	public IndeterminedProgressDrawable(Resources res, int color, int frameIndex, int frameCount, int sectionCount) {
+	public IndeterminedProgressLegacyDrawable(Resources res, int color, int index) {
 		mDisplayMetrics = res.getDisplayMetrics();
         mPaint = getPaint(mDisplayMetrics, color);
-        mGapPercentages = getGapPercentages(frameIndex, frameCount, sectionCount);
+        mGapPercentages = getGapPercentages(index);
 	}
 	
 	private Paint getPaint(DisplayMetrics displayMetrics, int color) {
@@ -95,15 +91,10 @@ public class IndeterminedProgressDrawable extends Drawable {
 		return result;
 	}
 	
-	private float[] getGapPercentages(int frameIndex, int frameCount, int sectionCount) {
-		float sectionWidth = 1f / sectionCount;
-		float offset = sectionWidth / frameCount * frameIndex;
-		float[] result = new float[sectionCount];
-		for (int i=0; i< result.length; i++) {
-			float phase = offset + (i * sectionWidth);
-			result[i] = mInterpolator.getInterpolation(phase);
-		}
-		return result;
+	private float[] getGapPercentages(int index) {
+		// Normalize the index just in case
+		index = index % GAP_PERCENTAGES_REFERENCE.length;
+		return GAP_PERCENTAGES_REFERENCE[index];
 	}
 	
 	@Override
@@ -127,24 +118,19 @@ public class IndeterminedProgressDrawable extends Drawable {
 		float minWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, MIN_WIDTH_DP, mDisplayMetrics);
 		if (totalWidth < minWidth)
 			totalWidth = minWidth;
-
-        float gapWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, GAP_WIDTH_DP, mDisplayMetrics);
+        
         float centerY = bounds.exactCenterY();
         float startX = bounds.left;
         float stopX;
+        float gapWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, GAP_WIDTH_DP, mDisplayMetrics);
         
-        totalWidth += gapWidth;
-        
-		for (float startPercentage : mGapPercentages) {
-			stopX = bounds.left + (totalWidth * startPercentage) - gapWidth;
-			if (stopX < bounds.left) {
-				startX = bounds.left + (totalWidth * startPercentage);
-				continue;
-			}
-			canvas.drawLine(startX, centerY, stopX, centerY, mPaint);
-			startX = stopX + gapWidth;
-		}
-		canvas.drawLine(startX, centerY, totalWidth, centerY, mPaint);
+        // Draw the lines before the gaps
+        for (float startPercentage : mGapPercentages) {
+        	stopX = totalWidth * startPercentage;
+        	canvas.drawLine(startX, centerY, stopX, centerY, mPaint);
+        	startX = stopX + gapWidth;
+        }
+    	canvas.drawLine(startX, centerY, totalWidth, centerY, mPaint);
 	}
 
 	@Override

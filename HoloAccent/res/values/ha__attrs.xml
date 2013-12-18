@@ -63,9 +63,4 @@
         <attr name="android:textColorLink" />
         <attr name="android:textAllCaps" />
     </declare-styleable>
-    
-    <!-- ProgressBar enhancement configuration -->
-    <declare-styleable name="IndeterminateProgress">
-	    <attr name="enhancedIndeterminateProgress" format="reference|boolean" />
-    </declare-styleable>
 </resources>
