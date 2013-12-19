@@ -8,16 +8,14 @@ import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
-import com.negusoft.holoaccent.AccentHelper;
+import com.negusoft.holoaccent.AccentActivity;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
 import com.negusoft.holoaccent.example.fragment.ProgressFragment;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
@@ -25,7 +23,7 @@ import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
 
-public class TabbedActivity extends FragmentActivity implements ActionBar.TabListener {
+public class TabbedActivity extends AccentActivity implements ActionBar.TabListener {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
@@ -39,7 +37,7 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 		if (actionBar != null) {
 			actionBar.setHomeButtonEnabled(true);
 
-			FragmentManager fragmentManager = getSupportFragmentManager();
+			FragmentManager fragmentManager = getFragmentManager();
 			mSectionsPagerAdapter = new SectionsPagerAdapter(fragmentManager);
 			mViewPager = (ViewPager) findViewById(R.id.pager);
 			mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -65,12 +63,6 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 					.setTabListener(this);
 			actionBar.addTab(newTab);
 		}
-	}
-	
-	private final AccentHelper mAccentHelper = new AccentHelper();
-	@Override
-	public Resources getResources() {
-		return mAccentHelper.getResources(this, super.getResources());
 	}
 	
 	@Override

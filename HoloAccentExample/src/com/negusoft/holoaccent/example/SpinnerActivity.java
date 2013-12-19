@@ -1,16 +1,14 @@
 package com.negusoft.holoaccent.example;
 
 import android.app.ActionBar;
-import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.negusoft.holoaccent.AccentHelper;
+import com.negusoft.holoaccent.AccentActivity;
 
-public class SpinnerActivity extends Activity {
+public class SpinnerActivity extends AccentActivity {
 
 	private static final String[] ITEMS = new String[] { "Item 1", "Item 2", "Item 3", "Item 4" };
 
@@ -45,12 +43,6 @@ public class SpinnerActivity extends Activity {
 		spinner1.setAdapter(new MyArrayAdapter());
 		Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
 		spinner2.setAdapter(new MyArrayAdapter());
-	}
-	
-	private final AccentHelper mAccentHelper = new AccentHelper();
-	@Override
-	public Resources getResources() {
-		return mAccentHelper.getResources(this, super.getResources());
 	}
 
 	@Override
