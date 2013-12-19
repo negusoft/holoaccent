@@ -58,22 +58,30 @@ import android.content.res.Resources;
  * prepareDialog().
  */
 public class AccentHelper {
+
+    static final Integer NO_OVERRIDE = Integer.MIN_VALUE;
 	
 	private AccentResources mAccentResources;
 	private DividerPainter mDividerPainter;
-	
-	private final boolean mOverrideThemeColor;
+
+    private final boolean mOverrideThemeColor;
 	private final int mOverrideColor;
-	
+
+    // Need for backwards compatibility & custom implementation
 	public AccentHelper() {
-		mOverrideThemeColor = false;
-		mOverrideColor = 0;
+        this(0, false);
 	}
-	
+
+    // Need for backwards compatibility & custom implementation
 	public AccentHelper(int color) {
-		mOverrideThemeColor = true;
-		mOverrideColor = color;
+        this(color, true);
 	}
+
+    // Keep package to avoid possible misuse in conjunction w/ AccentActivity
+    AccentHelper(int color, boolean overrideThemeColor) {
+        mOverrideColor = color;
+        mOverrideThemeColor = overrideThemeColor;
+    }
 	
 	/** @return The AccentResources instance, properly initialized. */
 	public Resources getResources(Context c, Resources resources) {
@@ -90,7 +98,7 @@ public class AccentHelper {
 	}
 	
 	private AccentResources createInstance(Context c, Resources resources) {
-		if (mOverrideThemeColor)
+        if (mOverrideThemeColor)
 			return new AccentResources(c, resources, mOverrideColor);
 		return new AccentResources(c, resources);
 	}
