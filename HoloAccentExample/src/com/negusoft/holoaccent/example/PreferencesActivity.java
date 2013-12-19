@@ -1,29 +1,21 @@
 package com.negusoft.holoaccent.example;
 
-import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
-import com.negusoft.holoaccent.AccentHelper;
+import com.negusoft.holoaccent.AccentActivity;
 
-public class PreferencesActivity extends Activity {
+public class PreferencesActivity extends AccentActivity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         // Display the fragment as the main content.
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new GeneralPreferenceFragment())
                 .commit();
-	}
-	
-	private final AccentHelper mAccentHelper = new AccentHelper();
-	@Override
-	public Resources getResources() {
-		return mAccentHelper.getResources(this, super.getResources());
-	}
+    }
 
 //	@Override
 //	public boolean onOptionsItemSelected(MenuItem item) {
@@ -35,11 +27,11 @@ public class PreferencesActivity extends Activity {
 //		return super.onOptionsItemSelected(item);
 //	}
 
-	public static class GeneralPreferenceFragment extends PreferenceFragment {
-		@Override
-		public void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-			addPreferencesFromResource(R.xml.pref_general);
-		}
-	}
+    public static class GeneralPreferenceFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.pref_general);
+        }
+    }
 }
