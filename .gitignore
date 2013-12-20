@@ -32,3 +32,6 @@ proguard/
 # Gradle
 build/
 .gradle
+
+# Mac files
+.DS_Store
