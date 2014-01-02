@@ -8,4 +8,13 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:0.6.+'
     }
+
+    allprojects {
+        version = VERSION_NAME
+        group = GROUP
+
+        repositories {
+            mavenCentral()
+        }
+    }
 }
