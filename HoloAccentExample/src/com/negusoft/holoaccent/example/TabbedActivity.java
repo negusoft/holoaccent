@@ -47,7 +47,7 @@ public class TabbedActivity extends FragmentActivity implements ActionBar.TabLis
 			configureTabs(actionBar, mViewPager);
 		}
 	}
-	
+
 	private final AccentHelper mAccentHelper = new AccentHelper();
 	@Override
 	public Resources getResources() {

@@ -58,6 +58,8 @@ import android.content.res.Resources;
  * prepareDialog().
  */
 public class AccentHelper {
+
+    public static final int COLOR_NO_OVERRIDE = 0;
 	
 	private AccentResources mAccentResources;
 	private DividerPainter mDividerPainter;
@@ -69,9 +71,14 @@ public class AccentHelper {
 		mOverrideThemeColor = false;
 		mOverrideColor = 0;
 	}
-	
+
+    /**
+     * Initialize by specifying a explicit color.
+     * @param color The color to override. If it is 0, it will not override
+     *              the color so it will be taken from the theme
+     */
 	public AccentHelper(int color) {
-		mOverrideThemeColor = true;
+		mOverrideThemeColor =  color != COLOR_NO_OVERRIDE;
 		mOverrideColor = color;
 	}
 	
