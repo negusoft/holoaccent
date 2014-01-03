@@ -16,18 +16,16 @@
 package com.negusoft.holoaccent.dialog;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.view.View;
 import android.view.Window;
 
 import com.negusoft.holoaccent.R;
+import com.negusoft.holoaccent.util.NativeResources;
 
 public class DividerPainter {
 
-	private static final String RESOURCE_TYPE = "id";
-	private static final String RESOURCE_PACKAGE = "android";
-	private static final String RESOURCE_NAME = "titleDivider";
+	private static final String IDENTIFIER_NAME = "titleDivider";
 	
 	private final int mColor;
 	
@@ -43,8 +41,7 @@ public class DividerPainter {
 	}
 	
 	public final void paint(Window window) {
-		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME, RESOURCE_TYPE, RESOURCE_PACKAGE);
+        int id = NativeResources.getIdentifier(IDENTIFIER_NAME);
 		View v = window.findViewById(id);
 		if (v != null)
 			v.setBackgroundColor(mColor);

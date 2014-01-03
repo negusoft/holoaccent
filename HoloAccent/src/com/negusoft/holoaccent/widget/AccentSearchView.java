@@ -2,7 +2,6 @@ package com.negusoft.holoaccent.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -11,14 +10,13 @@ import android.view.View;
 import android.widget.SearchView;
 
 import com.negusoft.holoaccent.R;
+import com.negusoft.holoaccent.util.NativeResources;
 
 public class AccentSearchView extends SearchView {
 	
 	private static final int SET_DRAWABLE_MIN_SDK = 16;
 
-	private static final String RESOURCE_TYPE = "id";
-	private static final String RESOURCE_PACKAGE = "android";
-	private static final String RESOURCE_NAME = "search_plate";
+	private static final String IDENTIFIER_NAME = "search_plate";
 
 	public AccentSearchView(Context context) {
 		super(context);
@@ -32,8 +30,7 @@ public class AccentSearchView extends SearchView {
 
 	private void initBackground(Context c, AttributeSet attrs) {
 		Drawable background = getBackgroundDrawable(c, attrs);
-		Resources res = Resources.getSystem();
-        int searchPlateId = res.getIdentifier(RESOURCE_NAME, RESOURCE_TYPE, RESOURCE_PACKAGE);
+        int searchPlateId = NativeResources.getIdentifier(IDENTIFIER_NAME);
         View searchPlate = findViewById(searchPlateId);
         setBackground(searchPlate, background);
 	}

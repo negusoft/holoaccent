@@ -44,6 +44,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.CompoundButton;
 
 import com.negusoft.holoaccent.R;
+import com.negusoft.holoaccent.util.NativeResources;
 
 /**
  * This class is based on the <a href="http://github.com/ankri/SwitchCompatLibrary">SwitchCompat Library</a>, just the styling attributes have been modified to fit the HoloAccent library. 
@@ -70,14 +71,11 @@ import com.negusoft.holoaccent.R;
  */
 public class AccentSwitch extends CompoundButton {
 
-	private static final String RESOURCE_TYPE_STRING = "string";
-	private static final String RESOURCE_PACKAGE = "android";
 	private static final String RESOURCE_NAME_ON = "capital_on";
 	private static final String RESOURCE_NAME_OFF = "capital_off";
 	private static final String DEFAULT_TEXT_ON = "ON";
 	private static final String DEFAULT_TEXT_OFF = "OFF";
 
-	private static final String RESOURCE_TYPE_DRAWABLE = "drawable";
 	private static final String RESOURCE_NAME_THUMB = "switch_inner_holo_dark";
 	private static final String RESOURCE_NAME_TRACK = "switch_track_holo_dark";
 	
@@ -172,7 +170,6 @@ public class AccentSwitch extends CompoundButton {
 		Resources res = getResources();
 		mTextPaint.density = res.getDisplayMetrics().density;
 
-		// TODO resolve error
 		// mTextPaint.setCompatibilityScaling(res.getCompatibilityInfo().applicationScale);
 
 		TypedArray a = context.obtainStyledAttributes(attrs,
@@ -221,7 +218,6 @@ public class AccentSwitch extends CompoundButton {
 		refreshDrawableState();
 		setChecked(isChecked());
 
-		// TODO I don't know why, but in order for the OnCheckedChangeListener
 		// to work this switch has to have an OnClickListener
 		this.setOnClickListener(new View.OnClickListener() {
 
@@ -233,27 +229,21 @@ public class AccentSwitch extends CompoundButton {
 	}
 	
 	private Drawable getDefaultThumbDrawable() {
-		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME_THUMB, RESOURCE_TYPE_DRAWABLE, RESOURCE_PACKAGE);
-		return res.getDrawable(id);
+        return NativeResources.getDrawable(RESOURCE_NAME_THUMB);
 	}
 	
 	private Drawable getDefaultTrackDrawable() {
-		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME_TRACK, RESOURCE_TYPE_DRAWABLE, RESOURCE_PACKAGE);
-		return res.getDrawable(id);
+        return NativeResources.getDrawable(RESOURCE_NAME_TRACK);
 	}
 	
 	private String getDefaultOnString() {
-		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME_ON, RESOURCE_TYPE_STRING, RESOURCE_PACKAGE);
-		return id == 0 ? DEFAULT_TEXT_ON :  res.getString(id);
+        String result = NativeResources.getString(RESOURCE_NAME_ON);
+        return result == null ? DEFAULT_TEXT_ON : result;
 	}
 	
 	private String getDefaultOffString() {
-		Resources res = Resources.getSystem();
-		int id = res.getIdentifier(RESOURCE_NAME_OFF, RESOURCE_TYPE_STRING, RESOURCE_PACKAGE);
-		return id == 0 ? DEFAULT_TEXT_OFF :  res.getString(id);
+        String result = NativeResources.getString(RESOURCE_NAME_OFF);
+        return result == null ? DEFAULT_TEXT_OFF : result;
 	}
 
 	/**
@@ -727,7 +717,6 @@ public class AccentSwitch extends CompoundButton {
 	}
 
 	private void animateThumbToCheckedState(boolean newCheckedState) {
-		// TODO animate!
 		// float targetPos = newCheckedState ? 0 : getThumbScrollRange();
 		// mThumbPosition = targetPos;
 		setChecked(newCheckedState);

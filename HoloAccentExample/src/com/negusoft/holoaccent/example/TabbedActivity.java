@@ -1,19 +1,20 @@
 package com.negusoft.holoaccent.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
-import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
@@ -21,9 +22,6 @@ import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
 import com.negusoft.holoaccent.example.fragment.ProgressFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TabbedActivity extends AccentActivity implements ActionBar.TabListener {
 

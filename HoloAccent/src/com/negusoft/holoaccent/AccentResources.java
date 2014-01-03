@@ -47,6 +47,7 @@ import com.negusoft.holoaccent.interceptor.TextSelectHandleInterceptor;
 import com.negusoft.holoaccent.interceptor.ToggleInterceptor;
 import com.negusoft.holoaccent.interceptor.UnderlineInterceptor;
 import com.negusoft.holoaccent.util.BitmapUtils;
+import com.negusoft.holoaccent.util.NativeResources;
 
 /**
  * Extends the default android Resources to replace and modify 
@@ -233,8 +234,6 @@ public class AccentResources extends Resources {
 	 */
 	private class OverScrollInterceptor implements Interceptor {
 
-		private static final String RESOURCE_TYPE = "drawable";
-		private static final String RESOURCE_PACKAGE = "android";
 		private static final String RESOURCE_NAME_EDGE = "overscroll_edge";
 		private static final String RESOURCE_NAME_GLOW = "overscroll_glow";
 
@@ -242,8 +241,8 @@ public class AccentResources extends Resources {
 		private final int mOverscrollGlowId;
 		
 		public OverScrollInterceptor() {
-			mOverscrollEdgeId = getIdentifier(RESOURCE_NAME_EDGE, RESOURCE_TYPE, RESOURCE_PACKAGE);
-			mOverscrollGlowId = getIdentifier(RESOURCE_NAME_GLOW, RESOURCE_TYPE, RESOURCE_PACKAGE);
+            mOverscrollEdgeId = NativeResources.getDrawableIdentifier(RESOURCE_NAME_EDGE);
+            mOverscrollGlowId = NativeResources.getDrawableIdentifier(RESOURCE_NAME_GLOW);
 		}
 
 		@Override
