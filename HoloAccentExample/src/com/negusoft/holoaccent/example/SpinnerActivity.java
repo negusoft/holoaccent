@@ -55,9 +55,6 @@ public class SpinnerActivity extends AccentActivity {
 		public MyArrayAdapter() {
 			super(SpinnerActivity.this, android.R.layout.simple_spinner_dropdown_item, ITEMS);
 		}
-		public MyArrayAdapter(int dropdownItemLayout) {
-			super(SpinnerActivity.this, dropdownItemLayout, ITEMS);
-		}
 	}
 
 }

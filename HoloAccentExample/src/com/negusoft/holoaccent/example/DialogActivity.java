@@ -10,13 +10,7 @@ public class DialogActivity extends SpinnerActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mAccentHelper.prepareDialog(this, getWindow());
-	}
-	
-	private final AccentHelper mAccentHelper = new AccentHelper();
-	@Override
-	public Resources getResources() {
-		return mAccentHelper.getResources(this, super.getResources());
+        getAccentHelper().prepareDialog(this, getWindow());
 	}
 
 }
