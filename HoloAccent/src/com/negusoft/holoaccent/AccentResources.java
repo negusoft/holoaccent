@@ -86,6 +86,10 @@ public class AccentResources extends Resources {
 	private static final int[] DARK_TINT_DRAWABLE_IDS = new int[] {
 		R.drawable.ha__btn_check_comp_on_accent
 	};
+	
+	private static final int[] TINT_TRANSFORMATION_DRAWABLE_IDS = new int[] {
+//		R.drawable.text_select_handle_middle
+	};
 
 	private final Context mContext;
 	private final int mExplicitColor;
@@ -192,6 +196,10 @@ public class AccentResources extends Resources {
 			if (resId == id)
 				return getTintendResourceStream(resId, value, mPalette.getDarkAccentColor());
 		}
+		for (int id : TINT_TRANSFORMATION_DRAWABLE_IDS) {
+			if (resId == id)
+				return getTintTransformationResourceStream(resId, value, mPalette.accentColor);
+		}
 		return super.openRawResource(resId, value);
 	}
 	
@@ -215,6 +223,38 @@ public class AccentResources extends Resources {
 		
 		// Apply the tint color
 		bitmap = BitmapUtils.applyColor(bitmap, color);
+
+		// Get the InputStream for the bitmap
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		bitmap.compress(CompressFormat.PNG, 100 /*ignored for PNG*/, bos);
+		byte[] bitmapData = bos.toByteArray();
+		try {
+			bos.close();
+		} catch (IOException e) { /* ignore */}
+		
+		return new ByteArrayInputStream(bitmapData);
+	}
+	
+	/**
+	 * Get a reference to a resource that is equivalent to the one requested, 
+	 * but changing the tint from the original red to the given color.
+	 */
+	private InputStream getTintTransformationResourceStream(int id, TypedValue value, int color) {
+		checkInitialized();
+		
+		// Get the bitmap form the resources
+		InputStream original = super.openRawResource(id, value);
+		value.density = getDisplayMetrics().densityDpi;
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inDither = false;
+        options.inScaled = false;
+        options.inScreenDensity = getDisplayMetrics().densityDpi;
+		Bitmap bitmap = BitmapFactory.decodeResourceStream(
+				this, value, original, 
+				new Rect(), options);
+		
+		// Apply the tint color
+		bitmap = BitmapUtils.processTintTransformationMap(bitmap, color);
 
 		// Get the InputStream for the bitmap
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
