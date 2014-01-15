@@ -14,10 +14,6 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <item android:drawable="@drawable/ha__text_select_handle_left_background" />
-    <item android:drawable="@drawable/ha__text_select_handle_left_accent" />
-    <item android:drawable="@drawable/ha__text_select_handle_left_foreground" />
-
-</layer-list>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical|fill_horizontal"
+    android:src="@drawable/ha__text_select_handle_left_transformation" />

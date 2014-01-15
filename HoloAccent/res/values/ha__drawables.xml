@@ -101,9 +101,6 @@
 	<item name="ha__spinner_indicator_rtl_disabled" type="drawable"/>
 	<item name="ha__spinner_indicator_rtl_light" type="drawable"/>
 	<item name="ha__spinner_indicator_rtl" type="drawable"/>
-	<item name="ha__text_select_handle_left_accent" type="drawable"/>
-	<item name="ha__text_select_handle_middle_accent" type="drawable"/>
-	<item name="ha__text_select_handle_right_accent" type="drawable"/>
 	<item name="ha__underline_1_5" type="drawable"/>
 	<item name="ha__underline_3" type="drawable"/>
 	<item name="ha__underline_6" type="drawable"/>

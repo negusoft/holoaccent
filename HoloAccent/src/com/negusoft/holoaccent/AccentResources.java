@@ -43,7 +43,6 @@ import com.negusoft.holoaccent.interceptor.ScrubberInterceptor;
 import com.negusoft.holoaccent.interceptor.SearchViewTextFieldInterceptor;
 import com.negusoft.holoaccent.interceptor.SolidColorInterceptor;
 import com.negusoft.holoaccent.interceptor.SpinnerInterceptor;
-import com.negusoft.holoaccent.interceptor.TextSelectHandleInterceptor;
 import com.negusoft.holoaccent.interceptor.ToggleInterceptor;
 import com.negusoft.holoaccent.interceptor.UnderlineInterceptor;
 import com.negusoft.holoaccent.util.BitmapUtils;
@@ -88,7 +87,9 @@ public class AccentResources extends Resources {
 	};
 	
 	private static final int[] TINT_TRANSFORMATION_DRAWABLE_IDS = new int[] {
-//		R.drawable.text_select_handle_middle
+		R.drawable.ha__text_select_handle_middle_transformation,
+		R.drawable.ha__text_select_handle_left_transformation,
+		R.drawable.ha__text_select_handle_right_transformation
 	};
 
 	private final Context mContext;
@@ -159,7 +160,6 @@ public class AccentResources extends Resources {
 		mIterceptors.add(new RoundRectInterceptor());
 		mIterceptors.add(new CircleInterceptor());
 		mIterceptors.add(new ScrubberInterceptor());
-		mIterceptors.add(new TextSelectHandleInterceptor());
 		mIterceptors.add(new FastScrollInterceptor());
 		mIterceptors.add(new IndeterminateInterceptor());
 		mIterceptors.add(new RadioInterceptor());
@@ -209,30 +209,10 @@ public class AccentResources extends Resources {
 	 */
 	private InputStream getTintendResourceStream(int id, TypedValue value, int color) {
 		checkInitialized();
-		
-		// Get the bitmap form the resources
-		InputStream original = super.openRawResource(id, value);
-		value.density = getDisplayMetrics().densityDpi;
-		final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inDither = false;
-        options.inScaled = false;
-        options.inScreenDensity = getDisplayMetrics().densityDpi;
-		Bitmap bitmap = BitmapFactory.decodeResourceStream(
-				this, value, original, 
-				new Rect(), options);
-		
-		// Apply the tint color
-		bitmap = BitmapUtils.applyColor(bitmap, color);
 
-		// Get the InputStream for the bitmap
-		ByteArrayOutputStream bos = new ByteArrayOutputStream();
-		bitmap.compress(CompressFormat.PNG, 100 /*ignored for PNG*/, bos);
-		byte[] bitmapData = bos.toByteArray();
-		try {
-			bos.close();
-		} catch (IOException e) { /* ignore */}
-		
-		return new ByteArrayInputStream(bitmapData);
+		Bitmap bitmap = getBitmapFromResource(id, value);
+		bitmap = BitmapUtils.applyColor(bitmap, color);
+		return getStreamFromBitmap(bitmap);
 	}
 	
 	/**
@@ -242,21 +222,24 @@ public class AccentResources extends Resources {
 	private InputStream getTintTransformationResourceStream(int id, TypedValue value, int color) {
 		checkInitialized();
 		
-		// Get the bitmap form the resources
-		InputStream original = super.openRawResource(id, value);
+		Bitmap bitmap = getBitmapFromResource(id, value);
+		bitmap = BitmapUtils.processTintTransformationMap(bitmap, color);
+		return getStreamFromBitmap(bitmap);
+	}
+	
+	private Bitmap getBitmapFromResource(int resId, TypedValue value) {
+		InputStream original = super.openRawResource(resId, value);
 		value.density = getDisplayMetrics().densityDpi;
 		final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inDither = false;
         options.inScaled = false;
         options.inScreenDensity = getDisplayMetrics().densityDpi;
-		Bitmap bitmap = BitmapFactory.decodeResourceStream(
+		return BitmapFactory.decodeResourceStream(
 				this, value, original, 
 				new Rect(), options);
-		
-		// Apply the tint color
-		bitmap = BitmapUtils.processTintTransformationMap(bitmap, color);
-
-		// Get the InputStream for the bitmap
+	}
+	
+	private InputStream getStreamFromBitmap(Bitmap bitmap) {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		bitmap.compress(CompressFormat.PNG, 100 /*ignored for PNG*/, bos);
 		byte[] bitmapData = bos.toByteArray();
