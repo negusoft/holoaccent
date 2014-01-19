@@ -14,14 +14,5 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-	<item>
-	    <bitmap android:src="@drawable/ha__btn_check_comp_on_accent"/>
-	</item>
-
-	<item>
-	    <bitmap android:src="@drawable/ha__btn_check_comp_on_foreground"/>
-	</item>
-
-</layer-list>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ha__btn_check_on_transformation"/>

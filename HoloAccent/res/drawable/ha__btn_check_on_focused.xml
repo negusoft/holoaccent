@@ -21,11 +21,7 @@
 	</item>
 
 	<item>
-	    <bitmap android:src="@drawable/ha__btn_check_comp_on_accent"/>
-	</item>
-
-	<item>
-	    <bitmap android:src="@drawable/ha__btn_check_comp_on_foreground"/>
+	    <bitmap android:src="@drawable/ha__btn_check_on_transformation"/>
 	</item>
 
 </layer-list>

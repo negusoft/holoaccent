@@ -17,6 +17,7 @@ package com.negusoft.holoaccent;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -82,14 +84,12 @@ public class AccentResources extends Resources {
 		R.drawable.ha__progress_comp_primary
 	};
 	
-	private static final int[] DARK_TINT_DRAWABLE_IDS = new int[] {
-		R.drawable.ha__btn_check_comp_on_accent
-	};
-	
 	private static final int[] TINT_TRANSFORMATION_DRAWABLE_IDS = new int[] {
 		R.drawable.ha__text_select_handle_middle_transformation,
 		R.drawable.ha__text_select_handle_left_transformation,
-		R.drawable.ha__text_select_handle_right_transformation
+		R.drawable.ha__text_select_handle_right_transformation,
+		R.drawable.ha__btn_check_on_transformation,
+		R.drawable.ha__btn_check_on_transformation_light
 	};
 
 	private final Context mContext;
@@ -188,13 +188,26 @@ public class AccentResources extends Resources {
 			throws NotFoundException {
 		checkInitialized();
 		
+//		try {
+//			Bitmap bitmap;
+//			bitmap = getBitmapFromResource(R.drawable.btn_check_on_transformation, value);
+//			bitmap = BitmapUtils.createTintTransformationMap(bitmap, Color.RED);
+//			BitmapUtils.writeToFile(bitmap, "", "ha__btn_check_on_transformation.png");
+//
+//			bitmap = getBitmapFromResource(R.drawable.btn_check_on_transformation_light, value);
+//			bitmap = BitmapUtils.createTintTransformationMap(bitmap, Color.RED);
+//			BitmapUtils.writeToFile(bitmap, "", "ha__btn_check_on_transformation_light.png");
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
 		for (int id : TINT_DRAWABLE_IDS) {
 			if (resId == id)
 				return getTintendResourceStream(resId, value, mPalette.accentColor);
-		}
-		for (int id : DARK_TINT_DRAWABLE_IDS) {
-			if (resId == id)
-				return getTintendResourceStream(resId, value, mPalette.getDarkAccentColor());
 		}
 		for (int id : TINT_TRANSFORMATION_DRAWABLE_IDS) {
 			if (resId == id)
