@@ -20,8 +20,6 @@
 	    <bitmap android:src="@drawable/ha__btn_check_comp_on_focus"/>
 	</item>
 
-	<item>
-	    <bitmap android:src="@drawable/ha__btn_check_on_transformation"/>
-	</item>
+	<item android:drawable="@drawable/ha__btn_check_on"/>
 
 </layer-list>
