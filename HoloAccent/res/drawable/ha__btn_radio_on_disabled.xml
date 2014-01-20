@@ -17,39 +17,17 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
     <!-- glow around -->
-	<item android:drawable="@drawable/ha__gradient_radio_on_disabled" />
+	<item android:drawable="@drawable/ha__btn_radio_comp_dot_disabled" />
     
-    <!-- inner background -->
-    <item
-        android:top="@dimen/ha__radio_center_margin"
-        android:right="@dimen/ha__radio_center_margin"
-        android:bottom="@dimen/ha__radio_center_margin"
-        android:left="@dimen/ha__radio_center_margin">
-        <shape android:shape="oval" >
-            <solid android:color="#77333333" />
-        </shape>
+    <!-- outer ring -->
+    <item>
+        <shape
+	        android:shape="ring"
+	        android:innerRadius="@dimen/ha__radio_outer_ring_inner_radius"
+	        android:thickness="@dimen/ha__radio_outer_ring_thickness"
+	        android:useLevel="false">
+            <solid android:color="@color/ha__radio_outer_ring_disabled" />
+	    </shape>
     </item>
-    
-    <!-- inner glow -->
-    <item
-        android:top="@dimen/ha__radio_center_glow_margin"
-        android:right="@dimen/ha__radio_center_glow_margin"
-        android:bottom="@dimen/ha__radio_center_glow_margin"
-        android:left="@dimen/ha__radio_center_glow_margin">
-        <shape android:shape="ring"
-            android:useLevel="false"
-            android:innerRadiusRatio="2" >
-	        <gradient
-	            android:type="linear"
-	            android:angle="270"
-	            android:useLevel="false"
-	            android:startColor="#2fff"
-	            android:centerColor="#0000"
-	            android:endColor="#0000" />
-        </shape>
-    </item>
-    
-    <!-- reuse the off drawable -->
-	<item android:drawable="@drawable/ha__btn_radio_off_disabled" />
     
 </layer-list>

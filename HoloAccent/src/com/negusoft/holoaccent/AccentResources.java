@@ -17,7 +17,6 @@ package com.negusoft.holoaccent;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -29,7 +28,6 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -38,7 +36,6 @@ import android.util.TypedValue;
 import com.negusoft.holoaccent.interceptor.CircleInterceptor;
 import com.negusoft.holoaccent.interceptor.FastScrollInterceptor;
 import com.negusoft.holoaccent.interceptor.IndeterminateInterceptor;
-import com.negusoft.holoaccent.interceptor.RadioInterceptor;
 import com.negusoft.holoaccent.interceptor.RectInterceptor;
 import com.negusoft.holoaccent.interceptor.RoundRectInterceptor;
 import com.negusoft.holoaccent.interceptor.ScrubberInterceptor;
@@ -89,7 +86,8 @@ public class AccentResources extends Resources {
 		R.drawable.ha__text_select_handle_left_transformation,
 		R.drawable.ha__text_select_handle_right_transformation,
 		R.drawable.ha__btn_check_on_transformation,
-		R.drawable.ha__btn_check_on_transformation_light
+		R.drawable.ha__btn_check_on_transformation_light,
+		R.drawable.ha__btn_radio_comp_dot_transformation
 	};
 
 	private final Context mContext;
@@ -162,7 +160,6 @@ public class AccentResources extends Resources {
 		mIterceptors.add(new ScrubberInterceptor());
 		mIterceptors.add(new FastScrollInterceptor());
 		mIterceptors.add(new IndeterminateInterceptor());
-		mIterceptors.add(new RadioInterceptor());
 		mIterceptors.add(new SpinnerInterceptor());
 		mIterceptors.add(new SearchViewTextFieldInterceptor());
 		mIterceptors.add(new OverScrollInterceptor());
@@ -187,23 +184,6 @@ public class AccentResources extends Resources {
 	public InputStream openRawResource(int resId, TypedValue value)
 			throws NotFoundException {
 		checkInitialized();
-		
-//		try {
-//			Bitmap bitmap;
-//			bitmap = getBitmapFromResource(R.drawable.btn_check_on_transformation, value);
-//			bitmap = BitmapUtils.createTintTransformationMap(bitmap, Color.RED);
-//			BitmapUtils.writeToFile(bitmap, "", "ha__btn_check_on_transformation.png");
-//
-//			bitmap = getBitmapFromResource(R.drawable.btn_check_on_transformation_light, value);
-//			bitmap = BitmapUtils.createTintTransformationMap(bitmap, Color.RED);
-//			BitmapUtils.writeToFile(bitmap, "", "ha__btn_check_on_transformation_light.png");
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		
 		for (int id : TINT_DRAWABLE_IDS) {
 			if (resId == id)

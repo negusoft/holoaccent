@@ -20,7 +20,6 @@
     <dimen name="ha__radio_outer_ring_inner_radius">8dp</dimen>
     <dimen name="ha__radio_outer_ring_thickness">1dp</dimen>
     <dimen name="ha__radio_center_margin">11.5dp</dimen>
-    <dimen name="ha__radio_center_glow_margin">12dp</dimen>
     
     <dimen name="ha__btn_default_margin">4dp</dimen>
     <dimen name="ha__btn_fill_corner_radius">1.5dp</dimen>

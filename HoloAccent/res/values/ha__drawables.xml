@@ -38,7 +38,6 @@
 	<item name="ha__circle_pressed" type="drawable"/>
 	<item name="ha__fastscroll_thumb_default" type="drawable"/>
 	<item name="ha__fastscroll_thumb_pressed" type="drawable"/>
-	<item name="ha__gradient_radio_on_disabled" type="drawable"/>
 	<item name="ha__overline_3" type="drawable"/>
 	<item name="ha__progressbar_indeterminate_1" type="drawable"/>
 	<item name="ha__progressbar_indeterminate_2" type="drawable"/>
@@ -68,7 +67,6 @@
 	<item name="ha__progressbar_indeterminate_legacy_6" type="drawable"/>
 	<item name="ha__progressbar_indeterminate_legacy_7" type="drawable"/>
 	<item name="ha__progressbar_indeterminate_legacy_8" type="drawable"/>
-	<item name="ha__radio_on_dot" type="drawable"/>
 	<item name="ha__rect_focused_background" type="drawable"/>
 	<item name="ha__rect_focused_border" type="drawable"/>
 	<item name="ha__roundrect_button_disabled_colored" type="drawable"/>

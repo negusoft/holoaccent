@@ -17,9 +17,19 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
     <!-- on dot -->
-    <item android:drawable="@drawable/ha__radio_on_dot"/>
+    <item>
+        <bitmap android:src="@drawable/ha__btn_radio_comp_dot_transformation" />
+	</item>
     
-    <!-- reuse the off drawable -->
-	<item android:drawable="@drawable/ha__btn_radio_off" />
+    <!-- outer ring -->
+    <item>
+        <shape
+	        android:shape="ring"
+	        android:innerRadius="@dimen/ha__radio_outer_ring_inner_radius"
+	        android:thickness="@dimen/ha__radio_outer_ring_thickness"
+	        android:useLevel="false">
+            <solid android:color="@color/ha__radio_outer_ring" />
+	    </shape>
+    </item>
     
 </layer-list>
