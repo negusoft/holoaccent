@@ -96,7 +96,7 @@ public class AccentResources extends Resources {
 	
 	private boolean mInitialized = false;
 	private AccentPalette mPalette;
-	private List<Interceptor> mIterceptors;
+	private List<Interceptor> mInterceptors;
 	
 	public AccentResources(Context c, Resources resources) {
 		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
@@ -134,7 +134,7 @@ public class AccentResources extends Resources {
 		if (mInitialized)
 			return;
 		mPalette = initPalette(c, explicitColor, explicitColorDark);
-		mIterceptors = new ArrayList<Interceptor>();
+		mInterceptors = new ArrayList<Interceptor>();
 		addInterceptors(c);
 		mInitialized = true;
 	}
@@ -151,18 +151,18 @@ public class AccentResources extends Resources {
 	}
 	
 	private void addInterceptors(Context c) {
-		mIterceptors.add(new ToggleInterceptor());
-		mIterceptors.add(new UnderlineInterceptor());
-		mIterceptors.add(new SolidColorInterceptor());
-		mIterceptors.add(new RectInterceptor());
-		mIterceptors.add(new RoundRectInterceptor());
-		mIterceptors.add(new CircleInterceptor());
-		mIterceptors.add(new ScrubberInterceptor());
-		mIterceptors.add(new FastScrollInterceptor());
-		mIterceptors.add(new IndeterminateInterceptor());
-		mIterceptors.add(new SpinnerInterceptor());
-		mIterceptors.add(new SearchViewTextFieldInterceptor());
-		mIterceptors.add(new OverScrollInterceptor());
+		mInterceptors.add(new ToggleInterceptor());
+		mInterceptors.add(new UnderlineInterceptor());
+		mInterceptors.add(new SolidColorInterceptor());
+		mInterceptors.add(new RectInterceptor());
+		mInterceptors.add(new RoundRectInterceptor());
+		mInterceptors.add(new CircleInterceptor());
+		mInterceptors.add(new ScrubberInterceptor());
+		mInterceptors.add(new FastScrollInterceptor());
+		mInterceptors.add(new IndeterminateInterceptor());
+		mInterceptors.add(new SpinnerInterceptor());
+		mInterceptors.add(new SearchViewTextFieldInterceptor());
+		mInterceptors.add(new OverScrollInterceptor());
 	}
 
 	@Override
@@ -171,7 +171,7 @@ public class AccentResources extends Resources {
 		
 		// Give a chance to the interceptors to replace the drawable
 		Drawable result;
-		for(Interceptor interceptor : mIterceptors) {
+		for(Interceptor interceptor : mInterceptors) {
 			result = interceptor.getDrawable(this, mPalette, resId);
 			if (result != null)
 				return result;
