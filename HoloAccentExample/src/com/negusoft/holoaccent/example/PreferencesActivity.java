@@ -12,9 +12,11 @@ public class PreferencesActivity extends AccentActivity {
 		super.onCreate(savedInstanceState);
 		
         // Display the fragment as the main content.
-        getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new GeneralPreferenceFragment())
-                .commit();
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new GeneralPreferenceFragment())
+                    .commit();
+        }
 	}
 
 	public static class GeneralPreferenceFragment extends PreferenceFragment {
