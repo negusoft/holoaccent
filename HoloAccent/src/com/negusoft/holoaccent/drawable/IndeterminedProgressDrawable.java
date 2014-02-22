@@ -38,9 +38,9 @@ import com.negusoft.holoaccent.R;
  */
 public class IndeterminedProgressDrawable extends Drawable {
 	
-	private static final int DEFAULT_SECTION_NUMBER = 6;
+	private static final int DEFAULT_SECTION_NUMBER = 5;
 
-	private static final float MIN_WIDTH_DP = 64.0f;
+	private static final float MIN_WIDTH_DP = 256.0f;
 	private static final float MIN_HEIGHT_DP = 16.0f;
 	private static final float LINE_WIDTH_DP = 4.0f;
 	private static final float GAP_WIDTH_DP = 4.0f;
@@ -49,15 +49,21 @@ public class IndeterminedProgressDrawable extends Drawable {
     private final Paint mPaint;
     private final float[] mGapPercentages;
 
-    /** Used to calculate the gap positions in a accelarate/decelarate shape. */
+    /** Used to calculate the gap positions in a accelarate shape. */
     private Interpolator mInterpolator = new Interpolator() {
-		@Override public float getInterpolation(float value) {
-			if (value <= 0.5f)
-				return 2 * value * value;
-			float offset = value - 0.5f;
-			return 0.5f + (2*offset) - (2*offset*offset);
-		}
-	};
+        @Override public float getInterpolation(float value) {
+            return value * value;
+        }
+    };
+    /** Used to calculate the gap positions in a accelarate/decelarate shape. */
+//    private Interpolator mInterpolator = new Interpolator() {
+//        @Override public float getInterpolation(float value) {
+//            if (value <= 0.5f)
+//                return 2 * value * value;
+//            float offset = value - 0.5f;
+//            return 0.5f + (2*offset) - (2*offset*offset);
+//        }
+//    }
 	
 	public IndeterminedProgressDrawable(Context c, int frameIndex, int frameCount) {
 		this(c, frameIndex, frameCount, DEFAULT_SECTION_NUMBER);
