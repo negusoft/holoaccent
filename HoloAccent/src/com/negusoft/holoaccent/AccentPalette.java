@@ -35,6 +35,11 @@ public class AccentPalette {
 	public final int redDark;
 	public final int greenDark;
 	public final int blueDark;
+
+    public final int accentColorActionBar;
+    public final int redActionBar;
+    public final int greenActionBar;
+    public final int blueActionBar;
 	
 	/**
 	 * Create an instance with the specified color. The dark 
@@ -50,18 +55,23 @@ public class AccentPalette {
 		greenDark = (int)(green * DARK_ACCENT_PERCENTAGE);
 		blueDark = (int)(blue * DARK_ACCENT_PERCENTAGE);
 		accentColorDark = Color.rgb(redDark, greenDark, blueDark);
+
+        redActionBar = red;
+        greenActionBar = green;
+        blueActionBar = blue;
+        accentColorActionBar = accentColor;
 	}
 
 	/**
-	 * Create an instance with the specified default and dark 
+	 * Create an instance with the specified default, dark and actionbar
 	 * accent colors explicitly specified.
 	 */
-	public AccentPalette(int color, int colorDark) {
+	public AccentPalette(int color, int colorDark, int colorActionBar) {
 		red = Color.red(color);
 		green = Color.green(color);
 		blue = Color.blue(color);
 		accentColor = Color.rgb(red, green, blue);
-		
+
 		if (colorDark == 0) {
 			redDark = (int)(red * DARK_ACCENT_PERCENTAGE);
 			greenDark = (int)(green * DARK_ACCENT_PERCENTAGE);
@@ -74,22 +84,11 @@ public class AccentPalette {
 			blueDark = Color.blue(colorDark);
 			accentColorDark = Color.rgb(redDark, greenDark, blueDark);
 		}
-	}
 
-	/**
-	 * Create an instance with the specified color components. The dark 
-	 * variant will be derived from them.
-	 */
-	public AccentPalette(int r, int g, int b) {
-		accentColor = Color.rgb(r, g, b);
-		red = r;
-		green = g;
-		blue = b;
-
-		redDark = Color.red((int)(red * DARK_ACCENT_PERCENTAGE));
-		greenDark = Color.green((int)(green * DARK_ACCENT_PERCENTAGE));
-		blueDark = Color.blue((int)(blue * DARK_ACCENT_PERCENTAGE));
-		accentColorDark = Color.rgb(redDark, greenDark, blueDark);
+        redActionBar = Color.red(colorActionBar);
+        greenActionBar = Color.green(colorActionBar);
+        blueActionBar = Color.blue(colorActionBar);
+        accentColorActionBar = Color.rgb(redActionBar, greenActionBar, blueActionBar);
 	}
 	
 	/** @return The accent color. Same as 'accentColor'. */
@@ -105,17 +104,30 @@ public class AccentPalette {
 		return Color.argb(alpha, red, green, blue);
 	}
 
-	/** @return The accent color. Same as 'accentColorDark'. */
-	public int getDarkAccentColor() {
-		return accentColorDark;
-	}
+    /** @return The dark accent color. Same as 'accentColorDark'. */
+    public int getDarkAccentColor() {
+        return accentColorDark;
+    }
 
-	/** 
-	 * Get a translucent version of the dark variant of the accent color. 
-	 * @param alpha The opacity of the color [0..255]
-	 */
-	public int getDarkAccentColor(int alpha) {
-		return Color.argb(alpha, redDark, greenDark, blueDark);
-	}
+    /**
+     * Get a translucent version of the dark variant of the accent color.
+     * @param alpha The opacity of the color [0..255]
+     */
+    public int getDarkAccentColor(int alpha) {
+        return Color.argb(alpha, redDark, greenDark, blueDark);
+    }
+
+    /** @return The ActionBar accent color. Same as 'accentColorActionBar'. */
+    public int getActionBarAccentColor() {
+        return accentColorActionBar;
+    }
+
+    /**
+     * Get a translucent version of the dark variant of the accent color.
+     * @param alpha The opacity of the color [0..255]
+     */
+    public int getActionBarAccentColor(int alpha) {
+        return Color.argb(alpha, redActionBar, greenActionBar, blueActionBar);
+    }
 
 }

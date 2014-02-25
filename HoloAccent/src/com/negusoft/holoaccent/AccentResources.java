@@ -141,13 +141,16 @@ public class AccentResources extends Resources {
 	
 	private AccentPalette initPalette(Context c, int explicitColor, int explicitColorDark) {
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
-		
+
+        int holoBlue = getColor(android.R.color.holo_blue_light);
 		int color = explicitColor != 0 ? explicitColor : 
-			attrs.getColor(R.styleable.HoloAccent_accentColor, getColor(android.R.color.holo_blue_light));
+			attrs.getColor(R.styleable.HoloAccent_accentColor, holoBlue);
 		int colorDark = explicitColorDark != 0 ? explicitColorDark : 
 			attrs.getColor(R.styleable.HoloAccent_accentColorDark, 0);
+        int colorActionBar = explicitColorDark != 0 ? explicitColorDark :
+                attrs.getColor(R.styleable.HoloAccent_accentColorActionBar, holoBlue);
 		
-		return new AccentPalette(color, colorDark);
+		return new AccentPalette(color, colorDark, colorActionBar);
 	}
 	
 	private void addInterceptors(Context c) {
