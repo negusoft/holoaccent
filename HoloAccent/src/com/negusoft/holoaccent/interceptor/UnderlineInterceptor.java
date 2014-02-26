@@ -31,8 +31,10 @@ public class UnderlineInterceptor implements AccentResources.Interceptor {
 			return new UnderlineDrawable(res, palette.accentColor, 1.5f);
 		if (resId == R.drawable.ha__underline_3)
 			return new UnderlineDrawable(res, palette.accentColor, 3f);
-		if (resId == R.drawable.ha__underline_6)
-			return new UnderlineDrawable(res, palette.accentColor, 6f);
+        if (resId == R.drawable.ha__underline_6)
+            return new UnderlineDrawable(res, palette.accentColor, 6f);
+        if (resId == R.drawable.ha__ab_underline_6)
+            return new UnderlineDrawable(res, palette.accentColorActionBar, 6f);
 		// overline
 		if (resId == R.drawable.ha__overline_3)
 			return new UnderlineDrawable(res, palette.accentColor, 3f, true);
