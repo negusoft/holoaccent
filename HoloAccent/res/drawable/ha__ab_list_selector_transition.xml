@@ -14,8 +14,9 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<transition xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item android:drawable="@drawable/ha__rect_focused_background"/>
-    
-</layer-list>
+    <item android:drawable="@drawable/ha__ab_solid_pressed"/>
+    <item android:drawable="@drawable/ha__ab_solid_focused"/>
+
+</transition>

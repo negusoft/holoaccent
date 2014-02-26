@@ -3,4 +3,5 @@
     <!-- Simply by overriding the color resources, we can change the accent color -->
 <!--     <color name="ha__accent">#33b5e5</color> -->
 <!--     <color name="ha__accent_translucent">#6633b5e5</color> -->
+    <color name="ha__accent_actionbar">#ff0000</color>
 </resources>
