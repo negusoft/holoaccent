@@ -34,16 +34,17 @@
         <item name="android:background">?android:attr/actionBarItemBackground</item>
     </style>
     
-    <!-- Style for the tabs -->
-    <style name="MyActionBarTabStyle" parent="android:Widget.Holo.ActionBar.TabView">
+    <!-- Actionbar tab style: with the actionbar accent color -->
+    <style name="HoloAccent.ActionBar.TabStyle" parent="android:Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/ha__ab_tab_background</item>
+    </style>
+    <!-- Actionbar tab style: with the actionbar accent color -->
+    <style name="HoloAccent.ActionBar.TabStyle.Accent">
         <item name="android:background">@drawable/ha__tab_background</item>
     </style>
-    <style name="MyActionBarTabStyle.Light" parent="android:Widget.Holo.Light.ActionBar.TabView">
-        <item name="android:background">@drawable/ha__tab_background</item>
-    </style>
-    <style name="MyActionBarTabStyle.Light.DarkActionBar" 
-        parent="android:Widget.Holo.Light.ActionBar.TabView.Inverse">
-        <item name="android:background">@drawable/ha__tab_background</item>
+    <!-- Actionbar tab style: default accent underline but actionbar colour touch feedback -->
+    <style name="HoloAccent.ActionBar.TabStyle.Mixed">
+        <item name="android:background">@drawable/ha__ab_tab_background_mixed</item>
     </style>
     
     <!-- Button styles -->

@@ -84,7 +84,7 @@
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.ActionBar</item>
@@ -162,7 +162,7 @@
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_light</item>
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_light</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
+        <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
@@ -238,7 +238,7 @@
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light.DarkActionBar</item>
+        <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
@@ -318,7 +318,7 @@
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top</item>
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
@@ -391,7 +391,7 @@
     	<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_light</item>
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_light</item>
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle.Light</item>
+        <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
@@ -435,7 +435,7 @@
         <!--<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>-->
         <!--<item name="android:actionModeBackground">@drawable/ha__actionmode_background_top</item>-->
         <!--<item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom</item>-->
-        <!--<item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>-->
+        <!--<item name="android:actionBarTabStyle">@style/HoloAccent.ActionBarTabStyle</item>-->
         <!--<item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>-->
         <!--<item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>-->
         <!--<item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.ActionBar</item>-->
