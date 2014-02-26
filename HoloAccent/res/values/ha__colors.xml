@@ -18,6 +18,7 @@
     
     <color name="ha__accent">#A4C739</color>
     <color name="ha__accent_translucent">#66A4C739</color>
+    <color name="ha__accent_actionbar">#A4C739</color>
     
     <color name="ha__selector_disabled">#8000</color>
     <color name="ha__selector_disabled_light">#2000</color>

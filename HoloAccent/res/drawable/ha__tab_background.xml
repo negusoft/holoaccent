@@ -20,7 +20,7 @@
     <item android:state_focused="false" android:state_selected="true"  android:state_pressed="false" android:drawable="@drawable/ha__tab_selected" />
 
     <!-- Focused states -->
-    <item android:state_focused="true" android:state_selected="false" android:state_pressed="false" android:drawable="@drawable/ha__focused_background" />
+    <item android:state_focused="true" android:state_selected="false" android:state_pressed="false" android:drawable="@drawable/ha__rect_focused_background" />
     <item android:state_focused="true" android:state_selected="true"  android:state_pressed="false" android:drawable="@drawable/ha__tab_selected_focused" />
 
     <!-- Pressed -->

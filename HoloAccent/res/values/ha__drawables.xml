@@ -17,9 +17,14 @@
 <resources>
     
     <!-- Drawable references that will be overriden at runtime -->
+    <item name="ha__ab_rect_focused_background" type="drawable">#0000</item>
+    <item name="ha__ab_roundrect_spinner_focussed" type="drawable">#0000</item>
+    <item name="ha__ab_roundrect_spinner_pressed" type="drawable">#0000</item>
 	<item name="ha__ab_searchview_textfield_default_light" type="drawable">#0000</item>
 	<item name="ha__ab_searchview_textfield_default" type="drawable">#0000</item>
 	<item name="ha__ab_searchview_textfield_focused" type="drawable">#0000</item>
+    <item name="ha__ab_solid_focused" type="drawable">#0000</item>
+    <item name="ha__ab_solid_pressed" type="drawable">#0000</item>
 	<item name="ha__ab_spinner_indicator_disabled_light" type="drawable">#0000</item>
 	<item name="ha__ab_spinner_indicator_disabled" type="drawable">#0000</item>
 	<item name="ha__ab_spinner_indicator_light" type="drawable">#0000</item>

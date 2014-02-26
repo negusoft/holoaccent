@@ -20,6 +20,7 @@
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
         <item name="accentColor">@color/ha__accent</item>
         <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
+        <item name="accentColorActionBar">@color/ha__accent_actionbar</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
@@ -86,16 +87,18 @@
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>
-        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.ActionBar</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
-        
+
+        <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         
         <item name="accentColor">@color/ha__accent</item>
         <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
+        <item name="accentColorActionBar">@color/ha__accent_actionbar</item>
         
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -164,11 +167,14 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
+
+        <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="accentColor">@color/ha__accent</item>
         <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
+        <item name="accentColorActionBar">@color/ha__accent_actionbar</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -237,8 +243,7 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
-        
-        <!-- DarkActionBar specific -->
+
         <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
     
@@ -249,7 +254,7 @@
      -->
     <!-- @hide -->
     <style name="BaseDialogTheme" parent="android:Theme.Holo.Dialog">
-        <!-- Copy of Theme.HoloAccents, except the 'accentColor' and 'accentColorTranslucent' attributes -->
+        <!-- Copy of Theme.HoloAccents, except the 'accentColor*' attributes -->
 
         <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
@@ -322,7 +327,7 @@
     </style>
     <!-- @hide -->
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
-        <!-- Copy of Theme.HoloAccents.Light, except the 'accentColor' and 'accentColorTranslucent' attributes -->
+        <!-- Copy of Theme.HoloAccents.Light, except the 'accentColor*' attributes -->
 
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -408,7 +413,6 @@
     </style>
     
     <!-- Extension themes (the parents are HoloAccent themes) -->
-    <!-- @hide -->
     <style name="BaseDialogTheme.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
@@ -416,7 +420,6 @@
         <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
         <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
     </style>
-    <!-- @hide -->
     <style name="BaseDialogTheme.Light.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowTitleStyle">@style/DialogWindowTitle.HoloAccent</item>
@@ -424,5 +427,22 @@
         <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
         <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
     </style>
+
+    <style name="Theme.HoloAccent.ActionBar">
+        <!--<item name="android:listPopupWindowStyle">@style/HoloAccent.ListPopupWindow</item>-->
+        <!--<item name="android:popupMenuStyle">@style/HoloAccent.ListPopupWindow.ActionBar</item>-->
+
+        <!--<item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>-->
+        <!--<item name="android:actionModeBackground">@drawable/ha__actionmode_background_top</item>-->
+        <!--<item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom</item>-->
+        <!--<item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>-->
+        <!--<item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>-->
+        <!--<item name="android:actionBarStyle">@style/HoloAccent.ActionBar</item>-->
+        <!--<item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.ActionBar</item>-->
+    </style>
+
+    <!--<style name="HoloAccent.ListPopupWindow.ActionBar">-->
+        <!--<item name="android:dropDownSelector">#00f</item>-->
+    <!--</style>-->
 
 </resources>

@@ -16,7 +16,7 @@
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <item android:drawable="@drawable/ha__roundrect_spinner_focussed" />
+    <item android:drawable="@drawable/ha__ab_roundrect_spinner_focussed" />
     <item android:drawable="@drawable/ha__ab_spinner_default" />
     
 </layer-list>

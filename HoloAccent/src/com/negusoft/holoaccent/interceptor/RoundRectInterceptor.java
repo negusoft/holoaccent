@@ -34,10 +34,14 @@ public class RoundRectInterceptor implements AccentResources.Interceptor {
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 		if (resId == R.drawable.ha__roundrect_check_pressed)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x88), CORNER_RADIUS_DP);
-		if (resId == R.drawable.ha__roundrect_spinner_pressed)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0xAA), CORNER_RADIUS_DP);
-		if (resId == R.drawable.ha__roundrect_spinner_focussed)
-			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x55), BORDER_WIDTH_DP, palette.getAccentColor(0xAA), CORNER_RADIUS_DP);
+        if (resId == R.drawable.ha__roundrect_spinner_pressed)
+            return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0xAA), CORNER_RADIUS_DP);
+        if (resId == R.drawable.ha__roundrect_spinner_focussed)
+            return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x55), BORDER_WIDTH_DP, palette.getAccentColor(0xAA), CORNER_RADIUS_DP);
+        if (resId == R.drawable.ha__ab_roundrect_spinner_pressed)
+            return new RoundRectDrawable(res.getDisplayMetrics(), palette.getActionBarAccentColor(0xAA), CORNER_RADIUS_DP);
+        if (resId == R.drawable.ha__ab_roundrect_spinner_focussed)
+            return new RoundRectDrawable(res.getDisplayMetrics(), palette.getActionBarAccentColor(0x55), BORDER_WIDTH_DP, palette.getActionBarAccentColor(0xAA), CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_pressed_glow)
 			return new RoundRectDrawable(res.getDisplayMetrics(), palette.getAccentColor(0x55), BUTTION_GLOW_CORNER_RADIUS_DP);
 		if (resId == R.drawable.ha__roundrect_button_pressed_fill)
