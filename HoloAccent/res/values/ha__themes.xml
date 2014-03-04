@@ -164,6 +164,7 @@
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_light</item>
         <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
@@ -240,12 +241,20 @@
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom</item>
         <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode</item>
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid.Inverse</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
 
         <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
+
+
+    <!-- Colored ActionBar themes -->
+    <!--<style name="Theme.HoloAccent.ColoredActionBar">-->
+        <!--<item name="accentColorActionBar">@color/ha__accent_actionbar</item>    -->
+    <!--</style>-->
+
     
     <!-- 
     	Base dialog themes, they are referenced from attributes in other thems. 
@@ -393,6 +402,7 @@
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_light</item>
         <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>

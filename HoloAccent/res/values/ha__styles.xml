@@ -24,6 +24,20 @@
     <!-- Actionbar customization -->
     <style name="HoloAccent.ActionBar" parent="android:Widget.Holo.ActionBar">
         <item name="android:background">@drawable/ha__actionbar_background</item>
+        <item name="android:progressBarStyle">@style/HoloAccent.ProgressBar.Horizontal</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Solid" parent="android:Widget.Holo.ActionBar.Solid">
+        <item name="android:progressBarStyle">@style/HoloAccent.ProgressBar.Horizontal</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Light" parent="android:Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/ha__actionbar_background</item>
+        <item name="android:progressBarStyle">@style/HoloAccent.ProgressBar.Horizontal</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Light.Solid" parent="android:Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:progressBarStyle">@style/HoloAccent.ProgressBar.Horizontal</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Light.Solid.Inverse" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:progressBarStyle">@style/HoloAccent.ProgressBar.Horizontal</item>
     </style>
     
     <!-- Action Mode customization -->
