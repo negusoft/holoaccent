@@ -39,6 +39,29 @@
     <style name="HoloAccent.ActionBar.Light.Solid.Inverse" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:progressBarStyle">@style/HoloAccent.ProgressBar.Horizontal</item>
     </style>
+
+    <!-- Colored Actionbar -->
+    <style name="HoloAccent.ActionBar.Colored">
+        <item name="android:background">?attr/coloredActionBarBackground</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Solid.Colored">
+        <item name="android:background">?attr/coloredActionBarBackground</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Colored.Inverse" parent="HoloAccent.ActionBar.Light.Solid">
+        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <item name="android:titleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse</item>
+        <item name="android:subtitleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Light.Colored">
+        <item name="android:background">?attr/coloredActionBarBackground</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Light.Solid.Colored">
+        <item name="android:background">?attr/coloredActionBarBackground</item>
+    </style>
+    <style name="HoloAccent.ActionBar.Light.Solid.Inverse.Colored">
+        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <!--<item name="android:backgroundStacked">@android:drawable/ab_stacked_solid_dark_holo</item>-->
+    </style>
     
     <!-- Action Mode customization -->
     <style name="HoloAccent.ActionButton.CloseMode" parent="android:Widget.Holo.ActionButton.CloseMode">

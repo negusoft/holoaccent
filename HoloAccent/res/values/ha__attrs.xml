@@ -33,6 +33,9 @@
     
     <attr name="imageButtonStyleColored" format="reference" />
     <attr name="imageButtonStyleColoredBright" format="reference" />
+
+    <!-- ActionBar background. Only used on ColoredActionBar styles. -->
+    <attr name="coloredActionBarBackground" format="reference|color" />
     
     <!-- AccentSearchView -->
     <attr name="accentSearchViewStyle" format="reference" />
