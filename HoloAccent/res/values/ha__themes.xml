@@ -258,19 +258,27 @@
         <item name="coloredActionBarBackground">@drawable/ha__background_accent_dark</item>
 
         <item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light.ActionBar</item>
-        <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_light</item>
-        <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_light</item>
+        <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_colored</item>
+        <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_colored</item>
         <item name="android:actionBarTabStyle">@style/HoloAccent.ActionBar.TabStyle</item>
         <item name="android:actionModeCloseButtonStyle">@style/HoloAccent.ActionButton.CloseMode.Light</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Colored.Inverse</item>
         <item name="android:actionBarTabBarStyle">@android:style/Widget.Holo.Light.ActionBar.TabBar.Inverse</item>
         <item name="android:actionBarTabTextStyle">@android:style/Widget.Holo.Light.ActionBar.TabText.Inverse</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
+        <item name="android:actionMenuTextColor">?android:attr/textColorPrimaryInverse</item>
 
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.Light.ActionButton.Overflow</item>
+
+        <!--<item name="android:actionModeCutDrawable">@android:drawable/ic_menu_cut_holo_light</item>-->
+        <!--<item name="android:actionModeCopyDrawable">@android:drawable/ic_menu_copy_holo_light</item>-->
+        <!--<item name="android:actionModePasteDrawable">@android:drawable/ic_menu_paste_holo_light</item>-->
+        <!--<item name="android:actionModeSelectAllDrawable">@android:drawable/ic_menu_selectall_holo_light</item>-->
     </style>
     <style name="Theme.HoloAccent.Light.ColoredActionBar">
         <item name="coloredActionBarBackground">@drawable/ha__actionbar_background_colored</item>
+        <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_colored</item>
+        <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_colored</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid.Colored</item>
     </style>
     <style name="Theme.HoloAccent.Light.ColoredActionBar.Inverse">
@@ -285,13 +293,15 @@
         <item name="android:actionBarTabBarStyle">@android:style/Widget.Holo.ActionBar.TabBar</item>
         <item name="android:actionBarTabTextStyle">@android:style/Widget.Holo.Light.ActionBar.TabText.Inverse</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
+        <item name="android:actionMenuTextColor">?android:attr/textColorPrimaryInverse</item>
 
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
+
+        <!--<item name="android:actionModeCutDrawable">@android:drawable/ic_menu_cut_holo_light</item>-->
+        <!--<item name="android:actionModeCopyDrawable">@android:drawable/ic_menu_copy_holo_light</item>-->
+        <!--<item name="android:actionModePasteDrawable">@android:drawable/ic_menu_paste_holo_light</item>-->
+        <!--<item name="android:actionModeSelectAllDrawable">@android:drawable/ic_menu_selectall_holo_light</item>-->
     </style>
-    <!--<style name="Theme.HoloAccent.Light.DarkActionBar.Colored">-->
-        <!--<item name="coloredActionBarBackground">@drawable/ha__background_accent_dark</item>-->
-        <!--<item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid.Inverse.Colored</item>-->
-    <!--</style>-->
     
     <!-- 
     	Base dialog themes, they are referenced from attributes in other thems. 
