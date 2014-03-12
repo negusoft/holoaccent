@@ -270,10 +270,11 @@
 
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.Light.ActionButton.Overflow</item>
 
-        <!--<item name="android:actionModeCutDrawable">@android:drawable/ic_menu_cut_holo_light</item>-->
-        <!--<item name="android:actionModeCopyDrawable">@android:drawable/ic_menu_copy_holo_light</item>-->
-        <!--<item name="android:actionModePasteDrawable">@android:drawable/ic_menu_paste_holo_light</item>-->
-        <!--<item name="android:actionModeSelectAllDrawable">@android:drawable/ic_menu_selectall_holo_light</item>-->
+        <item name="android:actionModeCloseDrawable">@drawable/ha__ic_cab_done_light</item>
+        <item name="android:actionModeCutDrawable">@drawable/ha__ic_menu_cut_light</item>
+        <item name="android:actionModeCopyDrawable">@drawable/ha__ic_menu_copy_light</item>
+        <item name="android:actionModePasteDrawable">@drawable/ha__ic_menu_paste_light</item>
+        <item name="android:actionModeSelectAllDrawable">@drawable/ha__ic_menu_selectall_light</item>
     </style>
     <style name="Theme.HoloAccent.Light.ColoredActionBar">
         <item name="coloredActionBarBackground">@drawable/ha__actionbar_background_colored</item>
@@ -297,10 +298,11 @@
 
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
 
-        <!--<item name="android:actionModeCutDrawable">@android:drawable/ic_menu_cut_holo_light</item>-->
-        <!--<item name="android:actionModeCopyDrawable">@android:drawable/ic_menu_copy_holo_light</item>-->
-        <!--<item name="android:actionModePasteDrawable">@android:drawable/ic_menu_paste_holo_light</item>-->
-        <!--<item name="android:actionModeSelectAllDrawable">@android:drawable/ic_menu_selectall_holo_light</item>-->
+        <item name="android:actionModeCloseDrawable">@drawable/ha__ic_cab_done</item>
+        <item name="android:actionModeCutDrawable">@drawable/ha__ic_menu_cut</item>
+        <item name="android:actionModeCopyDrawable">@drawable/ha__ic_menu_copy</item>
+        <item name="android:actionModePasteDrawable">@drawable/ha__ic_menu_paste</item>
+        <item name="android:actionModeSelectAllDrawable">@drawable/ha__ic_menu_selectall</item>
     </style>
     
     <!-- 

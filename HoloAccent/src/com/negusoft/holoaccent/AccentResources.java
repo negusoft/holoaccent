@@ -36,6 +36,7 @@ import android.util.TypedValue;
 import com.negusoft.holoaccent.interceptor.CircleInterceptor;
 import com.negusoft.holoaccent.interceptor.FastScrollInterceptor;
 import com.negusoft.holoaccent.interceptor.IndeterminateInterceptor;
+import com.negusoft.holoaccent.interceptor.NativeInterceptor;
 import com.negusoft.holoaccent.interceptor.RectInterceptor;
 import com.negusoft.holoaccent.interceptor.RoundRectInterceptor;
 import com.negusoft.holoaccent.interceptor.ScrubberInterceptor;
@@ -165,7 +166,8 @@ public class AccentResources extends Resources {
 		mInterceptors.add(new IndeterminateInterceptor());
 		mInterceptors.add(new SpinnerInterceptor());
 		mInterceptors.add(new SearchViewTextFieldInterceptor());
-		mInterceptors.add(new OverScrollInterceptor());
+        mInterceptors.add(new OverScrollInterceptor());
+        mInterceptors.add(new NativeInterceptor());
 	}
 
 	@Override
