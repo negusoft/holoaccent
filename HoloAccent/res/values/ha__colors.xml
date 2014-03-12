@@ -28,4 +28,6 @@
     <color name="ha__radio_outer_ring_light">#883d3d3d</color>
     <color name="ha__radio_outer_ring_disabled_light">#443d3d3d</color>
 
+    <color name="ha__action_mode_background_grey">#cdcdcd</color>
+
 </resources>

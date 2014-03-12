@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="title"/>
+
+    <item
         android:id="@+id/alert_dialog"
         android:orderInCategory="100"
         android:showAsAction="never"
