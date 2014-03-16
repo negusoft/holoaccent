@@ -35,7 +35,17 @@
     <attr name="imageButtonStyleColoredBright" format="reference" />
 
     <!-- ActionBar background. Only used on ColoredActionBar styles. -->
-    <attr name="coloredActionBarBackground" format="reference|color" />
+    <attr name="coloredActionBarBackgroundStyle" format="reference" />
+    <attr name="coloredActionBarStackedBackgroundStyle" format="reference" />
+    <attr name="coloredActionBarSplitBackgroundStyle" format="reference" />
+    <declare-styleable name="ColoredActionBarStacked">
+        <attr name="accentLineWidth" format="dimension|reference" />
+        <attr name="accentLineColor" format="color|reference" />
+        <attr name="accentLineOpacity" format="integer|reference" />
+        <attr name="accentBackgroundColor" format="color|reference" />
+        <attr name="accentBackgroundOpacity" format="integer|reference" />
+    </declare-styleable>
+
     
     <!-- AccentSearchView -->
     <attr name="accentSearchViewStyle" format="reference" />

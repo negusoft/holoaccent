@@ -33,6 +33,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
+import com.negusoft.holoaccent.interceptor.ActionBarBackgroundInterceptor;
 import com.negusoft.holoaccent.interceptor.CircleInterceptor;
 import com.negusoft.holoaccent.interceptor.FastScrollInterceptor;
 import com.negusoft.holoaccent.interceptor.IndeterminateInterceptor;
@@ -150,6 +151,8 @@ public class AccentResources extends Resources {
 			attrs.getColor(R.styleable.HoloAccent_accentColorDark, 0);
         int colorActionBar = explicitColorDark != 0 ? explicitColorDark :
                 attrs.getColor(R.styleable.HoloAccent_accentColorActionBar, holoBlue);
+
+        attrs.recycle();
 		
 		return new AccentPalette(color, colorDark, colorActionBar);
 	}
@@ -168,6 +171,7 @@ public class AccentResources extends Resources {
 		mInterceptors.add(new SearchViewTextFieldInterceptor());
         mInterceptors.add(new OverScrollInterceptor());
         mInterceptors.add(new NativeInterceptor());
+        mInterceptors.add(new ActionBarBackgroundInterceptor(mContext));
 	}
 
 	@Override

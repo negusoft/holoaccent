@@ -27,9 +27,6 @@ import com.negusoft.holoaccent.util.NativeResources;
 /** Access the android private drawables that we don't have directly access to. */
 public class NativeInterceptor implements AccentResources.Interceptor {
 
-	private static final int PRESSED_ALPHA = 0xAA;
-	private static final int FOCUSED_ALPHA = 0x55;
-
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
         if (resId == R.drawable.ha__native_ic_cab_done)

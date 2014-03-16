@@ -251,11 +251,15 @@
 
     <!-- Colored ActionBar themes -->
     <style name="Theme.HoloAccent.ColoredActionBar">
-        <item name="coloredActionBarBackground">@drawable/ha__background_accent_dark</item>
+        <item name="coloredActionBarBackgroundStyle">@style/HoloAccent.ActionBarBackground.Solid</item>
+        <item name="coloredActionBarStackedBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Soft</item>
+        <item name="coloredActionBarSplitBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Soft</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Colored</item>
     </style>
     <style name="Theme.HoloAccent.ColoredActionBar.Inverse">
-        <item name="coloredActionBarBackground">@drawable/ha__background_accent_dark</item>
+        <item name="coloredActionBarBackgroundStyle">@style/HoloAccent.ActionBarBackground.Solid</item>
+        <item name="coloredActionBarStackedBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Hard</item>
+        <item name="coloredActionBarSplitBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Hard</item>
 
         <item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.Light.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_colored</item>
@@ -277,13 +281,18 @@
         <item name="android:actionModeSelectAllDrawable">@drawable/ha__ic_menu_selectall_light</item>
     </style>
     <style name="Theme.HoloAccent.Light.ColoredActionBar">
-        <item name="coloredActionBarBackground">@drawable/ha__actionbar_background_colored</item>
+        <item name="coloredActionBarBackgroundStyle">@style/HoloAccent.ActionBarBackground.Solid</item>
+        <item name="coloredActionBarStackedBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Soft</item>
+        <item name="coloredActionBarSplitBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Soft</item>
+
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top_colored</item>
         <item name="android:actionModeSplitBackground">@drawable/ha__actionmode_background_bottom_colored</item>
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid.Colored</item>
     </style>
     <style name="Theme.HoloAccent.Light.ColoredActionBar.Inverse">
-        <item name="coloredActionBarBackground">@drawable/ha__background_accent_dark</item>
+        <item name="coloredActionBarBackgroundStyle">@style/HoloAccent.ActionBarBackground.Solid</item>
+        <item name="coloredActionBarStackedBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Hard</item>
+        <item name="coloredActionBarSplitBackgroundStyle">@style/HoloAccent.ActionBarBackground.Translucent.Hard</item>
 
         <item name="android:actionDropDownStyle">@style/HoloAccent.Spinner.ActionBar</item>
         <item name="android:actionModeBackground">@drawable/ha__actionmode_background_top</item>
