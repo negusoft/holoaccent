@@ -49,6 +49,10 @@ public class NativeInterceptor implements AccentResources.Interceptor {
             return NativeResources.getDrawable("ic_menu_selectall_holo_dark");
         if (resId == R.drawable.ha__native_ic_menu_selectall_light)
             return NativeResources.getDrawable("ic_menu_selectall_holo_light");
+        if (resId == R.drawable.ha__native_ab_back)
+            return NativeResources.getDrawable("ic_ab_back_holo_dark_am");
+        if (resId == R.drawable.ha__native_ab_back_light)
+            return NativeResources.getDrawable("ic_ab_back_holo_light_am");
 		return null;
 	}
 
