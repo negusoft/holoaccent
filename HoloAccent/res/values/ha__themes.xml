@@ -269,6 +269,7 @@
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Colored.Inverse</item>
         <item name="android:actionBarTabBarStyle">@android:style/Widget.Holo.Light.ActionBar.TabBar.Inverse</item>
         <item name="android:actionBarTabTextStyle">@android:style/Widget.Holo.Light.ActionBar.TabText.Inverse</item>
+        <item name="android:actionBarDivider">@drawable/ha__ab_divider_light</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:actionMenuTextColor">?android:attr/textColorPrimaryInverse</item>
 
@@ -302,6 +303,7 @@
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Light.Solid.Inverse.Colored</item>
         <item name="android:actionBarTabBarStyle">@android:style/Widget.Holo.ActionBar.TabBar</item>
         <item name="android:actionBarTabTextStyle">@android:style/Widget.Holo.Light.ActionBar.TabText.Inverse</item>
+        <item name="android:actionBarDivider">@drawable/ha__ab_divider</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:actionMenuTextColor">?android:attr/textColorPrimaryInverse</item>
 

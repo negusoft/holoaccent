@@ -30,4 +30,7 @@
 
     <color name="ha__action_mode_background_grey">#cdcdcd</color>
 
+    <color name="ha__ab_divider">#26ffffff</color>
+    <color name="ha__ab_divider_light">#1a000000</color>
+
 </resources>
