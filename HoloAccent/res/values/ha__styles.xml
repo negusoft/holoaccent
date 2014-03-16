@@ -42,25 +42,75 @@
 
     <!-- Colored Actionbar -->
     <style name="HoloAccent.ActionBar.Colored">
-        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <item name="android:background">@drawable/ha__ab_background</item>
+        <item name="android:backgroundStacked">@drawable/ha__ab_background_stacked</item>
+        <item name="android:backgroundSplit">@drawable/ha__ab_background_bottom</item>
     </style>
     <style name="HoloAccent.ActionBar.Solid.Colored">
-        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <item name="android:background">@drawable/ha__ab_background</item>
+        <item name="android:backgroundStacked">@drawable/ha__ab_background_stacked</item>
+        <item name="android:backgroundSplit">@drawable/ha__ab_background_bottom</item>
     </style>
     <style name="HoloAccent.ActionBar.Colored.Inverse" parent="HoloAccent.ActionBar.Light.Solid">
-        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <item name="android:background">@drawable/ha__ab_background_inverse</item>
+        <item name="android:backgroundStacked">@drawable/ha__ab_background_stacked_inverse</item>
+        <item name="android:backgroundSplit">@drawable/ha__ab_background_bottom_inverse</item>
         <item name="android:titleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse</item>
         <item name="android:subtitleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse</item>
     </style>
     <style name="HoloAccent.ActionBar.Light.Colored">
-        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <item name="android:background">@drawable/ha__ab_background</item>
+        <item name="android:backgroundStacked">@drawable/ha__ab_background_stacked</item>
+        <item name="android:backgroundSplit">@drawable/ha__ab_background_bottom</item>
     </style>
     <style name="HoloAccent.ActionBar.Light.Solid.Colored">
-        <item name="android:background">?attr/coloredActionBarBackground</item>
+        <item name="android:background">@drawable/ha__ab_background</item>
+        <item name="android:backgroundStacked">@drawable/ha__ab_background_stacked</item>
+        <item name="android:backgroundSplit">@drawable/ha__ab_background_bottom</item>
     </style>
     <style name="HoloAccent.ActionBar.Light.Solid.Inverse.Colored">
-        <item name="android:background">?attr/coloredActionBarBackground</item>
-        <!--<item name="android:backgroundStacked">@android:drawable/ab_stacked_solid_dark_holo</item>-->
+        <item name="android:background">@drawable/ha__ab_background_inverse_light</item>
+        <item name="android:backgroundStacked">@drawable/ha__ab_background_stacked_inverse_light</item>
+        <item name="android:backgroundSplit">@drawable/ha__ab_background_bottom_inverse_light</item>
+    </style>
+
+    <!-- Colored Actionbar background styles -->
+    <style name="HoloAccent.ActionBarBackground" />
+    <style name="HoloAccent.ActionBarBackground.Solid" />
+    <style name="HoloAccent.ActionBarBackground.Translucent">
+        <item name="accentLineWidth">0.5dp</item>
+        <item name="accentLineOpacity">72</item>
+        <item name="accentBackgroundOpacity">48</item>
+    </style>
+    <style name="HoloAccent.ActionBarBackground.Translucent.Soft" />
+    <style name="HoloAccent.ActionBarBackground.Translucent.Hard">
+        <item name="accentLineOpacity">144</item>
+        <item name="accentBackgroundOpacity">96</item>
+    </style>
+    <style name="HoloAccent.ActionBarBackground.Native">
+        <item name="accentLineWidth">0.5dp</item>
+        <item name="accentLineColor">@android:color/white</item>
+        <item name="accentLineOpacity">51</item>
+        <item name="accentBackgroundColor">@android:color/white</item>
+        <item name="accentBackgroundOpacity">0</item>
+    </style>
+    <style name="HoloAccent.ActionBarBackground.Native.Solid">
+        <item name="accentLineColor">#0e0e0e</item>
+        <item name="accentLineOpacity">255</item>
+        <item name="accentBackgroundColor">#111111</item>
+        <item name="accentBackgroundOpacity">255</item>
+    </style>
+    <style name="HoloAccent.ActionBarBackground.Native.Light">
+        <item name="accentLineColor">@android:color/black</item>
+        <item name="accentLineOpacity">61</item>
+        <item name="accentBackgroundColor">@android:color/black</item>
+        <item name="accentBackgroundOpacity">13</item>
+    </style>
+    <style name="HoloAccent.ActionBarBackground.Native.Light.Solid">
+        <item name="accentLineColor">#c6c6c6</item>
+        <item name="accentLineOpacity">255</item>
+        <item name="accentBackgroundColor">#dddddd</item>
+        <item name="accentBackgroundOpacity">255</item>
     </style>
     
     <!-- Action Mode customization -->
