@@ -118,6 +118,8 @@
     <item name="ha__native_ic_menu_paste_light" type="drawable">#0000</item>
     <item name="ha__native_ic_menu_selectall" type="drawable">#0000</item>
     <item name="ha__native_ic_menu_selectall_light" type="drawable">#0000</item>
+    <item name="ha__native_ab_back" type="drawable">#0000</item>
+    <item name="ha__native_ab_back_light" type="drawable">#0000</item>
     <item name="ha__ab_background_reference" type="drawable">#0000</item>
     <item name="ha__ab_background_bottom_reference" type="drawable">#0000</item>
     <item name="ha__ab_background_stacked_reference" type="drawable">#0000</item>
