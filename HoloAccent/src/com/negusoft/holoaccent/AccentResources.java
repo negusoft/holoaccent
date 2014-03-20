@@ -94,7 +94,8 @@ public class AccentResources extends Resources {
 
 	private final Context mContext;
 	private final int mExplicitColor;
-	private final int mExplicitColorDark;
+    private final int mExplicitColorDark;
+    private final int mExplicitColorActionBar;
 	
 	private boolean mInitialized = false;
 	private AccentPalette mPalette;
@@ -105,6 +106,7 @@ public class AccentResources extends Resources {
 		mContext = c;
 		mExplicitColor = 0;
 		mExplicitColorDark = 0;
+        mExplicitColorActionBar = 0;
 	}
 	
 	public AccentResources(Context c, Resources resources, int color) {
@@ -112,13 +114,15 @@ public class AccentResources extends Resources {
 		mContext = c;
 		mExplicitColor = color;
 		mExplicitColorDark = 0;
+        mExplicitColorActionBar = 0;
 	}
 	
-	public AccentResources(Context c, Resources resources, int color, int colorDark) {
+	public AccentResources(Context c, Resources resources, int color, int colorDark, int colorActionBar) {
 		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
 		mContext = c;
 		mExplicitColor = color;
 		mExplicitColorDark = colorDark;
+        mExplicitColorActionBar = colorActionBar;
 	}
 	
 	/**
@@ -129,19 +133,19 @@ public class AccentResources extends Resources {
 	private void checkInitialized() {
 		if (mInitialized)
 			return;
-		initialize(mContext, mExplicitColor, mExplicitColorDark);
+		initialize(mContext, mExplicitColor, mExplicitColorDark, mExplicitColorActionBar);
 	}
 	
-	private synchronized void initialize(Context c, int explicitColor, int explicitColorDark) {
+	private synchronized void initialize(Context c, int explicitColor, int explicitColorDark, int explicitColorActionBar) {
 		if (mInitialized)
 			return;
-		mPalette = initPalette(c, explicitColor, explicitColorDark);
+		mPalette = initPalette(c, explicitColor, explicitColorDark, explicitColorActionBar);
 		mInterceptors = new ArrayList<Interceptor>();
 		addInterceptors(c);
 		mInitialized = true;
 	}
 	
-	private AccentPalette initPalette(Context c, int explicitColor, int explicitColorDark) {
+	private AccentPalette initPalette(Context c, int explicitColor, int explicitColorDark, int explicitColorActionBar) {
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
 
         int holoBlue = getColor(android.R.color.holo_blue_light);
@@ -149,8 +153,8 @@ public class AccentResources extends Resources {
 			attrs.getColor(R.styleable.HoloAccent_accentColor, holoBlue);
 		int colorDark = explicitColorDark != 0 ? explicitColorDark : 
 			attrs.getColor(R.styleable.HoloAccent_accentColorDark, 0);
-        int colorActionBar = explicitColorDark != 0 ? explicitColorDark :
-                attrs.getColor(R.styleable.HoloAccent_accentColorActionBar, holoBlue);
+        int colorActionBar = explicitColorActionBar != 0 ? explicitColorActionBar :
+                attrs.getColor(R.styleable.HoloAccent_accentColorActionBar, color);
 
         attrs.recycle();
 		
