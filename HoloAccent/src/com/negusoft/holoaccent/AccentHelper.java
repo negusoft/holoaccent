@@ -104,9 +104,13 @@ public class AccentHelper {
 	/** Paint the dialog's divider if required to correctly customize it. */
 	public void prepareDialog(Context c, Window window) {
 		if (mDividerPainter == null)
-			mDividerPainter = new DividerPainter(c);
+			mDividerPainter = initPainter(c, mOverrideColor);
 		mDividerPainter.paint(window);
 	}
+
+    private DividerPainter initPainter(Context c, int color) {
+        return color == 0 ? new DividerPainter(c) : new DividerPainter(color, true);
+    }
 	
 	private AccentResources createInstance(Context c, Resources resources) {
         return new AccentResources(c, resources, mOverrideColor, mOverrideColorDark, mOverrideColorActionBar);
