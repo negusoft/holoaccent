@@ -65,21 +65,33 @@ public class AccentHelper {
 	private DividerPainter mDividerPainter;
 	
 	private final boolean mOverrideThemeColor;
-	private final int mOverrideColor;
+    private final int mOverrideColor;
+    private final int mOverrideColorDark;
+    private final int mOverrideColorActionBar;
 	
 	public AccentHelper() {
 		mOverrideThemeColor = false;
 		mOverrideColor = 0;
+        mOverrideColorDark = 0;
+        mOverrideColorActionBar = 0;
 	}
 
     /**
      * Initialize by specifying a explicit color.
-     * @param color The color to override. If it is 0, it will not override
-     *              the color so it will be taken from the theme
+     * @param color The color to override. If it is 0, it will not override the color so it
+     *              will be taken from the theme.
+     * @param colorDark The dark version to override. If it is 0, it be taken from the theme.
+     *                  Or it will be calculated from the main color if it not specified in
+     *                  the theme either.
+     * @param colorActionBar The action bar version to override. If it is 0, it will be taken
+     *                       from the theme. Or same as the main color if it not specified in
+     *                       the theme either.
      */
-	public AccentHelper(int color) {
+	public AccentHelper(int color, int colorDark, int colorActionBar) {
 		mOverrideThemeColor =  color != COLOR_NO_OVERRIDE;
-		mOverrideColor = color;
+        mOverrideColor = color;
+        mOverrideColorDark = colorDark;
+        mOverrideColorActionBar = colorActionBar;
 	}
 	
 	/** @return The AccentResources instance, properly initialized. */
@@ -97,9 +109,7 @@ public class AccentHelper {
 	}
 	
 	private AccentResources createInstance(Context c, Resources resources) {
-		if (mOverrideThemeColor)
-			return new AccentResources(c, resources, mOverrideColor);
-		return new AccentResources(c, resources);
+        return new AccentResources(c, resources, mOverrideColor, mOverrideColorDark, mOverrideColorActionBar);
 	}
 
 }
