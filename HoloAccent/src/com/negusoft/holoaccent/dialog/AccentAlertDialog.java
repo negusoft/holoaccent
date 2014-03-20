@@ -76,11 +76,11 @@ public class AccentAlertDialog extends AlertDialog {
 		
 		private final AlertDialog.Builder mBuilder;
 		private final DividerPainter mDividerPainter;
-		
-		public Builder(Context context) {
-			mBuilder = new AlertDialog.Builder(context);
-			mDividerPainter = new DividerPainter(context);
-		}
+
+        public Builder(Context context) {
+            mBuilder = new AlertDialog.Builder(context);
+            mDividerPainter = new DividerPainter(context);
+        }
 		
 		public Builder(Context context, int theme) {
 			mBuilder = new AlertDialog.Builder(context, theme);
@@ -89,6 +89,12 @@ public class AccentAlertDialog extends AlertDialog {
 		
         public Context getContext() {
             return mBuilder.getContext();
+        }
+
+        public Builder setTitleColor(int color) {
+            mDividerPainter.setColor(color);
+            mDividerPainter.setPaintTitle(true);
+            return this;
         }
 
         /**
