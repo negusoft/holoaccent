@@ -19,7 +19,6 @@
     <!-- Default themes -->
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
         <item name="accentColor">@color/ha__accent</item>
-        <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
@@ -36,8 +35,8 @@
         <item name="android:colorFocusedHighlight">?attr/accentColor</item>
         <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
-        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
-        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
+        <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
         <item name="android:textColorLink">?attr/accentColor</item>
         <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
@@ -96,7 +95,6 @@
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         
         <item name="accentColor">@color/ha__accent</item>
-        <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
         
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -113,8 +111,8 @@
         <item name="android:colorFocusedHighlight">?attr/accentColor</item>
         <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
-        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
-        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
+        <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
         <item name="android:textColorLink">?attr/accentColor</item>
         <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
@@ -172,7 +170,6 @@
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="accentColor">@color/ha__accent</item>
-        <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -189,8 +186,8 @@
         <item name="android:colorFocusedHighlight">?attr/accentColor</item>
         <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
-        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
-        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
+        <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
         <item name="android:textColorLink">?attr/accentColor</item>
         <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
@@ -339,8 +336,8 @@
         <item name="android:colorFocusedHighlight">?attr/accentColor</item>
         <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
-        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
-        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
+        <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
         <item name="android:textColorLink">?attr/accentColor</item>
         <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
@@ -412,8 +409,8 @@
         <item name="android:colorFocusedHighlight">?attr/accentColor</item>
         <item name="android:colorActivatedHighlight">?attr/accentColor</item>
         
-        <item name="android:textColorHighlight">?attr/accentColorTranslucent</item>
-        <item name="android:textColorHighlightInverse">?attr/accentColorTranslucent</item>
+        <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
+        <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
         <item name="android:textColorLink">?attr/accentColor</item>
         <item name="android:textColorLinkInverse">?attr/accentColor</item>
         
@@ -474,11 +471,9 @@
     -->
     <style name="Theme.HoloAccent.Dialog" parent="BaseDialogTheme">
         <item name="accentColor">@color/ha__accent</item>
-        <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
     </style>
     <style name="Theme.HoloAccent.Light.Dialog" parent="BaseDialogTheme.Light">
         <item name="accentColor">@color/ha__accent</item>
-        <item name="accentColorTranslucent">@color/ha__accent_translucent</item>
     </style>
     
     <!-- Extension themes (the parents are HoloAccent themes) -->
