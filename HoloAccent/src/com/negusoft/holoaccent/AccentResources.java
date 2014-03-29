@@ -23,11 +23,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -62,6 +64,8 @@ import com.negusoft.holoaccent.util.NativeResources;
  * drawable with a tinted version by applying a ColorFilter.
  */
 public class AccentResources extends Resources {
+
+    private static final int TRANSLUCENT_ACCENT_ALPHA = 0x66;
 	
 	public interface Interceptor {
 		/**
@@ -178,7 +182,14 @@ public class AccentResources extends Resources {
         mInterceptors.add(new ActionBarBackgroundInterceptor(mContext));
 	}
 
-	@Override
+    @Override
+    public int getColor(int id) throws NotFoundException {
+        if (id == R.color.ha__translucent_reference)
+            return mPalette.getAccentColor(TRANSLUCENT_ACCENT_ALPHA);
+        return super.getColor(id);
+    }
+
+    @Override
 	public Drawable getDrawable(int resId) throws Resources.NotFoundException {
 		checkInitialized();
 		
