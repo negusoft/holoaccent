@@ -23,7 +23,7 @@ public abstract class AccentActivity extends Activity {
      * @return The color to override. If the color is equals to 0, the
      * accent color will be taken from the theme.
      */
-    protected int getOverrideAccentColor() {
+    public int getOverrideAccentColor() {
         return 0;
     }
 
@@ -33,7 +33,7 @@ public abstract class AccentActivity extends Activity {
      * taken from the theme. If it is specified in the theme either, it will be calculated
      * based on the accent color.
      */
-    protected int getOverrideAccentColorDark() {
+    public int getOverrideAccentColorDark() {
         return 0;
     }
 
@@ -43,11 +43,11 @@ public abstract class AccentActivity extends Activity {
      * be taken from the theme. If it is specified in the theme either, it will the same as the
      * accent color.
      */
-    protected int getOverrideAccentColorActionBar() {
+    public int getOverrideAccentColorActionBar() {
         return 0;
     }
 
-    protected AccentHelper getAccentHelper() {
+    public AccentHelper getAccentHelper() {
         return mAccentHelper;
     }
 
