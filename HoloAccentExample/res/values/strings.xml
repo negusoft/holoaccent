@@ -13,6 +13,7 @@
     <string name="action_alert_dialog">Alert Dialog</string>
     <string name="action_tab_strip">Tab Strip Activity</string>
     <string name="action_dialog_activity">Dialog Activity</string>
+    <string name="action_dialog_fragment">Dialog Fragment</string>
     <string name="action_spinner_activity">Spinner Activity</string>
     <string name="action_code_override_activity">Code Override</string>
     <string name="action_theme_override_activity">Theme Override</string>
@@ -57,6 +58,12 @@
     <string name="edittext_input_password">input: password</string>
     <string name="edittext_autocomplete">autocomplete</string>
     <string name="edittext_multi_autocomplete">multi autocomplete</string>
+
+    <string name="dialog_alert_title">Alert Dialog</string>
+    <string name="dialog_fragment_title">Dialog Fragment</string>
+    <string name="dialog_message">Dummie dialog</string>
+    <string name="dialog_button_positive">Positive</string>
+    <string name="dialog_button_negative">Negative</string>
 
     <string-array name="list_items">
         <item>one</item>

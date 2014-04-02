@@ -1,8 +1,5 @@
 package com.negusoft.holoaccent.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Fragment;
@@ -21,7 +18,11 @@ import com.negusoft.holoaccent.example.fragment.ButtonFragment;
 import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
 import com.negusoft.holoaccent.example.fragment.ProgressFragment;
+import com.negusoft.holoaccent.example.fragment.SimpleDialogFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TabbedActivity extends AccentActivity implements ActionBar.TabListener {
 
@@ -83,8 +84,11 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 		case R.id.alert_dialog:
 			showAlertDialog();
             return true;
-		case R.id.dialog_activity:
+        case R.id.dialog_activity:
             startActivity(new Intent(this, DialogActivity.class));
+            return true;
+        case R.id.dialog_fragment:
+            new SimpleDialogFragment().show(getFragmentManager(), "FragmentDialog");
             return true;
 		case R.id.tab_strip_activity:
             startActivity(new Intent(this, TabbedStripActivity.class));
@@ -136,20 +140,21 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 	
 	private void showAlertDialog() {
 		AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
-		builder.setTitle("Alert Dialog")
-				.setMessage("Dummie dialog")
-				.setPositiveButton("Positive",
+		builder.setTitle(R.string.dialog_alert_title)
+				.setMessage(R.string.dialog_message)
+				.setPositiveButton(R.string.dialog_button_positive,
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
 								// positive action
 							}
 						})
-				.setNegativeButton("Negative",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								// negative action
-							}
-						});
+				.setNegativeButton(R.string.dialog_button_negative,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // negative action
+                            }
+                        }
+                );
 
 		builder.show();
 	}
