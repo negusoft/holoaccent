@@ -18,7 +18,7 @@
 	
     <!-- Default themes -->
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
-        <item name="accentColor">@color/ha__accent</item>
+        <item name="accentColor">@color/ha__accent_default</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
@@ -30,15 +30,15 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
 
-        <item name="android:colorPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
-        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        <item name="android:colorPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorFocusedHighlight">@color/ha__accent_dark</item>
+        <item name="android:colorActivatedHighlight">@color/ha__accent_dark</item>
         
         <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
         <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
-        <item name="android:textColorLink">?attr/accentColor</item>
-        <item name="android:textColorLinkInverse">?attr/accentColor</item>
+        <item name="android:textColorLink">@color/ha__accent</item>
+        <item name="android:textColorLinkInverse">@color/ha__accent</item>
         
         <item name="android:editTextBackground">@drawable/ha__textfield</item>
         
@@ -94,7 +94,7 @@
     
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         
-        <item name="accentColor">@color/ha__accent</item>
+        <item name="accentColor">@color/ha__accent_default</item>
         
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -106,15 +106,15 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
 
-        <item name="android:colorPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
-        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        <item name="android:colorPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorFocusedHighlight">@color/ha__accent_dark</item>
+        <item name="android:colorActivatedHighlight">@color/ha__accent_dark</item>
         
         <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
         <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
-        <item name="android:textColorLink">?attr/accentColor</item>
-        <item name="android:textColorLinkInverse">?attr/accentColor</item>
+        <item name="android:textColorLink">@color/ha__accent</item>
+        <item name="android:textColorLinkInverse">@color/ha__accent</item>
         
         <item name="android:editTextBackground">@drawable/ha__textfield_light</item>
         
@@ -169,7 +169,7 @@
     </style>
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
-        <item name="accentColor">@color/ha__accent</item>
+        <item name="accentColor">@color/ha__accent_default</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -181,15 +181,15 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
 
-        <item name="android:colorPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
-        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        <item name="android:colorPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorFocusedHighlight">@color/ha__accent_dark</item>
+        <item name="android:colorActivatedHighlight">@color/ha__accent_dark</item>
         
         <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
         <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
-        <item name="android:textColorLink">?attr/accentColor</item>
-        <item name="android:textColorLinkInverse">?attr/accentColor</item>
+        <item name="android:textColorLink">@color/ha__accent</item>
+        <item name="android:textColorLinkInverse">@color/ha__accent</item>
         
         <item name="android:editTextBackground">@drawable/ha__textfield_light</item>
         
@@ -331,15 +331,15 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
 
-        <item name="android:colorPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
-        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        <item name="android:colorPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorFocusedHighlight">@color/ha__accent_dark</item>
+        <item name="android:colorActivatedHighlight">@color/ha__accent_dark</item>
         
         <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
         <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
-        <item name="android:textColorLink">?attr/accentColor</item>
-        <item name="android:textColorLinkInverse">?attr/accentColor</item>
+        <item name="android:textColorLink">@color/ha__accent</item>
+        <item name="android:textColorLinkInverse">@color/ha__accent</item>
         
         <item name="android:editTextBackground">@drawable/ha__textfield</item>
         
@@ -404,15 +404,15 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
 
-        <item name="android:colorPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorLongPressedHighlight">?attr/accentColor</item>
-        <item name="android:colorFocusedHighlight">?attr/accentColor</item>
-        <item name="android:colorActivatedHighlight">?attr/accentColor</item>
+        <item name="android:colorPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
+        <item name="android:colorFocusedHighlight">@color/ha__accent_dark</item>
+        <item name="android:colorActivatedHighlight">@color/ha__accent_dark</item>
         
         <item name="android:textColorHighlight">@color/ha__accent_translucent</item>
         <item name="android:textColorHighlightInverse">@color/ha__accent_translucent</item>
-        <item name="android:textColorLink">?attr/accentColor</item>
-        <item name="android:textColorLinkInverse">?attr/accentColor</item>
+        <item name="android:textColorLink">@color/ha__accent</item>
+        <item name="android:textColorLinkInverse">@color/ha__accent</item>
         
         <item name="android:editTextBackground">@drawable/ha__textfield_light</item>
         
@@ -470,10 +470,10 @@
     	the title divider color. See DividerPainter for more information.
     -->
     <style name="Theme.HoloAccent.Dialog" parent="BaseDialogTheme">
-        <item name="accentColor">@color/ha__accent</item>
+        <item name="accentColor">@color/ha__accent_default</item>
     </style>
     <style name="Theme.HoloAccent.Light.Dialog" parent="BaseDialogTheme.Light">
-        <item name="accentColor">@color/ha__accent</item>
+        <item name="accentColor">@color/ha__accent_default</item>
     </style>
     
     <!-- Extension themes (the parents are HoloAccent themes) -->

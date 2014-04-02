@@ -151,9 +151,6 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 							}
 						});
 
-        if (getOverrideAccentColor() != 0)
-            builder.setTitleColor(getOverrideAccentColor());
-
 		builder.show();
 	}
 	

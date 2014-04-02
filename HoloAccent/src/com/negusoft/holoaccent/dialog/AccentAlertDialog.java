@@ -91,12 +91,6 @@ public class AccentAlertDialog extends AlertDialog {
             return mBuilder.getContext();
         }
 
-        public Builder setTitleColor(int color) {
-            mDividerPainter.setColor(color);
-            mDividerPainter.setPaintTitle(true);
-            return this;
-        }
-
         /**
          * Set the title using the given resource id.
          *

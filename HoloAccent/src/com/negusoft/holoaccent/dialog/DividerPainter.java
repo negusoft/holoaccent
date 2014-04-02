@@ -19,7 +19,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
 
 import com.negusoft.holoaccent.R;
 import com.negusoft.holoaccent.activity.AccentActivity;
@@ -33,24 +32,14 @@ import com.negusoft.holoaccent.util.NativeResources;
 public class DividerPainter {
 
     private static final String DIVIDER_IDENTIFIER_NAME = "titleDivider";
-    private static final String TITLE_ALERT_IDENTIFIER_NAME = "alertTitle";
-    private static final String TITLE_DIALOG_IDENTIFIER_NAME = "title_container";
 
     private int mColor;
-    private boolean mPaintTitle;
 
     public DividerPainter(int color) {
-        mColor = color;
-        mPaintTitle = false;
-    }
-
-    public DividerPainter(int color, boolean paintTitle) {
-        mPaintTitle = paintTitle;
         mColor = color;
     }
 
 	public DividerPainter(Context c) {
-        mPaintTitle = false;
 		mColor = initColor(c);
 	}
 
@@ -58,10 +47,8 @@ public class DividerPainter {
         // If the context is AccentActivity, check whether the accent color is set in code
         if (c instanceof AccentActivity) {
             int overrideColor = ((AccentActivity)c).getOverrideAccentColor();
-            if (overrideColor != 0) {
-                mPaintTitle = true;
+            if (overrideColor != 0)
                 return overrideColor;
-            }
         }
         // Get the accent color from the theme
         TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
@@ -78,14 +65,6 @@ public class DividerPainter {
     public void setColor(int color) {
         mColor = color;
     }
-
-    public boolean getPaintTitle() {
-        return mPaintTitle;
-    }
-
-    public void setPaintTitle(boolean paintTitle) {
-        mPaintTitle = paintTitle;
-    }
 	
 	public final void paint(Window window) {
         // Paint divider
@@ -93,18 +72,5 @@ public class DividerPainter {
 		View divider = window.findViewById(id);
 		if (divider != null)
             divider.setBackgroundColor(mColor);
-
-        // Paint title text if required
-        if (mPaintTitle) {
-            id = NativeResources.getIdentifier(TITLE_ALERT_IDENTIFIER_NAME);
-            TextView title = (TextView)window.findViewById(id);
-            if (title != null)
-                title.setTextColor(mColor);
-
-//            id = NativeResources.getIdentifier(TITLE_DIALOG_IDENTIFIER_NAME);
-            TextView view = (TextView)window.findViewById(android.R.id.title);
-            if (view != null)
-                view.setTextColor(mColor);
-        }
 	}
 }
