@@ -42,7 +42,7 @@ public class ToggleForegroundDrawable extends Drawable {
 		DisplayMetrics displayMetrics = res.getDisplayMetrics();
 
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
-		int color = attrs.getColor(R.styleable.HoloAccent_accentColor, res.getColor(R.color.ha__accent));
+		int color = attrs.getColor(R.styleable.HoloAccent_accentColor, res.getColor(R.color.ha__accent_default));
 		attrs.recycle();
 
         mPaint = getPaint(displayMetrics, color);

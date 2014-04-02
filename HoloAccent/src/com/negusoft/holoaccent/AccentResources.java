@@ -152,7 +152,7 @@ public class AccentResources extends Resources {
 	private AccentPalette initPalette(Context c, int explicitColor, int explicitColorDark, int explicitColorActionBar) {
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
 
-        int holoBlue = getColor(android.R.color.holo_blue_light);
+        int holoBlue = super.getColor(android.R.color.holo_blue_light);
 		int color = explicitColor != 0 ? explicitColor : 
 			attrs.getColor(R.styleable.HoloAccent_accentColor, holoBlue);
 		int colorDark = explicitColorDark != 0 ? explicitColorDark : 
@@ -184,7 +184,13 @@ public class AccentResources extends Resources {
 
     @Override
     public int getColor(int id) throws NotFoundException {
-        if (id == R.color.ha__translucent_reference)
+        checkInitialized();
+
+        if (id == R.color.ha__accent_reference)
+            return mPalette.getAccentColor();
+        if (id == R.color.ha__accent_dark_reference)
+            return mPalette.getDarkAccentColor();
+        if (id == R.color.ha__accent_translucent_reference)
             return mPalette.getAccentColor(TRANSLUCENT_ACCENT_ALPHA);
         return super.getColor(id);
     }

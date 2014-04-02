@@ -109,7 +109,7 @@ public class AccentHelper {
 	}
 
     private DividerPainter initPainter(Context c, int color) {
-        return color == 0 ? new DividerPainter(c) : new DividerPainter(color, true);
+        return color == 0 ? new DividerPainter(c) : new DividerPainter(color);
     }
 	
 	private AccentResources createInstance(Context c, Resources resources) {

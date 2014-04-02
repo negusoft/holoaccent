@@ -270,10 +270,10 @@
     
     <!-- Text appearance -->
     <style name="TextAppearance.HoloAccent.DialogWindowTitle" parent="android:TextAppearance.Holo.DialogWindowTitle">
-        <item name="android:textColor">?attr/accentColor</item>
+        <item name="android:textColor">@color/ha__accent</item>
     </style>
     <style name="TextAppearance.HoloAccent.Widget.DropDownItem" parent="android:TextAppearance.Holo.Widget.DropDownItem">
-        <item name="android:textColor">?attr/accentColor</item>
+        <item name="android:textColor">@color/ha__accent</item>
     </style>
     
     <!-- Dialog styles -->

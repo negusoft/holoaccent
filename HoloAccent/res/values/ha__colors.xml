@@ -16,10 +16,11 @@
 -->
 <resources>
     
-    <color name="ha__accent">#A4C739</color>
-    <color name="ha__accent_actionbar">#A4C739</color>
+    <color name="ha__accent_default">#A4C739</color>
 
-    <color name="ha__translucent_reference">#66888888</color>
+    <color name="ha__accent_reference">#33b5e5</color>
+    <color name="ha__accent_dark_reference">#0099cc</color>
+    <color name="ha__accent_translucent_reference">#6633b5e5</color>
     
     <color name="ha__selector_disabled">#8000</color>
     <color name="ha__selector_disabled_light">#2000</color>
