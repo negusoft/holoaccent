@@ -40,6 +40,7 @@ import com.negusoft.holoaccent.interceptor.CircleInterceptor;
 import com.negusoft.holoaccent.interceptor.FastScrollInterceptor;
 import com.negusoft.holoaccent.interceptor.IndeterminateInterceptor;
 import com.negusoft.holoaccent.interceptor.NativeInterceptor;
+import com.negusoft.holoaccent.interceptor.PagerTabStripInterceptor;
 import com.negusoft.holoaccent.interceptor.RectInterceptor;
 import com.negusoft.holoaccent.interceptor.RoundRectInterceptor;
 import com.negusoft.holoaccent.interceptor.ScrubberInterceptor;
@@ -177,9 +178,10 @@ public class AccentResources extends Resources {
 		mInterceptors.add(new IndeterminateInterceptor());
 		mInterceptors.add(new SpinnerInterceptor());
 		mInterceptors.add(new SearchViewTextFieldInterceptor());
-        mInterceptors.add(new OverScrollInterceptor());
         mInterceptors.add(new NativeInterceptor());
         mInterceptors.add(new ActionBarBackgroundInterceptor(mContext));
+        mInterceptors.add(new PagerTabStripInterceptor());
+        mInterceptors.add(new OverScrollInterceptor());
 	}
 
     @Override

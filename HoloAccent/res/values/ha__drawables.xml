@@ -123,5 +123,7 @@
     <item name="ha__ab_background_reference" type="drawable">#0000</item>
     <item name="ha__ab_background_bottom_reference" type="drawable">#0000</item>
     <item name="ha__ab_background_stacked_reference" type="drawable">#0000</item>
+    <item name="ha__pager_tab_strip_background_reference" type="drawable">#0000</item>
+    <item name="ha__pager_tab_strip_background_reference_light" type="drawable">#0000</item>
     
 </resources>
