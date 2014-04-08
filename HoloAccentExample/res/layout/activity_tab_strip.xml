@@ -11,6 +11,6 @@
         android:id="@+id/tabStrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="?attr/accentColor"
+        style="@style/HoloAccent.PagerTabStrip"
         android:visibility="gone" />
 </android.support.v4.view.ViewPager>

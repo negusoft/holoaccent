@@ -233,6 +233,17 @@
         <item name="android:indeterminateDrawable">@drawable/ha__scrubber_progress_horizontal_light</item>
         <item name="android:thumb">@drawable/ha__scrubber_control_selector</item>
     </style>
+
+    <!-- SeekBar styles -->
+    <style name="HoloAccent.PagerTabStrip">
+        <item name="android:textColor">@color/ha__accent</item>
+        <item name="android:background">@drawable/ha__pager_tab_strip_background</item>
+    </style>
+
+    <!-- SeekBar styles -->
+    <style name="HoloAccent.PagerTabStrip.Light">
+        <item name="android:background">@drawable/ha__pager_tab_strip_background_light</item>
+    </style>
     
     <!-- AutoCompleteTextView styles -->
     <style name="HoloAccent.AutoCompleteTextView" parent="android:Widget.Holo.AutoCompleteTextView">
