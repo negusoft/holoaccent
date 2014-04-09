@@ -194,6 +194,10 @@ public class AccentResources extends Resources {
             return mPalette.getDarkAccentColor();
         if (id == R.color.ha__accent_translucent_reference)
             return mPalette.getAccentColor(TRANSLUCENT_ACCENT_ALPHA);
+        if (id == R.color.ha__calendar_selected_week_reference)
+            return mPalette.getDarkAccentColor(0x33);
+        if (id == R.color.ha__calendar_day_line_reference)
+            return mPalette.getAccentColor(0xCC);
         return super.getColor(id);
     }
 

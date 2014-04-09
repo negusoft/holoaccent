@@ -17,6 +17,16 @@
         android:showAsAction="never"
         android:title="@string/action_dialog_fragment"/>
     <item
+        android:id="@+id/date_picker_dialog"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_date_picker_dialog"/>
+    <item
+        android:id="@+id/time_picker_dialog"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_time_picker_dialog"/>
+    <item
         android:id="@+id/tab_strip_activity"
         android:orderInCategory="100"
         android:showAsAction="never"
