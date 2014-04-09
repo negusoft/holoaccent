@@ -13,46 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.negusoft.holoaccent.dialog;
+package com.negusoft.holoaccent.widget;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.util.AttributeSet;
 import android.view.View;
-import android.view.Window;
+import android.widget.DatePicker;
 import android.widget.NumberPicker;
 
+import com.negusoft.holoaccent.R;
 import com.negusoft.holoaccent.util.NativeResources;
 
 import java.lang.reflect.Field;
 
-/**
- * Extends the DividerPainter to not only paint the divider in the dialog, but also the dividers
- * in each of the number pickers.
- */
-public class DatePickerPainter extends DividerPainter {
+/** Extends NumperPicker to apply the correct accent color to the dividers */
+public class AccentDatePicker extends DatePicker {
 
     private static final String[] NUMBER_PICKER_ID_NAMES = new String[] {
             "month", "day", "year"
     };
-
     private static final String DIVIDER_FIELD_NAME = "mSelectionDivider";
 
-    public DatePickerPainter(int color) {
-        super(color);
+    public AccentDatePicker(Context context) {
+        super(context);
+        init(context);
     }
 
-	public DatePickerPainter(Context c) {
-		super(c);
-	}
+    public AccentDatePicker(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context);
+    }
 
-    @Override
-	public void paint(Window window) {
-        super.paint(window);
+    public AccentDatePicker(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+    }
 
+    private void init(Context c) {
         try {
             for (String idName : NUMBER_PICKER_ID_NAMES) {
                 int id = NativeResources.getIdentifier(idName);
-                View view = window.findViewById(id);
+                View view = findViewById(id);
                 if (view == null)
                     continue;
                 if (!(view instanceof NumberPicker))
@@ -60,13 +62,13 @@ public class DatePickerPainter extends DividerPainter {
 
                 Field selectionDivider = NumberPicker.class.getDeclaredField(DIVIDER_FIELD_NAME);
                 selectionDivider.setAccessible(true);
-                selectionDivider.set(view, new ColorDrawable(getColor()));
+                int color = c.getResources().getColor(R.color.ha__picker_divider);
+                selectionDivider.set(view, new ColorDrawable(color));
             }
         } catch (NoSuchFieldException e) {
             // Ignore
         } catch (IllegalAccessException e) {
             // Ignore
         }
-	}
-
+    }
 }

@@ -32,6 +32,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
@@ -196,7 +197,7 @@ public class AccentResources extends Resources {
             return mPalette.getAccentColor(TRANSLUCENT_ACCENT_ALPHA);
         if (id == R.color.ha__calendar_selected_week_reference)
             return mPalette.getDarkAccentColor(0x33);
-        if (id == R.color.ha__calendar_day_line_reference)
+        if (id == R.color.ha__picker_divider_reference)
             return mPalette.getAccentColor(0xCC);
         return super.getColor(id);
     }
