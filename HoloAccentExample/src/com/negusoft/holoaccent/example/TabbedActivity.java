@@ -2,6 +2,7 @@ package com.negusoft.holoaccent.example;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.app.DatePickerDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -11,9 +12,13 @@ import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
+import android.widget.DatePicker;
 
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
+import com.negusoft.holoaccent.dialog.AccentDatePickerDialog;
+import com.negusoft.holoaccent.dialog.DatePickerPainter;
+import com.negusoft.holoaccent.dialog.DividerPainter;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
 import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
@@ -22,6 +27,7 @@ import com.negusoft.holoaccent.example.fragment.SimpleDialogFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class TabbedActivity extends AccentActivity implements ActionBar.TabListener {
@@ -90,6 +96,12 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
         case R.id.dialog_fragment:
             new SimpleDialogFragment().show(getFragmentManager(), "FragmentDialog");
             return true;
+        case R.id.date_picker_dialog:
+            showDatePickerDialog();
+            return true;
+        case R.id.time_picker_dialog:
+            showTimePickerDialog();
+            return true;
 		case R.id.tab_strip_activity:
             startActivity(new Intent(this, TabbedStripActivity.class));
             return true;
@@ -137,18 +149,18 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
 	}
-	
-	private void showAlertDialog() {
-		AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
-		builder.setTitle(R.string.dialog_alert_title)
-				.setMessage(R.string.dialog_message)
-				.setPositiveButton(R.string.dialog_button_positive,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								// positive action
-							}
-						})
-				.setNegativeButton(R.string.dialog_button_negative,
+
+    private void showAlertDialog() {
+        AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
+        builder.setTitle(R.string.dialog_alert_title)
+                .setMessage(R.string.dialog_message)
+                .setPositiveButton(R.string.dialog_button_positive,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // positive action
+                            }
+                        })
+                .setNegativeButton(R.string.dialog_button_negative,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 // negative action
@@ -156,8 +168,44 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
                         }
                 );
 
-		builder.show();
-	}
+        builder.show();
+    }
+
+    private void showDatePickerDialog() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        // Create a new instance of DatePickerDialog
+        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) { }
+        };
+        new AccentDatePickerDialog(this, listener, year, month, day).show();
+    }
+
+    private void showTimePickerDialog() {
+        AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
+        builder.setTitle(R.string.dialog_alert_title)
+                .setMessage(R.string.dialog_message)
+                .setPositiveButton(R.string.dialog_button_positive,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // positive action
+                            }
+                        }
+                )
+                .setNegativeButton(R.string.dialog_button_negative,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // negative action
+                            }
+                        }
+                );
+
+        builder.show();
+    }
 	
 	private final class FragmentTabHolder {
 		public final Fragment fragment;

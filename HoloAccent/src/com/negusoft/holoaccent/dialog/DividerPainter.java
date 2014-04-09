@@ -26,8 +26,7 @@ import com.negusoft.holoaccent.util.NativeResources;
 
 /**
  * Utility class to change the color of the divider color of dialogs. To do so, it finds the
- * view using the native identifier in the layout and changes the background. If specified in
- * the constructor, the title text color will also be changed.
+ * view using the native identifier in the layout and changes the background.
  */
 public class DividerPainter {
 
@@ -66,7 +65,7 @@ public class DividerPainter {
         mColor = color;
     }
 	
-	public final void paint(Window window) {
+	public void paint(Window window) {
         // Paint divider
         int id = NativeResources.getIdentifier(DIVIDER_IDENTIFIER_NAME);
 		View divider = window.findViewById(id);

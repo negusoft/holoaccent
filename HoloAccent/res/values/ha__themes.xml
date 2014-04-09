@@ -89,6 +89,8 @@
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
 
+        <item name="android:calendarViewStyle">@style/HoloAccent.CalendarView</item>
+
         <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
     
@@ -165,6 +167,8 @@
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
 
+        <item name="android:calendarViewStyle">@style/HoloAccent.CalendarView</item>
+
         <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
     
@@ -239,6 +243,8 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
+
+        <item name="android:calendarViewStyle">@style/HoloAccent.CalendarView</item>
 
         <item name="android:actionBarItemBackground">@drawable/ha__actionbar_item_background</item>
     </style>
@@ -389,6 +395,8 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
+
+        <item name="android:calendarViewStyle">@style/HoloAccent.CalendarView</item>
     </style>
     <!-- @hide -->
     <style name="BaseDialogTheme.Light" parent="android:Theme.Holo.Light.Dialog">
@@ -462,6 +470,8 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
 
         <item name="android:fastScrollThumbDrawable">@drawable/ha__fastscroll_thumb</item>
+
+        <item name="android:calendarViewStyle">@style/HoloAccent.CalendarView</item>
     </style>
     
     <!--

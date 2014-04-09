@@ -14,6 +14,8 @@
     <string name="action_tab_strip">Tab Strip Activity</string>
     <string name="action_dialog_activity">Dialog Activity</string>
     <string name="action_dialog_fragment">Dialog Fragment</string>
+    <string name="action_date_picker_dialog">Date Picker</string>
+    <string name="action_time_picker_dialog">Time Picker</string>
     <string name="action_spinner_activity">Spinner Activity</string>
     <string name="action_code_override_activity">Code Override</string>
     <string name="action_theme_override_activity">Theme Override</string>

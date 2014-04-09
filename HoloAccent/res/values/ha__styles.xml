@@ -239,10 +239,14 @@
         <item name="android:textColor">@color/ha__accent</item>
         <item name="android:background">@drawable/ha__pager_tab_strip_background</item>
     </style>
-
-    <!-- SeekBar styles -->
     <style name="HoloAccent.PagerTabStrip.Light">
         <item name="android:background">@drawable/ha__pager_tab_strip_background_light</item>
+    </style>
+
+    <!-- CalendarView style -->
+    <style name="HoloAccent.CalendarView" parent="android:Widget.Holo.CalendarView">
+        <item name="android:selectedWeekBackgroundColor">@color/ha__calendar_selected_week</item>
+        <item name="android:selectedDateVerticalBar">@drawable/ha__calendar_day_line</item>
     </style>
     
     <!-- AutoCompleteTextView styles -->
