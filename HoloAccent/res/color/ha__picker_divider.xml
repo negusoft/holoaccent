@@ -15,5 +15,5 @@
   limitations under the License.
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/ha__calendar_day_line_reference"/>
+    <item android:color="@color/ha__picker_divider_reference"/>
 </selector>

@@ -23,7 +23,7 @@
     <color name="ha__accent_translucent_reference">#6633b5e5</color>
 
     <color name="ha__calendar_selected_week_reference">#330066ff</color>
-    <color name="ha__calendar_day_line_reference">#cc33b5e5</color>
+    <color name="ha__picker_divider_reference">#cc33b5e5</color>
     
     <color name="ha__selector_disabled">#8000</color>
     <color name="ha__selector_disabled_light">#2000</color>
