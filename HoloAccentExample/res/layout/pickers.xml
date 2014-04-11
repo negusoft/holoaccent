@@ -55,7 +55,7 @@
             android:layout_height="@dimen/horizontal_divider_thickness"
             android:background="@drawable/ha__background_accent"/>
 
-        <TimePicker
+        <com.negusoft.holoaccent.widget.AccentTimePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
