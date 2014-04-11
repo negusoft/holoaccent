@@ -15,23 +15,23 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.dialog;
 
-import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 
-/** Extend the DatePickerDialog to apply the accent color using DatePickerPainter.  */
-public class AccentDatePickerDialog extends DatePickerDialog {
+/** Extend the DatePickerDialog to apply the accent color using NumberPickerPainter.  */
+public class AccentTimePickerDialog extends TimePickerDialog {
 
-    public AccentDatePickerDialog(Context context, OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth) {
-        super(context, callBack, year, monthOfYear, dayOfMonth);
+    public AccentTimePickerDialog(Context context, OnTimeSetListener callBack, int hourOfDay, int minute, boolean is24HourView) {
+        super(context, callBack, hourOfDay, minute, is24HourView);
     }
 
-    public AccentDatePickerDialog(Context context, int theme, OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth) {
-        super(context, theme, callBack, year, monthOfYear, dayOfMonth);
+    public AccentTimePickerDialog(Context context, int theme, OnTimeSetListener callBack, int hourOfDay, int minute, boolean is24HourView) {
+        super(context, theme, callBack, hourOfDay, minute, is24HourView);
     }
 
     @Override
     public void show() {
         super.show();
-        NumberPickerPainter.newDatePickerPainter(getContext()).paint(getWindow());
+        NumberPickerPainter.newTimePickerPainter(getContext()).paint(getWindow());
     }
 }

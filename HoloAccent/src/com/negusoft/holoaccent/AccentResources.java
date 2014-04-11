@@ -66,8 +66,6 @@ import com.negusoft.holoaccent.util.NativeResources;
  * drawable with a tinted version by applying a ColorFilter.
  */
 public class AccentResources extends Resources {
-
-    private static final int TRANSLUCENT_ACCENT_ALPHA = 0x66;
 	
 	public interface Interceptor {
 		/**
@@ -194,11 +192,12 @@ public class AccentResources extends Resources {
         if (id == R.color.ha__accent_dark_reference)
             return mPalette.getDarkAccentColor();
         if (id == R.color.ha__accent_translucent_reference)
-            return mPalette.getAccentColor(TRANSLUCENT_ACCENT_ALPHA);
+            return mPalette.getAccentColor(0x66);
         if (id == R.color.ha__calendar_selected_week_reference)
             return mPalette.getAccentColor(0x33);
         if (id == R.color.ha__picker_divider_reference)
             return mPalette.getAccentColor(0xCC);
+
         return super.getColor(id);
     }
 

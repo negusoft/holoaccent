@@ -29,20 +29,35 @@ import java.lang.reflect.Field;
  * Extends the DividerPainter to not only paint the divider in the dialog, but also the dividers
  * in each of the number pickers.
  */
-public class DatePickerPainter extends DividerPainter {
+public class NumberPickerPainter extends DividerPainter {
 
-    private static final String[] NUMBER_PICKER_ID_NAMES = new String[] {
+    private static final String[] DATE_PICKER_ID_NAMES = new String[] {
             "month", "day", "year"
+    };
+    private static final String[] TIME_PICKER_ID_NAMES = new String[] {
+            "hour", "minute", "amPm"
     };
 
     private static final String DIVIDER_FIELD_NAME = "mSelectionDivider";
 
-    public DatePickerPainter(int color) {
-        super(color);
+    public static NumberPickerPainter newDatePickerPainter(Context c) {
+        return new NumberPickerPainter(c, DATE_PICKER_ID_NAMES);
     }
 
-	public DatePickerPainter(Context c) {
+    public static NumberPickerPainter newTimePickerPainter(Context c) {
+        return new NumberPickerPainter(c, TIME_PICKER_ID_NAMES);
+    }
+
+    private final String[] mNumberPickerIdNames;
+
+    public NumberPickerPainter(int color, String[] nativeIdNames) {
+        super(color);
+        mNumberPickerIdNames = nativeIdNames;
+    }
+
+	public NumberPickerPainter(Context c, String[] nativeIdNames) {
 		super(c);
+        mNumberPickerIdNames = nativeIdNames;
 	}
 
     @Override
@@ -50,7 +65,7 @@ public class DatePickerPainter extends DividerPainter {
         super.paint(window);
 
         try {
-            for (String idName : NUMBER_PICKER_ID_NAMES) {
+            for (String idName : mNumberPickerIdNames) {
                 int id = NativeResources.getIdentifier(idName);
                 View view = window.findViewById(id);
                 if (view == null)
