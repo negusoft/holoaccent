@@ -248,6 +248,10 @@
         <item name="android:selectedWeekBackgroundColor">@color/ha__calendar_selected_week</item>
         <item name="android:selectedDateVerticalBar">@drawable/ha__calendar_day_line</item>
     </style>
+    <style name="HoloAccent.CalendarView.Light" parent="android:Widget.Holo.Light.CalendarView">
+        <item name="android:selectedWeekBackgroundColor">@color/ha__calendar_selected_week</item>
+        <item name="android:selectedDateVerticalBar">@drawable/ha__calendar_day_line</item>
+    </style>
     
     <!-- AutoCompleteTextView styles -->
     <style name="HoloAccent.AutoCompleteTextView" parent="android:Widget.Holo.AutoCompleteTextView">
