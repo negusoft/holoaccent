@@ -8,6 +8,7 @@
     <string name="tab_progress">Progress</string>
     <string name="tab_list">List</string>
     <string name="tab_text_fields">Text Fields</string>
+    <string name="tab_pickers">Pickers</string>
     
     <string name="action_dummie">Dummie item</string>
     <string name="action_alert_dialog">Alert Dialog</string>
@@ -60,6 +61,10 @@
     <string name="edittext_input_password">input: password</string>
     <string name="edittext_autocomplete">autocomplete</string>
     <string name="edittext_multi_autocomplete">multi autocomplete</string>
+
+    <string name="number_picker_title">Number Picker</string>
+    <string name="date_picker_title">Date Picker</string>
+    <string name="time_picker_title">Date Picker</string>
 
     <string name="dialog_alert_title">Alert Dialog</string>
     <string name="dialog_fragment_title">Dialog Fragment</string>

@@ -23,6 +23,7 @@ import com.negusoft.holoaccent.dialog.DividerPainter;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
 import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
+import com.negusoft.holoaccent.example.fragment.PickersFragment;
 import com.negusoft.holoaccent.example.fragment.ProgressFragment;
 import com.negusoft.holoaccent.example.fragment.SimpleDialogFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
@@ -228,7 +229,8 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 			mFragments.add(new FragmentTabHolder(new ButtonFragment(), R.string.tab_buttons));
 			mFragments.add(new FragmentTabHolder(new ListFragment(), R.string.tab_list));
 			mFragments.add(new FragmentTabHolder(new TextviewFragment(), R.string.tab_text_fields));
-			mFragments.add(new FragmentTabHolder(new ProgressFragment(), R.string.tab_progress));
+            mFragments.add(new FragmentTabHolder(new ProgressFragment(), R.string.tab_progress));
+            mFragments.add(new FragmentTabHolder(new PickersFragment(), R.string.tab_pickers));
 		}
 
 		@Override
