@@ -15,27 +15,18 @@
  ******************************************************************************/
 package com.negusoft.holoaccent;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
+import com.negusoft.holoaccent.interceptor.AccentColorInterceptor;
 import com.negusoft.holoaccent.interceptor.ActionBarBackgroundInterceptor;
 import com.negusoft.holoaccent.interceptor.CircleInterceptor;
 import com.negusoft.holoaccent.interceptor.FastScrollInterceptor;
@@ -53,6 +44,13 @@ import com.negusoft.holoaccent.interceptor.UnderlineInterceptor;
 import com.negusoft.holoaccent.util.BitmapUtils;
 import com.negusoft.holoaccent.util.NativeResources;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Extends the default android Resources to replace and modify 
  * drawables at runtime and apply the accent color.
@@ -68,12 +66,14 @@ import com.negusoft.holoaccent.util.NativeResources;
 public class AccentResources extends Resources {
 	
 	public interface Interceptor {
-		/**
-		 * @return The drawable to be replaced or null 
-		 * to continue the normal flow.
-		 */
+		/** @return The drawable to be replaced or null to continue the normal flow. */
 		public Drawable getDrawable(Resources res, AccentPalette palette, int resId);
 	}
+
+    public interface ColorInterceptor {
+        /** @return The color to be replaced or 0 to continue the normal flow. */
+        public int getColor(Resources res, AccentPalette palette, int resId);
+    }
 	
 	private static final int[] TINT_DRAWABLE_IDS = new int[] {
 		R.drawable.ha__textfield_comp_activated_left,
@@ -103,7 +103,8 @@ public class AccentResources extends Resources {
 	
 	private boolean mInitialized = false;
 	private AccentPalette mPalette;
-	private List<Interceptor> mInterceptors;
+    private List<Interceptor> mInterceptors;
+    private List<ColorInterceptor> mColorInterceptors;
 	
 	public AccentResources(Context c, Resources resources) {
 		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
@@ -144,7 +145,8 @@ public class AccentResources extends Resources {
 		if (mInitialized)
 			return;
 		mPalette = initPalette(c, explicitColor, explicitColorDark, explicitColorActionBar);
-		mInterceptors = new ArrayList<Interceptor>();
+        mInterceptors = new ArrayList<Interceptor>();
+        mColorInterceptors = new ArrayList<ColorInterceptor>();
 		addInterceptors(c);
 		mInitialized = true;
 	}
@@ -181,24 +183,23 @@ public class AccentResources extends Resources {
         mInterceptors.add(new ActionBarBackgroundInterceptor(mContext));
         mInterceptors.add(new PagerTabStripInterceptor());
         mInterceptors.add(new OverScrollInterceptor());
+
+        mColorInterceptors.add(new AccentColorInterceptor());
 	}
 
     @Override
-    public int getColor(int id) throws NotFoundException {
+    public int getColor(int resId) throws NotFoundException {
         checkInitialized();
 
-        if (id == R.color.ha__accent_reference)
-            return mPalette.getAccentColor();
-        if (id == R.color.ha__accent_dark_reference)
-            return mPalette.getDarkAccentColor();
-        if (id == R.color.ha__accent_translucent_reference)
-            return mPalette.getAccentColor(0x66);
-        if (id == R.color.ha__calendar_selected_week_reference)
-            return mPalette.getAccentColor(0x33);
-        if (id == R.color.ha__picker_divider_reference)
-            return mPalette.getAccentColor(0xCC);
+        // Give a chance to the interceptors to replace the drawable
+        int result;
+        for(ColorInterceptor interceptor : mColorInterceptors) {
+            result = interceptor.getColor(this, mPalette, resId);
+            if (result != 0)
+                return result;
+        }
 
-        return super.getColor(id);
+        return super.getColor(resId);
     }
 
     @Override
