@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.Resources;
 
 import com.negusoft.holoaccent.AccentHelper;
+import com.negusoft.holoaccent.AccentResources;
 
 /**
  * Extends the Activity class and adds the HoloAccent configuration.
@@ -47,8 +48,24 @@ public abstract class AccentActivity extends Activity {
         return 0;
     }
 
+    /** Getter for the AccentHelper instance. */
     public AccentHelper getAccentHelper() {
         return mAccentHelper;
+    }
+
+    /**
+     * Override this function to modify the AccentResources instance. You can add your own logic
+     * to the default HoloAccent behaviour.
+     */
+    public void onInitResources(AccentResources resources) {
+        // To be overriden in child classes.
+    }
+
+    private class MyInitListener implements AccentHelper.OnInitListener {
+        @Override
+        public void onInitResources(AccentResources resources) {
+            onInitResources(resources);
+        }
     }
 
 }
