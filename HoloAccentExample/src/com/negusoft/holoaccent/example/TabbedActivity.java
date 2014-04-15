@@ -160,27 +160,6 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 			FragmentTransaction fragmentTransaction) {
 	}
 
-//    @Override
-//    public void onInitAccentResources(AccentResources resources) {
-//        resources.addColorInterceptor(new AccentResources.ColorInterceptor() {
-//            @Override
-//            public int getColor(Resources res, AccentPalette palette, int resId) {
-//                if (resId == com.negusoft.holoaccent.R.color.ha__accent_reference)
-//                    return Color.CYAN;
-//                return 0;
-//            }
-//        });
-//
-//        resources.addInterceptor(new AccentResources.Interceptor() {
-//            @Override
-//            public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-//                if (resId == com.negusoft.holoaccent.R.drawable.ha__ab_background_reference)
-//                    return new ColorDrawable(Color.CYAN);
-//                return null;
-//            }
-//        });
-//    }
-
     private void showAlertDialog() {
         AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
         builder.setTitle(R.string.dialog_alert_title)
