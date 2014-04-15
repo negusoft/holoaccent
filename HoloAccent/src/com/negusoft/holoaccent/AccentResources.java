@@ -103,6 +103,11 @@ public class AccentResources extends Resources {
 
     private final List<Interceptor> mInterceptors = new ArrayList<Interceptor>();
     private final List<ColorInterceptor> mColorInterceptors = new ArrayList<ColorInterceptor>();
+
+    private List<Integer> mCustomTintDrawableIds;
+    private List<Integer> mCustomTransformationDrawableIds;
+    private int[] mTintDrawableIds;
+    private int[] mTransformationDrawableIds;
 	
 	private boolean mInitialized = false;
 	private AccentPalette mPalette;
@@ -146,9 +151,25 @@ public class AccentResources extends Resources {
 		if (mInitialized)
 			return;
 		mPalette = initPalette(c, explicitColor, explicitColorDark, explicitColorActionBar);
+        mTintDrawableIds = appendDrawableIds(TINT_DRAWABLE_IDS, mCustomTintDrawableIds);
+        mTransformationDrawableIds = appendDrawableIds(TINT_TRANSFORMATION_DRAWABLE_IDS, mCustomTransformationDrawableIds);
 		addInterceptors(c);
 		mInitialized = true;
 	}
+
+    private int[] appendDrawableIds(int[] defaults, List<Integer> custom) {
+        if (custom == null)
+            return defaults;
+
+        int customSize = custom.size();
+        int[] result = new int[defaults.length + customSize];
+        for (int i=0; i<customSize; i++)
+            result[i] = custom.get(i);
+        for (int i=0; i<defaults.length; i++)
+            result[customSize + i] = defaults[i];
+
+        return result;
+    }
 	
 	private AccentPalette initPalette(Context c, int explicitColor, int explicitColorDark, int explicitColorActionBar) {
 		TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
@@ -221,11 +242,11 @@ public class AccentResources extends Resources {
 			throws NotFoundException {
 		checkInitialized();
 		
-		for (int id : TINT_DRAWABLE_IDS) {
+		for (int id : mTintDrawableIds) {
 			if (resId == id)
 				return getTintendResourceStream(resId, value, mPalette.accentColor);
 		}
-		for (int id : TINT_TRANSFORMATION_DRAWABLE_IDS) {
+		for (int id : mTransformationDrawableIds) {
 			if (resId == id)
 				return getTintTransformationResourceStream(resId, value, mPalette.accentColor);
 		}
@@ -246,6 +267,20 @@ public class AccentResources extends Resources {
      */
     public void addColorInterceptor(ColorInterceptor interceptor) {
         mColorInterceptors.add(0, interceptor);
+    }
+
+    /** Add a drawable resource to which to apply the "tint" technique. */
+    public void addTintResourceId(int resId) {
+        if (mCustomTintDrawableIds == null)
+            mCustomTintDrawableIds = new ArrayList<Integer>();
+        mCustomTintDrawableIds.add(resId);
+    }
+
+    /** Add a drawable resource to which to apply the "tint transformation" technique. */
+    public void addTintTransformationResourceId(int resId) {
+        if (mCustomTransformationDrawableIds == null)
+            mCustomTransformationDrawableIds = new ArrayList<Integer>();
+        mCustomTransformationDrawableIds.add(resId);
     }
 	
 	/**
