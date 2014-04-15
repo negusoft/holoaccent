@@ -12,7 +12,7 @@ import com.negusoft.holoaccent.AccentResources;
 public abstract class AccentActivity extends Activity {
 
     private final AccentHelper mAccentHelper = new AccentHelper(getOverrideAccentColor(),
-            getOverrideAccentColorDark(), getOverrideAccentColorActionBar());
+            getOverrideAccentColorDark(), getOverrideAccentColorActionBar(), new MyInitListener());
 
     @Override
     public Resources getResources() {
@@ -57,14 +57,14 @@ public abstract class AccentActivity extends Activity {
      * Override this function to modify the AccentResources instance. You can add your own logic
      * to the default HoloAccent behaviour.
      */
-    public void onInitResources(AccentResources resources) {
+    public void onInitAccentResources(AccentResources resources) {
         // To be overriden in child classes.
     }
 
     private class MyInitListener implements AccentHelper.OnInitListener {
         @Override
         public void onInitResources(AccentResources resources) {
-            onInitResources(resources);
+            onInitAccentResources(resources);
         }
     }
 

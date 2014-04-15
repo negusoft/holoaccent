@@ -100,11 +100,12 @@ public class AccentResources extends Resources {
 	private final int mExplicitColor;
     private final int mExplicitColorDark;
     private final int mExplicitColorActionBar;
+
+    private final List<Interceptor> mInterceptors = new ArrayList<Interceptor>();
+    private final List<ColorInterceptor> mColorInterceptors = new ArrayList<ColorInterceptor>();
 	
 	private boolean mInitialized = false;
 	private AccentPalette mPalette;
-    private List<Interceptor> mInterceptors;
-    private List<ColorInterceptor> mColorInterceptors;
 	
 	public AccentResources(Context c, Resources resources) {
 		super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
@@ -145,8 +146,6 @@ public class AccentResources extends Resources {
 		if (mInitialized)
 			return;
 		mPalette = initPalette(c, explicitColor, explicitColorDark, explicitColorActionBar);
-        mInterceptors = new ArrayList<Interceptor>();
-        mColorInterceptors = new ArrayList<ColorInterceptor>();
 		addInterceptors(c);
 		mInitialized = true;
 	}
@@ -232,6 +231,22 @@ public class AccentResources extends Resources {
 		}
 		return super.openRawResource(resId, value);
 	}
+
+    /**
+     * Add a drawable interceptor. They are evaluated in the order they are added, and before the
+     * default interceptors.
+     */
+    public void addInterceptor(Interceptor interceptor) {
+        mInterceptors.add(0, interceptor);
+    }
+
+    /**
+     * Add a color interceptor. They are evaluated in the order they are added, and before the
+     * default interceptors.
+     */
+    public void addColorInterceptor(ColorInterceptor interceptor) {
+        mColorInterceptors.add(0, interceptor);
+    }
 	
 	/**
 	 * Get a reference to a resource that is equivalent to the one requested, 

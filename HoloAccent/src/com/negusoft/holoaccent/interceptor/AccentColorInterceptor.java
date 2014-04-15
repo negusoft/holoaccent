@@ -8,7 +8,6 @@ import com.negusoft.holoaccent.R;
 
 public class AccentColorInterceptor implements AccentResources.ColorInterceptor {
 
-
     public int getColor(Resources res, AccentPalette palette, int resId) {
         if (resId == R.color.ha__accent_reference)
             return palette.getAccentColor();

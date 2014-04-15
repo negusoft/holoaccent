@@ -9,6 +9,10 @@ import android.app.FragmentTransaction;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -17,6 +21,8 @@ import android.view.Menu;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
 
+import com.negusoft.holoaccent.AccentPalette;
+import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
 import com.negusoft.holoaccent.dialog.AccentDatePickerDialog;
@@ -153,6 +159,27 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
 	}
+
+//    @Override
+//    public void onInitAccentResources(AccentResources resources) {
+//        resources.addColorInterceptor(new AccentResources.ColorInterceptor() {
+//            @Override
+//            public int getColor(Resources res, AccentPalette palette, int resId) {
+//                if (resId == com.negusoft.holoaccent.R.color.ha__accent_reference)
+//                    return Color.CYAN;
+//                return 0;
+//            }
+//        });
+//
+//        resources.addInterceptor(new AccentResources.Interceptor() {
+//            @Override
+//            public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
+//                if (resId == com.negusoft.holoaccent.R.drawable.ha__ab_background_reference)
+//                    return new ColorDrawable(Color.CYAN);
+//                return null;
+//            }
+//        });
+//    }
 
     private void showAlertDialog() {
         AccentAlertDialog.Builder builder = new AccentAlertDialog.Builder(this);
