@@ -273,7 +273,7 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent.Light</item>
         <item name="android:actionMenuTextColor">?android:attr/textColorPrimaryInverse</item>
 
-        <item name="android:homeAsUpIndicator">@drawable/ha__ab_back_light</item>
+        <item name="android:homeAsUpIndicator">@drawable/ha__ab_home_as_up_light</item>
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.Light.ActionButton.Overflow</item>
 
         <item name="android:actionModeCloseDrawable">@drawable/ha__ic_cab_done_light</item>
@@ -308,7 +308,7 @@
         <item name="android:actionBarWidgetTheme">@style/Theme.HoloAccent</item>
         <item name="android:actionMenuTextColor">?android:attr/textColorPrimaryInverse</item>
 
-        <item name="android:homeAsUpIndicator">@drawable/ha__ab_back</item>
+        <item name="android:homeAsUpIndicator">@drawable/ha__ab_home_as_up</item>
         <item name="android:actionOverflowButtonStyle">@android:style/Widget.Holo.ActionButton.Overflow</item>
 
         <item name="android:actionModeCloseDrawable">@drawable/ha__ic_cab_done</item>
