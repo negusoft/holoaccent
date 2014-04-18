@@ -342,6 +342,9 @@ public class AccentResources extends Resources {
 
 		private final int mOverscrollEdgeId;
 		private final int mOverscrollGlowId;
+
+        private Drawable mOverscrollEdgeDrawable;
+        private Drawable mOverscrollGlowDrawable;
 		
 		public OverScrollInterceptor() {
             mOverscrollEdgeId = NativeResources.getDrawableIdentifier(RESOURCE_NAME_EDGE);
@@ -358,15 +361,19 @@ public class AccentResources extends Resources {
 		}
 		
 		private Drawable getEdgeDrawable() {
-			Drawable result = AccentResources.super.getDrawable(R.drawable.ha__overscroll_edge);
-			result.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
-			return result;
+            if (mOverscrollEdgeDrawable == null) {
+                mOverscrollEdgeDrawable = AccentResources.super.getDrawable(R.drawable.ha__overscroll_edge);
+                mOverscrollEdgeDrawable.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
+            }
+			return mOverscrollEdgeDrawable;
 		}
 		
 		private Drawable getGlowDrawable() {
-			Drawable result = AccentResources.super.getDrawable(R.drawable.ha__overscroll_glow);
-			result.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
-			return result;
+            if (mOverscrollGlowDrawable == null) {
+                mOverscrollGlowDrawable = AccentResources.super.getDrawable(R.drawable.ha__overscroll_glow);
+                mOverscrollGlowDrawable.setColorFilter(mPalette.accentColor, PorterDuff.Mode.MULTIPLY);
+            }
+			return mOverscrollGlowDrawable;
 		}
 	}
 
