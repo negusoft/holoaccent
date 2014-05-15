@@ -29,6 +29,7 @@
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
+        <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -107,6 +108,7 @@
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
+        <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar.Light</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -184,6 +186,7 @@
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
+        <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar.Light</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -338,6 +341,7 @@
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
+        <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -413,6 +417,7 @@
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
+        <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar.Light</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>

@@ -336,4 +336,16 @@
         <item name="android:background">@drawable/ha__searchview_textfield_light</item>
     </style>
 
+    <!-- AccentRagingBar style. It doens't extend any Holo style -->
+    <style name="HoloAccent.AccentRagingBar">
+        <item name="android:colorBackground">#b7b7b7</item>
+        <item name="android:colorForeground">#cccccc</item>
+        <item name="android:colorForegroundInverse">#f4f4f4</item>
+    </style>
+    <style name="HoloAccent.AccentRagingBar.Light">
+        <item name="android:colorBackground">#b7b7b7</item>
+        <item name="android:colorForeground">#7f7f7f</item>
+        <item name="android:colorForegroundInverse">#404040</item>
+    </style>
+
 </resources>

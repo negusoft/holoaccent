@@ -53,6 +53,7 @@
     <string name="progress_indeterminate">Indeterminate</string>
     <string name="progress_default">Default</string>
     <string name="progress_seekbars">SeekBars</string>
+    <string name="progress_ratingbars">Rating Bars</string>
     
     <string name="edittext_title">Normal</string>
     <string name="edittext_default">default</string>
