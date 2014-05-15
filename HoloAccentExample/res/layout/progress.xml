@@ -94,6 +94,33 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:progress="48" />
+
+        <!-- RatingBar -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/progress_ratingbars" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+
+        <com.negusoft.holoaccent.widget.AccentRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.negusoft.holoaccent.widget.AccentRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:ratingBarStyleSmall"
+            android:isIndicator="false" />
+
+        <com.negusoft.holoaccent.widget.AccentRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:ratingBarStyleIndicator"
+            android:isIndicator="false" />
     </LinearLayout>
 
 </ScrollView>

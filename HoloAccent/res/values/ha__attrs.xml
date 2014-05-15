@@ -76,4 +76,15 @@
         <attr name="android:textColorLink" />
         <attr name="android:textAllCaps" />
     </declare-styleable>
+
+    <!-- AccentRatingBar -->
+    <attr name="accentRatingBarStyle" format="reference" />
+    <declare-styleable name="AccentRatingBar">
+        <!-- empty star background color -->
+        <attr name="android:colorBackground" />
+        <!-- border color for empty star -->
+        <attr name="android:colorForeground" />
+        <!-- border color for filled star -->
+        <attr name="android:colorForegroundInverse" />
+    </declare-styleable>
 </resources>

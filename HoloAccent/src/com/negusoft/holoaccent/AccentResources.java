@@ -254,6 +254,14 @@ public class AccentResources extends Resources {
 	}
 
     /**
+     * Method to access the palette instance
+     */
+    public AccentPalette getPalette() {
+        checkInitialized();
+        return mPalette;
+    }
+
+    /**
      * Add a drawable interceptor. They are evaluated in the order they are added, and before the
      * default interceptors.
      */
