@@ -31,6 +31,7 @@
     <string name="button_category_imagebutton">ImageButtons</string>
     <string name="button_category_toggle">ToggleButton</string>
     <string name="button_category_switch">Switch</string>
+    <string name="button_category_quick_contact_badge">QuickContactBadge</string>
     <string name="button_default">Default</string>
     <string name="button_disabled">Disabled</string>
     <string name="button_small">Small Style</string>

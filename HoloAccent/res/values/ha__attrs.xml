@@ -87,4 +87,8 @@
         <!-- border color for filled star -->
         <attr name="android:colorForegroundInverse" />
     </declare-styleable>
+
+    <!-- AccentQuickContactBadge -->
+    <attr name="accentContactBadgeOverlay" format="reference" />
+
 </resources>

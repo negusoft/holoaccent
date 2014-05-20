@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
+import android.widget.QuickContactBadge;
 
 import com.negusoft.holoaccent.example.R;
 

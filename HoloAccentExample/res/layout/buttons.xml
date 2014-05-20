@@ -254,6 +254,24 @@
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content" />
 		</LinearLayout>
+
+        <!-- QuickContactBadge -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/button_category_quick_contact_badge" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+
+        <com.negusoft.holoaccent.widget.AccentQuickContactBadge
+            android:id="@+id/badge"
+            android:focusable="true"
+            android:layout_margin="5dp"
+            style="?android:quickContactBadgeStyleWindowMedium"/>
 	
 	</LinearLayout>
 </ScrollView>

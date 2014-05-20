@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListPopupWindow;
+import android.widget.QuickContactBadge;
 
 import com.negusoft.holoaccent.example.R;
 
@@ -27,6 +28,9 @@ public class ButtonFragment extends Fragment {
 		
 //		mListPopupButton = result.findViewById(R.id.listPopupButton);
 //		mListPopupButton.setOnLongClickListener(mPopupListener);
+
+        QuickContactBadge badge = (QuickContactBadge)result.findViewById(R.id.badge);
+        badge.assignContactFromEmail("info@negusoft.com", false);
 		
 		return result;
 	}

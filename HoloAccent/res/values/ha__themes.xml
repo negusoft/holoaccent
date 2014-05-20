@@ -30,6 +30,7 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
         <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar</item>
+        <item name="accentContactBadgeOverlay">@drawable/ha__quickcontact_badge_overlay</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -109,6 +110,7 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
         <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar.Light</item>
+        <item name="accentContactBadgeOverlay">@drawable/ha__quickcontact_badge_overlay_light</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -187,6 +189,7 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
         <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar.Light</item>
+        <item name="accentContactBadgeOverlay">@drawable/ha__quickcontact_badge_overlay_light</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -342,6 +345,7 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
         <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar</item>
+        <item name="accentContactBadgeOverlay">@drawable/ha__quickcontact_badge_overlay</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>
@@ -418,6 +422,7 @@
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
         <item name="accentRatingBarStyle">@style/HoloAccent.AccentRagingBar.Light</item>
+        <item name="accentContactBadgeOverlay">@drawable/ha__quickcontact_badge_overlay_light</item>
 
         <item name="android:colorPressedHighlight">@color/ha__accent</item>
         <item name="android:colorLongPressedHighlight">@color/ha__accent</item>

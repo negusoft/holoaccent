@@ -114,7 +114,7 @@ public class RectDrawable extends Drawable {
 	}
 
 	@Override
-	public final ConstantState getConstantState() {
+	public ConstantState getConstantState() {
 		mState.changingConfigurationValue = super.getChangingConfigurations();
 		return mState;
 	}
