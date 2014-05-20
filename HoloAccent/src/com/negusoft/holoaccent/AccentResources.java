@@ -29,6 +29,7 @@ import android.util.TypedValue;
 import com.negusoft.holoaccent.interceptor.AccentColorInterceptor;
 import com.negusoft.holoaccent.interceptor.ActionBarBackgroundInterceptor;
 import com.negusoft.holoaccent.interceptor.CircleInterceptor;
+import com.negusoft.holoaccent.interceptor.ContactBadgeInterceptor;
 import com.negusoft.holoaccent.interceptor.FastScrollInterceptor;
 import com.negusoft.holoaccent.interceptor.IndeterminateInterceptor;
 import com.negusoft.holoaccent.interceptor.NativeInterceptor;
@@ -202,6 +203,7 @@ public class AccentResources extends Resources {
         mInterceptors.add(new NativeInterceptor());
         mInterceptors.add(new ActionBarBackgroundInterceptor(mContext));
         mInterceptors.add(new PagerTabStripInterceptor());
+        mInterceptors.add(new ContactBadgeInterceptor());
         mInterceptors.add(new OverScrollInterceptor());
 
         mColorInterceptors.add(new AccentColorInterceptor());
