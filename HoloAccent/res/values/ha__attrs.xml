@@ -26,12 +26,18 @@
     <!-- Colored button styles -->
     <attr name="buttonStyleColored" format="reference" />
     <attr name="buttonStyleColoredBright" format="reference" />
-    
+    <attr name="buttonStyleColoredInverse" format="reference" />
+    <attr name="buttonStyleColoredBrightInverse" format="reference" />
+
     <attr name="buttonStyleSmallColored" format="reference" />
     <attr name="buttonStyleSmallColoredBright" format="reference" />
-    
+    <attr name="buttonStyleSmallColoredInverse" format="reference" />
+    <attr name="buttonStyleSmallColoredBrightInverse" format="reference" />
+
     <attr name="imageButtonStyleColored" format="reference" />
     <attr name="imageButtonStyleColoredBright" format="reference" />
+    <attr name="imageButtonStyleColoredInverse" format="reference" />
+    <attr name="imageButtonStyleColoredBrightInverse" format="reference" />
 
     <!-- ActionBar background. Only used on ColoredActionBar styles. -->
     <attr name="coloredActionBarBackgroundStyle" format="reference" />
