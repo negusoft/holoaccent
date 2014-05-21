@@ -59,30 +59,54 @@
             android:layout_height="@dimen/horizontal_divider_thickness"
             android:background="@drawable/ha__background_accent"/>
 
-		<LinearLayout
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:orientation="horizontal" >
-			<Button
-			    style="?attr/buttonStyleColored"
-			    android:id="@+id/coloredButton"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="@string/button_default" />
-		
-			<Button
-			    style="?attr/buttonStyleColored"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:enabled="false"
-			    android:text="@string/button_disabled" />
-		
-			<Button
-			    style="?attr/buttonStyleSmallColored"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="@string/button_small" />
-		</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="?attr/buttonStyleColored"
+                android:id="@+id/coloredButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_default" />
+
+            <Button
+                style="?attr/buttonStyleColored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/button_disabled" />
+
+            <Button
+                style="?attr/buttonStyleSmallColored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="?attr/buttonStyleColoredInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_default" />
+
+            <Button
+                style="?attr/buttonStyleColoredInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/button_disabled" />
+
+            <Button
+                style="?attr/buttonStyleSmallColoredInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_small" />
+        </LinearLayout>
 
         <!-- Colored button (bright) -->
         <TextView
@@ -96,29 +120,53 @@
             android:layout_height="@dimen/horizontal_divider_thickness"
             android:background="@drawable/ha__background_accent"/>
 
-		<LinearLayout
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:orientation="horizontal" >
-			<Button
-			    style="?attr/buttonStyleColoredBright"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="@string/button_default" />
-		
-			<Button
-			    style="?attr/buttonStyleColoredBright"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:enabled="false"
-			    android:text="@string/button_disabled" />
-		
-			<Button
-			    style="?attr/buttonStyleSmallColoredBright"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="@string/button_small" />
-		</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="?attr/buttonStyleColoredBright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_default" />
+
+            <Button
+                style="?attr/buttonStyleColoredBright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/button_disabled" />
+
+            <Button
+                style="?attr/buttonStyleSmallColoredBright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="?attr/buttonStyleColoredBrightInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_default" />
+
+            <Button
+                style="?attr/buttonStyleColoredBrightInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/button_disabled" />
+
+            <Button
+                style="?attr/buttonStyleSmallColoredBrightInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_small" />
+        </LinearLayout>
 
 		<!-- Other button styles -->
         <TextView

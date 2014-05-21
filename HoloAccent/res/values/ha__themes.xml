@@ -26,6 +26,13 @@
         <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
         <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
         <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Light.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.Light.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
@@ -99,13 +106,20 @@
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Holo.Light">
         
         <item name="accentColor">@color/ha__accent_default</item>
-        
+
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
         <item name="buttonStyleSmallColored">@style/HoloAccent.Light.Button.Small.Colored</item>
         <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
         <item name="imageButtonStyleColored">@style/HoloAccent.Light.ImageButton.Colored</item>
         <item name="imageButtonStyleColoredBright">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright</item>
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
@@ -185,6 +199,13 @@
         <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
         <item name="imageButtonStyleColored">@style/HoloAccent.Light.ImageButton.Colored</item>
         <item name="imageButtonStyleColoredBright">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright</item>
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
@@ -341,6 +362,13 @@
         <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
         <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
         <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Light.Button.Colored</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Light.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Light.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.Light.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView</item>
@@ -418,6 +446,13 @@
         <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Light.Button.Small.Colored.Bright</item>
         <item name="imageButtonStyleColored">@style/HoloAccent.Light.ImageButton.Colored</item>
         <item name="imageButtonStyleColoredBright">@style/HoloAccent.Light.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright</item>
         
         <item name="accentSwitchStyle">@style/HoloAccent.AccentSwitch.Light</item>
         <item name="accentSearchViewStyle">@style/HoloAccent.AccentSearchView.Light</item>
