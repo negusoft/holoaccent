@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin" >
+
+        <!-- Activity type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_category_activity_type" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+
+        <Spinner
+            android:id="@+id/activitySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Style -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/main_category_style" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/horizontal_divider_thickness"
+            android:background="@drawable/ha__background_accent"/>
+
+        <Spinner
+            android:id="@+id/themeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="5dp">
+            <CheckBox
+                android:id="@+id/overrideColorCheckBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Override color"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+            <View
+                android:id="@+id/colorView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:visibility="invisible"
+                android:background="#f00"/>
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/hueSeekBar"
+            android:padding="4dp"
+            android:max="360"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_start_activity"
+            android:layout_marginTop="12dp"
+            style="?buttonStyleColoredInverse"/>
+
+    </LinearLayout>
+
+</ScrollView>
+

@@ -1,4 +1,4 @@
-package com.negusoft.holoaccent.example;
+package com.negusoft.holoaccent.example.activity;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -9,25 +9,18 @@ import android.app.FragmentTransaction;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.widget.DatePicker;
-import android.widget.NumberPicker;
 
-import com.negusoft.holoaccent.AccentPalette;
-import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.dialog.AccentAlertDialog;
 import com.negusoft.holoaccent.dialog.AccentDatePickerDialog;
 import com.negusoft.holoaccent.dialog.AccentTimePickerDialog;
-import com.negusoft.holoaccent.dialog.DividerPainter;
+import com.negusoft.holoaccent.example.R;
 import com.negusoft.holoaccent.example.fragment.ButtonFragment;
 import com.negusoft.holoaccent.example.fragment.ChoicesFragment;
 import com.negusoft.holoaccent.example.fragment.ListFragment;
@@ -35,6 +28,7 @@ import com.negusoft.holoaccent.example.fragment.PickersFragment;
 import com.negusoft.holoaccent.example.fragment.ProgressFragment;
 import com.negusoft.holoaccent.example.fragment.SimpleDialogFragment;
 import com.negusoft.holoaccent.example.fragment.TextviewFragment;
+import com.negusoft.holoaccent.example.model.ColorOverrideConfig;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -62,6 +56,11 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 			configureTabs(actionBar, mViewPager);
 		}
 	}
+
+    @Override
+    public int getOverrideAccentColor() {
+        return ColorOverrideConfig.getColor();
+    }
 	
 	protected int getLayoutId() {
 		return R.layout.activity_tabbed;
@@ -100,9 +99,6 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 		case R.id.alert_dialog:
 			showAlertDialog();
             return true;
-        case R.id.dialog_activity:
-            startActivity(new Intent(this, DialogActivity.class));
-            return true;
         case R.id.dialog_fragment:
             new SimpleDialogFragment().show(getFragmentManager(), "FragmentDialog");
             return true;
@@ -111,24 +107,6 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
             return true;
         case R.id.time_picker_dialog:
             showTimePickerDialog();
-            return true;
-		case R.id.tab_strip_activity:
-            startActivity(new Intent(this, TabbedStripActivity.class));
-            return true;
-		case R.id.spinner_activity:
-            startActivity(new Intent(this, SpinnerActivity.class));
-            return true;
-		case R.id.code_override_activity:
-            startActivity(new Intent(this, CodeOverrideActivity.class));
-            return true;
-		case R.id.theme_override_activity:
-            startActivity(new Intent(this, ThemeOverrideActivity.class));
-            return true;
-		case R.id.holo_theme_activity:
-            startActivity(new Intent(this, TabbetHoloActivity.class));
-            return true;
-		case R.id.preferences_activity:
-            startActivity(new Intent(this, PreferencesActivity.class));
             return true;
 		default:
 			return super.onOptionsItemSelected(item);
