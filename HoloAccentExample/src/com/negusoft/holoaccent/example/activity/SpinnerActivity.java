@@ -1,4 +1,4 @@
-package com.negusoft.holoaccent.example;
+package com.negusoft.holoaccent.example.activity;
 
 import android.app.ActionBar;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.negusoft.holoaccent.activity.AccentActivity;
+import com.negusoft.holoaccent.example.R;
+import com.negusoft.holoaccent.example.model.ColorOverrideConfig;
 
 public class SpinnerActivity extends AccentActivity {
 
@@ -20,6 +22,11 @@ public class SpinnerActivity extends AccentActivity {
 		initActionBar();
 		initSpinners();
 	}
+
+    @Override
+    public int getOverrideAccentColor() {
+        return ColorOverrideConfig.getColor();
+    }
 	
 	private void initActionBar() {
 		ActionBar actionBar = getActionBar();

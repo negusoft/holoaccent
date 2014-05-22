@@ -1,9 +1,12 @@
-package com.negusoft.holoaccent.example;
+package com.negusoft.holoaccent.example.activity;
 
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import com.negusoft.holoaccent.example.R;
+import com.negusoft.holoaccent.example.activity.TabbedActivity;
 
 public class TabbedStripActivity extends TabbedActivity {
 	

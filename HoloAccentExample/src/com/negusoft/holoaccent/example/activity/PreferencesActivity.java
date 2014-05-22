@@ -1,9 +1,11 @@
-package com.negusoft.holoaccent.example;
+package com.negusoft.holoaccent.example.activity;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
 import com.negusoft.holoaccent.activity.AccentActivity;
+import com.negusoft.holoaccent.example.R;
+import com.negusoft.holoaccent.example.model.ColorOverrideConfig;
 
 public class PreferencesActivity extends AccentActivity {
 
@@ -18,6 +20,11 @@ public class PreferencesActivity extends AccentActivity {
                     .commit();
         }
 	}
+
+    @Override
+    public int getOverrideAccentColor() {
+        return ColorOverrideConfig.getColor();
+    }
 
 	public static class GeneralPreferenceFragment extends PreferenceFragment {
 		@Override

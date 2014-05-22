@@ -2,6 +2,10 @@
 <resources>
 
     <string name="app_name">HoloAccent</string>
+
+    <string name="main_start_activity">Start Activity</string>
+    <string name="main_category_activity_type">Activity type</string>
+    <string name="main_category_style">Theme &amp; color</string>
     
     <string name="tab_buttons">Buttons</string>
     <string name="tab_choices">Choices</string>
@@ -12,17 +16,10 @@
     
     <string name="action_dummie">Dummie item</string>
     <string name="action_alert_dialog">Alert Dialog</string>
-    <string name="action_tab_strip">Tab Strip Activity</string>
-    <string name="action_dialog_activity">Dialog Activity</string>
     <string name="action_dialog_fragment">Dialog Fragment</string>
     <string name="action_date_picker_dialog">Date Picker</string>
     <string name="action_time_picker_dialog">Time Picker</string>
-    <string name="action_spinner_activity">Spinner Activity</string>
-    <string name="action_code_override_activity">Code Override</string>
-    <string name="action_theme_override_activity">Theme Override</string>
-    <string name="action_holo_theme_activity">Holo Theme</string>
-    <string name="action_preferences_activity">Preferences</string>
-    <string name="action_search">Alert Dialog</string>
+    <string name="action_search">Search</string>
     
     <string name="button_category_default">Buttons (Default)</string>
     <string name="button_category_colored">Colored Buttons</string>
