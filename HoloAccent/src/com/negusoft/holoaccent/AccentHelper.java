@@ -64,6 +64,17 @@ public class AccentHelper {
     }
 
     public static final int COLOR_NO_OVERRIDE = 0;
+
+    /**
+     * Get the AccentPalette instance from the the context.
+     * @return It might return null if HoloAccent has not been correctly configured.
+     */
+    public static AccentPalette getPalette(Context context) {
+        Resources resources = context.getResources();
+        if (!(resources instanceof AccentResources))
+            return null;
+        return ((AccentResources)resources).getPalette();
+    }
 	
 	private AccentResources mAccentResources;
 	private DividerPainter mDividerPainter;
