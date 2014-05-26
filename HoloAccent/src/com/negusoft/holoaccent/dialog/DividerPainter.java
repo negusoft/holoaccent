@@ -20,6 +20,8 @@ import android.content.res.TypedArray;
 import android.view.View;
 import android.view.Window;
 
+import com.negusoft.holoaccent.AccentHelper;
+import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.R;
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.util.NativeResources;
@@ -43,18 +45,10 @@ public class DividerPainter {
 	}
 
     private int initColor(Context c) {
-        // If the context is AccentActivity, check whether the accent color is set in code
-        if (c instanceof AccentActivity) {
-            int overrideColor = ((AccentActivity)c).getOverrideAccentColor();
-            if (overrideColor != 0)
-                return overrideColor;
-        }
-        // Get the accent color from the theme
-        TypedArray attrs = c.getTheme().obtainStyledAttributes(R.styleable.HoloAccent);
-        int defaultColor = c.getResources().getColor(android.R.color.holo_blue_light);
-        int result = attrs.getColor(R.styleable.HoloAccent_accentColor, defaultColor);
-        attrs.recycle();
-        return result;
+        AccentPalette palette = AccentHelper.getPalette(c);
+        if (palette == null)
+            return c.getResources().getColor(android.R.color.holo_blue_light);
+        return palette.getAccentColor();
     }
 
     public int getColor() {
