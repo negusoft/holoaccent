@@ -30,7 +30,7 @@
             android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
         <activity
             android:name=".activity.themed.TabbedActivityColoredABInverse"
-            android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
+            android:theme="@style/Theme.HoloAccent.ColoredActionBar.Inverse"/>
         <activity
             android:name=".activity.themed.TabbedActivityLight"
             android:theme="@style/Theme.HoloAccent.Light"/>
@@ -52,7 +52,7 @@
             android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
         <activity
             android:name=".activity.themed.TabbedStripActivityColoredABInverse"
-            android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
+            android:theme="@style/Theme.HoloAccent.ColoredActionBar.Inverse"/>
         <activity
             android:name=".activity.themed.TabbedStripActivityLight"
             android:theme="@style/Theme.HoloAccent.Light"/>
@@ -77,7 +77,7 @@
         <activity
             android:name=".activity.themed.SpinnerActivityColoredABInverse"
             android:uiOptions="splitActionBarWhenNarrow"
-            android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
+            android:theme="@style/Theme.HoloAccent.ColoredActionBar.Inverse"/>
         <activity
             android:name=".activity.themed.SpinnerActivityLight"
             android:uiOptions="splitActionBarWhenNarrow"
@@ -105,7 +105,7 @@
             android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
         <activity
             android:name=".activity.themed.PreferencesActivityColoredABInverse"
-            android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
+            android:theme="@style/Theme.HoloAccent.ColoredActionBar.Inverse"/>
         <activity
             android:name=".activity.themed.PreferencesActivityLight"
             android:theme="@style/Theme.HoloAccent.Light"/>
