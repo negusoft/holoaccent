@@ -63,6 +63,8 @@ public class MainActivity extends AccentActivity {
     private SeekBar mHueSeekBar;
     private View mColorView;
 
+    private String[] mCurrentThemes = THEMES_DEFAULT;
+
     private int mColor = Color.RED;
 
 	@Override
@@ -75,14 +77,17 @@ public class MainActivity extends AccentActivity {
         mActivitySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                mThemeSpinner.setAdapter(new ThemeAdapter(i));
+                if (mCurrentThemes == THEMES[i])
+                    return;
+                mCurrentThemes = THEMES[i];
+                mThemeSpinner.setAdapter(new ThemeAdapter(THEMES[i]));
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
         mThemeSpinner = (Spinner)findViewById(R.id.themeSpinner);
-        mThemeSpinner.setAdapter(new ThemeAdapter(0));
+        mThemeSpinner.setAdapter(new ThemeAdapter(THEMES[0]));
 
         mHueSeekBar = (SeekBar)findViewById(R.id.hueSeekBar);
         mHueSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -248,8 +253,8 @@ public class MainActivity extends AccentActivity {
     }
 
     private class ThemeAdapter extends ArrayAdapter<String> {
-        public ThemeAdapter(int index) {
-            super(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, THEMES[index]);
+        public ThemeAdapter(String[] items) {
+            super(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, items);
         }
     }
 
