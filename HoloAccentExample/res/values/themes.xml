@@ -2,8 +2,13 @@
 <resources>
 
     <!-- Overrides the accent color -->
-    <style name="Theme.HoloAccent.Override" parent="Theme.HoloAccent.Light">
-        <item name="accentColor">#ff0000</item>
+    <style name="Theme.MainActivity" parent="Theme.HoloAccent.Light.ColoredActionBar.Inverse">
+        <item name="accentColor">#A4C739</item>
+        <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+    </style>
+
+    <style name="CustomActionBarStyle" parent="HoloAccent.ActionBar.Colored.Inverse">
+        <item name="android:background">#8BA930</item>
     </style>
 
 </resources>
