@@ -2,7 +2,9 @@ package com.negusoft.holoaccent.example.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -42,6 +44,8 @@ import com.negusoft.holoaccent.example.activity.themed.TabbedStripActivityLightD
 import com.negusoft.holoaccent.example.model.ColorOverrideConfig;
 
 public class MainActivity extends AccentActivity {
+
+    private static final String URL_GITHUB = "https://github.com/negusoft/holoaccent";
 
     private static final String[] ITEMS = new String[] {
             "Showcase (tabs)", "Showcase (tab strip)", "Spinner", "Preferences", "Dialog" };
@@ -127,6 +131,25 @@ public class MainActivity extends AccentActivity {
         mHueSeekBar.setEnabled(false);
         ColorOverrideConfig.setColor(0);
 	}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_github:
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GITHUB));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     private void updateColor() {
         int hue = mHueSeekBar.getProgress();

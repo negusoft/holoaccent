@@ -20,6 +20,7 @@
     <string name="action_date_picker_dialog">Date Picker</string>
     <string name="action_time_picker_dialog">Time Picker</string>
     <string name="action_search">Search</string>
+    <string name="action_github">Open on GitHub</string>
     
     <string name="button_category_default">Buttons (Default)</string>
     <string name="button_category_colored">Colored Buttons</string>
