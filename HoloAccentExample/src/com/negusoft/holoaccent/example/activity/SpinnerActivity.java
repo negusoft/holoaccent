@@ -8,6 +8,7 @@ import android.widget.Spinner;
 
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.example.R;
+import com.negusoft.holoaccent.example.fragment.SimpleDialogFragment;
 import com.negusoft.holoaccent.example.model.ColorOverrideConfig;
 
 public class SpinnerActivity extends AccentActivity {
@@ -27,13 +28,25 @@ public class SpinnerActivity extends AccentActivity {
     public int getOverrideAccentColor() {
         return ColorOverrideConfig.getColor();
     }
-	
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 	private void initActionBar() {
 		ActionBar actionBar = getActionBar();
 		if (actionBar == null)
 			return;
 		
 		actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 		
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setDisplayShowTitleEnabled(false);

@@ -44,6 +44,8 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 		super.onCreate(savedInstanceState);
 		setContentView(getLayoutId());
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
 		final ActionBar actionBar = getActionBar();
 		if (actionBar != null) {
 			actionBar.setHomeButtonEnabled(true);
@@ -94,7 +96,7 @@ public class TabbedActivity extends AccentActivity implements ActionBar.TabListe
 	public boolean onOptionsItemSelected(android.view.MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-            startActivity(new Intent(this, TabbedActivity.class));
+            finish();
             return true;
 		case R.id.alert_dialog:
 			showAlertDialog();
