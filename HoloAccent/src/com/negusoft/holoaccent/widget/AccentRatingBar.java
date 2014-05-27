@@ -91,6 +91,7 @@ public class AccentRatingBar extends RatingBar {
         result.setStrokeWidth(strokeWidth);
         result.setStrokeJoin(Paint.Join.ROUND);
         result.setColor(mPalette.getAccentColor(alpha));
+        result.setAntiAlias(true);
         return result;
     }
 
