@@ -28,6 +28,7 @@ import android.util.AttributeSet;
 import android.widget.NumberPicker;
 import android.widget.RatingBar;
 
+import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
@@ -70,9 +71,7 @@ public class AccentRatingBar extends RatingBar {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyle) {
-        Resources resources = context.getResources();
-        if (resources instanceof AccentResources)
-            mPalette = ((AccentResources)resources).getPalette();
+        mPalette = AccentHelper.getPalette(context);
 
         TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.AccentRatingBar, defStyle, 0);
