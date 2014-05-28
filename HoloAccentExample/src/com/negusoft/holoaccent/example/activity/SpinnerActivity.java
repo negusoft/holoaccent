@@ -51,7 +51,7 @@ public class SpinnerActivity extends AccentActivity {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		actionBar.setDisplayShowTitleEnabled(false);
 		
-		actionBar.setListNavigationCallbacks(new MyArrayAdapter(), new ActionBar.OnNavigationListener() {
+		actionBar.setListNavigationCallbacks(new ActionBarArrayAdapter(), new ActionBar.OnNavigationListener() {
 			@Override public boolean onNavigationItemSelected(int itemPosition, long itemId) {
 				return false;
 			}
@@ -60,9 +60,9 @@ public class SpinnerActivity extends AccentActivity {
 	
 	private void initSpinners() {
 		Spinner spinner1 = (Spinner)findViewById(R.id.spinner1);
-		spinner1.setAdapter(new MyArrayAdapter());
+		spinner1.setAdapter(new DefaultArrayAdapter());
 		Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
-		spinner2.setAdapter(new MyArrayAdapter());
+		spinner2.setAdapter(new DefaultArrayAdapter());
 	}
 
 	@Override
@@ -70,11 +70,17 @@ public class SpinnerActivity extends AccentActivity {
 		getMenuInflater().inflate(R.menu.spinner, menu);
 		return true;
 	}
-	
-	private class MyArrayAdapter extends ArrayAdapter<String> {
-		public MyArrayAdapter() {
-			super(SpinnerActivity.this, android.R.layout.simple_spinner_dropdown_item, ITEMS);
-		}
-	}
+
+    private class ActionBarArrayAdapter extends ArrayAdapter<String> {
+        public ActionBarArrayAdapter() {
+            super(SpinnerActivity.this, R.layout.spinner_dropdown, ITEMS);
+        }
+    }
+
+    private class DefaultArrayAdapter extends ArrayAdapter<String> {
+        public DefaultArrayAdapter() {
+            super(SpinnerActivity.this, android.R.layout.simple_spinner_dropdown_item, ITEMS);
+        }
+    }
 
 }
