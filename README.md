@@ -7,12 +7,14 @@
 Description
 ===========
 
-Android library to customize the Holo theme with a custom accent color.
+Android library to customize the Holo theme with a custom accent color. The color can even be set programmatically, allowing the UI to change dynamically. 
 
 It currently supports Android 4.0+ projects (minSdkVersion="14"). Each theme defined in the project corresponds to a default android theme:
 - Theme.Holo > Theme.HoloAccent
 - Theme.Holo.Light > Theme.HoloAccent.Light
 - Theme.Holo.Light.DarkActionBar > Theme.HoloAccent.Light.DarkActionBar
+
+There are other ColoredActionBar themes that allow further customization. See the appropriate wiki page for further information.
 
 See the 'Getting Started' section for links to get more information.
 
@@ -20,6 +22,7 @@ See the 'Getting Started' section for links to get more information.
 Features
 ========
 - Change the accent color in one place and apply it everywhere
+- Programmatically override the accent color set in the theme
 - All the UI components from "Holo Colors Generator" supported
 - Themes with different accent colors within the same app
 - Full focused state support (navigate with hardware keys)
