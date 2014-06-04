@@ -7,7 +7,7 @@
         <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
     </style>
 
-    <style name="CustomActionBarStyle" parent="HoloAccent.ActionBar.Colored.Inverse">
+    <style name="CustomActionBarStyle" parent="HoloAccent.ActionBar.Light.Solid.Inverse.Colored">
         <item name="android:background">#8BA930</item>
     </style>
 

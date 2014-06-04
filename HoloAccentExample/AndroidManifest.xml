@@ -9,7 +9,6 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true"
-        android:debuggable="false"
         android:icon="@drawable/ic_launcher"
         android:logo="@drawable/ic_logo_white"
         android:label="@string/app_name"
