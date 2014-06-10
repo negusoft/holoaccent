@@ -51,8 +51,8 @@ public class MainActivity extends AccentActivity {
             "Showcase (tabs)", "Showcase (tab strip)", "Spinner", "Preferences", "Dialog" };
 
     private static final String[] THEMES_DEFAULT = new String[] {
-            "Default (Dark)", "ColoredeActionBar", "ColoredeActionBar (Inverse)",
-            "Light", "Light.DarkActionBar", "Light ColoredeActionBar", "Light.ColoredeActionBar (Inverse)"
+            "Default (Dark)", "ColoredActionBar", "ColoredActionBar (Inverse)",
+            "Light", "Light DarkActionBar", "Light ColoredActionBar", "Light ColoredActionBar (Inverse)"
     };
     private static final String[] THEMES_DIALOG = new String[] {
             "Default (Dark)", "Light"
@@ -183,17 +183,17 @@ public class MainActivity extends AccentActivity {
         switch (mThemeSpinner.getSelectedItemPosition()) {
             case 0: // Default (Dark)
                 return new Intent(this, TabbedActivity.class);
-            case 1: // ColoredeActionBar
+            case 1: // ColoredActionBar
                 return new Intent(this, TabbedActivityColoredAB.class);
-            case 2: // ColoredeActionBar (Inverse)
+            case 2: // ColoredActionBar (Inverse)
                 return new Intent(this, TabbedActivityColoredABInverse.class);
             case 3: // Light
                 return new Intent(this, TabbedActivityLight.class);
             case 4: // Light.DarkActionBar
                 return new Intent(this, TabbedActivityLightDarkAB.class);
-            case 5: // Light ColoredeActionBar
+            case 5: // Light ColoredActionBar
                 return new Intent(this, TabbedActivityLightColoredAB.class);
-            case 6: // Light.ColoredeActionBar (Inverse)
+            case 6: // Light.ColoredActionBar (Inverse)
                 return new Intent(this, TabbedActivityLightColoredABInverse.class);
         }
         throw new RuntimeException("Invalid theme selected");
@@ -203,17 +203,17 @@ public class MainActivity extends AccentActivity {
         switch (mThemeSpinner.getSelectedItemPosition()) {
             case 0: // Default (Dark)
                 return new Intent(this, TabbedStripActivity.class);
-            case 1: // ColoredeActionBar
+            case 1: // ColoredActionBar
                 return new Intent(this, TabbedStripActivityColoredAB.class);
-            case 2: // ColoredeActionBar (Inverse)
+            case 2: // ColoredActionBar (Inverse)
                 return new Intent(this, TabbedStripActivityColoredABInverse.class);
             case 3: // Light
                 return new Intent(this, TabbedStripActivityLight.class);
             case 4: // Light.DarkActionBar
                 return new Intent(this, TabbedStripActivityLightDarkAB.class);
-            case 5: // Light ColoredeActionBar
+            case 5: // Light ColoredActionBar
                 return new Intent(this, TabbedStripActivityLightColoredAB.class);
-            case 6: // Light.ColoredeActionBar (Inverse)
+            case 6: // Light.ColoredActionBar (Inverse)
                 return new Intent(this, TabbedStripActivityLightColoredABInverse.class);
         }
         throw new RuntimeException("Invalid theme selected");
@@ -223,17 +223,17 @@ public class MainActivity extends AccentActivity {
         switch (mThemeSpinner.getSelectedItemPosition()) {
             case 0: // Default (Dark)
                 return new Intent(this, SpinnerActivity.class);
-            case 1: // ColoredeActionBar
+            case 1: // ColoredActionBar
                 return new Intent(this, SpinnerActivityColoredAB.class);
-            case 2: // ColoredeActionBar (Inverse)
+            case 2: // ColoredActionBar (Inverse)
                 return new Intent(this, SpinnerActivityColoredABInverse.class);
             case 3: // Light
                 return new Intent(this, SpinnerActivityLight.class);
             case 4: // Light.DarkActionBar
                 return new Intent(this, SpinnerActivityLightDarkAB.class);
-            case 5: // Light ColoredeActionBar
+            case 5: // Light ColoredActionBar
                 return new Intent(this, SpinnerActivityLightColoredAB.class);
-            case 6: // Light.ColoredeActionBar (Inverse)
+            case 6: // Light.ColoredActionBar (Inverse)
                 return new Intent(this, SpinnerActivityLightColoredABInverse.class);
         }
         throw new RuntimeException("Invalid theme selected");
@@ -243,17 +243,17 @@ public class MainActivity extends AccentActivity {
         switch (mThemeSpinner.getSelectedItemPosition()) {
             case 0: // Default (Dark)
                 return new Intent(this, PreferencesActivity.class);
-            case 1: // ColoredeActionBar
+            case 1: // ColoredActionBar
                 return new Intent(this, PreferencesActivityColoredAB.class);
-            case 2: // ColoredeActionBar (Inverse)
+            case 2: // ColoredActionBar (Inverse)
                 return new Intent(this, PreferencesActivityColoredABInverse.class);
             case 3: // Light
                 return new Intent(this, PreferencesActivityLight.class);
             case 4: // Light.DarkActionBar
                 return new Intent(this, PreferencesActivityLightDarkAB.class);
-            case 5: // Light ColoredeActionBar
+            case 5: // Light ColoredActionBar
                 return new Intent(this, PreferencesActivityLightColoredAB.class);
-            case 6: // Light.ColoredeActionBar (Inverse)
+            case 6: // Light.ColoredActionBar (Inverse)
                 return new Intent(this, PreferencesActivityLightColoredABInverse.class);
         }
         throw new RuntimeException("Invalid theme selected");
