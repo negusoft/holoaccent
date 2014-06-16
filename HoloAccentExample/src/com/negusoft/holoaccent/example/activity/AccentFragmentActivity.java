@@ -9,7 +9,7 @@ import com.negusoft.holoaccent.AccentResources;
 /**
  * A copy of AccentActivity that extends FragmentActivity in stead of Activity.
  * <br/><br/>
- * You can copy this file into your project if and make your activities extend it if you
+ * You can copy this file into your project and make your activities extend it if you
  * are using the support library.
  */
 public class AccentFragmentActivity extends FragmentActivity {
