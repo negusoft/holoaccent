@@ -21,6 +21,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -111,6 +112,7 @@ public class AccentResources extends Resources {
     private int[] mTransformationDrawableIds;
 	
 	private boolean mInitialized = false;
+    private boolean mInitializingFlag = false;
 	private AccentPalette mPalette;
 	
 	public AccentResources(Context c, Resources resources) {
@@ -141,21 +143,30 @@ public class AccentResources extends Resources {
 	 * Make sure that the instance is initialized. It will check the 'mInitialized' 
 	 * flag even if it is done within 'initialize()', to avoid getting into the 
 	 * synchronized block every time.
+     * @return True if we are initializing. This means that initialize has been called recursively,
+     * in which case a default value must be returned to avoid a "stack overflow".
 	 */
-	private void checkInitialized() {
+	private boolean checkInitialized() {
 		if (mInitialized)
-			return;
-		initialize(mContext, mExplicitColor, mExplicitColorDark, mExplicitColorActionBar);
+			return false;
+		return initialize(mContext, mExplicitColor, mExplicitColorDark, mExplicitColorActionBar);
 	}
-	
-	private synchronized void initialize(Context c, int explicitColor, int explicitColorDark, int explicitColorActionBar) {
+
+	private synchronized boolean initialize(Context c, int explicitColor, int explicitColorDark, int explicitColorActionBar) {
 		if (mInitialized)
-			return;
+			return false;
+        if (mInitializingFlag)
+            return true;
+
+        mInitializingFlag = true;
 		mPalette = initPalette(c, explicitColor, explicitColorDark, explicitColorActionBar);
         mTintDrawableIds = appendDrawableIds(TINT_DRAWABLE_IDS, mCustomTintDrawableIds);
         mTransformationDrawableIds = appendDrawableIds(TINT_TRANSFORMATION_DRAWABLE_IDS, mCustomTransformationDrawableIds);
 		addInterceptors(c);
+        mInitializingFlag = false;
 		mInitialized = true;
+
+        return false;
 	}
 
     private int[] appendDrawableIds(int[] defaults, List<Integer> custom) {
@@ -211,7 +222,8 @@ public class AccentResources extends Resources {
 
     @Override
     public int getColor(int resId) throws NotFoundException {
-        checkInitialized();
+        if (checkInitialized())
+            return super.getColor(resId);
 
         // Give a chance to the interceptors to replace the drawable
         int result;
@@ -226,7 +238,8 @@ public class AccentResources extends Resources {
 
     @Override
 	public Drawable getDrawable(int resId) throws Resources.NotFoundException {
-		checkInitialized();
+        if (checkInitialized())
+            return super.getDrawable(resId);
 		
 		// Give a chance to the interceptors to replace the drawable
 		Drawable result;
@@ -242,7 +255,8 @@ public class AccentResources extends Resources {
 	@Override
 	public InputStream openRawResource(int resId, TypedValue value)
 			throws NotFoundException {
-		checkInitialized();
+        if (checkInitialized())
+            return super.openRawResource(resId, value);
 		
 		for (int id : mTintDrawableIds) {
 			if (resId == id)
@@ -259,7 +273,8 @@ public class AccentResources extends Resources {
      * Method to access the palette instance
      */
     public AccentPalette getPalette() {
-        checkInitialized();
+        if (checkInitialized())
+            throw new RuntimeException("HoloAccent: Unexpected initialization exception in initialization.");
         return mPalette;
     }
 
@@ -298,8 +313,6 @@ public class AccentResources extends Resources {
 	 * but with the accent color applied to it.
 	 */
 	private InputStream getTintendResourceStream(int id, TypedValue value, int color) {
-		checkInitialized();
-
 		Bitmap bitmap = getBitmapFromResource(id, value);
 		bitmap = BitmapUtils.applyColor(bitmap, color);
 		return getStreamFromBitmap(bitmap);
@@ -310,8 +323,6 @@ public class AccentResources extends Resources {
 	 * but changing the tint from the original red to the given color.
 	 */
 	private InputStream getTintTransformationResourceStream(int id, TypedValue value, int color) {
-		checkInitialized();
-		
 		Bitmap bitmap = getBitmapFromResource(id, value);
 		bitmap = BitmapUtils.processTintTransformationMap(bitmap, color);
 		return getStreamFromBitmap(bitmap);
