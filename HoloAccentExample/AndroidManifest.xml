@@ -112,24 +112,30 @@
             android:parentActivityName=".activity.TabbedActivity" />
         <activity
             android:name=".activity.themed.PreferencesActivityColoredAB"
+            android:label="@string/pref_title"
             android:theme="@style/Theme.HoloAccent.ColoredActionBar"/>
         <activity
             android:name=".activity.themed.PreferencesActivityColoredABInverse"
+            android:label="@string/pref_title"
             android:logo="@drawable/ic_logo_black"
             android:theme="@style/Theme.HoloAccent.ColoredActionBar.Inverse"/>
         <activity
             android:name=".activity.themed.PreferencesActivityLight"
+            android:label="@string/pref_title"
             android:logo="@drawable/ic_logo_black"
             android:theme="@style/Theme.HoloAccent.Light"/>
         <activity
             android:name=".activity.themed.PreferencesActivityLightDarkAB"
+            android:label="@string/pref_title"
             android:theme="@style/Theme.HoloAccent.Light.DarkActionBar"/>
         <activity
             android:name=".activity.themed.PreferencesActivityLightColoredAB"
+            android:label="@string/pref_title"
             android:logo="@drawable/ic_logo_black"
             android:theme="@style/Theme.HoloAccent.Light.ColoredActionBar"/>
         <activity
             android:name=".activity.themed.PreferencesActivityLightColoredABInverse"
+            android:label="@string/pref_title"
             android:theme="@style/Theme.HoloAccent.Light.ColoredActionBar.Inverse"/>
 
         <!-- Dialog Activity -->
