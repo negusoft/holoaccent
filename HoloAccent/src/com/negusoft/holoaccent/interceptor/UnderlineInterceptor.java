@@ -16,6 +16,7 @@
 package com.negusoft.holoaccent.interceptor;
 
 import android.content.res.Resources;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 import com.negusoft.holoaccent.AccentPalette;
@@ -29,8 +30,8 @@ public class UnderlineInterceptor implements AccentResources.Interceptor {
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 		if (resId == R.drawable.ha__underline_1_5)
 			return new UnderlineDrawable(res, palette.accentColor, 1.5f);
-		if (resId == R.drawable.ha__underline_3)
-			return new UnderlineDrawable(res, palette.accentColor, 3f);
+        if (resId == R.drawable.ha__underline_3)
+            return new UnderlineDrawable(res, palette.accentColor, 3f);
         if (resId == R.drawable.ha__underline_6)
             return new UnderlineDrawable(res, palette.accentColor, 6f);
         if (resId == R.drawable.ha__ab_underline_6)
@@ -38,6 +39,11 @@ public class UnderlineInterceptor implements AccentResources.Interceptor {
 		// overline
 		if (resId == R.drawable.ha__overline_3)
 			return new UnderlineDrawable(res, palette.accentColor, 3f, true);
+        // list separators
+        if (resId == R.drawable.ha__underline_list_separator)
+            return new UnderlineDrawable(res, palette.getAccentColor(0xCC), 2f);
+        if (resId == R.drawable.ha__underline_list_separator_dark)
+            return new UnderlineDrawable(res, palette.getDarkAccentColor(0xCC), 2f);
 		return null;
 	}
 

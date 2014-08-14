@@ -221,7 +221,7 @@
     <style name="HoloAccent.Spinner.Light.ActionBar">
         <item name="android:background">@drawable/ha__ab_spinner_background_light</item>
     </style>
-    
+
     <!-- SeekBar styles -->
     <style name="HoloAccent.SeekBar" parent="android:Widget.Holo.SeekBar">
         <item name="android:progressDrawable">@drawable/ha__scrubber_progress_horizontal</item>
@@ -232,6 +232,25 @@
         <item name="android:progressDrawable">@drawable/ha__scrubber_progress_horizontal_light</item>
         <item name="android:indeterminateDrawable">@drawable/ha__scrubber_progress_horizontal_light</item>
         <item name="android:thumb">@drawable/ha__scrubber_control_selector</item>
+    </style>
+
+    <!-- List separator styles. Apply them to "android:listSeparatorTextViewStyle" in your theme. -->
+    <style name="HoloAccent.TextView.ListSeparator" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/ha__accent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingStart">8dip</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/ha__list_separator</item>
+    </style>
+    <style name="HoloAccent.TextView.ListSeparator.Dark">
+        <item name="android:textColor">@color/ha__accent_dark</item>
+        <item name="android:background">@drawable/ha__list_separator_dark</item>
     </style>
 
     <!-- SeekBar styles -->

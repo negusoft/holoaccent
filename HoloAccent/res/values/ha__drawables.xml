@@ -106,8 +106,10 @@
 	<item name="ha__spinner_indicator_rtl_light" type="drawable">#0000</item>
 	<item name="ha__spinner_indicator_rtl" type="drawable">#0000</item>
 	<item name="ha__underline_1_5" type="drawable">#0000</item>
-	<item name="ha__underline_3" type="drawable">#0000</item>
+    <item name="ha__underline_3" type="drawable">#0000</item>
     <item name="ha__underline_6" type="drawable">#0000</item>
+    <item name="ha__underline_list_separator" type="drawable">#0000</item>
+    <item name="ha__underline_list_separator_dark" type="drawable">#0000</item>
     <item name="ha__native_ic_cab_done" type="drawable">#0000</item>
     <item name="ha__native_ic_cab_done_light" type="drawable">#0000</item>
     <item name="ha__native_ic_menu_cut" type="drawable">#0000</item>
