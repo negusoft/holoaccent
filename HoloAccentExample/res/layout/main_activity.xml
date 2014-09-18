@@ -21,7 +21,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <Spinner
             android:id="@+id/activitySpinner"
@@ -37,7 +37,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <Spinner
             android:id="@+id/themeSpinner"

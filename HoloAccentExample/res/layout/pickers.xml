@@ -21,7 +21,7 @@
         <View 
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <com.negusoft.holoaccent.widget.AccentNumberPicker
             android:id="@+id/numberPicker"
@@ -37,7 +37,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <com.negusoft.holoaccent.widget.AccentDatePicker
             android:id="@+id/datePicker"
@@ -53,7 +53,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <com.negusoft.holoaccent.widget.AccentTimePicker
             android:layout_width="wrap_content"

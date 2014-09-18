@@ -21,7 +21,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent" />
+            android:background="?accentColorDarkDrawable" />
 
         <ProgressBar
             style="?android:progressBarStyleHorizontal"
@@ -51,7 +51,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent" />
+            android:background="?accentColorDarkDrawable" />
 
         <ProgressBar
             style="?android:progressBarStyleHorizontal"
@@ -81,7 +81,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent" />
+            android:background="?accentColorDarkDrawable" />
 
         <SeekBar
             android:layout_width="match_parent"
@@ -104,7 +104,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <com.negusoft.holoaccent.widget.AccentRatingBar
             android:layout_width="wrap_content"

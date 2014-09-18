@@ -21,7 +21,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent" />
+            android:background="?accentColorDarkDrawable" />
         
         <EditText
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent" />
+            android:background="?accentColorDarkDrawable" />
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView1"

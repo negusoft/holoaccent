@@ -21,7 +21,7 @@
         <View 
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
         <View 
             android:layout_width="match_parent"
             android:layout_height="@dimen/horizontal_divider_thickness"
-            android:background="@drawable/ha__background_accent"/>
+            android:background="?accentColorDarkDrawable"/>
         
         <RadioGroup
             android:layout_width="fill_parent"
