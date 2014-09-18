@@ -21,6 +21,14 @@
         <attr name="accentColor" format="color|reference" />
         <attr name="accentColorDark" format="color|reference" />
         <attr name="accentColorActionBar" format="color|reference" />
+
+        <!-- Used to support color overriding -->
+        <attr name="accentColorReference" format="color" />
+        <attr name="accentColorDarkReference" format="color" />
+
+        <!-- Used when a drawable is expected, typically for the 'background' -->
+        <attr name="accentColorDrawable" format="reference" />
+        <attr name="accentColorDarkDrawable" format="reference" />
     </declare-styleable>
     
     <!-- Colored button styles -->

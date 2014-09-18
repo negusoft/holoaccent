@@ -20,6 +20,11 @@
     <style name="Theme.HoloAccent" parent="android:Theme.Holo">
         <item name="accentColor">@color/ha__accent_default</item>
 
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__fill_shape</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__fill_shape_dark</item>
+
         <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
         <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
@@ -107,6 +112,11 @@
         
         <item name="accentColor">@color/ha__accent_default</item>
 
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__fill_shape</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__fill_shape_dark</item>
+
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
         <item name="buttonStyleSmallColored">@style/HoloAccent.Light.Button.Small.Colored</item>
@@ -192,6 +202,11 @@
     
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="accentColor">@color/ha__accent_default</item>
+
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__fill_shape</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__fill_shape_dark</item>
 
         <item name="buttonStyleColored">@style/HoloAccent.Light.Button.Colored</item>
         <item name="buttonStyleColoredBright">@style/HoloAccent.Light.Button.Colored.Bright</item>
@@ -528,9 +543,19 @@
     -->
     <style name="Theme.HoloAccent.Dialog" parent="BaseDialogTheme">
         <item name="accentColor">@color/ha__accent_default</item>
+
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__fill_shape</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__fill_shape_dark</item>
     </style>
     <style name="Theme.HoloAccent.Light.Dialog" parent="BaseDialogTheme.Light">
         <item name="accentColor">@color/ha__accent_default</item>
+
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__fill_shape</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__fill_shape_dark</item>
     </style>
     
     <!-- Extension themes (the parents are HoloAccent themes) -->
