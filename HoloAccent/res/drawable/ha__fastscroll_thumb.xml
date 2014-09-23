@@ -15,6 +15,6 @@
   limitations under the License.
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@drawable/ha__fastscroll_thumb_pressed" />
-    <item android:drawable="@drawable/ha__fastscroll_thumb_default" />
+    <item android:state_pressed="true" android:drawable="@drawable/ha__fastscroll_thumb_pressed_reference" />
+    <item android:drawable="@drawable/ha__fastscroll_thumb_default_reference" />
 </selector>

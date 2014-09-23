@@ -27,37 +27,37 @@ import com.negusoft.holoaccent.drawable.IndeterminedProgressLegacyDrawable;
 public class IndeterminateInterceptor implements AccentResources.Interceptor {
 
 	private final int[] LEGACY_DRAWABLE_IDS = new int[] {
-			R.drawable.ha__progressbar_indeterminate_legacy_1,
-			R.drawable.ha__progressbar_indeterminate_legacy_2,
-			R.drawable.ha__progressbar_indeterminate_legacy_3,
-			R.drawable.ha__progressbar_indeterminate_legacy_4,
-			R.drawable.ha__progressbar_indeterminate_legacy_5,
-			R.drawable.ha__progressbar_indeterminate_legacy_6,
-			R.drawable.ha__progressbar_indeterminate_legacy_7,
-			R.drawable.ha__progressbar_indeterminate_legacy_8
+			R.drawable.ha__progressbar_indeterminate_legacy_1_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_2_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_3_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_4_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_5_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_6_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_7_reference,
+			R.drawable.ha__progressbar_indeterminate_legacy_8_reference
 	};
 
 	private final int[] INDETERMINATE_DRAWABLE_IDS = new int[] {
-			R.drawable.ha__progressbar_indeterminate_1,
-			R.drawable.ha__progressbar_indeterminate_2,
-			R.drawable.ha__progressbar_indeterminate_3,
-			R.drawable.ha__progressbar_indeterminate_4,
-			R.drawable.ha__progressbar_indeterminate_5,
-			R.drawable.ha__progressbar_indeterminate_6,
-			R.drawable.ha__progressbar_indeterminate_7,
-			R.drawable.ha__progressbar_indeterminate_8,
-			R.drawable.ha__progressbar_indeterminate_9,
-			R.drawable.ha__progressbar_indeterminate_10,
-			R.drawable.ha__progressbar_indeterminate_11,
-			R.drawable.ha__progressbar_indeterminate_12,
-			R.drawable.ha__progressbar_indeterminate_13,
-			R.drawable.ha__progressbar_indeterminate_14,
-			R.drawable.ha__progressbar_indeterminate_15,
-			R.drawable.ha__progressbar_indeterminate_16,
-			R.drawable.ha__progressbar_indeterminate_17,
-			R.drawable.ha__progressbar_indeterminate_18,
-			R.drawable.ha__progressbar_indeterminate_19,
-			R.drawable.ha__progressbar_indeterminate_20
+			R.drawable.ha__progressbar_indeterminate_1_reference,
+			R.drawable.ha__progressbar_indeterminate_2_reference,
+			R.drawable.ha__progressbar_indeterminate_3_reference,
+			R.drawable.ha__progressbar_indeterminate_4_reference,
+			R.drawable.ha__progressbar_indeterminate_5_reference,
+			R.drawable.ha__progressbar_indeterminate_6_reference,
+			R.drawable.ha__progressbar_indeterminate_7_reference,
+			R.drawable.ha__progressbar_indeterminate_8_reference,
+			R.drawable.ha__progressbar_indeterminate_9_reference,
+			R.drawable.ha__progressbar_indeterminate_10_reference,
+			R.drawable.ha__progressbar_indeterminate_11_reference,
+			R.drawable.ha__progressbar_indeterminate_12_reference,
+			R.drawable.ha__progressbar_indeterminate_13_reference,
+			R.drawable.ha__progressbar_indeterminate_14_reference,
+			R.drawable.ha__progressbar_indeterminate_15_reference,
+			R.drawable.ha__progressbar_indeterminate_16_reference,
+			R.drawable.ha__progressbar_indeterminate_17_reference,
+			R.drawable.ha__progressbar_indeterminate_18_reference,
+			R.drawable.ha__progressbar_indeterminate_19_reference,
+			R.drawable.ha__progressbar_indeterminate_20_reference
 	};
 	
 	@Override

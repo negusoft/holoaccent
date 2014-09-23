@@ -33,26 +33,26 @@ public class ContactBadgeInterceptor implements AccentResources.Interceptor {
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-        if (resId == R.drawable.ha__contact_badge_normal)
+        if (resId == R.drawable.ha__contact_badge_normal_reference)
             return new ContactBadgeDrawable(res, 0, 0f, 0, FILL_COLOR_DARK, LINE_COLOR_DARK);
-        if (resId == R.drawable.ha__contact_badge_focused) {
+        if (resId == R.drawable.ha__contact_badge_focused_reference) {
             int backColor = palette.getActionBarAccentColor(0x55);
             int borderColor = palette.getActionBarAccentColor(0xAA);
             return new ContactBadgeDrawable(res, backColor, 2f, borderColor, palette.accentColor, LINE_COLOR_DARK);
         }
-        if (resId == R.drawable.ha__contact_badge_pressed) {
+        if (resId == R.drawable.ha__contact_badge_pressed_reference) {
             int borderColor = palette.getActionBarAccentColor(0xAA);
             return new ContactBadgeDrawable(res, borderColor, 0f, 0, palette.accentColor, LINE_COLOR_DARK);
         }
 
-        if (resId == R.drawable.ha__contact_badge_normal_light)
+        if (resId == R.drawable.ha__contact_badge_normal_light_reference)
             return new ContactBadgeDrawable(res, 0, 0f, 0, FILL_COLOR_LIGHT, LINE_COLOR_LIGHT);
-        if (resId == R.drawable.ha__contact_badge_focused_light) {
+        if (resId == R.drawable.ha__contact_badge_focused_light_reference) {
             int backColor = palette.getActionBarAccentColor(0x55);
             int borderColor = palette.getActionBarAccentColor(0xAA);
             return new ContactBadgeDrawable(res, backColor, 2f, borderColor, palette.accentColor, LINE_COLOR_LIGHT);
         }
-        if (resId == R.drawable.ha__contact_badge_pressed_light) {
+        if (resId == R.drawable.ha__contact_badge_pressed_light_reference) {
             int borderColor = palette.getActionBarAccentColor(0xAA);
             return new ContactBadgeDrawable(res, borderColor, 0f, 0, palette.accentColor, LINE_COLOR_LIGHT);
         }

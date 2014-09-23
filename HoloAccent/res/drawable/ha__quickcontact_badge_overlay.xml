@@ -17,12 +17,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_pressed="true"
-        android:drawable="@drawable/ha__contact_badge_pressed" />
+        android:drawable="@drawable/ha__contact_badge_pressed_reference" />
     <item
         android:state_pressed="false"
         android:state_focused="true"
-        android:drawable="@drawable/ha__contact_badge_focused" />
+        android:drawable="@drawable/ha__contact_badge_focused_reference" />
     <item
-        android:drawable="@drawable/ha__contact_badge_normal" />
+        android:drawable="@drawable/ha__contact_badge_normal_reference" />
 
 </selector>

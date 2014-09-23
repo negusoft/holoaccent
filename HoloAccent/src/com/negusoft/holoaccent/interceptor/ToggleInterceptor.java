@@ -32,15 +32,15 @@ public class ToggleInterceptor implements AccentResources.Interceptor {
 
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground)
+		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_reference)
 			return new ToggleForegroundDrawable(res, palette.accentColor);
-		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_pressed)
+		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_pressed_reference)
 			return new ToggleForegroundDrawable(res, COLOR_ON_PRESSED);
-		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_disabled)
+		if (resId == R.drawable.ha__btn_toggle_comp_on_foreground_disabled_reference)
 			return new ToggleForegroundDrawable(res, palette.getAccentColor(128));
-		if (resId == R.drawable.ha__btn_toggle_comp_off_foreground)
+		if (resId == R.drawable.ha__btn_toggle_comp_off_foreground_reference)
 			return new ToggleForegroundDrawable(res, COLOR_OFF);
-		if (resId == R.drawable.ha__btn_toggle_comp_off_foreground_disabled)
+		if (resId == R.drawable.ha__btn_toggle_comp_off_foreground_disabled_reference)
 			return new ToggleForegroundDrawable(res, COLOR_OFF_DISABLED);
 		return null;
 	}

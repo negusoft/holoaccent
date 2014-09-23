@@ -14,6 +14,6 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:drawable="@drawable/ha__native_ic_menu_cut_light"/>
-</layer-list>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/ha__native_ic_menu_cut_light_reference"/>
+</selector>

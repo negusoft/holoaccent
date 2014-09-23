@@ -29,29 +29,29 @@ public class NativeInterceptor implements AccentResources.Interceptor {
 
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-        if (resId == R.drawable.ha__native_ic_cab_done)
+        if (resId == R.drawable.ha__native_ic_cab_done_reference)
             return NativeResources.getDrawable("ic_cab_done_holo_dark");
-        if (resId == R.drawable.ha__native_ic_cab_done_light)
+        if (resId == R.drawable.ha__native_ic_cab_done_light_reference)
             return NativeResources.getDrawable("ic_cab_done_holo_light");
-        if (resId == R.drawable.ha__native_ic_menu_copy)
+        if (resId == R.drawable.ha__native_ic_menu_copy_reference)
             return NativeResources.getDrawable("ic_menu_copy_holo_dark");
-        if (resId == R.drawable.ha__native_ic_menu_copy_light)
+        if (resId == R.drawable.ha__native_ic_menu_copy_light_reference)
             return NativeResources.getDrawable("ic_menu_copy_holo_light");
-        if (resId == R.drawable.ha__native_ic_menu_cut)
+        if (resId == R.drawable.ha__native_ic_menu_cut_reference)
             return NativeResources.getDrawable("ic_menu_cut_holo_dark");
-        if (resId == R.drawable.ha__native_ic_menu_cut_light)
+        if (resId == R.drawable.ha__native_ic_menu_cut_light_reference)
             return NativeResources.getDrawable("ic_menu_cut_holo_light");
-        if (resId == R.drawable.ha__native_ic_menu_paste)
+        if (resId == R.drawable.ha__native_ic_menu_paste_reference)
             return NativeResources.getDrawable("ic_menu_paste_holo_dark");
-        if (resId == R.drawable.ha__native_ic_menu_paste_light)
+        if (resId == R.drawable.ha__native_ic_menu_paste_light_reference)
             return NativeResources.getDrawable("ic_menu_paste_holo_light");
-        if (resId == R.drawable.ha__native_ic_menu_selectall)
+        if (resId == R.drawable.ha__native_ic_menu_selectall_reference)
             return NativeResources.getDrawable("ic_menu_selectall_holo_dark");
-        if (resId == R.drawable.ha__native_ic_menu_selectall_light)
+        if (resId == R.drawable.ha__native_ic_menu_selectall_light_reference)
             return NativeResources.getDrawable("ic_menu_selectall_holo_light");
-        if (resId == R.drawable.ha__native_ab_back)
+        if (resId == R.drawable.ha__native_ab_back_reference)
             return NativeResources.getDrawable("ic_ab_back_holo_dark_am");
-        if (resId == R.drawable.ha__native_ab_back_light)
+        if (resId == R.drawable.ha__native_ab_back_light_reference)
             return NativeResources.getDrawable("ic_ab_back_holo_light_am");
 		return null;
 	}

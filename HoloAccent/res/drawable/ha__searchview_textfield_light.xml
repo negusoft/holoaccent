@@ -16,6 +16,6 @@
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_focused="true"
-        android:drawable="@drawable/ha__ab_searchview_textfield_focused" />
-    <item android:drawable="@drawable/ha__ab_searchview_textfield_default_light" />
+        android:drawable="@drawable/ha__ab_searchview_textfield_focused_reference" />
+    <item android:drawable="@drawable/ha__ab_searchview_textfield_default_light_reference" />
 </selector>

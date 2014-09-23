@@ -16,5 +16,5 @@
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:drawable="@android:color/white"/>
-    <item android:drawable="@drawable/ha__ab_background_stacked_reference"/>
+    <item android:drawable="@drawable/ha__ab_background_stacked"/>
 </layer-list>

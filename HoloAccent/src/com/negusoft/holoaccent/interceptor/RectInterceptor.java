@@ -27,14 +27,14 @@ public class RectInterceptor implements AccentResources.Interceptor {
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__rect_focused_background) {
+		if (resId == R.drawable.ha__rect_focused_background_reference) {
 			int backColor = palette.getAccentColor(0x55);
 			int borderColor = palette.getAccentColor(0xAA);
 			return new RectDrawable(res, backColor, 2f, borderColor);
 		}
-		if (resId == R.drawable.ha__rect_focused_border)
+		if (resId == R.drawable.ha__rect_focused_border_reference)
 			return new RectDrawable(res, 0, 1f, palette.getAccentColor(0x99));
-        if (resId == R.drawable.ha__ab_rect_focused_background) {
+        if (resId == R.drawable.ha__ab_rect_focused_background_reference) {
             int backColor = palette.getActionBarAccentColor(0x55);
             int borderColor = palette.getActionBarAccentColor(0xAA);
             return new RectDrawable(res, backColor, 2f, borderColor);

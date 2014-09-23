@@ -14,12 +14,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <item android:drawable="@drawable/ha__roundrect_button_disabled_focused"
+    <item android:drawable="@drawable/ha__roundrect_button_disabled_focused_reference"
         android:top="@dimen/ha__btn_default_margin"
         android:right="@dimen/ha__btn_default_margin"
         android:bottom="@dimen/ha__btn_default_margin"
         android:left="@dimen/ha__btn_default_margin"/>
     
-</layer-list>
+</selector>

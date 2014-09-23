@@ -23,6 +23,6 @@
     <item android:state_focused="true"  android:state_enabled="false"                              android:drawable="@color/ha__selector_disabled_light" />
     <item android:state_focused="true"                                android:state_pressed="true" android:drawable="@drawable/ha__list_selector_transition" />
     <item android:state_focused="false"                               android:state_pressed="true" android:drawable="@drawable/ha__list_selector_transition" />
-    <item android:state_focused="true"                                                             android:drawable="@drawable/ha__rect_focused_background" />
+    <item android:state_focused="true"                                                             android:drawable="@drawable/ha__rect_focused_background_reference" />
     
 </selector>

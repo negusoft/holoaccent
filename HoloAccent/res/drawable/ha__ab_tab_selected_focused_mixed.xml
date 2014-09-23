@@ -17,6 +17,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item android:drawable="@drawable/ha__ab_solid_focused"/>
-    <item android:drawable="@drawable/ha__underline_6"/>
+    <item android:drawable="@drawable/ha__ab_tab_selected"/>
 
 </layer-list>

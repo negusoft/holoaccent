@@ -15,11 +15,11 @@ public class SearchViewTextFieldInterceptor implements AccentResources.Intercept
 
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__ab_searchview_textfield_focused)
+		if (resId == R.drawable.ha__ab_searchview_textfield_focused_reference)
 			return new SearchViewDrawable(res.getDisplayMetrics(), palette.accentColor);
-		if (resId == R.drawable.ha__ab_searchview_textfield_default)
+		if (resId == R.drawable.ha__ab_searchview_textfield_default_reference)
 			return new SearchViewDrawable(res.getDisplayMetrics(), DEFAULT_COLOR);
-		if (resId == R.drawable.ha__ab_searchview_textfield_default_light)
+		if (resId == R.drawable.ha__ab_searchview_textfield_default_light_reference)
 			return new SearchViewDrawable(res.getDisplayMetrics(), DEFAULT_COLOR_LIGHT);
 		return null;
 	}

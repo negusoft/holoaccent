@@ -17,24 +17,24 @@
 <animation-list
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:oneshot="false">
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_1" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_2" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_3" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_4" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_5" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_6" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_7" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_8" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_9" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_10" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_11" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_12" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_13" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_14" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_15" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_16" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_17" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_18" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_19" android:duration="20" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_20" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_1_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_2_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_3_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_4_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_5_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_6_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_7_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_8_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_9_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_10_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_11_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_12_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_13_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_14_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_15_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_16_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_17_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_18_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_19_reference" android:duration="20" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_20_reference" android:duration="20" />
 </animation-list>

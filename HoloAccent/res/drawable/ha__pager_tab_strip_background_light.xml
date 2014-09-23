@@ -22,7 +22,7 @@
         </shape>
     </item>
 
-    <item android:drawable="@drawable/ha__pager_tab_strip_background_reference_light" />
+    <item android:drawable="@drawable/ha__pager_tab_strip_background_light_reference" />
 
     <item android:drawable="@drawable/ha__underline_1_5" />
 

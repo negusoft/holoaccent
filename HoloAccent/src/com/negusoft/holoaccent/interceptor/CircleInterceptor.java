@@ -28,15 +28,15 @@ public class CircleInterceptor implements AccentResources.Interceptor {
 	
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
-		if (resId == R.drawable.ha__circle_pressed) {
+		if (resId == R.drawable.ha__circle_pressed_reference) {
 			int backColor = palette.getAccentColor(0x88);
 			return new CircleDrawable(res, 16f, backColor, 0f, Color.TRANSPARENT);
 		}
-		if (resId == R.drawable.ha__circle_focused) {
+		if (resId == R.drawable.ha__circle_focused_reference) {
 			int borderColor = palette.getAccentColor(0xAA);
 			return new CircleDrawable(res, 11f, Color.TRANSPARENT, 1.5f, borderColor);
 		}
-		if (resId == R.drawable.ha__circle_disabled_focused) {
+		if (resId == R.drawable.ha__circle_disabled_focused_reference) {
 			int borderColor = palette.getAccentColor(0x55);
 			return new CircleDrawable(res, 11f, Color.TRANSPARENT, 1.5f, borderColor);
 		}

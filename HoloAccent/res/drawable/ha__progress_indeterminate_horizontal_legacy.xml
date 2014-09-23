@@ -17,12 +17,12 @@
 <animation-list
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:oneshot="false">
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_1" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_2" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_3" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_4" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_5" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_6" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_7" android:duration="50" />
-    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_8" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_1_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_2_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_3_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_4_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_5_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_6_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_7_reference" android:duration="50" />
+    <item android:drawable="@drawable/ha__progressbar_indeterminate_legacy_8_reference" android:duration="50" />
 </animation-list>

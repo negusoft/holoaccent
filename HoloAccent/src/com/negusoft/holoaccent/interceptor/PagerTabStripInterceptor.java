@@ -32,7 +32,7 @@ public class PagerTabStripInterceptor implements AccentResources.Interceptor {
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 		if (resId == R.drawable.ha__pager_tab_strip_background_reference)
 			return new ColorDrawable(palette.getDarkAccentColor(DEFAULT_ALPHA));
-		if (resId == R.drawable.ha__pager_tab_strip_background_reference_light)
+		if (resId == R.drawable.ha__pager_tab_strip_background_light_reference)
 			return new ColorDrawable(palette.getDarkAccentColor(LIGHT_ALPHA));
 		return null;
 	}

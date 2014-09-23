@@ -30,19 +30,19 @@ public class ScrubberInterceptor implements AccentResources.Interceptor {
 	@Override
 	public Drawable getDrawable(Resources res, AccentPalette palette, int resId) {
 		// control selector
-		if (resId == R.drawable.ha__scrubber_control_disabled)
+		if (resId == R.drawable.ha__scrubber_control_disabled_reference)
 			return new ScrubberControlSelectorDrawable(res.getDisplayMetrics(), palette, SelectorType.DISABLED);
-		if (resId == R.drawable.ha__scrubber_control_focused)
+		if (resId == R.drawable.ha__scrubber_control_focused_reference)
 			return new ScrubberControlSelectorDrawable(res.getDisplayMetrics(), palette, SelectorType.FOCUSED);
-		if (resId == R.drawable.ha__scrubber_control_normal)
+		if (resId == R.drawable.ha__scrubber_control_normal_reference)
 			return new ScrubberControlSelectorDrawable(res.getDisplayMetrics(), palette, SelectorType.NORMAL);
-		if (resId == R.drawable.ha__scrubber_control_pressed)
+		if (resId == R.drawable.ha__scrubber_control_pressed_reference)
 			return new ScrubberControlSelectorDrawable(res.getDisplayMetrics(), palette, SelectorType.PRESSED);
 		
 		// progress indicators
-		if (resId == R.drawable.ha__scrubber_comp_primary)
+		if (resId == R.drawable.ha__scrubber_comp_primary_reference)
 			return new ScrubberProgressDrawable(res.getDisplayMetrics(), palette);
-		if (resId == R.drawable.ha__scrubber_comp_secondary)
+		if (resId == R.drawable.ha__scrubber_comp_secondary_reference)
 			return new ScrubberProgressDrawable(res.getDisplayMetrics(), palette, 77);
 		return null;
 	}
