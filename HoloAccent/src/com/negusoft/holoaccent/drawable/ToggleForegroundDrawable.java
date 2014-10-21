@@ -15,8 +15,6 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.drawable;
 
-import com.negusoft.holoaccent.R;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -27,6 +25,8 @@ import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+
+import com.negusoft.holoaccent.R;
 
 public class ToggleForegroundDrawable extends Drawable {
 

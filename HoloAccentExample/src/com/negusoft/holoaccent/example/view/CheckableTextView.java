@@ -1,7 +1,6 @@
 package com.negusoft.holoaccent.example.view;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -10,8 +9,6 @@ import android.widget.TextView;
 
 import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.AccentPalette;
-import com.negusoft.holoaccent.AccentResources;
-import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.example.R;
 
 public class CheckableTextView extends TextView implements Checkable {

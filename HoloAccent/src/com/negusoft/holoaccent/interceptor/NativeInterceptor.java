@@ -16,7 +16,6 @@
 package com.negusoft.holoaccent.interceptor;
 
 import android.content.res.Resources;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.negusoft.holoaccent.AccentPalette;

@@ -22,7 +22,6 @@ import com.negusoft.holoaccent.AccentPalette;
 import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
 import com.negusoft.holoaccent.drawable.ContactBadgeDrawable;
-import com.negusoft.holoaccent.drawable.RectDrawable;
 
 public class ContactBadgeInterceptor implements AccentResources.Interceptor {
 

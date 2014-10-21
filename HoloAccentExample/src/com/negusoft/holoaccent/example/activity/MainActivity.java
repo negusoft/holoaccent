@@ -13,7 +13,6 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 
-import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.example.R;
 import com.negusoft.holoaccent.example.activity.themed.DialogActivityLight;

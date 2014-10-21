@@ -16,25 +16,17 @@
 package com.negusoft.holoaccent.widget;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Debug;
 import android.util.AttributeSet;
-import android.widget.NumberPicker;
 import android.widget.RatingBar;
 
 import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.AccentPalette;
-import com.negusoft.holoaccent.AccentResources;
 import com.negusoft.holoaccent.R;
-import com.negusoft.holoaccent.activity.AccentActivity;
-
-import java.lang.reflect.Field;
 
 /** Extends RatingBar to apply the correct accent color. */
 public class AccentRatingBar extends RatingBar {

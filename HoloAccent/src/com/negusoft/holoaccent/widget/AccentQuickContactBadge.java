@@ -17,10 +17,8 @@ package com.negusoft.holoaccent.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.NumberPicker;
 import android.widget.QuickContactBadge;
 
 import com.negusoft.holoaccent.R;

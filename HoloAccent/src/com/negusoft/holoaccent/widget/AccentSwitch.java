@@ -15,8 +15,6 @@
  ******************************************************************************/
 package com.negusoft.holoaccent.widget;
 
-import java.util.Locale;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -45,6 +43,8 @@ import android.widget.CompoundButton;
 
 import com.negusoft.holoaccent.R;
 import com.negusoft.holoaccent.util.NativeResources;
+
+import java.util.Locale;
 
 /**
  * This class is based on the <a href="http://github.com/ankri/SwitchCompatLibrary">SwitchCompat Library</a>, just the styling attributes have been modified to fit the HoloAccent library. 

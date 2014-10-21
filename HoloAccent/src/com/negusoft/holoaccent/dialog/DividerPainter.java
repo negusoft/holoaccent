@@ -16,14 +16,11 @@
 package com.negusoft.holoaccent.dialog;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.view.View;
 import android.view.Window;
 
 import com.negusoft.holoaccent.AccentHelper;
 import com.negusoft.holoaccent.AccentPalette;
-import com.negusoft.holoaccent.R;
-import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.util.NativeResources;
 
 /**

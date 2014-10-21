@@ -8,7 +8,6 @@ import android.widget.Spinner;
 
 import com.negusoft.holoaccent.activity.AccentActivity;
 import com.negusoft.holoaccent.example.R;
-import com.negusoft.holoaccent.example.fragment.SimpleDialogFragment;
 import com.negusoft.holoaccent.example.model.ColorOverrideConfig;
 
 public class SpinnerActivity extends AccentActivity {

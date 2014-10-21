@@ -6,7 +6,6 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.negusoft.holoaccent.example.R;
-import com.negusoft.holoaccent.example.activity.TabbedActivity;
 
 public class TabbedStripActivity extends TabbedActivity {
 	

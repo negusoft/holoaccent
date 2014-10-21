@@ -19,7 +19,6 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
 
