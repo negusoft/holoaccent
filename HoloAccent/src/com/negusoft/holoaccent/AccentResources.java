@@ -15,6 +15,7 @@
  ******************************************************************************/
 package com.negusoft.holoaccent;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -25,6 +26,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.TypedValue;
 
 import com.negusoft.holoaccent.interceptor.AccentColorInterceptor;
@@ -236,21 +238,71 @@ public class AccentResources extends Resources {
         return super.getColor(resId);
     }
 
+
     @Override
-	public Drawable getDrawable(int resId) throws Resources.NotFoundException {
+    public Drawable getDrawable(int resId) throws Resources.NotFoundException {
         if (checkInitialized())
             return super.getDrawable(resId);
-		
-		// Give a chance to the interceptors to replace the drawable
-		Drawable result;
-		for(Interceptor interceptor : mInterceptors) {
-			result = interceptor.getDrawable(this, mPalette, resId);
-			if (result != null)
-				return result;
-		}
-		
-		return super.getDrawable(resId);
-	}
+
+        // Give a chance to the interceptors to replace the drawable
+        Drawable result;
+        for(Interceptor interceptor : mInterceptors) {
+            result = interceptor.getDrawable(this, mPalette, resId);
+            if (result != null)
+                return result;
+        }
+
+        return super.getDrawable(resId);
+    }
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
+    @Override
+    public Drawable getDrawableForDensity(int resId, int density) throws NotFoundException {
+        if (checkInitialized())
+            return super.getDrawableForDensity(resId, density);
+
+        // Give a chance to the interceptors to replace the drawable
+        Drawable result;
+        for(Interceptor interceptor : mInterceptors) {
+            result = interceptor.getDrawable(this, mPalette, resId);
+            if (result != null)
+                return result;
+        }
+
+        return super.getDrawableForDensity(resId, density);
+    }
+
+    @TargetApi(Build.VERSION_CODES.L)
+    @Override
+    public Drawable getDrawable(int resId, Theme theme) throws NotFoundException {
+        if (checkInitialized())
+            return super.getDrawable(resId, theme);
+
+        // Give a chance to the interceptors to replace the drawable
+        Drawable result;
+        for(Interceptor interceptor : mInterceptors) {
+            result = interceptor.getDrawable(this, mPalette, resId);
+            if (result != null)
+                return result;
+        }
+        return super.getDrawable(resId, theme);
+    }
+
+    @TargetApi(Build.VERSION_CODES.L)
+    @Override
+    public Drawable getDrawableForDensity(int resId, int density, Theme theme) {
+        if (checkInitialized())
+            return super.getDrawableForDensity(resId, density, theme);
+
+        // Give a chance to the interceptors to replace the drawable
+        Drawable result;
+        for(Interceptor interceptor : mInterceptors) {
+            result = interceptor.getDrawable(this, mPalette, resId);
+            if (result != null)
+                return result;
+        }
+        return super.getDrawableForDensity(resId, density, theme);
+    }
 	
 	@Override
 	public InputStream openRawResource(int resId, TypedValue value)
