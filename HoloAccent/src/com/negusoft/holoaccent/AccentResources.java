@@ -271,7 +271,7 @@ public class AccentResources extends Resources {
         return super.getDrawableForDensity(resId, density);
     }
 
-    @TargetApi(Build.VERSION_CODES.L)
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public Drawable getDrawable(int resId, Theme theme) throws NotFoundException {
         if (checkInitialized())
@@ -287,7 +287,7 @@ public class AccentResources extends Resources {
         return super.getDrawable(resId, theme);
     }
 
-    @TargetApi(Build.VERSION_CODES.L)
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public Drawable getDrawableForDensity(int resId, int density, Theme theme) {
         if (checkInitialized())
