@@ -33,6 +33,9 @@
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
     </style>
 
     <style name="Theme.HoloAccent.Light" parent="android:Theme.Material.Light">
@@ -52,6 +55,9 @@
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
     </style>
 
     <style name="Theme.HoloAccent.Light.DarkActionBar" parent="android:Theme.Material.Light.DarkActionBar">
@@ -70,6 +76,9 @@
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
     </style>
 
     <!-- Colored ActionBar themes -->
@@ -106,6 +115,9 @@
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
     </style>
     <style name="Theme.HoloAccent.Light.Dialog" parent="android:Theme.Material.Light.Dialog">
         <item name="accentColor">@color/ha__accent_default</item>
@@ -124,6 +136,52 @@
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
+    </style>
+
+    <!-- Alert Dialog themes -->
+    <style name="Theme.HoloAccent.Dialog.Alert" parent="android:Theme.Material.Dialog.Alert">
+        <item name="accentColor">@color/ha__accent_default</item>
+
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__solid_accent</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__solid_accent_dark</item>
+
+        <item name="android:colorAccent">@color/ha__accent</item>
+        <item name="android:colorPrimaryDark">@android:color/black</item>
+        <item name="android:colorEdgeEffect">?android:colorAccent</item>
+
+        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
+        <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Dialog.Alert</item>
+    </style>
+    <style name="Theme.HoloAccent.Light.Dialog.Alert" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="accentColor">@color/ha__accent_default</item>
+
+        <item name="accentColorReference">@color/ha__accent</item>
+        <item name="accentColorDarkReference">@color/ha__accent_dark</item>
+        <item name="accentColorDrawable">@drawable/ha__solid_accent</item>
+        <item name="accentColorDarkDrawable">@drawable/ha__solid_accent_dark</item>
+
+        <item name="android:colorAccent">@color/ha__accent</item>
+        <item name="android:colorPrimary">#dddddd</item>
+        <item name="android:colorPrimaryDark">@android:color/black</item>
+        <item name="android:colorEdgeEffect">?android:colorAccent</item>
+
+        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+
+        <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
+        <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
+
+        <item name="android:dialogTheme">@style/Theme.HoloAccent.Light.Dialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.HoloAccent.Light.Dialog.Alert</item>
     </style>
 
 </resources>
