@@ -26,4 +26,48 @@
         <item name="android:headerBackground">@drawable/ha__solid_accent</item>
     </style>
 
+    <!-- Colored button styles -->
+    <style name="HoloAccent.Button.Colored" parent="android:Widget.Material.Button">
+        <item name="android:background">@drawable/ha__btn_default_colored</item>
+    </style>
+    <style name="HoloAccent.Button.Small.Colored" parent="android:Widget.Material.Button.Small">
+        <item name="android:background">@drawable/ha__btn_default_colored</item>
+    </style>
+    <style name="HoloAccent.ImageButton.Colored" parent="android:Widget.Material.ImageButton">
+        <item name="android:background">@drawable/ha__btn_default_colored</item>
+    </style>
+
+    <!-- Colored button styles (Inverse) -->
+    <style name="HoloAccent.Button.Colored.Inverse">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+    <style name="HoloAccent.Button.Small.Colored.Inverse">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+    <style name="HoloAccent.ImageButton.Colored.Inverse">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+
+    <!-- Bright colored button styles -->
+    <style name="HoloAccent.Button.Colored.Bright" parent="android:Widget.Material.Button">
+        <item name="android:background">@drawable/ha__btn_default_colored_bright</item>
+    </style>
+    <style name="HoloAccent.Button.Small.Colored.Bright" parent="android:Widget.Material.Button.Small">
+        <item name="android:background">@drawable/ha__btn_default_colored_bright</item>
+    </style>
+    <style name="HoloAccent.ImageButton.Colored.Bright" parent="android:Widget.Material.ImageButton">
+        <item name="android:background">@drawable/ha__btn_default_colored_bright</item>
+    </style>
+
+    <!-- Bright colored button styles (Light) -->
+    <style name="HoloAccent.Button.Colored.Bright.Inverse">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+    <style name="HoloAccent.Button.Small.Colored.Bright.Inverse">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+    <style name="HoloAccent.ImageButton.Colored.Bright.Inverse">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+
 </resources>

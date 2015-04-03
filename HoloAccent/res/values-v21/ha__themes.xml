@@ -29,7 +29,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
@@ -51,7 +63,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
@@ -72,7 +96,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
@@ -111,7 +147,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
@@ -132,7 +180,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
@@ -154,7 +214,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
@@ -175,7 +247,19 @@
         <item name="android:colorPrimaryDark">@android:color/black</item>
         <item name="android:colorEdgeEffect">?android:colorAccent</item>
 
-        <item name="buttonStyleColoredInverse">?android:attr/buttonStyle</item>
+        <item name="buttonStyleColored">@style/HoloAccent.Button.Colored</item>
+        <item name="buttonStyleColoredBright">@style/HoloAccent.Button.Colored.Bright</item>
+        <item name="buttonStyleSmallColored">@style/HoloAccent.Button.Small.Colored</item>
+        <item name="buttonStyleSmallColoredBright">@style/HoloAccent.Button.Small.Colored.Bright</item>
+        <item name="imageButtonStyleColored">@style/HoloAccent.ImageButton.Colored</item>
+        <item name="imageButtonStyleColoredBright">@style/HoloAccent.ImageButton.Colored.Bright</item>
+
+        <item name="buttonStyleColoredInverse">@style/HoloAccent.Button.Colored.Inverse</item>
+        <item name="buttonStyleColoredBrightInverse">@style/HoloAccent.Button.Colored.Bright.Inverse</item>
+        <item name="buttonStyleSmallColoredInverse">@style/HoloAccent.Button.Small.Colored.Inverse</item>
+        <item name="buttonStyleSmallColoredBrightInverse">@style/HoloAccent.Button.Small.Colored.Bright.Inverse</item>
+        <item name="imageButtonStyleColoredInverse">@style/HoloAccent.ImageButton.Colored.Inverse</item>
+        <item name="imageButtonStyleColoredBrightInverse">@style/HoloAccent.ImageButton.Colored.Bright.Inverse</item>
 
         <item name="android:actionBarStyle">@style/HoloAccent.ActionBar.Solid</item>
         <item name="android:datePickerStyle">@style/HoloAccent.DatePicker</item>
