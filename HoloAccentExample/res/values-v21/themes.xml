@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomActionBarStyle" parent="HoloAccent.ActionBar.Solid">
+        <item name="android:background">#8BA930</item>
+        <item name="android:displayOptions">useLogo|showHome|showTitle</item>
+    </style>
+
+</resources>
