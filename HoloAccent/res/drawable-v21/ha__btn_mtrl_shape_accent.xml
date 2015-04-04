@@ -19,10 +19,9 @@
     android:insetTop="@dimen/button_inset_vertical_material"
     android:insetRight="@dimen/button_inset_horizontal_material"
     android:insetBottom="@dimen/button_inset_vertical_material">
-    <shape android:shape="rectangle"
-        android:tint="@color/ha__button_accent">
+    <shape android:shape="rectangle">
         <corners android:radius="@dimen/control_corner_material" />
-        <solid android:color="@android:color/white" />
+        <solid android:color="@color/ha__button_accent" />
         <padding android:left="@dimen/button_padding_horizontal_material"
             android:top="@dimen/button_padding_vertical_material"
             android:right="@dimen/button_padding_horizontal_material"
